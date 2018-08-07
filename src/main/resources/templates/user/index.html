@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/default :: head"></head>
+<body>
+	<header th:replace="layout/default :: header"></header>
+	<aside th:replace="layout/default :: left-panel"></aside>
+
+	<!-- Right Panel -->
+	<div id="right-panel" class="right-panel">
+
+		<!-- Header-->
+		<header id="header" class="header"
+			th:replace="layout/default :: header"> </header>
+		<!-- Header-->
+
+		<div class="breadcrumbs" th:replace=" layout/default :: breadcrumbs"></div>
+
+		<div class="content mt-3">
+			<h1>List User</h1>
+			<hr />
+			<a th:href="@{/users/new}">New User</a><br /> <br />
+
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="user : ${listUser}">
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.email}"></td>
+						<td><a th:href="@{/users/{id}(id = ${user.id})}">Show</a> <a
+							th:href="@{/users/edit/{id}(id = ${user.id})}">Edit</a> <a
+							th:href="@{/users/delete/{id}(id = ${user.id})}">Destroy</a></td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+	<!-- Right Panel -->
+
+
+	<footer th:replace="layout/default :: footer"></footer>
+
+	<div th:replace="layout/default :: scripts"></div>
+</body>
+</html>

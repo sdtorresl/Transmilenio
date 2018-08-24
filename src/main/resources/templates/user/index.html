@@ -1,51 +1,59 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head th:replace="layout/default :: head"></head>
-<body>
-	<header th:replace="layout/default :: header"></header>
-	<aside th:replace="layout/default :: left-panel"></aside>
+<body class="wrapper">
+	<!-- Sidebar -->
+    <head th:replace="layout/default :: sidebar"></head>
+	<!-- Sidebar -->
 
-	<!-- Right Panel -->
-	<div id="right-panel" class="right-panel">
-
-		<!-- Header-->
-		<header id="header" class="header"
-			th:replace="layout/default :: header"> </header>
-		<!-- Header-->
-
-		<div class="breadcrumbs" th:replace=" layout/default :: breadcrumbs"></div>
-
-		<div class="content mt-3">
-			<h1>List User</h1>
-			<hr />
-			<a th:href="@{/users/new}">New User</a><br /> <br />
-
-			<table class="table">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Email</th>
-						<th>Action</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="user : ${listUser}">
-						<td th:text="${user.name}"></td>
-						<td th:text="${user.email}"></td>
-						<td><a th:href="@{/users/{id}(id = ${user.id})}">Show</a> <a
-							th:href="@{/users/edit/{id}(id = ${user.id})}">Edit</a> <a
-							th:href="@{/users/delete/{id}(id = ${user.id})}">Destroy</a></td>
-					</tr>
-				</tbody>
-			</table>
-
-		</div>
-	</div>
-	<!-- Right Panel -->
+	<!-- Page Content -->
+    <div id="content">
+		<!-- Top nav -->
+        <nav th:replace="layout/default :: navbar"></nav>
+        <!-- Top nav -->
 
 
+        <article class="container-fluid">
+	
+			<div id="main-content" class="shadow-sm bg-white">
+			
+				<h1>List User</h1>
+				<hr />
+	
+				<table class="table table-hover">
+					<thead class="thead-dark">
+						<tr>
+							<th scope="col">Name</th>
+							<th scope="col">Email</th>
+							<th scope="col">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="user : ${listUser}">
+							<td th:text="${user.name}"></td>
+							<td th:text="${user.email}"></td>
+							<td><a th:href="@{/users/{id}(id = ${user.id})}">Show</a> <a
+								th:href="@{/users/edit/{id}(id = ${user.id})}">Edit</a> <a
+								th:href="@{/users/delete/{id}(id = ${user.id})}">Destroy</a></td>
+						</tr>
+					</tbody>
+				</table>
+			
+				<div class="d-flex justify-content-end">
+					<a th:href="@{/users/new}" class="btn btn-primary">New User</a><br /> <br />
+				</div>
+			</div>
+			
+		</article>
+    </div>
+	<!-- Page Content -->
+
+	<!-- Footer -->
 	<footer th:replace="layout/default :: footer"></footer>
-
+	<!-- Footer -->
+	
+	<!-- Scripts -->
 	<div th:replace="layout/default :: scripts"></div>
+	<!-- Scripts -->
 </body>
 </html>

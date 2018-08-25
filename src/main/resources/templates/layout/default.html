@@ -22,47 +22,79 @@
 	<!-- Sidebar -->
     <nav id="sidebar" th:fragment="sidebar">
         <div class="sidebar-header">
-            <h3>TM Inventory</h3>
+            <figure class="logo"><img th:src="@{/img/logo.png}" alt="Logo"></figure>
         </div>
 
         <ul class="list-unstyled components">
-            <p>Dummy Heading</p>
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="#">Home 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
+            <li>
+                <a href="#searchMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="flaticon-search"></i>
+                    Búsqueda
+                </a>
+                <ul class="collapse list-unstyled" id="searchMenu">
+                    <li><a href="#"><i class="flaticon-list-1"></i>Listar</a></li>
+                    <li><a href="#"><i class="flaticon-add"></i>Agregar</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Page 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
+                <a href="#inventoryMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="flaticon-notepad"></i>
+                    Inventario
+                </a>
+                <ul class="collapse list-unstyled" id="inventoryMenu">
+                    <li><a href="#"><i class="flaticon-list-1"></i>Listar</a></li>
+                    <li><a href="#"><i class="flaticon-add"></i>Agregar</a></li>
                 </ul>
             </li>
             <li>
-                <a href="#">Portfolio</a>
+                <a href="#trunksMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="flaticon-route"></i>
+                    Troncales
+                </a>
+                <ul class="collapse list-unstyled" id="trunksMenu">
+                    <li><a href="#"><i class="flaticon-list-1"></i>Listar</a></li>
+                    <li><a href="#"><i class="flaticon-add"></i>Agregar</a></li>
+                </ul>
             </li>
             <li>
-                <a href="#">Contact</a>
+                <a href="#stationsMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="flaticon-placeholder-1"></i>
+                    Estaciones
+                </a>
+                <ul class="collapse list-unstyled" id="stationsMenu">
+                    <li><a href="#"><i class="flaticon-list-1"></i>Listar</a></li>
+                    <li><a href="#"><i class="flaticon-add"></i>Agregar</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#sectionsMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="flaticon-placeholders"></i>
+                    Secciones
+                </a>
+                <ul class="collapse list-unstyled" id="sectionsMenu">
+                    <li><a href="#"><i class="flaticon-list-1"></i>Listar</a></li>
+                    <li><a href="#"><i class="flaticon-add"></i>Agregar</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#reportsMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="flaticon-file-1"></i>
+                    Reportes
+                </a>
+                <ul class="collapse list-unstyled" id="reportsMenu">
+                    <li><a href="#"><i class="flaticon-list-1"></i>Listar</a></li>
+                    <li><a href="#"><i class="flaticon-add"></i>Agregar</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#usersMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="flaticon-users"></i>
+                    Usuarios
+                </a>
+                <ul class="collapse list-unstyled" id="usersMenu">
+                    <li><a href="#"><i class="flaticon-list-1"></i>Listar</a></li>
+                    <li><a href="#"><i class="flaticon-add"></i>Agregar</a></li>
+                </ul>
             </li>
         </ul>
     </nav>
@@ -80,9 +112,9 @@
 
                 <div class="d-flex justify-content-end">
                 	<div class="btn-group">
-						<button id="user-button" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sergio Torres</button>
+						<button id="user-button" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-user"></i>Sergio Torres</button>
 						<div class="dropdown-menu dropdown-menu-right">
-							<button class="dropdown-item" type="button">My Perfil</button>
+							<button class="dropdown-item" type="button">Perfil</button>
 							<button class="dropdown-item" type="button">Cerrar sesión</button>
 						</div>
 					</div>

@@ -12,35 +12,36 @@
         <nav th:replace="layout/default :: navbar"></nav>
         <!-- Top nav -->
 
-
         <article class="container-fluid">
 	
 			<div id="main-content" class="shadow-sm bg-white">
 			
-				<h1>List User</h1>
+				<h1>Usuarios</h1>
 				<hr />
 	
-				<table class="table table-hover">
+				<table class="table table-hover text-center">
 					<thead class="thead-dark">
 						<tr>
-							<th scope="col">Name</th>
-							<th scope="col">Email</th>
-							<th scope="col">Action</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Correo</th>
+							<th scope="col">Acciones</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr th:each="user : ${listUser}">
 							<td th:text="${user.name}"></td>
 							<td th:text="${user.email}"></td>
-							<td><a th:href="@{/users/{id}(id = ${user.id})}">Show</a> <a
-								th:href="@{/users/edit/{id}(id = ${user.id})}">Edit</a> <a
-								th:href="@{/users/delete/{id}(id = ${user.id})}">Destroy</a></td>
+							<td>
+								<a class="action" th:href="@{/users/{id}(id = ${user.id})}"><i class="flaticon-add"></i></a>
+								<a class="action" th:href="@{/users/edit/{id}(id = ${user.id})}"><i class="flaticon-edit"></i></a>
+								<a class="action" th:href="@{/users/delete/{id}(id = ${user.id})}"><i class="flaticon-trash"></i></a>
+							</td>
 						</tr>
 					</tbody>
 				</table>
 			
 				<div class="d-flex justify-content-end">
-					<a th:href="@{/users/new}" class="btn btn-primary">New User</a><br /> <br />
+					<a th:href="@{/users/new}" class="btn btn-primary">Crear Usuario</a>
 				</div>
 			</div>
 			

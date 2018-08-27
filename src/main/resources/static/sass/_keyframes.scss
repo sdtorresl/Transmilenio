@@ -1,0 +1,14 @@
+@keyframes run {
+	from {right: 70%;}
+	to {right: 25px;}
+}
+
+@keyframes fade-in {
+	from {opacity: 0;}
+	to {opacity: 1}
+}
+
+@keyframes fade-out {
+	from {opacity: 1;}
+	to {opacity: 0}
+}

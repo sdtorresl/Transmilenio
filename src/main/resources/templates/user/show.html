@@ -1,31 +1,59 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorator="layout">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<title>Show User</title>
-</head>
-<body>
-	<div layout:fragment="content">
-		<h1>Show User</h1>
-		<hr />
-		<div class="form-group"> 
-			<label for="name">Name: </label>  
-			<span th:text="${user.name}"></span> 
-		</div> 
-		<div class="form-group"> 
-			<label for="email">Email: </label>  
-			<span th:text="${user.email}"></span> 
-		</div> 
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+	<!-- Sidebar -->
+    <head th:replace="layout/default :: sidebar"></head>
+	<!-- Sidebar -->
 
-		<a th:href="@{/users/{id}/edit(id = ${user.id})}">Edit this record</a> <br/>
-		<a href="#">Delete this record</a> <br/>
-		<a th:href="@{/users}">Back to list User</a> <br/>
-	</div>
+	<!-- Page Content -->
+    <div id="content">
+		<!-- Top nav -->
+        <nav th:replace="layout/default :: navbar"></nav>
+        <!-- Top nav -->
+
+        <article class="container-fluid">
+	
+			<div id="main-content" class="shadow-sm bg-white">
+			
+				<h1>Ver usuario</h1>
+				<hr />
+
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<div class="row bg-secondary mb-3 header">
+							<div class="col">
+								<p class="text-white text-center" th:text="${user.name}"></p>
+							</div>	
+						</div>
+						<div class="row"> 
+							<p class="col secondary text-right">ID:</p>
+							<p class="col" th:text="${user.id}"></p> 
+						</div> 
+						<div class="row"> 
+							<p class="col secondary text-right">Correo:</p>
+							<p class="col" th:text="${user.email}"></p> 
+						</div> 
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col mt-3">
+						<div class="d-flex justify-content-end">
+							<a class="btn btn-secondary mr-2"th:href="@{/users}">Atrás</a>
+							<a class="btn btn-secondary mr-2" th:href="@{/users/delete/{id}(id = ${user.id})}">Borrar</a>
+							<a class="btn btn-primary" th:href="@{/users/edit/{id}(id = ${user.id})}">Editar</a>
+						</div>
+					</div>
+				</div>			
+			</div>
+			
+		</article>
+    </div>
+	<!-- Page Content -->
+	
+	<!-- Scripts -->
+	<div th:replace="layout/default :: scripts"></div>
+	<!-- Scripts -->
 </body>
 </html>

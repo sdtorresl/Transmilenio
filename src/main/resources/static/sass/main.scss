@@ -1,12 +1,17 @@
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import "../img/icons/essential-set/font/flaticon.css";
+@import "_mixins.scss";
+@import "_keyframes.scss";
+
+@include font-face('Futura light bt', '../fonts/futura light bt', null, null, 'ttf');
+@include font-face('Futura condensed bold', '../fonts/Futura Bold font', 'bold', null, 'ttf');
+
 
 /* ---------------------------------------------------
 	VARIABLES
 ----------------------------------------------------- */
 
-$primary-font: 'Roboto';
+$primary-font: 'Futura light bt';
+$secondary-font: 'Futura condensed bold';
 
 /* Bootstrap customization */
 $white:    #fff !default;
@@ -22,11 +27,15 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+$gray-light: #6F6F6E;
+$gray-background: #f2f2f2;
+$gray-dark: #333333;
+
 $blue:    #007bff !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
-$red:     #dc3545 !default;
+$red:     #c60c30 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
 $green:   #28a745 !default;
@@ -34,13 +43,13 @@ $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
 $primary: $red;
-$secondary: $gray-900;
+$secondary: $gray-dark;
 $success: $green;
 $info: $cyan;
 $warning: $yellow;
 $danger: $red;
-$light: $white-100;
-$dark: $gray-900;
+$light: $gray-light;
+$dark: $gray-dark;
 
 /* ---------------------------------------------------
 	BOOTSTRAP
@@ -52,17 +61,55 @@ $dark: $gray-900;
 	MAIN STYLES
 ----------------------------------------------------- */
 
-body {
+body, p, td, label, input, th {
 	font-family: $primary-font, sans-serif;
-	background: $white-100;
+	color: $gray-light;
+	font-size: 1rem;
 }
 
-p {
-	font-family: $primary-font, sans-serif;
-	font-size: 1.1em;
-	font-weight: 300;
-	line-height: 1.7em;
-	color: #999;
+h1, h2, h3, h4, h5, h6 {
+	font-family: $secondary-font, sans-serif;
+}
+
+h2, h3, h4, h5 {
+	color: $gray-light;
+}
+
+h1, .h1 {
+	color: $gray-dark;
+	font-size: 1.5rem;
+}
+
+h2, .h2 {
+	font-size: 1.4rem;
+}
+
+h3, .h3 {
+	font-size: 1.3rem;
+}
+
+h4, .h4 {
+	font-size: 1.2rem;
+}
+
+h5, .h5 {
+	font-size: 1rem;
+}
+
+body {
+	background: $gray-background;
+}
+
+footer {
+	margin-top: 1.5rem;
+	animation: 1s fade-in ease-in-out;
+	
+	p {
+		font-size: 0.7rem;
+		color: $white;
+		line-height: 0.7rem;
+		margin-bottom: 0.3rem;
+	}
 }
 
 a {
@@ -87,6 +134,42 @@ figure {
 	margin: 0;
 }
 
+.btn {
+	font-family: $secondary-font;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	transition: 0.5s;
+
+	&:hover {
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
+	}
+
+}
+
+.btn-primary {
+	background: $primary;
+	color: $white;
+	border-color: $primary;
+
+	&:hover {
+		background: $secondary;
+		border-color: $secondary;
+	}
+}
+
+.btn-secondary {
+	background-color: $white;
+	color: $primary;
+	border-color: $primary;
+	
+	&:hover {
+		background: $secondary;
+		color: $white;
+		border-color: $secondary;
+	}
+}
+
 /* ---------------------------------------------------
 	NAVBAR STYLE
 ----------------------------------------------------- */
@@ -100,6 +183,7 @@ figure {
 	margin-top: 5px;
 	margin-bottom: 5px;
 	transition: 0.75s;
+	padding: 0;
 }
 
 .navbar {
@@ -135,6 +219,7 @@ figure {
 	background: transparent;
 	cursor: pointer;
 	transition: 0.5s;
+	animation: 1s fade-in ease-in-out;
 
 	&:hover {
 		background: $primary;
@@ -162,24 +247,26 @@ figure {
 }
 
 #sidebar {
-	width: 250px;
+	width: 280px;
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100vh;
 	z-index: 999;
-	background: $secondary;
-	color: #fff;
+	background: $black;
+	color: $white;
 	transition: all 0.3s;
 
 	&.active {
-		margin-left: -250px;
+		margin-left: -280px;
 	}
 	.sidebar-header {
 		padding: 20px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		animation: 1s fade-in ease-in-out;
+		animation-fill-mode: forwards;
 
 		.logo {
 			border-radius: 100%;
@@ -196,10 +283,15 @@ figure {
 				max-width: 100%;
 			}
 		}
+
+		h1 {
+			animation-duration:2s;
+		}
 	}
 
 	ul.components {
-		padding: 20px 0;
+		padding: 0;
+		animation: 1s fade-in ease-in-out;
 	}
 
 	ul p {
@@ -211,12 +303,11 @@ figure {
 		padding: 10px;
 		font-size: 1rem;
 		display: block;
-		text-transform: uppercase;
 	}
 
 	ul li a:hover {
-		color: $secondary;
-		background: $white-100;
+		color: $primary;
+		background: $gray-background;
 
 		i {
 			color: $primary;
@@ -243,7 +334,6 @@ figure {
 		font-size: 0.9em !important;
 		padding-left: 30px !important;
 		background: $primary;
-		text-transform: none;
 
 		i {
 			color: $white!important;
@@ -295,12 +385,27 @@ a.article:hover {
 ----------------------------------------------------- */
 
 #content {
-	width: calc(100% - 250px);
+	width: calc(100% - 280px);
 	min-height: 100vh;
 	transition: all 0.3s;
 	position: absolute;
 	top: 0;
 	right: 0;
+	background-image: url('../img/styles/main-background.png');
+	background-size: 100%;
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 5px;
+		width: 300px;
+		height: 60px;
+		background-image: url("../img/styles/bus.png");
+		background-size: 100%;
+		background-repeat: no-repeat;
+		animation: run 2s ease-in-out;
+		animation-fill-mode: forwards;
+	}
 
 	&.active {
 		width: 100%;
@@ -314,6 +419,7 @@ a.article:hover {
 #main-content {
 	margin: 1.5rem;
 	padding: 1rem;
+	animation: 1s fade-in ease-in-out;
 }
 
 a.action {
@@ -325,13 +431,21 @@ a.action {
 	}
 }
 
+.header {
+	h1, h2, h3, h4, h5, p {
+		line-height: 1.5rem;
+		font-weight: bold;
+		padding: 0.75rem;
+		margin: 0;
+	}
+}
 /* ---------------------------------------------------
 	MEDIAQUERIES
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
 	#sidebar {
-		margin-left: -250px;
+		margin-left: -280px;
 		.active {
 			margin-left: 0;
 		}
@@ -341,7 +455,7 @@ a.action {
 		width: 100%;
 
 		&.active {
-			width: calc(100% - 250px);
+			width: calc(100% - 280px);
 
 			#sidebarCollapse {
 				margin-left: 0px;

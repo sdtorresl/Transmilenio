@@ -100,6 +100,10 @@ body {
 	background: $gray-background;
 }
 
+#login {
+	background: url('../img/styles/login-background.png');	
+}
+
 footer {
 	margin-top: 1.5rem;
 	animation: 1s fade-in ease-in-out;

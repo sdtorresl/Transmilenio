@@ -1,10 +1,17 @@
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "../img/icons/essential-set/font/flaticon.css";
+@import "_mixins.scss";
+@import "_keyframes.scss";
+
+@include font-face('Futura light bt', '../fonts/futura light bt', null, null, 'ttf');
+@include font-face('Futura condensed bold', '../fonts/Futura Bold font', 'bold', null, 'ttf');
+
 
 /* ---------------------------------------------------
 	VARIABLES
 ----------------------------------------------------- */
 
-$primary-font: 'Poppins';
+$primary-font: 'Futura light bt';
+$secondary-font: 'Futura condensed bold';
 
 /* Bootstrap customization */
 $white:    #fff !default;
@@ -20,11 +27,15 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+$gray-light: #6F6F6E;
+$gray-background: #f2f2f2;
+$gray-dark: #333333;
+
 $blue:    #007bff !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
-$red:     #dc3545 !default;
+$red:     #c60c30 !default;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
 $green:   #28a745 !default;
@@ -32,13 +43,14 @@ $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
 $primary: $red;
-$secondary: $gray-900;
+$secondary: $gray-dark;
 $success: $green;
 $info: $cyan;
 $warning: $yellow;
 $danger: $red;
-$light: $white-100;
-$dark: $gray-900;
+$light: $gray-light;
+$dark: $gray-dark;
+
 /* ---------------------------------------------------
 	BOOTSTRAP
 ----------------------------------------------------- */
@@ -49,19 +61,63 @@ $dark: $gray-900;
 	MAIN STYLES
 ----------------------------------------------------- */
 
+body, p, td, label, input, th {
+	font-family: $primary-font, sans-serif;
+	color: $gray-light;
+	font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $secondary-font, sans-serif;
+}
+
+h2, h3, h4, h5 {
+	color: $gray-light;
+}
+
+h1, .h1 {
+	color: $gray-dark;
+	font-size: 1.5rem;
+}
+
+h2, .h2 {
+	font-size: 1.4rem;
+}
+
+h3, .h3 {
+	font-size: 1.3rem;
+}
+
+h4, .h4 {
+	font-size: 1.2rem;
+}
+
+h5, .h5 {
+	font-size: 1rem;
+}
+
 body {
-	font-family: $primary-font, sans-serif;
-	background: $white-100;
+	background: $gray-background;
 }
 
-p {
-	font-family: $primary-font, sans-serif;
-	font-size: 1.1em;
-	font-weight: 300;
-	line-height: 1.7em;
-	color: #999;
+footer {
+	margin-top: 1.5rem;
+	animation: 1s fade-in ease-in-out;
+	
+	p {
+		font-size: 0.7rem;
+		color: $white;
+		line-height: 0.7rem;
+		margin-bottom: 0.3rem;
+	}
 }
 
+a {
+	i {
+		margin-right: 10px;
+		margin-left: 10px;
+	}
+}
 a,
 a:hover,
 a:focus {
@@ -70,18 +126,64 @@ a:focus {
 	transition: all 0.3s;
 }
 
+figure {
+	margin: 0;
+}
+
+[class^="flaticon-"]::before, [class*=" flaticon-"]::before, [class^="flaticon-"]::after, [class*=" flaticon-"]::after {
+	margin: 0;
+}
+
+.btn {
+	font-family: $secondary-font;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	transition: 0.5s;
+
+	&:hover {
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
+	}
+
+}
+
+.btn-primary {
+	background: $primary;
+	color: $white;
+	border-color: $primary;
+
+	&:hover {
+		background: $secondary;
+		border-color: $secondary;
+	}
+}
+
+.btn-secondary {
+	background-color: $white;
+	color: $primary;
+	border-color: $primary;
+	
+	&:hover {
+		background: $secondary;
+		color: $white;
+		border-color: $secondary;
+	}
+}
+
 /* ---------------------------------------------------
 	NAVBAR STYLE
 ----------------------------------------------------- */
+
 #sidebarCollapse {
 	border-radius: 100px;
 	height: 50px;
 	width: 50px;
-	margin-left: -40px;
+	margin-left: -25px;
 	z-index: 1000;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	transition: 0.75s;
+	padding: 0;
 }
 
 .navbar {
@@ -90,6 +192,11 @@ a:focus {
 	border-radius: 0;
 	margin-bottom: 40px;
 	padding: 0;
+
+	.container-fluid {
+		padding: 0;
+		align-items: stretch;
+	}
 }
 
 .navbar-btn {
@@ -107,12 +214,26 @@ a:focus {
 
 #user-button {
 	border: none;
-	padding: 5px 45px;
+	padding-left: 20px;
+	padding-right: 50px;
 	background: transparent;
 	cursor: pointer;
+	transition: 0.5s;
+	animation: 1s fade-in ease-in-out;
 
 	&:hover {
-		text-decoration: underline;
+		background: $primary;
+		color: $white;
+
+		i {
+			color: $white;
+		}
+	}
+
+	i {
+		color: $primary;
+		margin-right: 10px;
+		transition: 0.5s;
 	}
 }
 
@@ -126,52 +247,101 @@ a:focus {
 }
 
 #sidebar {
-	width: 250px;
+	width: 280px;
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100vh;
 	z-index: 999;
-	background: $secondary;
-	color: #fff;
+	background: $black;
+	color: $white;
 	transition: all 0.3s;
+
+	&.active {
+		margin-left: -280px;
+	}
+	.sidebar-header {
+		padding: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation: 1s fade-in ease-in-out;
+		animation-fill-mode: forwards;
+
+		.logo {
+			border-radius: 100%;
+			height: 100px;
+			width: 100px;
+			overflow: hidden;
+			padding: 10px;
+			background: $white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			img {
+				max-width: 100%;
+			}
+		}
+
+		h1 {
+			animation-duration:2s;
+		}
+	}
+
+	ul.components {
+		padding: 0;
+		animation: 1s fade-in ease-in-out;
+	}
+
+	ul p {
+		color: #fff;
+		padding: 10px;
+	}
+
+	ul li a {
+		padding: 10px;
+		font-size: 1rem;
+		display: block;
+	}
+
+	ul li a:hover {
+		color: $primary;
+		background: $gray-background;
+
+		i {
+			color: $primary;
+		}
+	}
+
+	ul li.active>a,
+	a[aria-expanded="true"] {
+		color: #fff;
+		background: theme-color-level(primary, 2);
+
+		i {
+			color: $white;
+		}
+	}
+
+	a {
+		i {
+			color: $primary;
+		}
+	}
+
+	ul ul a {
+		font-size: 0.9em !important;
+		padding-left: 30px !important;
+		background: $primary;
+
+		i {
+			color: $white!important;
+		}
+	}
 }
 
-#sidebar.active {
-	margin-left: -250px;
-}
 
-#sidebar .sidebar-header {
-	padding: 20px;
-	border-bottom: 1px solid $primary;
-}
-
-#sidebar ul.components {
-	padding: 20px 0;
-	border-bottom: 1px solid $primary;
-}
-
-#sidebar ul p {
-	color: #fff;
-	padding: 10px;
-}
-
-#sidebar ul li a {
-	padding: 10px;
-	font-size: 1.1em;
-	display: block;
-}
-
-#sidebar ul li a:hover {
-	color: #7386D5;
-	background: #fff;
-}
-
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-	color: #fff;
-	background: #6d7fcc;
-}
 
 a[data-toggle="collapse"] {
 	position: relative;
@@ -185,11 +355,7 @@ a[data-toggle="collapse"] {
 	transform: translateY(-50%);
 }
 
-ul ul a {
-	font-size: 0.9em !important;
-	padding-left: 30px !important;
-	background: #6d7fcc;
-}
+
 
 ul.CTAs {
 	padding: 20px;
@@ -203,10 +369,10 @@ ul.CTAs a {
 	margin-bottom: 5px;
 }
 
-a.download {
-	background: #fff;
-	color: #7386D5;
-}
+// a.download {
+// 	background: #fff;
+// 	color: #7386D5;
+// }
 
 a.article,
 a.article:hover {
@@ -219,18 +385,33 @@ a.article:hover {
 ----------------------------------------------------- */
 
 #content {
-	width: calc(100% - 250px);
+	width: calc(100% - 280px);
 	min-height: 100vh;
 	transition: all 0.3s;
 	position: absolute;
 	top: 0;
 	right: 0;
+	background-image: url('../img/styles/main-background.png');
+	background-size: 100%;
+
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 5px;
+		width: 300px;
+		height: 60px;
+		background-image: url("../img/styles/bus.png");
+		background-size: 100%;
+		background-repeat: no-repeat;
+		animation: run 2s ease-in-out;
+		animation-fill-mode: forwards;
+	}
 
 	&.active {
 		width: 100%;
 
 		#sidebarCollapse {
-			margin-left: 0px;
+			margin-left: 15px;
 		}
 	}
 }
@@ -238,15 +419,33 @@ a.article:hover {
 #main-content {
 	margin: 1.5rem;
 	padding: 1rem;
+	animation: 1s fade-in ease-in-out;
 }
 
+a.action {
+	color: $secondary;
+	transition: 0.5s;
+
+	&:hover {
+		color: $primary;
+	}
+}
+
+.header {
+	h1, h2, h3, h4, h5, p {
+		line-height: 1.5rem;
+		font-weight: bold;
+		padding: 0.75rem;
+		margin: 0;
+	}
+}
 /* ---------------------------------------------------
 	MEDIAQUERIES
 ----------------------------------------------------- */
 
 @media (max-width: 768px) {
 	#sidebar {
-		margin-left: -250px;
+		margin-left: -280px;
 		.active {
 			margin-left: 0;
 		}
@@ -256,7 +455,7 @@ a.article:hover {
 		width: 100%;
 
 		&.active {
-			width: calc(100% - 250px);
+			width: calc(100% - 280px);
 
 			#sidebarCollapse {
 				margin-left: 0px;

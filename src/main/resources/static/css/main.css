@@ -10392,6 +10392,10 @@ body {
   background: #f2f2f2;
 }
 
+#login {
+  background: url("../img/styles/login-background.png");
+}
+
 footer {
   margin-top: 1.5rem;
   -webkit-animation: 1s fade-in ease-in-out;

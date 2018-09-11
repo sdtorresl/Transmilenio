@@ -34,7 +34,10 @@
 						<button id="user-button" type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="flaticon-user"></i>Sergio Torres</button>
 						<div class="dropdown-menu dropdown-menu-right">
 							<button class="dropdown-item" type="button">Perfil</button>
-							<button class="dropdown-item" type="button">Cerrar sesión</button>
+							<form id="logoutForm" th:action="@{/logout}" method="post">
+								<button class="dropdown-item" type="button">Cerrar sesión</button>
+								<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+							</form>
 						</div>
 					</div>
                 </div>

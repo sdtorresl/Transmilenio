@@ -21,6 +21,7 @@ import co.innovaciones.model.User;
 import co.innovaciones.service.UserService;
 
 @Controller
+//TODO: "/" mapping have to be removed
 @RequestMapping({"/users", "/"})
 public class UserController {
 

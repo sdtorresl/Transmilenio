@@ -9,12 +9,19 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+/**
+ * {@link WebSecurityConfigurerAdapter} implementation to define the application access rules.
+ *
+ * @author ndariass
+ */
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
+	private static final String[] ANT_MATCHERS = {"/css/**", "/js/**", "/img/**", "/fonts/**", "/sass/**"};
+	
 	@Override
 	protected void configure(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.authorizeRequests().antMatchers("/css/**", "/js/**", "/img/**").permitAll()
+		httpSecurity.authorizeRequests().antMatchers(ANT_MATCHERS).permitAll()
 				.anyRequest().authenticated()
 				.and()
 				.formLogin()
@@ -30,6 +37,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		User.UserBuilder users = User.builder().passwordEncoder(encoder::encode);
 		
 		build.inMemoryAuthentication()
-				.withUser(users.username("admin").password("admin").roles("ADMIN"));
+				.withUser(users.username("admin").password("admin").roles("ROLE_ADMIN"));
 	}
 }

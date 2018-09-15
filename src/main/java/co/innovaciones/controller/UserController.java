@@ -21,7 +21,8 @@ import co.innovaciones.model.User;
 import co.innovaciones.service.UserService;
 
 @Controller
-@RequestMapping("/users")
+//TODO: "/" mapping have to be removed
+@RequestMapping({"/users", "/"})
 public class UserController {
 
 	private static final String MSG_SUCESS_INSERT = "User inserted successfully.";

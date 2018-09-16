@@ -15,6 +15,7 @@ public class Entrada implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_entrada")
 	private Integer id;
 
     @Column(name = "inv_entrada_nivel")

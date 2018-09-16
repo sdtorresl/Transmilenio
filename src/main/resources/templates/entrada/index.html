@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layout">
+<head>
+ 	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+</head>
+<body>
+
+	<div layout:fragment="content">
+		<h1>List Entrada</h1>
+		<hr />
+		<a th:href="@{/entradas/new}">New Entrada</a><br/><br/>
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nivel</th> 
+					<th>Largo</th> 
+					<th>Ancho</th> 
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="entrada : ${listEntrada}">
+					<td th:text="${entrada.nivel}"></td> 
+					<td th:text="${entrada.largo}"></td> 
+					<td th:text="${entrada.ancho}"></td> 
+					<td>
+							<a th:href="@{/entradas/{id}(id = ${entrada.id})}">Show</a> 
+					 		<a th:href="@{/entradas/edit/{id}(id = ${entrada.id})}">Edit</a> 
+							<a th:href="@{/entradas/delete/{id}(id = ${entrada.id})}">Destroy</a> 
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

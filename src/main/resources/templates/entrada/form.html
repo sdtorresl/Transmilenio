@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>New Entrada</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<h1 th:if="${entrada.id == null}">New Entrada</h1>
+		<h1 th:if="${entrada.id != null}">Edit Entrada</h1>
+		<hr />
+		<form th:action="@{/entradas}" th:method="@{${entrada.id == null} ? 'post' : 'put'}"
+			th:object="${entrada}">
+			<input type="hidden" th:field="*{id}" /> 
+			
+				<div class="form-group"> 
+					<label for="nivel">Nivel</label>  
+					<input id="nivel" name="nivel" type="text" class="form-control" th:field="*{nivel}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="largo">Largo</label>  
+					<input id="largo" name="largo" type="text" class="form-control" th:field="*{largo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ancho">Ancho</label>  
+					<input id="ancho" name="ancho" type="text" class="form-control" th:field="*{ancho}" />  
+				</div> 
+
+			<button type="submit" class="btn btn-success">Save</button>
+			<a th:href="@{/entradas}" class="btn btn-default">Back</a>
+		</form>
+	</div>
+</body>
+</html>

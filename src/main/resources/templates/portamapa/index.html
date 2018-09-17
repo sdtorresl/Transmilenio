@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Portamapas</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>PortamapaId</th> 
+					<th>PortamapaCorroido</th> 
+					<th>PortamapaMalaconexion</th> 
+					<th>PortamapaAveria</th> 
+					<th>PortamapaCostado</th> 
+					<th>PortamapaAncho</th> 
+					<th>PortamapaAlto</th> 
+					<th>PortamapaPresentamapa</th> 
+					<th>IdSeccionestacion</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="portamapa : ${listPortamapa}">
+										<td th:text="${portamapa.PortamapaId}"></td> 
+					<td th:text="${portamapa.PortamapaCorroido}"></td> 
+					<td th:text="${portamapa.PortamapaMalaconexion}"></td> 
+					<td th:text="${portamapa.PortamapaAveria}"></td> 
+					<td th:text="${portamapa.PortamapaCostado}"></td> 
+					<td th:text="${portamapa.PortamapaAncho}"></td> 
+					<td th:text="${portamapa.PortamapaAlto}"></td> 
+					<td th:text="${portamapa.PortamapaPresentamapa}"></td> 
+					<td th:text="${portamapa.IdSeccionestacion}"></td> 
+					<td>
+							<a th:href="@{/portamapas/{id}(id = ${portamapa.id})}">Show</a> 
+					 		<a th:href="@{/portamapas/edit/{id}(id = ${portamapa.id})}">Edit</a> 
+							<a th:href="@{/portamapas/delete/{id}(id = ${portamapa.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/portamapas/{id}(id = ${portamapa.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/portamapas/edit/{id}(id = ${portamapa.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/portamapas/delete/{id}(id = ${portamapa.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/portamapas/new}" class="btn btn-primary">Crear Portamapa</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

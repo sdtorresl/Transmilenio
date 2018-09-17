@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Camaras</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdSeccionestacion</th> 
+					<th>CamaraId</th> 
+					<th>CamaraTipoVision</th> 
+					<th>CamaraTipo</th> 
+					<th>CamaraCostado</th> 
+					<th>CamaraAveria</th> 
+					<th>CamaraFaltapieza</th> 
+					<th>CamaraPorcentajepiezafalta</th> 
+					<th>CamaraFalta</th> 
+					<th>CamaraAveriasoporte</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="camara : ${listCamara}">
+										<td th:text="${camara.IdSeccionestacion}"></td> 
+					<td th:text="${camara.CamaraId}"></td> 
+					<td th:text="${camara.CamaraTipoVision}"></td> 
+					<td th:text="${camara.CamaraTipo}"></td> 
+					<td th:text="${camara.CamaraCostado}"></td> 
+					<td th:text="${camara.CamaraAveria}"></td> 
+					<td th:text="${camara.CamaraFaltapieza}"></td> 
+					<td th:text="${camara.CamaraPorcentajepiezafalta}"></td> 
+					<td th:text="${camara.CamaraFalta}"></td> 
+					<td th:text="${camara.CamaraAveriasoporte}"></td> 
+					<td>
+							<a th:href="@{/camaras/{id}(id = ${camara.id})}">Show</a> 
+					 		<a th:href="@{/camaras/edit/{id}(id = ${camara.id})}">Edit</a> 
+							<a th:href="@{/camaras/delete/{id}(id = ${camara.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/camaras/{id}(id = ${camara.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/camaras/edit/{id}(id = ${camara.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/camaras/delete/{id}(id = ${camara.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/camaras/new}" class="btn btn-primary">Crear Camara</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

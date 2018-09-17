@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${cerramiento.id == null}">Agregar Cerramiento</h1>
+			<h1 th:if="${cerramiento.id != null}">Editar Cerramiento</h1>
+			<hr />
+
+			<form th:action="@{/cerramientos}" th:method="@{${cerramiento.id == null} ? 'post' : 'put'}" th:object="${cerramiento}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="CerramientoLibricacionNumero">CerramientoLibricacionNumero</label>  
+					<input id="CerramientoLibricacionNumero" name="CerramientoLibricacionNumero" type="text" class="form-control" th:field="*{CerramientoLibricacionNumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoTipo">CerramientoTipo</label>  
+					<input id="CerramientoTipo" name="CerramientoTipo" type="text" class="form-control" th:field="*{CerramientoTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoPiezafaltante">CerramientoPiezafaltante</label>  
+					<input id="CerramientoPiezafaltante" name="CerramientoPiezafaltante" type="text" class="form-control" th:field="*{CerramientoPiezafaltante}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoPiezafaltanteNumero">CerramientoPiezafaltanteNumero</label>  
+					<input id="CerramientoPiezafaltanteNumero" name="CerramientoPiezafaltanteNumero" type="text" class="form-control" th:field="*{CerramientoPiezafaltanteNumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoDesnivel">CerramientoDesnivel</label>  
+					<input id="CerramientoDesnivel" name="CerramientoDesnivel" type="text" class="form-control" th:field="*{CerramientoDesnivel}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoDesnivelNumero">CerramientoDesnivelNumero</label>  
+					<input id="CerramientoDesnivelNumero" name="CerramientoDesnivelNumero" type="text" class="form-control" th:field="*{CerramientoDesnivelNumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoPasadore">CerramientoPasadore</label>  
+					<input id="CerramientoPasadore" name="CerramientoPasadore" type="text" class="form-control" th:field="*{CerramientoPasadore}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoPasadorenumero">CerramientoPasadorenumero</label>  
+					<input id="CerramientoPasadorenumero" name="CerramientoPasadorenumero" type="text" class="form-control" th:field="*{CerramientoPasadorenumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoBisagra">CerramientoBisagra</label>  
+					<input id="CerramientoBisagra" name="CerramientoBisagra" type="text" class="form-control" th:field="*{CerramientoBisagra}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoBisagranumero">CerramientoBisagranumero</label>  
+					<input id="CerramientoBisagranumero" name="CerramientoBisagranumero" type="text" class="form-control" th:field="*{CerramientoBisagranumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoCorrosionNumero">CerramientoCorrosionNumero</label>  
+					<input id="CerramientoCorrosionNumero" name="CerramientoCorrosionNumero" type="text" class="form-control" th:field="*{CerramientoCorrosionNumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoCorrosion">CerramientoCorrosion</label>  
+					<input id="CerramientoCorrosion" name="CerramientoCorrosion" type="text" class="form-control" th:field="*{CerramientoCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoAveria">CerramientoAveria</label>  
+					<input id="CerramientoAveria" name="CerramientoAveria" type="text" class="form-control" th:field="*{CerramientoAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoId">CerramientoId</label>  
+					<input id="CerramientoId" name="CerramientoId" type="text" class="form-control" th:field="*{CerramientoId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CerramientoLubricacion">CerramientoLubricacion</label>  
+					<input id="CerramientoLubricacion" name="CerramientoLubricacion" type="text" class="form-control" th:field="*{CerramientoLubricacion}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/cerramientos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

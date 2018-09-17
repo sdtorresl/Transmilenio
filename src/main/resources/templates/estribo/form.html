@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${estribo.id == null}">Agregar Estribo</h1>
+			<h1 th:if="${estribo.id != null}">Editar Estribo</h1>
+			<hr />
+
+			<form th:action="@{/estribos}" th:method="@{${estribo.id == null} ? 'post' : 'put'}" th:object="${estribo}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="EstriboPerdida">EstriboPerdida</label>  
+					<input id="EstriboPerdida" name="EstriboPerdida" type="text" class="form-control" th:field="*{EstriboPerdida}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstriboPandeo">EstriboPandeo</label>  
+					<input id="EstriboPandeo" name="EstriboPandeo" type="text" class="form-control" th:field="*{EstriboPandeo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstriboId">EstriboId</label>  
+					<input id="EstriboId" name="EstriboId" type="text" class="form-control" th:field="*{EstriboId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstriboCostado">EstriboCostado</label>  
+					<input id="EstriboCostado" name="EstriboCostado" type="text" class="form-control" th:field="*{EstriboCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstriboLargo">EstriboLargo</label>  
+					<input id="EstriboLargo" name="EstriboLargo" type="text" class="form-control" th:field="*{EstriboLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstriboAncho">EstriboAncho</label>  
+					<input id="EstriboAncho" name="EstriboAncho" type="text" class="form-control" th:field="*{EstriboAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstriboAlfajor">EstriboAlfajor</label>  
+					<input id="EstriboAlfajor" name="EstriboAlfajor" type="text" class="form-control" th:field="*{EstriboAlfajor}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstriboAveria">EstriboAveria</label>  
+					<input id="EstriboAveria" name="EstriboAveria" type="text" class="form-control" th:field="*{EstriboAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstriboDesgaste">EstriboDesgaste</label>  
+					<input id="EstriboDesgaste" name="EstriboDesgaste" type="text" class="form-control" th:field="*{EstriboDesgaste}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstriboFisurado">EstriboFisurado</label>  
+					<input id="EstriboFisurado" name="EstriboFisurado" type="text" class="form-control" th:field="*{EstriboFisurado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstriboCorrosion">EstriboCorrosion</label>  
+					<input id="EstriboCorrosion" name="EstriboCorrosion" type="text" class="form-control" th:field="*{EstriboCorrosion}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/estribos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

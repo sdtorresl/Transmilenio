@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Silla</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="SillaLargo">SillaLargo: </label>  
+			<span th:text="${silla.SillaLargo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="SillaId">SillaId: </label>  
+			<span th:text="${silla.SillaId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${silla.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="SillaFaltante">SillaFaltante: </label>  
+			<span th:text="${silla.SillaFaltante}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="SillaCarbonatacion">SillaCarbonatacion: </label>  
+			<span th:text="${silla.SillaCarbonatacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="SillaDesintegracion">SillaDesintegracion: </label>  
+			<span th:text="${silla.SillaDesintegracion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="SillaPandeo">SillaPandeo: </label>  
+			<span th:text="${silla.SillaPandeo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="SillaPandeoEstructura">SillaPandeoEstructura: </label>  
+			<span th:text="${silla.SillaPandeoEstructura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="SillaAlto">SillaAlto: </label>  
+			<span th:text="${silla.SillaAlto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="SillaAveria">SillaAveria: </label>  
+			<span th:text="${silla.SillaAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="SillaCorrosion">SillaCorrosion: </label>  
+			<span th:text="${silla.SillaCorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="SillaAncho">SillaAncho: </label>  
+			<span th:text="${silla.SillaAncho}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/sillas}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/sillas/delete/{id}(id = ${silla.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/sillas/edit/{id}(id = ${silla.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

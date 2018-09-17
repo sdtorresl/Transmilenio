@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${casetacomercial.id == null}">Agregar Casetacomercial</h1>
+			<h1 th:if="${casetacomercial.id != null}">Editar Casetacomercial</h1>
+			<hr />
+
+			<form th:action="@{/casetacomercials}" th:method="@{${casetacomercial.id == null} ? 'post' : 'put'}" th:object="${casetacomercial}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="CasetacomercialAveria">CasetacomercialAveria</label>  
+					<input id="CasetacomercialAveria" name="CasetacomercialAveria" type="text" class="form-control" th:field="*{CasetacomercialAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CasetacomercialAlto">CasetacomercialAlto</label>  
+					<input id="CasetacomercialAlto" name="CasetacomercialAlto" type="text" class="form-control" th:field="*{CasetacomercialAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CasetacomercialLargo">CasetacomercialLargo</label>  
+					<input id="CasetacomercialLargo" name="CasetacomercialLargo" type="text" class="form-control" th:field="*{CasetacomercialLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CasetacomercialId">CasetacomercialId</label>  
+					<input id="CasetacomercialId" name="CasetacomercialId" type="text" class="form-control" th:field="*{CasetacomercialId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CasetacomercialNumeracion">CasetacomercialNumeracion</label>  
+					<input id="CasetacomercialNumeracion" name="CasetacomercialNumeracion" type="text" class="form-control" th:field="*{CasetacomercialNumeracion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CasetacomercialImagen">CasetacomercialImagen</label>  
+					<input id="CasetacomercialImagen" name="CasetacomercialImagen" type="text" class="form-control" th:field="*{CasetacomercialImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CasetacomercialRutaImagen">CasetacomercialRutaImagen</label>  
+					<input id="CasetacomercialRutaImagen" name="CasetacomercialRutaImagen" type="text" class="form-control" th:field="*{CasetacomercialRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CasetacomercialContaminacion">CasetacomercialContaminacion</label>  
+					<input id="CasetacomercialContaminacion" name="CasetacomercialContaminacion" type="text" class="form-control" th:field="*{CasetacomercialContaminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CasetacomercialAveriaestructura">CasetacomercialAveriaestructura</label>  
+					<input id="CasetacomercialAveriaestructura" name="CasetacomercialAveriaestructura" type="text" class="form-control" th:field="*{CasetacomercialAveriaestructura}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/casetacomercials}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

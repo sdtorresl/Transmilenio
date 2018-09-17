@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Ventana</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="VentanaDesaparicion">VentanaDesaparicion: </label>  
+			<span th:text="${ventana.VentanaDesaparicion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VentanaRayones">VentanaRayones: </label>  
+			<span th:text="${ventana.VentanaRayones}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VentanaContaminacion">VentanaContaminacion: </label>  
+			<span th:text="${ventana.VentanaContaminacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VentanaCierre">VentanaCierre: </label>  
+			<span th:text="${ventana.VentanaCierre}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VentanaRejarota">VentanaRejarota: </label>  
+			<span th:text="${ventana.VentanaRejarota}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VentanaFisura">VentanaFisura: </label>  
+			<span th:text="${ventana.VentanaFisura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VentanaAncho">VentanaAncho: </label>  
+			<span th:text="${ventana.VentanaAncho}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VentanaAlto">VentanaAlto: </label>  
+			<span th:text="${ventana.VentanaAlto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VentanaCostado">VentanaCostado: </label>  
+			<span th:text="${ventana.VentanaCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VentanaId">VentanaId: </label>  
+			<span th:text="${ventana.VentanaId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${ventana.IdSeccionestacion}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/ventanas}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/ventanas/delete/{id}(id = ${ventana.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/ventanas/edit/{id}(id = ${ventana.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

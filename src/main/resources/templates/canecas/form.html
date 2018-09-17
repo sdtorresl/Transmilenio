@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${canecas.id == null}">Agregar Canecas</h1>
+			<h1 th:if="${canecas.id != null}">Editar Canecas</h1>
+			<hr />
+
+			<form th:action="@{/canecass}" th:method="@{${canecas.id == null} ? 'post' : 'put'}" th:object="${canecas}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanecasId">CanecasId</label>  
+					<input id="CanecasId" name="CanecasId" type="text" class="form-control" th:field="*{CanecasId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanecasCostado">CanecasCostado</label>  
+					<input id="CanecasCostado" name="CanecasCostado" type="text" class="form-control" th:field="*{CanecasCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanecasNumerosinservicio">CanecasNumerosinservicio</label>  
+					<input id="CanecasNumerosinservicio" name="CanecasNumerosinservicio" type="text" class="form-control" th:field="*{CanecasNumerosinservicio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanecasNumeroaveriados">CanecasNumeroaveriados</label>  
+					<input id="CanecasNumeroaveriados" name="CanecasNumeroaveriados" type="text" class="form-control" th:field="*{CanecasNumeroaveriados}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanecasTotal">CanecasTotal</label>  
+					<input id="CanecasTotal" name="CanecasTotal" type="text" class="form-control" th:field="*{CanecasTotal}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/canecass}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

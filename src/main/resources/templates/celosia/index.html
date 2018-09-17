@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Celosias</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>CelosiaId</th> 
+					<th>IdSeccionestacion</th> 
+					<th>CelosiaCostado</th> 
+					<th>CelosiaTipo</th> 
+					<th>CelosiaAlto</th> 
+					<th>CelosiaAveria</th> 
+					<th>CelosiaPorcentajeaveria</th> 
+					<th>CelosiaCorrosion</th> 
+					<th>CelosiaDesgastepintura</th> 
+					<th>CelosiaTubofaltante</th> 
+					<th>CelosiaPiezasfaltante</th> 
+					<th>CelosiaContaminacionvisual</th> 
+					<th>CelosiaObservacion</th> 
+					<th>CelosiaLargo</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="celosia : ${listCelosia}">
+										<td th:text="${celosia.CelosiaId}"></td> 
+					<td th:text="${celosia.IdSeccionestacion}"></td> 
+					<td th:text="${celosia.CelosiaCostado}"></td> 
+					<td th:text="${celosia.CelosiaTipo}"></td> 
+					<td th:text="${celosia.CelosiaAlto}"></td> 
+					<td th:text="${celosia.CelosiaAveria}"></td> 
+					<td th:text="${celosia.CelosiaPorcentajeaveria}"></td> 
+					<td th:text="${celosia.CelosiaCorrosion}"></td> 
+					<td th:text="${celosia.CelosiaDesgastepintura}"></td> 
+					<td th:text="${celosia.CelosiaTubofaltante}"></td> 
+					<td th:text="${celosia.CelosiaPiezasfaltante}"></td> 
+					<td th:text="${celosia.CelosiaContaminacionvisual}"></td> 
+					<td th:text="${celosia.CelosiaObservacion}"></td> 
+					<td th:text="${celosia.CelosiaLargo}"></td> 
+					<td>
+							<a th:href="@{/celosias/{id}(id = ${celosia.id})}">Show</a> 
+					 		<a th:href="@{/celosias/edit/{id}(id = ${celosia.id})}">Edit</a> 
+							<a th:href="@{/celosias/delete/{id}(id = ${celosia.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/celosias/{id}(id = ${celosia.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/celosias/edit/{id}(id = ${celosia.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/celosias/delete/{id}(id = ${celosia.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/celosias/new}" class="btn btn-primary">Crear Celosia</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

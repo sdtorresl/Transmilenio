@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${barandaentrada.id == null}">Agregar Barandaentrada</h1>
+			<h1 th:if="${barandaentrada.id != null}">Editar Barandaentrada</h1>
+			<hr />
+
+			<form th:action="@{/barandaentradas}" th:method="@{${barandaentrada.id == null} ? 'post' : 'put'}" th:object="${barandaentrada}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarandaentradaId">BarandaentradaId</label>  
+					<input id="BarandaentradaId" name="BarandaentradaId" type="text" class="form-control" th:field="*{BarandaentradaId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarandaentradaCostado">BarandaentradaCostado</label>  
+					<input id="BarandaentradaCostado" name="BarandaentradaCostado" type="text" class="form-control" th:field="*{BarandaentradaCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarandaentradaLargo">BarandaentradaLargo</label>  
+					<input id="BarandaentradaLargo" name="BarandaentradaLargo" type="text" class="form-control" th:field="*{BarandaentradaLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarandaentradaAlto">BarandaentradaAlto</label>  
+					<input id="BarandaentradaAlto" name="BarandaentradaAlto" type="text" class="form-control" th:field="*{BarandaentradaAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarandaentradaMalestado">BarandaentradaMalestado</label>  
+					<input id="BarandaentradaMalestado" name="BarandaentradaMalestado" type="text" class="form-control" th:field="*{BarandaentradaMalestado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarandaentradaRayones">BarandaentradaRayones</label>  
+					<input id="BarandaentradaRayones" name="BarandaentradaRayones" type="text" class="form-control" th:field="*{BarandaentradaRayones}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarandaentradaFisura">BarandaentradaFisura</label>  
+					<input id="BarandaentradaFisura" name="BarandaentradaFisura" type="text" class="form-control" th:field="*{BarandaentradaFisura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarandaentradaContaminacion">BarandaentradaContaminacion</label>  
+					<input id="BarandaentradaContaminacion" name="BarandaentradaContaminacion" type="text" class="form-control" th:field="*{BarandaentradaContaminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarandaentradaDesaparicionvidrio">BarandaentradaDesaparicionvidrio</label>  
+					<input id="BarandaentradaDesaparicionvidrio" name="BarandaentradaDesaparicionvidrio" type="text" class="form-control" th:field="*{BarandaentradaDesaparicionvidrio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarandaentradaSinclar">BarandaentradaSinclar</label>  
+					<input id="BarandaentradaSinclar" name="BarandaentradaSinclar" type="text" class="form-control" th:field="*{BarandaentradaSinclar}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarandaentradaPerdida">BarandaentradaPerdida</label>  
+					<input id="BarandaentradaPerdida" name="BarandaentradaPerdida" type="text" class="form-control" th:field="*{BarandaentradaPerdida}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/barandaentradas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

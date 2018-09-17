@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Cerramiento</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="CerramientoLibricacionNumero">CerramientoLibricacionNumero: </label>  
+			<span th:text="${cerramiento.CerramientoLibricacionNumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoTipo">CerramientoTipo: </label>  
+			<span th:text="${cerramiento.CerramientoTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoPiezafaltante">CerramientoPiezafaltante: </label>  
+			<span th:text="${cerramiento.CerramientoPiezafaltante}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoPiezafaltanteNumero">CerramientoPiezafaltanteNumero: </label>  
+			<span th:text="${cerramiento.CerramientoPiezafaltanteNumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoDesnivel">CerramientoDesnivel: </label>  
+			<span th:text="${cerramiento.CerramientoDesnivel}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoDesnivelNumero">CerramientoDesnivelNumero: </label>  
+			<span th:text="${cerramiento.CerramientoDesnivelNumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoPasadore">CerramientoPasadore: </label>  
+			<span th:text="${cerramiento.CerramientoPasadore}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoPasadorenumero">CerramientoPasadorenumero: </label>  
+			<span th:text="${cerramiento.CerramientoPasadorenumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoBisagra">CerramientoBisagra: </label>  
+			<span th:text="${cerramiento.CerramientoBisagra}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoBisagranumero">CerramientoBisagranumero: </label>  
+			<span th:text="${cerramiento.CerramientoBisagranumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoCorrosionNumero">CerramientoCorrosionNumero: </label>  
+			<span th:text="${cerramiento.CerramientoCorrosionNumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoCorrosion">CerramientoCorrosion: </label>  
+			<span th:text="${cerramiento.CerramientoCorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoAveria">CerramientoAveria: </label>  
+			<span th:text="${cerramiento.CerramientoAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoId">CerramientoId: </label>  
+			<span th:text="${cerramiento.CerramientoId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${cerramiento.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerramientoLubricacion">CerramientoLubricacion: </label>  
+			<span th:text="${cerramiento.CerramientoLubricacion}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/cerramientos}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/cerramientos/delete/{id}(id = ${cerramiento.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/cerramientos/edit/{id}(id = ${cerramiento.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

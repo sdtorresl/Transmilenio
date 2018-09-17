@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${subestacion.id == null}">Agregar Subestacion</h1>
+			<h1 th:if="${subestacion.id != null}">Editar Subestacion</h1>
+			<hr />
+
+			<form th:action="@{/subestacions}" th:method="@{${subestacion.id == null} ? 'post' : 'put'}" th:object="${subestacion}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="SubestacionNominalfusible">SubestacionNominalfusible</label>  
+					<input id="SubestacionNominalfusible" name="SubestacionNominalfusible" type="text" class="form-control" th:field="*{SubestacionNominalfusible}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionNominal">SubestacionNominal</label>  
+					<input id="SubestacionNominal" name="SubestacionNominal" type="text" class="form-control" th:field="*{SubestacionNominal}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionAislamiento">SubestacionAislamiento</label>  
+					<input id="SubestacionAislamiento" name="SubestacionAislamiento" type="text" class="form-control" th:field="*{SubestacionAislamiento}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionTransforsecundario">SubestacionTransforsecundario</label>  
+					<input id="SubestacionTransforsecundario" name="SubestacionTransforsecundario" type="text" class="form-control" th:field="*{SubestacionTransforsecundario}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionTransforprimario">SubestacionTransforprimario</label>  
+					<input id="SubestacionTransforprimario" name="SubestacionTransforprimario" type="text" class="form-control" th:field="*{SubestacionTransforprimario}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionTransfornumero">SubestacionTransfornumero</label>  
+					<input id="SubestacionTransfornumero" name="SubestacionTransfornumero" type="text" class="form-control" th:field="*{SubestacionTransfornumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionTransforpotencia">SubestacionTransforpotencia</label>  
+					<input id="SubestacionTransforpotencia" name="SubestacionTransforpotencia" type="text" class="form-control" th:field="*{SubestacionTransforpotencia}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionCablederretido">SubestacionCablederretido</label>  
+					<input id="SubestacionCablederretido" name="SubestacionCablederretido" type="text" class="form-control" th:field="*{SubestacionCablederretido}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionGabinetecorrosionarea">SubestacionGabinetecorrosionarea</label>  
+					<input id="SubestacionGabinetecorrosionarea" name="SubestacionGabinetecorrosionarea" type="text" class="form-control" th:field="*{SubestacionGabinetecorrosionarea}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionId">SubestacionId</label>  
+					<input id="SubestacionId" name="SubestacionId" type="text" class="form-control" th:field="*{SubestacionId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionPotencia">SubestacionPotencia</label>  
+					<input id="SubestacionPotencia" name="SubestacionPotencia" type="text" class="form-control" th:field="*{SubestacionPotencia}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionTransformacion">SubestacionTransformacion</label>  
+					<input id="SubestacionTransformacion" name="SubestacionTransformacion" type="text" class="form-control" th:field="*{SubestacionTransformacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionUbicacion">SubestacionUbicacion</label>  
+					<input id="SubestacionUbicacion" name="SubestacionUbicacion" type="text" class="form-control" th:field="*{SubestacionUbicacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionAveria">SubestacionAveria</label>  
+					<input id="SubestacionAveria" name="SubestacionAveria" type="text" class="form-control" th:field="*{SubestacionAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionImagen">SubestacionImagen</label>  
+					<input id="SubestacionImagen" name="SubestacionImagen" type="text" class="form-control" th:field="*{SubestacionImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionGabinetecorrosion">SubestacionGabinetecorrosion</label>  
+					<input id="SubestacionGabinetecorrosion" name="SubestacionGabinetecorrosion" type="text" class="form-control" th:field="*{SubestacionGabinetecorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SubestacionRutaImagen">SubestacionRutaImagen</label>  
+					<input id="SubestacionRutaImagen" name="SubestacionRutaImagen" type="text" class="form-control" th:field="*{SubestacionRutaImagen}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/subestacions}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

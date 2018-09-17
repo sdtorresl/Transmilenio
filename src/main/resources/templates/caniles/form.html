@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${caniles.id == null}">Agregar Caniles</h1>
+			<h1 th:if="${caniles.id != null}">Editar Caniles</h1>
+			<hr />
+
+			<form th:action="@{/caniless}" th:method="@{${caniles.id == null} ? 'post' : 'put'}" th:object="${caniles}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="CanilesImagen">CanilesImagen</label>  
+					<input id="CanilesImagen" name="CanilesImagen" type="text" class="form-control" th:field="*{CanilesImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanilesRutaImagen">CanilesRutaImagen</label>  
+					<input id="CanilesRutaImagen" name="CanilesRutaImagen" type="text" class="form-control" th:field="*{CanilesRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanilesTotal">CanilesTotal</label>  
+					<input id="CanilesTotal" name="CanilesTotal" type="text" class="form-control" th:field="*{CanilesTotal}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanilesNumeroaveriados">CanilesNumeroaveriados</label>  
+					<input id="CanilesNumeroaveriados" name="CanilesNumeroaveriados" type="text" class="form-control" th:field="*{CanilesNumeroaveriados}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanilesNumerosinservicio">CanilesNumerosinservicio</label>  
+					<input id="CanilesNumerosinservicio" name="CanilesNumerosinservicio" type="text" class="form-control" th:field="*{CanilesNumerosinservicio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanilesCantidad">CanilesCantidad</label>  
+					<input id="CanilesCantidad" name="CanilesCantidad" type="text" class="form-control" th:field="*{CanilesCantidad}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanilesId">CanilesId</label>  
+					<input id="CanilesId" name="CanilesId" type="text" class="form-control" th:field="*{CanilesId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/caniless}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${rampamaterial.id == null}">Agregar Rampamaterial</h1>
+			<h1 th:if="${rampamaterial.id != null}">Editar Rampamaterial</h1>
+			<hr />
+
+			<form th:action="@{/rampamaterials}" th:method="@{${rampamaterial.id == null} ? 'post' : 'put'}" th:object="${rampamaterial}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="RampamaterialTipo">RampamaterialTipo</label>  
+					<input id="RampamaterialTipo" name="RampamaterialTipo" type="text" class="form-control" th:field="*{RampamaterialTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdRampa">IdRampa</label>  
+					<input id="IdRampa" name="IdRampa" type="text" class="form-control" th:field="*{IdRampa}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/rampamaterials}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Rampas</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdSeccionestacion</th> 
+					<th>RampaId</th> 
+					<th>RampaLongitud</th> 
+					<th>RampaArea</th> 
+					<th>RampaAveria</th> 
+					<th>RampaPorcentajeaveria</th> 
+					<th>IdMaterialAveria</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="rampa : ${listRampa}">
+										<td th:text="${rampa.IdSeccionestacion}"></td> 
+					<td th:text="${rampa.RampaId}"></td> 
+					<td th:text="${rampa.RampaLongitud}"></td> 
+					<td th:text="${rampa.RampaArea}"></td> 
+					<td th:text="${rampa.RampaAveria}"></td> 
+					<td th:text="${rampa.RampaPorcentajeaveria}"></td> 
+					<td th:text="${rampa.IdMaterialAveria}"></td> 
+					<td>
+							<a th:href="@{/rampas/{id}(id = ${rampa.id})}">Show</a> 
+					 		<a th:href="@{/rampas/edit/{id}(id = ${rampa.id})}">Edit</a> 
+							<a th:href="@{/rampas/delete/{id}(id = ${rampa.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/rampas/{id}(id = ${rampa.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/rampas/edit/{id}(id = ${rampa.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/rampas/delete/{id}(id = ${rampa.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/rampas/new}" class="btn btn-primary">Crear Rampa</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

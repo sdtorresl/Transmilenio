@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${barrerapasamano.id == null}">Agregar Barrerapasamano</h1>
+			<h1 th:if="${barrerapasamano.id != null}">Editar Barrerapasamano</h1>
+			<hr />
+
+			<form th:action="@{/barrerapasamanos}" th:method="@{${barrerapasamano.id == null} ? 'post' : 'put'}" th:object="${barrerapasamano}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoId">BarrerapasamanoId</label>  
+					<input id="BarrerapasamanoId" name="BarrerapasamanoId" type="text" class="form-control" th:field="*{BarrerapasamanoId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoCostado">BarrerapasamanoCostado</label>  
+					<input id="BarrerapasamanoCostado" name="BarrerapasamanoCostado" type="text" class="form-control" th:field="*{BarrerapasamanoCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoLargo">BarrerapasamanoLargo</label>  
+					<input id="BarrerapasamanoLargo" name="BarrerapasamanoLargo" type="text" class="form-control" th:field="*{BarrerapasamanoLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoAlto">BarrerapasamanoAlto</label>  
+					<input id="BarrerapasamanoAlto" name="BarrerapasamanoAlto" type="text" class="form-control" th:field="*{BarrerapasamanoAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoNumeromodulos">BarrerapasamanoNumeromodulos</label>  
+					<input id="BarrerapasamanoNumeromodulos" name="BarrerapasamanoNumeromodulos" type="text" class="form-control" th:field="*{BarrerapasamanoNumeromodulos}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoLongitudmodulos">BarrerapasamanoLongitudmodulos</label>  
+					<input id="BarrerapasamanoLongitudmodulos" name="BarrerapasamanoLongitudmodulos" type="text" class="form-control" th:field="*{BarrerapasamanoLongitudmodulos}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoAlturamodulo">BarrerapasamanoAlturamodulo</label>  
+					<input id="BarrerapasamanoAlturamodulo" name="BarrerapasamanoAlturamodulo" type="text" class="form-control" th:field="*{BarrerapasamanoAlturamodulo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoTipo">BarrerapasamanoTipo</label>  
+					<input id="BarrerapasamanoTipo" name="BarrerapasamanoTipo" type="text" class="form-control" th:field="*{BarrerapasamanoTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoAveria">BarrerapasamanoAveria</label>  
+					<input id="BarrerapasamanoAveria" name="BarrerapasamanoAveria" type="text" class="form-control" th:field="*{BarrerapasamanoAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoPorcentajeaveria">BarrerapasamanoPorcentajeaveria</label>  
+					<input id="BarrerapasamanoPorcentajeaveria" name="BarrerapasamanoPorcentajeaveria" type="text" class="form-control" th:field="*{BarrerapasamanoPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoCorrosion">BarrerapasamanoCorrosion</label>  
+					<input id="BarrerapasamanoCorrosion" name="BarrerapasamanoCorrosion" type="text" class="form-control" th:field="*{BarrerapasamanoCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoAbolladuras">BarrerapasamanoAbolladuras</label>  
+					<input id="BarrerapasamanoAbolladuras" name="BarrerapasamanoAbolladuras" type="text" class="form-control" th:field="*{BarrerapasamanoAbolladuras}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoPintura">BarrerapasamanoPintura</label>  
+					<input id="BarrerapasamanoPintura" name="BarrerapasamanoPintura" type="text" class="form-control" th:field="*{BarrerapasamanoPintura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoTubofaltante">BarrerapasamanoTubofaltante</label>  
+					<input id="BarrerapasamanoTubofaltante" name="BarrerapasamanoTubofaltante" type="text" class="form-control" th:field="*{BarrerapasamanoTubofaltante}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoContaminacion">BarrerapasamanoContaminacion</label>  
+					<input id="BarrerapasamanoContaminacion" name="BarrerapasamanoContaminacion" type="text" class="form-control" th:field="*{BarrerapasamanoContaminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarrerapasamanoSoldadura">BarrerapasamanoSoldadura</label>  
+					<input id="BarrerapasamanoSoldadura" name="BarrerapasamanoSoldadura" type="text" class="form-control" th:field="*{BarrerapasamanoSoldadura}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/barrerapasamanos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${vidriopuerta.id == null}">Agregar Vidriopuerta</h1>
+			<h1 th:if="${vidriopuerta.id != null}">Editar Vidriopuerta</h1>
+			<hr />
+
+			<form th:action="@{/vidriopuertas}" th:method="@{${vidriopuerta.id == null} ? 'post' : 'put'}" th:object="${vidriopuerta}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="VidriopuertaPeliculaseguridadaveria">VidriopuertaPeliculaseguridadaveria</label>  
+					<input id="VidriopuertaPeliculaseguridadaveria" name="VidriopuertaPeliculaseguridadaveria" type="text" class="form-control" th:field="*{VidriopuertaPeliculaseguridadaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidriopuertaContaminacion">VidriopuertaContaminacion</label>  
+					<input id="VidriopuertaContaminacion" name="VidriopuertaContaminacion" type="text" class="form-control" th:field="*{VidriopuertaContaminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidriopuertaNumerocontaminacion">VidriopuertaNumerocontaminacion</label>  
+					<input id="VidriopuertaNumerocontaminacion" name="VidriopuertaNumerocontaminacion" type="text" class="form-control" th:field="*{VidriopuertaNumerocontaminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidriopuertaId">VidriopuertaId</label>  
+					<input id="VidriopuertaId" name="VidriopuertaId" type="text" class="form-control" th:field="*{VidriopuertaId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidriopuertaCostado">VidriopuertaCostado</label>  
+					<input id="VidriopuertaCostado" name="VidriopuertaCostado" type="text" class="form-control" th:field="*{VidriopuertaCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidriopuertaLargo">VidriopuertaLargo</label>  
+					<input id="VidriopuertaLargo" name="VidriopuertaLargo" type="text" class="form-control" th:field="*{VidriopuertaLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidriopuertaAncho">VidriopuertaAncho</label>  
+					<input id="VidriopuertaAncho" name="VidriopuertaAncho" type="text" class="form-control" th:field="*{VidriopuertaAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidriopuertaAveria">VidriopuertaAveria</label>  
+					<input id="VidriopuertaAveria" name="VidriopuertaAveria" type="text" class="form-control" th:field="*{VidriopuertaAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidriopuertaFragmentado">VidriopuertaFragmentado</label>  
+					<input id="VidriopuertaFragmentado" name="VidriopuertaFragmentado" type="text" class="form-control" th:field="*{VidriopuertaFragmentado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidriopuertaNumerofragmentado">VidriopuertaNumerofragmentado</label>  
+					<input id="VidriopuertaNumerofragmentado" name="VidriopuertaNumerofragmentado" type="text" class="form-control" th:field="*{VidriopuertaNumerofragmentado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidriopuertaPeliculaidentificacion">VidriopuertaPeliculaidentificacion</label>  
+					<input id="VidriopuertaPeliculaidentificacion" name="VidriopuertaPeliculaidentificacion" type="text" class="form-control" th:field="*{VidriopuertaPeliculaidentificacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidriopuertaNumeropeliculaidentificacion">VidriopuertaNumeropeliculaidentificacion</label>  
+					<input id="VidriopuertaNumeropeliculaidentificacion" name="VidriopuertaNumeropeliculaidentificacion" type="text" class="form-control" th:field="*{VidriopuertaNumeropeliculaidentificacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidriopuertaNumeropelucilaseguridadaveria">VidriopuertaNumeropelucilaseguridadaveria</label>  
+					<input id="VidriopuertaNumeropelucilaseguridadaveria" name="VidriopuertaNumeropelucilaseguridadaveria" type="text" class="form-control" th:field="*{VidriopuertaNumeropelucilaseguridadaveria}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/vidriopuertas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

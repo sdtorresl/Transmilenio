@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${cubierta.id == null}">Agregar Cubierta</h1>
+			<h1 th:if="${cubierta.id != null}">Editar Cubierta</h1>
+			<hr />
+
+			<form th:action="@{/cubiertas}" th:method="@{${cubierta.id == null} ? 'post' : 'put'}" th:object="${cubierta}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="CubiertaAncholucemario">CubiertaAncholucemario</label>  
+					<input id="CubiertaAncholucemario" name="CubiertaAncholucemario" type="text" class="form-control" th:field="*{CubiertaAncholucemario}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CubiertaLucemario">CubiertaLucemario</label>  
+					<input id="CubiertaLucemario" name="CubiertaLucemario" type="text" class="form-control" th:field="*{CubiertaLucemario}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CubiertaAncho">CubiertaAncho</label>  
+					<input id="CubiertaAncho" name="CubiertaAncho" type="text" class="form-control" th:field="*{CubiertaAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CubiertaLargo">CubiertaLargo</label>  
+					<input id="CubiertaLargo" name="CubiertaLargo" type="text" class="form-control" th:field="*{CubiertaLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CubiertaLargolucemario">CubiertaLargolucemario</label>  
+					<input id="CubiertaLargolucemario" name="CubiertaLargolucemario" type="text" class="form-control" th:field="*{CubiertaLargolucemario}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CubiertaAveria">CubiertaAveria</label>  
+					<input id="CubiertaAveria" name="CubiertaAveria" type="text" class="form-control" th:field="*{CubiertaAveria}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/cubiertas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

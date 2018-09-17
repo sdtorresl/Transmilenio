@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${medidor.id == null}">Agregar Medidor</h1>
+			<h1 th:if="${medidor.id != null}">Editar Medidor</h1>
+			<hr />
+
+			<form th:action="@{/medidors}" th:method="@{${medidor.id == null} ? 'post' : 'put'}" th:object="${medidor}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="MedidorAveria">MedidorAveria</label>  
+					<input id="MedidorAveria" name="MedidorAveria" type="text" class="form-control" th:field="*{MedidorAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MedidorCablederretido">MedidorCablederretido</label>  
+					<input id="MedidorCablederretido" name="MedidorCablederretido" type="text" class="form-control" th:field="*{MedidorCablederretido}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MedidorGabinetecerradura">MedidorGabinetecerradura</label>  
+					<input id="MedidorGabinetecerradura" name="MedidorGabinetecerradura" type="text" class="form-control" th:field="*{MedidorGabinetecerradura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MedidorSerial">MedidorSerial</label>  
+					<input id="MedidorSerial" name="MedidorSerial" type="text" class="form-control" th:field="*{MedidorSerial}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MedidorPropietario">MedidorPropietario</label>  
+					<input id="MedidorPropietario" name="MedidorPropietario" type="text" class="form-control" th:field="*{MedidorPropietario}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MedidorTipo">MedidorTipo</label>  
+					<input id="MedidorTipo" name="MedidorTipo" type="text" class="form-control" th:field="*{MedidorTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MedidorGabinetepintura">MedidorGabinetepintura</label>  
+					<input id="MedidorGabinetepintura" name="MedidorGabinetepintura" type="text" class="form-control" th:field="*{MedidorGabinetepintura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MedidorGabinetecorrosion">MedidorGabinetecorrosion</label>  
+					<input id="MedidorGabinetecorrosion" name="MedidorGabinetecorrosion" type="text" class="form-control" th:field="*{MedidorGabinetecorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MedidorImagen">MedidorImagen</label>  
+					<input id="MedidorImagen" name="MedidorImagen" type="text" class="form-control" th:field="*{MedidorImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MedidorGabinetesucio">MedidorGabinetesucio</label>  
+					<input id="MedidorGabinetesucio" name="MedidorGabinetesucio" type="text" class="form-control" th:field="*{MedidorGabinetesucio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MedidorId">MedidorId</label>  
+					<input id="MedidorId" name="MedidorId" type="text" class="form-control" th:field="*{MedidorId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MedidorRutaImagen">MedidorRutaImagen</label>  
+					<input id="MedidorRutaImagen" name="MedidorRutaImagen" type="text" class="form-control" th:field="*{MedidorRutaImagen}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/medidors}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

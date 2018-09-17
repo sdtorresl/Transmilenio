@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Puentes</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>PuentePorcentajetablero</th> 
+					<th>PuenteRutaImagen</th> 
+					<th>PuenteImagen</th> 
+					<th>PuentePorcentajepasamanos</th> 
+					<th>PuenteAveriapasamanos</th> 
+					<th>PuenteMaterialtablero</th> 
+					<th>PuenteAncho</th> 
+					<th>PuenteLongitud</th> 
+					<th>PuenteBuenmovilidadreducida</th> 
+					<th>PuenteRampatipo</th> 
+					<th>IdSeccionestacion</th> 
+					<th>PuenteId</th> 
+					<th>IdTipopuente</th> 
+					<th>PuenteNumeroascensor</th> 
+					<th>PuenteNumeroescalera</th> 
+					<th>IdTipoescalera</th> 
+					<th>PuenteNumerorampa</th> 
+					<th>PuenteAveriatablero</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="puente : ${listPuente}">
+										<td th:text="${puente.PuentePorcentajetablero}"></td> 
+					<td th:text="${puente.PuenteRutaImagen}"></td> 
+					<td th:text="${puente.PuenteImagen}"></td> 
+					<td th:text="${puente.PuentePorcentajepasamanos}"></td> 
+					<td th:text="${puente.PuenteAveriapasamanos}"></td> 
+					<td th:text="${puente.PuenteMaterialtablero}"></td> 
+					<td th:text="${puente.PuenteAncho}"></td> 
+					<td th:text="${puente.PuenteLongitud}"></td> 
+					<td th:text="${puente.PuenteBuenmovilidadreducida}"></td> 
+					<td th:text="${puente.PuenteRampatipo}"></td> 
+					<td th:text="${puente.IdSeccionestacion}"></td> 
+					<td th:text="${puente.PuenteId}"></td> 
+					<td th:text="${puente.IdTipopuente}"></td> 
+					<td th:text="${puente.PuenteNumeroascensor}"></td> 
+					<td th:text="${puente.PuenteNumeroescalera}"></td> 
+					<td th:text="${puente.IdTipoescalera}"></td> 
+					<td th:text="${puente.PuenteNumerorampa}"></td> 
+					<td th:text="${puente.PuenteAveriatablero}"></td> 
+					<td>
+							<a th:href="@{/puentes/{id}(id = ${puente.id})}">Show</a> 
+					 		<a th:href="@{/puentes/edit/{id}(id = ${puente.id})}">Edit</a> 
+							<a th:href="@{/puentes/delete/{id}(id = ${puente.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/puentes/{id}(id = ${puente.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/puentes/edit/{id}(id = ${puente.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/puentes/delete/{id}(id = ${puente.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/puentes/new}" class="btn btn-primary">Crear Puente</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

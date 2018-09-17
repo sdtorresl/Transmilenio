@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Vidrios</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>VidrioFisurado</th> 
+					<th>VidrioAncho</th> 
+					<th>VidrioId</th> 
+					<th>VidrioCostado</th> 
+					<th>VidrioAlto</th> 
+					<th>VidrioTipo</th> 
+					<th>IdSeccionestacion</th> 
+					<th>VidrioDeterioro</th> 
+					<th>VidrioDesaparecido</th> 
+					<th>VidrioContaminacion</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="vidrio : ${listVidrio}">
+										<td th:text="${vidrio.VidrioFisurado}"></td> 
+					<td th:text="${vidrio.VidrioAncho}"></td> 
+					<td th:text="${vidrio.VidrioId}"></td> 
+					<td th:text="${vidrio.VidrioCostado}"></td> 
+					<td th:text="${vidrio.VidrioAlto}"></td> 
+					<td th:text="${vidrio.VidrioTipo}"></td> 
+					<td th:text="${vidrio.IdSeccionestacion}"></td> 
+					<td th:text="${vidrio.VidrioDeterioro}"></td> 
+					<td th:text="${vidrio.VidrioDesaparecido}"></td> 
+					<td th:text="${vidrio.VidrioContaminacion}"></td> 
+					<td>
+							<a th:href="@{/vidrios/{id}(id = ${vidrio.id})}">Show</a> 
+					 		<a th:href="@{/vidrios/edit/{id}(id = ${vidrio.id})}">Edit</a> 
+							<a th:href="@{/vidrios/delete/{id}(id = ${vidrio.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/vidrios/{id}(id = ${vidrio.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/vidrios/edit/{id}(id = ${vidrio.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/vidrios/delete/{id}(id = ${vidrio.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/vidrios/new}" class="btn btn-primary">Crear Vidrio</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

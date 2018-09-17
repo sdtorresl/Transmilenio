@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Compensacions</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdSeccionestacion</th> 
+					<th>CompensacionPotenciareactiva</th> 
+					<th>CompensacionTension</th> 
+					<th>CompensacionCapacidad</th> 
+					<th>CompensacionUbicacion</th> 
+					<th>CompensacionAveria</th> 
+					<th>CompensacionGabinetecorrosion</th> 
+					<th>CompensacionGabinetecorrosionarea</th> 
+					<th>CompensacionCablesderretidos</th> 
+					<th>CompensacionRutaImagen</th> 
+					<th>CompensacionImagen</th> 
+					<th>CompensacionId</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="compensacion : ${listCompensacion}">
+										<td th:text="${compensacion.IdSeccionestacion}"></td> 
+					<td th:text="${compensacion.CompensacionPotenciareactiva}"></td> 
+					<td th:text="${compensacion.CompensacionTension}"></td> 
+					<td th:text="${compensacion.CompensacionCapacidad}"></td> 
+					<td th:text="${compensacion.CompensacionUbicacion}"></td> 
+					<td th:text="${compensacion.CompensacionAveria}"></td> 
+					<td th:text="${compensacion.CompensacionGabinetecorrosion}"></td> 
+					<td th:text="${compensacion.CompensacionGabinetecorrosionarea}"></td> 
+					<td th:text="${compensacion.CompensacionCablesderretidos}"></td> 
+					<td th:text="${compensacion.CompensacionRutaImagen}"></td> 
+					<td th:text="${compensacion.CompensacionImagen}"></td> 
+					<td th:text="${compensacion.CompensacionId}"></td> 
+					<td>
+							<a th:href="@{/compensacions/{id}(id = ${compensacion.id})}">Show</a> 
+					 		<a th:href="@{/compensacions/edit/{id}(id = ${compensacion.id})}">Edit</a> 
+							<a th:href="@{/compensacions/delete/{id}(id = ${compensacion.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/compensacions/{id}(id = ${compensacion.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/compensacions/edit/{id}(id = ${compensacion.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/compensacions/delete/{id}(id = ${compensacion.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/compensacions/new}" class="btn btn-primary">Crear Compensacion</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

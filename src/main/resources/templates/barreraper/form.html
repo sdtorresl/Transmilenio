@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${barreraper.id == null}">Agregar Barreraper</h1>
+			<h1 th:if="${barreraper.id != null}">Editar Barreraper</h1>
+			<hr />
+
+			<form th:action="@{/barrerapers}" th:method="@{${barreraper.id == null} ? 'post' : 'put'}" th:object="${barreraper}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperId">BarreraperId</label>  
+					<input id="BarreraperId" name="BarreraperId" type="text" class="form-control" th:field="*{BarreraperId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperTipo">BarreraperTipo</label>  
+					<input id="BarreraperTipo" name="BarreraperTipo" type="text" class="form-control" th:field="*{BarreraperTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperAltomenor">BarreraperAltomenor</label>  
+					<input id="BarreraperAltomenor" name="BarreraperAltomenor" type="text" class="form-control" th:field="*{BarreraperAltomenor}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperAltomayor">BarreraperAltomayor</label>  
+					<input id="BarreraperAltomayor" name="BarreraperAltomayor" type="text" class="form-control" th:field="*{BarreraperAltomayor}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperLargo">BarreraperLargo</label>  
+					<input id="BarreraperLargo" name="BarreraperLargo" type="text" class="form-control" th:field="*{BarreraperLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperDistanciatubos">BarreraperDistanciatubos</label>  
+					<input id="BarreraperDistanciatubos" name="BarreraperDistanciatubos" type="text" class="form-control" th:field="*{BarreraperDistanciatubos}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperNumerotubos">BarreraperNumerotubos</label>  
+					<input id="BarreraperNumerotubos" name="BarreraperNumerotubos" type="text" class="form-control" th:field="*{BarreraperNumerotubos}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperAveria">BarreraperAveria</label>  
+					<input id="BarreraperAveria" name="BarreraperAveria" type="text" class="form-control" th:field="*{BarreraperAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperPorcentajeaveria">BarreraperPorcentajeaveria</label>  
+					<input id="BarreraperPorcentajeaveria" name="BarreraperPorcentajeaveria" type="text" class="form-control" th:field="*{BarreraperPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperDesintegravigacon">BarreraperDesintegravigacon</label>  
+					<input id="BarreraperDesintegravigacon" name="BarreraperDesintegravigacon" type="text" class="form-control" th:field="*{BarreraperDesintegravigacon}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperExposicionarmaduraacero">BarreraperExposicionarmaduraacero</label>  
+					<input id="BarreraperExposicionarmaduraacero" name="BarreraperExposicionarmaduraacero" type="text" class="form-control" th:field="*{BarreraperExposicionarmaduraacero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperCorrosiontubo">BarreraperCorrosiontubo</label>  
+					<input id="BarreraperCorrosiontubo" name="BarreraperCorrosiontubo" type="text" class="form-control" th:field="*{BarreraperCorrosiontubo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperCorrosiontubonumero">BarreraperCorrosiontubonumero</label>  
+					<input id="BarreraperCorrosiontubonumero" name="BarreraperCorrosiontubonumero" type="text" class="form-control" th:field="*{BarreraperCorrosiontubonumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperDesgastepintura">BarreraperDesgastepintura</label>  
+					<input id="BarreraperDesgastepintura" name="BarreraperDesgastepintura" type="text" class="form-control" th:field="*{BarreraperDesgastepintura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperDesgastepinturanumero">BarreraperDesgastepinturanumero</label>  
+					<input id="BarreraperDesgastepinturanumero" name="BarreraperDesgastepinturanumero" type="text" class="form-control" th:field="*{BarreraperDesgastepinturanumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperPerdidatubo">BarreraperPerdidatubo</label>  
+					<input id="BarreraperPerdidatubo" name="BarreraperPerdidatubo" type="text" class="form-control" th:field="*{BarreraperPerdidatubo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperPerdidatubonumero">BarreraperPerdidatubonumero</label>  
+					<input id="BarreraperPerdidatubonumero" name="BarreraperPerdidatubonumero" type="text" class="form-control" th:field="*{BarreraperPerdidatubonumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperPandeotubo">BarreraperPandeotubo</label>  
+					<input id="BarreraperPandeotubo" name="BarreraperPandeotubo" type="text" class="form-control" th:field="*{BarreraperPandeotubo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperPandeotubotubonumero">BarreraperPandeotubotubonumero</label>  
+					<input id="BarreraperPandeotubotubonumero" name="BarreraperPandeotubotubonumero" type="text" class="form-control" th:field="*{BarreraperPandeotubotubonumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperUbicacion">BarreraperUbicacion</label>  
+					<input id="BarreraperUbicacion" name="BarreraperUbicacion" type="text" class="form-control" th:field="*{BarreraperUbicacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperRutaImagen">BarreraperRutaImagen</label>  
+					<input id="BarreraperRutaImagen" name="BarreraperRutaImagen" type="text" class="form-control" th:field="*{BarreraperRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BarreraperImagen">BarreraperImagen</label>  
+					<input id="BarreraperImagen" name="BarreraperImagen" type="text" class="form-control" th:field="*{BarreraperImagen}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/barrerapers}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

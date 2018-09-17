@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Barandaentradas</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdSeccionestacion</th> 
+					<th>BarandaentradaId</th> 
+					<th>BarandaentradaCostado</th> 
+					<th>BarandaentradaLargo</th> 
+					<th>BarandaentradaAlto</th> 
+					<th>BarandaentradaMalestado</th> 
+					<th>BarandaentradaRayones</th> 
+					<th>BarandaentradaFisura</th> 
+					<th>BarandaentradaContaminacion</th> 
+					<th>BarandaentradaDesaparicionvidrio</th> 
+					<th>BarandaentradaSinclar</th> 
+					<th>BarandaentradaPerdida</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="barandaentrada : ${listBarandaentrada}">
+										<td th:text="${barandaentrada.IdSeccionestacion}"></td> 
+					<td th:text="${barandaentrada.BarandaentradaId}"></td> 
+					<td th:text="${barandaentrada.BarandaentradaCostado}"></td> 
+					<td th:text="${barandaentrada.BarandaentradaLargo}"></td> 
+					<td th:text="${barandaentrada.BarandaentradaAlto}"></td> 
+					<td th:text="${barandaentrada.BarandaentradaMalestado}"></td> 
+					<td th:text="${barandaentrada.BarandaentradaRayones}"></td> 
+					<td th:text="${barandaentrada.BarandaentradaFisura}"></td> 
+					<td th:text="${barandaentrada.BarandaentradaContaminacion}"></td> 
+					<td th:text="${barandaentrada.BarandaentradaDesaparicionvidrio}"></td> 
+					<td th:text="${barandaentrada.BarandaentradaSinclar}"></td> 
+					<td th:text="${barandaentrada.BarandaentradaPerdida}"></td> 
+					<td>
+							<a th:href="@{/barandaentradas/{id}(id = ${barandaentrada.id})}">Show</a> 
+					 		<a th:href="@{/barandaentradas/edit/{id}(id = ${barandaentrada.id})}">Edit</a> 
+							<a th:href="@{/barandaentradas/delete/{id}(id = ${barandaentrada.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/barandaentradas/{id}(id = ${barandaentrada.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/barandaentradas/edit/{id}(id = ${barandaentrada.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/barandaentradas/delete/{id}(id = ${barandaentrada.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/barandaentradas/new}" class="btn btn-primary">Crear Barandaentrada</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${pasamano.id == null}">Agregar Pasamano</h1>
+			<h1 th:if="${pasamano.id != null}">Editar Pasamano</h1>
+			<hr />
+
+			<form th:action="@{/pasamanos}" th:method="@{${pasamano.id == null} ? 'post' : 'put'}" th:object="${pasamano}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="PasamanoCorrosion">PasamanoCorrosion</label>  
+					<input id="PasamanoCorrosion" name="PasamanoCorrosion" type="text" class="form-control" th:field="*{PasamanoCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PasamanoId">PasamanoId</label>  
+					<input id="PasamanoId" name="PasamanoId" type="text" class="form-control" th:field="*{PasamanoId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PasamanoCostado">PasamanoCostado</label>  
+					<input id="PasamanoCostado" name="PasamanoCostado" type="text" class="form-control" th:field="*{PasamanoCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PasamanoLargo">PasamanoLargo</label>  
+					<input id="PasamanoLargo" name="PasamanoLargo" type="text" class="form-control" th:field="*{PasamanoLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PasamanoAlto">PasamanoAlto</label>  
+					<input id="PasamanoAlto" name="PasamanoAlto" type="text" class="form-control" th:field="*{PasamanoAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PasamanoLongitudmodulo">PasamanoLongitudmodulo</label>  
+					<input id="PasamanoLongitudmodulo" name="PasamanoLongitudmodulo" type="text" class="form-control" th:field="*{PasamanoLongitudmodulo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PasamanoNumeromodulos">PasamanoNumeromodulos</label>  
+					<input id="PasamanoNumeromodulos" name="PasamanoNumeromodulos" type="text" class="form-control" th:field="*{PasamanoNumeromodulos}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PasamanoAveria">PasamanoAveria</label>  
+					<input id="PasamanoAveria" name="PasamanoAveria" type="text" class="form-control" th:field="*{PasamanoAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PasamanoPorcentajeaveria">PasamanoPorcentajeaveria</label>  
+					<input id="PasamanoPorcentajeaveria" name="PasamanoPorcentajeaveria" type="text" class="form-control" th:field="*{PasamanoPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PasamanoSoldaduraaveria">PasamanoSoldaduraaveria</label>  
+					<input id="PasamanoSoldaduraaveria" name="PasamanoSoldaduraaveria" type="text" class="form-control" th:field="*{PasamanoSoldaduraaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PasamanoPiezafaltante">PasamanoPiezafaltante</label>  
+					<input id="PasamanoPiezafaltante" name="PasamanoPiezafaltante" type="text" class="form-control" th:field="*{PasamanoPiezafaltante}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PasamanoAbolladuras">PasamanoAbolladuras</label>  
+					<input id="PasamanoAbolladuras" name="PasamanoAbolladuras" type="text" class="form-control" th:field="*{PasamanoAbolladuras}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/pasamanos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

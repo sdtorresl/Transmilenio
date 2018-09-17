@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${tablero.id == null}">Agregar Tablero</h1>
+			<h1 th:if="${tablero.id != null}">Editar Tablero</h1>
+			<hr />
+
+			<form th:action="@{/tableros}" th:method="@{${tablero.id == null} ? 'post' : 'put'}" th:object="${tablero}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="TableroRutaImagen">TableroRutaImagen</label>  
+					<input id="TableroRutaImagen" name="TableroRutaImagen" type="text" class="form-control" th:field="*{TableroRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroImagen">TableroImagen</label>  
+					<input id="TableroImagen" name="TableroImagen" type="text" class="form-control" th:field="*{TableroImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroTipo">TableroTipo</label>  
+					<input id="TableroTipo" name="TableroTipo" type="text" class="form-control" th:field="*{TableroTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroNombre">TableroNombre</label>  
+					<input id="TableroNombre" name="TableroNombre" type="text" class="form-control" th:field="*{TableroNombre}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroNumero">TableroNumero</label>  
+					<input id="TableroNumero" name="TableroNumero" type="text" class="form-control" th:field="*{TableroNumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroAveria">TableroAveria</label>  
+					<input id="TableroAveria" name="TableroAveria" type="text" class="form-control" th:field="*{TableroAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroSucio">TableroSucio</label>  
+					<input id="TableroSucio" name="TableroSucio" type="text" class="form-control" th:field="*{TableroSucio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroCorrosion">TableroCorrosion</label>  
+					<input id="TableroCorrosion" name="TableroCorrosion" type="text" class="form-control" th:field="*{TableroCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroFaltapintura">TableroFaltapintura</label>  
+					<input id="TableroFaltapintura" name="TableroFaltapintura" type="text" class="form-control" th:field="*{TableroFaltapintura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroSincerradura">TableroSincerradura</label>  
+					<input id="TableroSincerradura" name="TableroSincerradura" type="text" class="form-control" th:field="*{TableroSincerradura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroSintapa">TableroSintapa</label>  
+					<input id="TableroSintapa" name="TableroSintapa" type="text" class="form-control" th:field="*{TableroSintapa}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroMalanclaje">TableroMalanclaje</label>  
+					<input id="TableroMalanclaje" name="TableroMalanclaje" type="text" class="form-control" th:field="*{TableroMalanclaje}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroVidriofisura">TableroVidriofisura</label>  
+					<input id="TableroVidriofisura" name="TableroVidriofisura" type="text" class="form-control" th:field="*{TableroVidriofisura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroVidriofaltante">TableroVidriofaltante</label>  
+					<input id="TableroVidriofaltante" name="TableroVidriofaltante" type="text" class="form-control" th:field="*{TableroVidriofaltante}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TableroCablederretido">TableroCablederretido</label>  
+					<input id="TableroCablederretido" name="TableroCablederretido" type="text" class="form-control" th:field="*{TableroCablederretido}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/tableros}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

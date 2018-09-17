@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Rampamaterials</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>RampamaterialTipo</th> 
+					<th>IdRampa</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="rampamaterial : ${listRampamaterial}">
+										<td th:text="${rampamaterial.RampamaterialTipo}"></td> 
+					<td th:text="${rampamaterial.IdRampa}"></td> 
+					<td>
+							<a th:href="@{/rampamaterials/{id}(id = ${rampamaterial.id})}">Show</a> 
+					 		<a th:href="@{/rampamaterials/edit/{id}(id = ${rampamaterial.id})}">Edit</a> 
+							<a th:href="@{/rampamaterials/delete/{id}(id = ${rampamaterial.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/rampamaterials/{id}(id = ${rampamaterial.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/rampamaterials/edit/{id}(id = ${rampamaterial.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/rampamaterials/delete/{id}(id = ${rampamaterial.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/rampamaterials/new}" class="btn btn-primary">Crear Rampamaterial</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

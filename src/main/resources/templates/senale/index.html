@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Senales</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>SenaleIlegible</th> 
+					<th>IdSeccionestacion</th> 
+					<th>SenaleId</th> 
+					<th>SenaleTipo</th> 
+					<th>SenaleCostado</th> 
+					<th>SenaleTipologia</th> 
+					<th>SenaleAveria</th> 
+					<th>SenalePerdida</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="senale : ${listSenale}">
+										<td th:text="${senale.SenaleIlegible}"></td> 
+					<td th:text="${senale.IdSeccionestacion}"></td> 
+					<td th:text="${senale.SenaleId}"></td> 
+					<td th:text="${senale.SenaleTipo}"></td> 
+					<td th:text="${senale.SenaleCostado}"></td> 
+					<td th:text="${senale.SenaleTipologia}"></td> 
+					<td th:text="${senale.SenaleAveria}"></td> 
+					<td th:text="${senale.SenalePerdida}"></td> 
+					<td>
+							<a th:href="@{/senales/{id}(id = ${senale.id})}">Show</a> 
+					 		<a th:href="@{/senales/edit/{id}(id = ${senale.id})}">Edit</a> 
+							<a th:href="@{/senales/delete/{id}(id = ${senale.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/senales/{id}(id = ${senale.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/senales/edit/{id}(id = ${senale.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/senales/delete/{id}(id = ${senale.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/senales/new}" class="btn btn-primary">Crear Senale</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

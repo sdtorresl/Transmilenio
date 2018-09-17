@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${columna.id == null}">Agregar Columna</h1>
+			<h1 th:if="${columna.id != null}">Editar Columna</h1>
+			<hr />
+
+			<form th:action="@{/columnas}" th:method="@{${columna.id == null} ? 'post' : 'put'}" th:object="${columna}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="ColumnaFisura">ColumnaFisura</label>  
+					<input id="ColumnaFisura" name="ColumnaFisura" type="text" class="form-control" th:field="*{ColumnaFisura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ColumnaDescascaramiento">ColumnaDescascaramiento</label>  
+					<input id="ColumnaDescascaramiento" name="ColumnaDescascaramiento" type="text" class="form-control" th:field="*{ColumnaDescascaramiento}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ColumnaPorcentajeaveria">ColumnaPorcentajeaveria</label>  
+					<input id="ColumnaPorcentajeaveria" name="ColumnaPorcentajeaveria" type="text" class="form-control" th:field="*{ColumnaPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ColumnaTipo">ColumnaTipo</label>  
+					<input id="ColumnaTipo" name="ColumnaTipo" type="text" class="form-control" th:field="*{ColumnaTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ColumnaAveria">ColumnaAveria</label>  
+					<input id="ColumnaAveria" name="ColumnaAveria" type="text" class="form-control" th:field="*{ColumnaAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ColumnaPerimetro">ColumnaPerimetro</label>  
+					<input id="ColumnaPerimetro" name="ColumnaPerimetro" type="text" class="form-control" th:field="*{ColumnaPerimetro}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ColumnaId">ColumnaId</label>  
+					<input id="ColumnaId" name="ColumnaId" type="text" class="form-control" th:field="*{ColumnaId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ColumnaGrieta">ColumnaGrieta</label>  
+					<input id="ColumnaGrieta" name="ColumnaGrieta" type="text" class="form-control" th:field="*{ColumnaGrieta}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ColumnaCorrosion">ColumnaCorrosion</label>  
+					<input id="ColumnaCorrosion" name="ColumnaCorrosion" type="text" class="form-control" th:field="*{ColumnaCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ColumnaDeformacion">ColumnaDeformacion</label>  
+					<input id="ColumnaDeformacion" name="ColumnaDeformacion" type="text" class="form-control" th:field="*{ColumnaDeformacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ColumnaPerdida">ColumnaPerdida</label>  
+					<input id="ColumnaPerdida" name="ColumnaPerdida" type="text" class="form-control" th:field="*{ColumnaPerdida}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/columnas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

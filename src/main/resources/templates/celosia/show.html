@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Celosia</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="CelosiaId">CelosiaId: </label>  
+			<span th:text="${celosia.CelosiaId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${celosia.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaCostado">CelosiaCostado: </label>  
+			<span th:text="${celosia.CelosiaCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaTipo">CelosiaTipo: </label>  
+			<span th:text="${celosia.CelosiaTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaAlto">CelosiaAlto: </label>  
+			<span th:text="${celosia.CelosiaAlto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaAveria">CelosiaAveria: </label>  
+			<span th:text="${celosia.CelosiaAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaPorcentajeaveria">CelosiaPorcentajeaveria: </label>  
+			<span th:text="${celosia.CelosiaPorcentajeaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaCorrosion">CelosiaCorrosion: </label>  
+			<span th:text="${celosia.CelosiaCorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaDesgastepintura">CelosiaDesgastepintura: </label>  
+			<span th:text="${celosia.CelosiaDesgastepintura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaTubofaltante">CelosiaTubofaltante: </label>  
+			<span th:text="${celosia.CelosiaTubofaltante}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaPiezasfaltante">CelosiaPiezasfaltante: </label>  
+			<span th:text="${celosia.CelosiaPiezasfaltante}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaContaminacionvisual">CelosiaContaminacionvisual: </label>  
+			<span th:text="${celosia.CelosiaContaminacionvisual}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaObservacion">CelosiaObservacion: </label>  
+			<span th:text="${celosia.CelosiaObservacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaLargo">CelosiaLargo: </label>  
+			<span th:text="${celosia.CelosiaLargo}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/celosias}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/celosias/delete/{id}(id = ${celosia.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/celosias/edit/{id}(id = ${celosia.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

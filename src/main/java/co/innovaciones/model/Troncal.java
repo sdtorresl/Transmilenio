@@ -40,4 +40,5 @@ public class Troncal implements Serializable {
 	public String getTroncalNombre() {return troncalNombre;}
 	public void setTroncalDescipcion(String troncalDescripcion) {this.troncalDescripcion = troncalDescripcion;}
 	public String getTroncalDescipcion() {return troncalDescripcion;}
+
 }

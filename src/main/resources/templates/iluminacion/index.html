@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Iluminacions</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IluminacionSirveparcialporcentaje</th> 
+					<th>IdSeccionestacion</th> 
+					<th>IluminacionId</th> 
+					<th>IluminacionNumero</th> 
+					<th>IluminacionTipo</th> 
+					<th>IluminacionCostado</th> 
+					<th>IluminacionAveria</th> 
+					<th>IluminacionNosirve</th> 
+					<th>IluminacionSirveparcial</th> 
+					<th>IluminacionSoporte</th> 
+					<th>IluminacionFaltabombilla</th> 
+					<th>IluminacionFaltaacrilico</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="iluminacion : ${listIluminacion}">
+										<td th:text="${iluminacion.IluminacionSirveparcialporcentaje}"></td> 
+					<td th:text="${iluminacion.IdSeccionestacion}"></td> 
+					<td th:text="${iluminacion.IluminacionId}"></td> 
+					<td th:text="${iluminacion.IluminacionNumero}"></td> 
+					<td th:text="${iluminacion.IluminacionTipo}"></td> 
+					<td th:text="${iluminacion.IluminacionCostado}"></td> 
+					<td th:text="${iluminacion.IluminacionAveria}"></td> 
+					<td th:text="${iluminacion.IluminacionNosirve}"></td> 
+					<td th:text="${iluminacion.IluminacionSirveparcial}"></td> 
+					<td th:text="${iluminacion.IluminacionSoporte}"></td> 
+					<td th:text="${iluminacion.IluminacionFaltabombilla}"></td> 
+					<td th:text="${iluminacion.IluminacionFaltaacrilico}"></td> 
+					<td>
+							<a th:href="@{/iluminacions/{id}(id = ${iluminacion.id})}">Show</a> 
+					 		<a th:href="@{/iluminacions/edit/{id}(id = ${iluminacion.id})}">Edit</a> 
+							<a th:href="@{/iluminacions/delete/{id}(id = ${iluminacion.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/iluminacions/{id}(id = ${iluminacion.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/iluminacions/edit/{id}(id = ${iluminacion.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/iluminacions/delete/{id}(id = ${iluminacion.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/iluminacions/new}" class="btn btn-primary">Crear Iluminacion</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

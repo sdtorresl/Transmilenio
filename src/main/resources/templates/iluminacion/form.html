@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${iluminacion.id == null}">Agregar Iluminacion</h1>
+			<h1 th:if="${iluminacion.id != null}">Editar Iluminacion</h1>
+			<hr />
+
+			<form th:action="@{/iluminacions}" th:method="@{${iluminacion.id == null} ? 'post' : 'put'}" th:object="${iluminacion}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IluminacionSirveparcialporcentaje">IluminacionSirveparcialporcentaje</label>  
+					<input id="IluminacionSirveparcialporcentaje" name="IluminacionSirveparcialporcentaje" type="text" class="form-control" th:field="*{IluminacionSirveparcialporcentaje}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IluminacionId">IluminacionId</label>  
+					<input id="IluminacionId" name="IluminacionId" type="text" class="form-control" th:field="*{IluminacionId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IluminacionNumero">IluminacionNumero</label>  
+					<input id="IluminacionNumero" name="IluminacionNumero" type="text" class="form-control" th:field="*{IluminacionNumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IluminacionTipo">IluminacionTipo</label>  
+					<input id="IluminacionTipo" name="IluminacionTipo" type="text" class="form-control" th:field="*{IluminacionTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IluminacionCostado">IluminacionCostado</label>  
+					<input id="IluminacionCostado" name="IluminacionCostado" type="text" class="form-control" th:field="*{IluminacionCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IluminacionAveria">IluminacionAveria</label>  
+					<input id="IluminacionAveria" name="IluminacionAveria" type="text" class="form-control" th:field="*{IluminacionAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IluminacionNosirve">IluminacionNosirve</label>  
+					<input id="IluminacionNosirve" name="IluminacionNosirve" type="text" class="form-control" th:field="*{IluminacionNosirve}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IluminacionSirveparcial">IluminacionSirveparcial</label>  
+					<input id="IluminacionSirveparcial" name="IluminacionSirveparcial" type="text" class="form-control" th:field="*{IluminacionSirveparcial}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IluminacionSoporte">IluminacionSoporte</label>  
+					<input id="IluminacionSoporte" name="IluminacionSoporte" type="text" class="form-control" th:field="*{IluminacionSoporte}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IluminacionFaltabombilla">IluminacionFaltabombilla</label>  
+					<input id="IluminacionFaltabombilla" name="IluminacionFaltabombilla" type="text" class="form-control" th:field="*{IluminacionFaltabombilla}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IluminacionFaltaacrilico">IluminacionFaltaacrilico</label>  
+					<input id="IluminacionFaltaacrilico" name="IluminacionFaltaacrilico" type="text" class="form-control" th:field="*{IluminacionFaltaacrilico}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/iluminacions}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

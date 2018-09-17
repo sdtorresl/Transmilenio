@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${seccion.id == null}">Agregar Seccion</h1>
+			<h1 th:if="${seccion.id != null}">Editar Seccion</h1>
+			<hr />
+
+			<form th:action="@{/seccions}" th:method="@{${seccion.id == null} ? 'post' : 'put'}" th:object="${seccion}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdPlataforma">IdPlataforma</label>  
+					<input id="IdPlataforma" name="IdPlataforma" type="text" class="form-control" th:field="*{IdPlataforma}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdConexion">IdConexion</label>  
+					<input id="IdConexion" name="IdConexion" type="text" class="form-control" th:field="*{IdConexion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdTransicion">IdTransicion</label>  
+					<input id="IdTransicion" name="IdTransicion" type="text" class="form-control" th:field="*{IdTransicion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdConexa">IdConexa</label>  
+					<input id="IdConexa" name="IdConexa" type="text" class="form-control" th:field="*{IdConexa}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdVagon">IdVagon</label>  
+					<input id="IdVagon" name="IdVagon" type="text" class="form-control" th:field="*{IdVagon}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdEdificio">IdEdificio</label>  
+					<input id="IdEdificio" name="IdEdificio" type="text" class="form-control" th:field="*{IdEdificio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdEntrada">IdEntrada</label>  
+					<input id="IdEntrada" name="IdEntrada" type="text" class="form-control" th:field="*{IdEntrada}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SeccionExterna">SeccionExterna</label>  
+					<input id="SeccionExterna" name="SeccionExterna" type="text" class="form-control" th:field="*{SeccionExterna}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="SeccionNombre">SeccionNombre</label>  
+					<input id="SeccionNombre" name="SeccionNombre" type="text" class="form-control" th:field="*{SeccionNombre}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/seccions}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

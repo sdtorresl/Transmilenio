@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Toma</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="TomaDestruido">TomaDestruido: </label>  
+			<span th:text="${toma.TomaDestruido}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${toma.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TomaNumero">TomaNumero: </label>  
+			<span th:text="${toma.TomaNumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TomaTipo">TomaTipo: </label>  
+			<span th:text="${toma.TomaTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TomaCostado">TomaCostado: </label>  
+			<span th:text="${toma.TomaCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TomaAveria">TomaAveria: </label>  
+			<span th:text="${toma.TomaAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TomaTension">TomaTension: </label>  
+			<span th:text="${toma.TomaTension}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TomaTapafalta">TomaTapafalta: </label>  
+			<span th:text="${toma.TomaTapafalta}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TomaPorcentajetapafalta">TomaPorcentajetapafalta: </label>  
+			<span th:text="${toma.TomaPorcentajetapafalta}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TomaSinservicio">TomaSinservicio: </label>  
+			<span th:text="${toma.TomaSinservicio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TomaCableado">TomaCableado: </label>  
+			<span th:text="${toma.TomaCableado}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/tomas}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/tomas/delete/{id}(id = ${toma.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/tomas/edit/{id}(id = ${toma.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

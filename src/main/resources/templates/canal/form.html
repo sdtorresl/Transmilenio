@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${canal.id == null}">Agregar Canal</h1>
+			<h1 th:if="${canal.id != null}">Editar Canal</h1>
+			<hr />
+
+			<form th:action="@{/canals}" th:method="@{${canal.id == null} ? 'post' : 'put'}" th:object="${canal}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanalId">CanalId</label>  
+					<input id="CanalId" name="CanalId" type="text" class="form-control" th:field="*{CanalId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanalAveria">CanalAveria</label>  
+					<input id="CanalAveria" name="CanalAveria" type="text" class="form-control" th:field="*{CanalAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanalPorcentajeaveria">CanalPorcentajeaveria</label>  
+					<input id="CanalPorcentajeaveria" name="CanalPorcentajeaveria" type="text" class="form-control" th:field="*{CanalPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanalCorrosion">CanalCorrosion</label>  
+					<input id="CanalCorrosion" name="CanalCorrosion" type="text" class="form-control" th:field="*{CanalCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanalDiscontinuo">CanalDiscontinuo</label>  
+					<input id="CanalDiscontinuo" name="CanalDiscontinuo" type="text" class="form-control" th:field="*{CanalDiscontinuo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CanalDesajustado">CanalDesajustado</label>  
+					<input id="CanalDesajustado" name="CanalDesajustado" type="text" class="form-control" th:field="*{CanalDesajustado}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/canals}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

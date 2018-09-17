@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${escotilla.id == null}">Agregar Escotilla</h1>
+			<h1 th:if="${escotilla.id != null}">Editar Escotilla</h1>
+			<hr />
+
+			<form th:action="@{/escotillas}" th:method="@{${escotilla.id == null} ? 'post' : 'put'}" th:object="${escotilla}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EscotillaId">EscotillaId</label>  
+					<input id="EscotillaId" name="EscotillaId" type="text" class="form-control" th:field="*{EscotillaId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EscotillaLargo">EscotillaLargo</label>  
+					<input id="EscotillaLargo" name="EscotillaLargo" type="text" class="form-control" th:field="*{EscotillaLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EscotillaAncho">EscotillaAncho</label>  
+					<input id="EscotillaAncho" name="EscotillaAncho" type="text" class="form-control" th:field="*{EscotillaAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EscotillaTipo">EscotillaTipo</label>  
+					<input id="EscotillaTipo" name="EscotillaTipo" type="text" class="form-control" th:field="*{EscotillaTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EscotillaAveria">EscotillaAveria</label>  
+					<input id="EscotillaAveria" name="EscotillaAveria" type="text" class="form-control" th:field="*{EscotillaAveria}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/escotillas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

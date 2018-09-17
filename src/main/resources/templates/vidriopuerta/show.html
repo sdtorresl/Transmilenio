@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Vidriopuerta</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="VidriopuertaPeliculaseguridadaveria">VidriopuertaPeliculaseguridadaveria: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaPeliculaseguridadaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VidriopuertaContaminacion">VidriopuertaContaminacion: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaContaminacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VidriopuertaNumerocontaminacion">VidriopuertaNumerocontaminacion: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaNumerocontaminacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${vidriopuerta.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VidriopuertaId">VidriopuertaId: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VidriopuertaCostado">VidriopuertaCostado: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VidriopuertaLargo">VidriopuertaLargo: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaLargo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VidriopuertaAncho">VidriopuertaAncho: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaAncho}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VidriopuertaAveria">VidriopuertaAveria: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VidriopuertaFragmentado">VidriopuertaFragmentado: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaFragmentado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VidriopuertaNumerofragmentado">VidriopuertaNumerofragmentado: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaNumerofragmentado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VidriopuertaPeliculaidentificacion">VidriopuertaPeliculaidentificacion: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaPeliculaidentificacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VidriopuertaNumeropeliculaidentificacion">VidriopuertaNumeropeliculaidentificacion: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaNumeropeliculaidentificacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VidriopuertaNumeropelucilaseguridadaveria">VidriopuertaNumeropelucilaseguridadaveria: </label>  
+			<span th:text="${vidriopuerta.VidriopuertaNumeropelucilaseguridadaveria}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/vidriopuertas}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/vidriopuertas/delete/{id}(id = ${vidriopuerta.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/vidriopuertas/edit/{id}(id = ${vidriopuerta.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

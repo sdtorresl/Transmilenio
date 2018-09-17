@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${cuarto.id == null}">Agregar Cuarto</h1>
+			<h1 th:if="${cuarto.id != null}">Editar Cuarto</h1>
+			<hr />
+
+			<form th:action="@{/cuartos}" th:method="@{${cuarto.id == null} ? 'post' : 'put'}" th:object="${cuarto}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CuartoId">CuartoId</label>  
+					<input id="CuartoId" name="CuartoId" type="text" class="form-control" th:field="*{CuartoId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CuartoUso">CuartoUso</label>  
+					<input id="CuartoUso" name="CuartoUso" type="text" class="form-control" th:field="*{CuartoUso}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CuartoTipo">CuartoTipo</label>  
+					<input id="CuartoTipo" name="CuartoTipo" type="text" class="form-control" th:field="*{CuartoTipo}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/cuartos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

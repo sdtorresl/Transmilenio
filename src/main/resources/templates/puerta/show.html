@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Puerta</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${puerta.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaId">PuertaId: </label>  
+			<span th:text="${puerta.PuertaId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaTipo">PuertaTipo: </label>  
+			<span th:text="${puerta.PuertaTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaAncho">PuertaAncho: </label>  
+			<span th:text="${puerta.PuertaAncho}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaAveria">PuertaAveria: </label>  
+			<span th:text="${puerta.PuertaAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaPorcentajeaveria">PuertaPorcentajeaveria: </label>  
+			<span th:text="${puerta.PuertaPorcentajeaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaRejaMetalicaRota">PuertaRejaMetalicaRota: </label>  
+			<span th:text="${puerta.PuertaRejaMetalicaRota}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaAveriaCierre">PuertaAveriaCierre: </label>  
+			<span th:text="${puerta.PuertaAveriaCierre}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaContaVisual">PuertaContaVisual: </label>  
+			<span th:text="${puerta.PuertaContaVisual}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaDescolgada">PuertaDescolgada: </label>  
+			<span th:text="${puerta.PuertaDescolgada}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaFaltabisagra">PuertaFaltabisagra: </label>  
+			<span th:text="${puerta.PuertaFaltabisagra}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaCorrosion">PuertaCorrosion: </label>  
+			<span th:text="${puerta.PuertaCorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaPerdida">PuertaPerdida: </label>  
+			<span th:text="${puerta.PuertaPerdida}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaMalestado">PuertaMalestado: </label>  
+			<span th:text="${puerta.PuertaMalestado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuertaAlto">PuertaAlto: </label>  
+			<span th:text="${puerta.PuertaAlto}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/puertas}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/puertas/delete/{id}(id = ${puerta.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/puertas/edit/{id}(id = ${puerta.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

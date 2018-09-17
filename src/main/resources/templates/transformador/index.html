@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Transformadors</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>TransformadorCablederretido</th> 
+					<th>IdSeccionestacion</th> 
+					<th>TransformadorId</th> 
+					<th>TransformadorPotencia</th> 
+					<th>TransformadorPrimario</th> 
+					<th>TransformadorSecundario</th> 
+					<th>TransformadorUbicacion</th> 
+					<th>TransformadorAveria</th> 
+					<th>TransformadorGabinetecorrosion</th> 
+					<th>TransformadorGabinetecorrosionarea</th> 
+					<th>TransformadorImagen</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="transformador : ${listTransformador}">
+										<td th:text="${transformador.TransformadorCablederretido}"></td> 
+					<td th:text="${transformador.IdSeccionestacion}"></td> 
+					<td th:text="${transformador.TransformadorId}"></td> 
+					<td th:text="${transformador.TransformadorPotencia}"></td> 
+					<td th:text="${transformador.TransformadorPrimario}"></td> 
+					<td th:text="${transformador.TransformadorSecundario}"></td> 
+					<td th:text="${transformador.TransformadorUbicacion}"></td> 
+					<td th:text="${transformador.TransformadorAveria}"></td> 
+					<td th:text="${transformador.TransformadorGabinetecorrosion}"></td> 
+					<td th:text="${transformador.TransformadorGabinetecorrosionarea}"></td> 
+					<td th:text="${transformador.TransformadorImagen}"></td> 
+					<td>
+							<a th:href="@{/transformadors/{id}(id = ${transformador.id})}">Show</a> 
+					 		<a th:href="@{/transformadors/edit/{id}(id = ${transformador.id})}">Edit</a> 
+							<a th:href="@{/transformadors/delete/{id}(id = ${transformador.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/transformadors/{id}(id = ${transformador.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/transformadors/edit/{id}(id = ${transformador.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/transformadors/delete/{id}(id = ${transformador.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/transformadors/new}" class="btn btn-primary">Crear Transformador</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

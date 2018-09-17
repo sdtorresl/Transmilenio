@@ -16,33 +16,21 @@
 
 		<div id="main-content" class="shadow-sm bg-white">
 
-			<h1 th:if="${entrada.id == null}">Agregar Entrada</h1>
-			<h1 th:if="${entrada.id != null}">Editar Entrada</h1>
+			<h1 th:if="${paramClassName.id == null}">Agregar ${className}</h1>
+			<h1 th:if="${paramClassName.id != null}">Editar ${className}</h1>
 			<hr />
 
-			<form th:action="@{/entradas}" th:method="@{${entrada.id == null} ? 'post' : 'put'}" th:object="${entrada}">
+			<form th:action="@{url_path}" th:method="@{${paramClassName.id == null} ? 'post' : 'put'}" th:object="${paramClassName}">
 				<div class="row justify-content-center">
 					<div class="col-8">
 						<input type="hidden" th:field="*{id}" />
 
-										<div class="form-group"> 
-					<label for="nivel">Nivel</label>  
-					<input id="nivel" name="nivel" type="text" class="form-control" th:field="*{nivel}" />  
-				</div> 
-				<div class="form-group"> 
-					<label for="largo">Largo</label>  
-					<input id="largo" name="largo" type="text" class="form-control" th:field="*{largo}" />  
-				</div> 
-				<div class="form-group"> 
-					<label for="ancho">Ancho</label>  
-					<input id="ancho" name="ancho" type="text" class="form-control" th:field="*{ancho}" />  
-				</div> 
-
+						${input_parameters}
 					</div>
 
 					<div class="col-12 mt-3">
 						<div class="d-flex justify-content-end">
-							<a th:href="@{/entradas}" class="btn btn-secondary mr-2">Atrás</a>
+							<a th:href="@{url_path}" class="btn btn-secondary mr-2">Atrás</a>
 							<button type="submit" class="btn btn-primary">Guardar</button>
 						</div>
 					</div>

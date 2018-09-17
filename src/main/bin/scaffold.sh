@@ -11,17 +11,17 @@
 usage() {
 	echo "Program to dynamically generate CRUD code for Transmilenio DB"
 	echo "Requires cli-spring-boot-scaffold"
-	echo -e "\nUsage:" 
+	echo -e "\nUsage:"
 	echo -e "\t$0 \t\t\t Generate code"
-	echo -e "\t$0 -h\t\t\t Get help" 
-	echo -e "\t$0 --help\t\t Get help" 
+	echo -e "\t$0 -h\t\t\t Get help"
+	echo -e "\t$0 --help\t\t Get help"
 }
 
 
-if [  $# -gt 0 ] 
-then 
-	if [[ ( $# == "--help") ||  $# == "-h" ]] 
-	then 
+if [  $# -gt 0 ]
+then
+	if [[ ( $# == "--help") ||  $# == "-h" ]]
+	then
 		usage
 		exit 0
 
@@ -29,9 +29,10 @@ then
 		usage
 		exit 1
 	fi
-fi 
+fi
 
 #Generate code
+spring scaffold -n "inv_entrada:Entrada" -p "inv_entrada_nivel:nivel:String inv_entrada_largo:largo:Double inv_entrada_ancho:ancho:Double" -t src/main/resources/scaffold-templates
 spring scaffold -n "inv_acceso:Acceso" -p "inv_id_acceso:IdAcceso:Double inv_id_seccionestacion:IdSeccionestacion:Double inv_acceso_formaingreso:AccesoFormaingreso:String inv_acceso_total:AccesoTotal:Double inv_acceso_torniquete:AccesoTorniquete:Double inv_acceso_distribucion:AccesoDistribucion:String inv_acceso_id:AccesoId:Double"
 spring scaffold -n "inv_acondicionado:Acondicionado" -p "inv_id_acondicionado:IdAcondicionado:Double inv_acondicionado_id:AcondicionadoId:Double inv_acondicionado_ubicacion:AcondicionadoUbicacion:String inv_id_seccionestacion:IdSeccionestacion:Double"
 spring scaffold -n "inv_altavoz:Altavoz" -p "inv_id_seccionestacion:IdSeccionestacion:Double inv_altavoz_partesfaltantes:AltavozPartesfaltantes:boolean inv_altavoz_desaparecido:AltavozDesaparecido:boolean inv_altavoz_costado:AltavozCostado:String inv_id_altavoz:IdAltavoz:Double inv_altavoz_averia:AltavozAveria:boolean inv_altavoz_id:AltavozId:Double inv_altavoz_averiasoporte:AltavozAveriasoporte:boolean inv_altavoz_contaminacion:AltavozContaminacion:boolean inv_altavoz_porcentajecontaminacion:AltavozPorcentajecontaminacion:Double"

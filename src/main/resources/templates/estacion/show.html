@@ -26,8 +26,8 @@
 			<span th:text="${estacion.EstacionCodigo}"></span> 
 		</div> 
 		<div class="form-group"> 
-			<label for="IdEstaciontipo">IdEstaciontipo: </label>  
-			<span th:text="${estacion.IdEstaciontipo}"></span> 
+			<label for="idEstacionTipo">idEstacionTipo: </label>  
+			<span th:text="${estacion.idEstacionTipo}"></span> 
 		</div> 
 		<div class="form-group"> 
 			<label for="EstacionDistribucion">EstacionDistribucion: </label>  
@@ -68,9 +68,9 @@
 			<div class="row">
 				<div class="col mt-3">
 					<div class="d-flex justify-content-end">
-						<a class="btn btn-secondary mr-2"th:href="@{/estacions}">Atrás</a>
-						<a class="btn btn-secondary mr-2" th:href="@{/estacions/delete/{id}(id = ${estacion.id})}">Borrar</a>
-						<a class="btn btn-primary" th:href="@{/estacions/edit/{id}(id = ${estacion.id})}">Editar</a>
+						<a class="btn btn-secondary mr-2"th:href="@{/estaciones}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/estaciones/delete/{id}(id = ${estacion.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/estaciones/edit/{id}(id = ${estacion.id})}">Editar</a>
 					</div>
 				</div>
 			</div>

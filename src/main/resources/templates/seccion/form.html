@@ -20,7 +20,7 @@
 			<h1 th:if="${seccion.id != null}">Editar Seccion</h1>
 			<hr />
 
-			<form th:action="@{/seccions}" th:method="@{${seccion.id == null} ? 'post' : 'put'}" th:object="${seccion}">
+			<form th:action="@{/secciones}" th:method="@{${seccion.id == null} ? 'post' : 'put'}" th:object="${seccion}">
 				<div class="row justify-content-center">
 					<div class="col-8">
 						<input type="hidden" th:field="*{id}" />
@@ -66,7 +66,7 @@
 
 					<div class="col-12 mt-3">
 						<div class="d-flex justify-content-end">
-							<a th:href="@{/seccions}" class="btn btn-secondary mr-2">Atrás</a>
+							<a th:href="@{/secciones}" class="btn btn-secondary mr-2">Atrás</a>
 							<button type="submit" class="btn btn-primary">Guardar</button>
 						</div>
 					</div>

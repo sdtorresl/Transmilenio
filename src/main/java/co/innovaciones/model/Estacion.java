@@ -15,7 +15,7 @@ public class Estacion implements Serializable {
     
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "inv_id_estacion")
-    private Integer idEstacion;
+    private Integer id;
 
     @Column(name = "inv_id_estaciontipo")
     private Double idEstacionTipo;
@@ -47,10 +47,10 @@ public class Estacion implements Serializable {
     @Column(name = "inv_estacion_codigo")
     private Double estacionCodigo;
 
-    public Integer getIdEstacion() {return  this.idEstacion;}
+    public Integer getId() {return  this.id;}
     
-    void setIdEstacion(Integer idEstacion) {
-        this.idEstacion = idEstacion;
+    void setId(Integer id) {
+        this.id = id;
     }
     
     public Double getIdEstacionTipo() {return this.idEstacionTipo;}

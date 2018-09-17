@@ -25,7 +25,7 @@
                                 <label for="troncal" class="col-4 col-form-label">Troncal</label>
                                 <div class="col-8">
                                     <select name="troncal" id="troncal" class="form-control" multiple="multiple">
-                                        <option th:each="troncal : ${troncales}" th:value="${troncal.idTroncal}" th:text="${#strings.capitalizeWords(#strings.toLowerCase(troncal.troncalNombre))}"></option>
+                                        <option th:each="troncal : ${troncales}" th:value="${troncal.id}" th:text="${#strings.capitalizeWords(#strings.toLowerCase(troncal.troncalNombre))}"></option>
                                     </select>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
                                 <label for="estaciones" class="col-4 col-form-label">Estaciones</label>
                                 <div class="col-8">
                                     <select name="estaciones" id="estaciones" class="form-control" multiple="multiple">
-                                        <option th:each="estacion : ${estaciones}" th:value="${estacion.idEstacion}" th:text="${estacion.estacionNombre}"></option>
+                                        <option th:each="estacion : ${estaciones}" th:value="${estacion.id}" th:text="${estacion.estacionNombre}"></option>
                                     </select>
                                 </div>
                             </div>
@@ -45,10 +45,7 @@
                                 <label for="secciones" class="col-4 col-form-label">Secciones</label>
                                 <div class="col-8">
                                     <select name="secciones" id="secciones" class="form-control" multiple="multiple">
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
-                                        <option value="4">Option 4</option>
+                                        <option th:each="seccion : ${secciones}" th:value="${seccion.id}" th:text="${seccion.seccionNombre}"></option>
                                     </select>
                                 </div>
                             </div>

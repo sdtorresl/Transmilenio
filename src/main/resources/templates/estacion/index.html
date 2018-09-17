@@ -16,53 +16,38 @@
 
 		<div id="main-content" class="shadow-sm bg-white">
 
-			<h1>Estacions</h1>
+			<h1>Estaciones</h1>
 			<hr />
 
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>EstacionCodigo</th> 
-					<th>IdEstaciontipo</th> 
-					<th>EstacionDistribucion</th> 
-					<th>IdTroncal</th> 
-					<th>EstacionNombre</th> 
-					<th>EstacionDireccion</th> 
-					<th>EstacionFechentrega</th> 
-					<th>EstacionFechoperacion</th> 
-					<th>EstacionFase</th> 
-					<th>EstacionEstado</th> 
-					<th>Action</th>
+					<th>Código</th>
+					<th>Distribución</th> 
+					<th>Nombre</th>
+					<th>Fase</th> 
+					<th>Estado</th> 
+					<th>Acción</th>
 				</tr>
 				</thead>
 				<tbody>
 				<tr th:each="estacion : ${listEstacion}">
-										<td th:text="${estacion.EstacionCodigo}"></td> 
-					<td th:text="${estacion.IdEstaciontipo}"></td> 
+					<td th:text="${estacion.EstacionCodigo}"></td> 
 					<td th:text="${estacion.EstacionDistribucion}"></td> 
-					<td th:text="${estacion.IdTroncal}"></td> 
 					<td th:text="${estacion.EstacionNombre}"></td> 
-					<td th:text="${estacion.EstacionDireccion}"></td> 
-					<td th:text="${estacion.EstacionFechentrega}"></td> 
-					<td th:text="${estacion.EstacionFechoperacion}"></td> 
 					<td th:text="${estacion.EstacionFase}"></td> 
-					<td th:text="${estacion.EstacionEstado}"></td> 
+					<td th:text="${estacion.EstacionEstado}"></td>
 					<td>
-							<a th:href="@{/estacions/{id}(id = ${estacion.id})}">Show</a> 
-					 		<a th:href="@{/estacions/edit/{id}(id = ${estacion.id})}">Edit</a> 
-							<a th:href="@{/estacions/delete/{id}(id = ${estacion.id})}">Destroy</a> 
-					</td>
-					<td>
-						<a class="action" th:href="@{/estacions/{id}(id = ${estacion.id})}"><i class="flaticon-search"></i></a>
-						<a class="action" th:href="@{/estacions/edit/{id}(id = ${estacion.id})}"><i class="flaticon-edit"></i></a>
-						<a class="action" th:href="@{/estacions/delete/{id}(id = ${estacion.id})}"><i class="flaticon-trash"></i></a>
+						<a class="action" th:href="@{/estaciones/{id}(id = ${estacion.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/estaciones/edit/{id}(id = ${estacion.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/estaciones/delete/{id}(id = ${estacion.id})}"><i class="flaticon-trash"></i></a>
 					</td>
 				</tr>
 				</tbody>
 			</table>
 
 			<div class="d-flex justify-content-end">
-				<a th:href="@{/estacions/new}" class="btn btn-primary">Crear Estacion</a>
+				<a th:href="@{/estaciones/new}" class="btn btn-primary">Crear Estacion</a>
 			</div>
 		</div>
 

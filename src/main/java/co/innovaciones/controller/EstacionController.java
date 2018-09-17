@@ -22,7 +22,7 @@ import co.innovaciones.model.Estacion;
 import co.innovaciones.service.EstacionService;
 
 @Controller
-@RequestMapping("/estacions")
+@RequestMapping("/estaciones")
 public class EstacionController {
 
 	private static final String MSG_SUCESS_INSERT = "Estacion inserted successfully.";

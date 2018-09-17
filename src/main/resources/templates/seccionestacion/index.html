@@ -16,14 +16,14 @@
 
 		<div id="main-content" class="shadow-sm bg-white">
 
-			<h1>Seccionestacions</h1>
+			<h1>Seccionestaciones</h1>
 			<hr />
 
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
 										<th>IdEstacion</th> 
-					<th>SeccionSubseccion</th> 
+					<th>seccionesubseccion</th> 
 					<th>IdSeccion</th> 
 					<th>Action</th>
 				</tr>
@@ -31,24 +31,24 @@
 				<tbody>
 				<tr th:each="seccionestacion : ${listSeccionestacion}">
 										<td th:text="${seccionestacion.IdEstacion}"></td> 
-					<td th:text="${seccionestacion.SeccionSubseccion}"></td> 
+					<td th:text="${seccionestacion.seccionesubseccion}"></td> 
 					<td th:text="${seccionestacion.IdSeccion}"></td> 
 					<td>
-							<a th:href="@{/seccionestacions/{id}(id = ${seccionestacion.id})}">Show</a> 
-					 		<a th:href="@{/seccionestacions/edit/{id}(id = ${seccionestacion.id})}">Edit</a> 
-							<a th:href="@{/seccionestacions/delete/{id}(id = ${seccionestacion.id})}">Destroy</a> 
+							<a th:href="@{/seccionestaciones/{id}(id = ${seccionestacion.id})}">Show</a> 
+					 		<a th:href="@{/seccionestaciones/edit/{id}(id = ${seccionestacion.id})}">Edit</a> 
+							<a th:href="@{/seccionestaciones/delete/{id}(id = ${seccionestacion.id})}">Destroy</a> 
 					</td>
 					<td>
-						<a class="action" th:href="@{/seccionestacions/{id}(id = ${seccionestacion.id})}"><i class="flaticon-search"></i></a>
-						<a class="action" th:href="@{/seccionestacions/edit/{id}(id = ${seccionestacion.id})}"><i class="flaticon-edit"></i></a>
-						<a class="action" th:href="@{/seccionestacions/delete/{id}(id = ${seccionestacion.id})}"><i class="flaticon-trash"></i></a>
+						<a class="action" th:href="@{/seccionestaciones/{id}(id = ${seccionestacion.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/seccionestaciones/edit/{id}(id = ${seccionestacion.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/seccionestaciones/delete/{id}(id = ${seccionestacion.id})}"><i class="flaticon-trash"></i></a>
 					</td>
 				</tr>
 				</tbody>
 			</table>
 
 			<div class="d-flex justify-content-end">
-				<a th:href="@{/seccionestacions/new}" class="btn btn-primary">Crear Seccionestacion</a>
+				<a th:href="@{/seccionestaciones/new}" class="btn btn-primary">Crear Seccionestacion</a>
 			</div>
 		</div>
 

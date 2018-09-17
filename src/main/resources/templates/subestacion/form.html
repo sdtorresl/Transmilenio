@@ -20,7 +20,7 @@
 			<h1 th:if="${subestacion.id != null}">Editar Subestacion</h1>
 			<hr />
 
-			<form th:action="@{/subestacions}" th:method="@{${subestacion.id == null} ? 'post' : 'put'}" th:object="${subestacion}">
+			<form th:action="@{/subestaciones}" th:method="@{${subestacion.id == null} ? 'post' : 'put'}" th:object="${subestacion}">
 				<div class="row justify-content-center">
 					<div class="col-8">
 						<input type="hidden" th:field="*{id}" />
@@ -102,7 +102,7 @@
 
 					<div class="col-12 mt-3">
 						<div class="d-flex justify-content-end">
-							<a th:href="@{/subestacions}" class="btn btn-secondary mr-2">Atrás</a>
+							<a th:href="@{/subestaciones}" class="btn btn-secondary mr-2">Atrás</a>
 							<button type="submit" class="btn btn-primary">Guardar</button>
 						</div>
 					</div>

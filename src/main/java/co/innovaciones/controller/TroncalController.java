@@ -22,7 +22,7 @@ import co.innovaciones.model.Troncal;
 import co.innovaciones.service.TroncalService;
 
 @Controller
-@RequestMapping("/troncals")
+@RequestMapping("/troncales")
 public class TroncalController {
 
 	private static final String MSG_SUCESS_INSERT = "Troncal inserted successfully.";

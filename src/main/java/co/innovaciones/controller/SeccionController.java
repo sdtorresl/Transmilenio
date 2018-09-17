@@ -22,7 +22,7 @@ import co.innovaciones.model.Seccion;
 import co.innovaciones.service.SeccionService;
 
 @Controller
-@RequestMapping("/seccions")
+@RequestMapping("/secciones")
 public class SeccionController {
 
 	private static final String MSG_SUCESS_INSERT = "Seccion inserted successfully.";
@@ -67,7 +67,7 @@ public class SeccionController {
 			redirectAttributes.addFlashAttribute("error", MSG_ERROR);
 			e.printStackTrace();
 		}
-		return "redirect:/seccions/" + seccion.getId();
+		return "redirect:/secciones/" + seccion.getId();
 	}
 	
 	@GetMapping("/edit/{id}")
@@ -95,7 +95,7 @@ public class SeccionController {
 			redirectAttributes.addFlashAttribute("error", MSG_ERROR);
 			e.printStackTrace();
 		}
-		return "redirect:/seccions/" + seccion.getId();
+		return "redirect:/secciones/" + seccion.getId();
 	}
 	
 	@GetMapping("/delete/{id}")
@@ -115,7 +115,7 @@ public class SeccionController {
 			redirectAttributes.addFlashAttribute("error", MSG_ERROR);
 			throw new ServiceException(e.getMessage());
 		}
-		return "redirect:/seccions";
+		return "redirect:/secciones";
 	}
 
 }

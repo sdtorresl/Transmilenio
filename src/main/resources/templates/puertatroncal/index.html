@@ -16,7 +16,7 @@
 
 		<div id="main-content" class="shadow-sm bg-white">
 
-			<h1>Puertatroncals</h1>
+			<h1>Puertatroncales</h1>
 			<hr />
 
 			<table class="table table-hover text-center">
@@ -58,21 +58,21 @@
 					<td th:text="${puertatroncal.IdTipoPuertatroncal}"></td> 
 					<td th:text="${puertatroncal.PuertatroncalDistancia}"></td> 
 					<td>
-							<a th:href="@{/puertatroncals/{id}(id = ${puertatroncal.id})}">Show</a> 
-					 		<a th:href="@{/puertatroncals/edit/{id}(id = ${puertatroncal.id})}">Edit</a> 
-							<a th:href="@{/puertatroncals/delete/{id}(id = ${puertatroncal.id})}">Destroy</a> 
+							<a th:href="@{/puertatroncales/{id}(id = ${puertatroncal.id})}">Show</a> 
+					 		<a th:href="@{/puertatroncales/edit/{id}(id = ${puertatroncal.id})}">Edit</a> 
+							<a th:href="@{/puertatroncales/delete/{id}(id = ${puertatroncal.id})}">Destroy</a> 
 					</td>
 					<td>
-						<a class="action" th:href="@{/puertatroncals/{id}(id = ${puertatroncal.id})}"><i class="flaticon-search"></i></a>
-						<a class="action" th:href="@{/puertatroncals/edit/{id}(id = ${puertatroncal.id})}"><i class="flaticon-edit"></i></a>
-						<a class="action" th:href="@{/puertatroncals/delete/{id}(id = ${puertatroncal.id})}"><i class="flaticon-trash"></i></a>
+						<a class="action" th:href="@{/puertatroncales/{id}(id = ${puertatroncal.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/puertatroncales/edit/{id}(id = ${puertatroncal.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/puertatroncales/delete/{id}(id = ${puertatroncal.id})}"><i class="flaticon-trash"></i></a>
 					</td>
 				</tr>
 				</tbody>
 			</table>
 
 			<div class="d-flex justify-content-end">
-				<a th:href="@{/puertatroncals/new}" class="btn btn-primary">Crear Puertatroncal</a>
+				<a th:href="@{/puertatroncales/new}" class="btn btn-primary">Crear Puertatroncal</a>
 			</div>
 		</div>
 

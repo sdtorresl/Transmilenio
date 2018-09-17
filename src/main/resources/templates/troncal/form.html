@@ -20,7 +20,7 @@
 			<h1 th:if="${troncal.id != null}">Editar Troncal</h1>
 			<hr />
 
-			<form th:action="@{/troncals}" th:method="@{${troncal.id == null} ? 'post' : 'put'}" th:object="${troncal}">
+			<form th:action="@{/troncales}" th:method="@{${troncal.id == null} ? 'post' : 'put'}" th:object="${troncal}">
 				<div class="row justify-content-center">
 					<div class="col-8">
 						<input type="hidden" th:field="*{id}" />
@@ -46,7 +46,7 @@
 
 					<div class="col-12 mt-3">
 						<div class="d-flex justify-content-end">
-							<a th:href="@{/troncals}" class="btn btn-secondary mr-2">Atrás</a>
+							<a th:href="@{/troncales}" class="btn btn-secondary mr-2">Atrás</a>
 							<button type="submit" class="btn btn-primary">Guardar</button>
 						</div>
 					</div>

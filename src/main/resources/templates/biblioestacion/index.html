@@ -16,7 +16,7 @@
 
 		<div id="main-content" class="shadow-sm bg-white">
 
-			<h1>Biblioestacions</h1>
+			<h1>Biblioestaciones</h1>
 			<hr />
 
 			<table class="table table-hover text-center">
@@ -40,21 +40,21 @@
 					<td th:text="${biblioestacion.BiblioestacionRutaImagen}"></td> 
 					<td th:text="${biblioestacion.BiblioestacionImagen}"></td> 
 					<td>
-							<a th:href="@{/biblioestacions/{id}(id = ${biblioestacion.id})}">Show</a> 
-					 		<a th:href="@{/biblioestacions/edit/{id}(id = ${biblioestacion.id})}">Edit</a> 
-							<a th:href="@{/biblioestacions/delete/{id}(id = ${biblioestacion.id})}">Destroy</a> 
+							<a th:href="@{/biblioestaciones/{id}(id = ${biblioestacion.id})}">Show</a> 
+					 		<a th:href="@{/biblioestaciones/edit/{id}(id = ${biblioestacion.id})}">Edit</a> 
+							<a th:href="@{/biblioestaciones/delete/{id}(id = ${biblioestacion.id})}">Destroy</a> 
 					</td>
 					<td>
-						<a class="action" th:href="@{/biblioestacions/{id}(id = ${biblioestacion.id})}"><i class="flaticon-search"></i></a>
-						<a class="action" th:href="@{/biblioestacions/edit/{id}(id = ${biblioestacion.id})}"><i class="flaticon-edit"></i></a>
-						<a class="action" th:href="@{/biblioestacions/delete/{id}(id = ${biblioestacion.id})}"><i class="flaticon-trash"></i></a>
+						<a class="action" th:href="@{/biblioestaciones/{id}(id = ${biblioestacion.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/biblioestaciones/edit/{id}(id = ${biblioestacion.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/biblioestaciones/delete/{id}(id = ${biblioestacion.id})}"><i class="flaticon-trash"></i></a>
 					</td>
 				</tr>
 				</tbody>
 			</table>
 
 			<div class="d-flex justify-content-end">
-				<a th:href="@{/biblioestacions/new}" class="btn btn-primary">Crear Biblioestacion</a>
+				<a th:href="@{/biblioestaciones/new}" class="btn btn-primary">Crear Biblioestacion</a>
 			</div>
 		</div>
 

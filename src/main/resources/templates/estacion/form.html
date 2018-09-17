@@ -20,7 +20,7 @@
 			<h1 th:if="${estacion.id != null}">Editar Estacion</h1>
 			<hr />
 
-			<form th:action="@{/estacions}" th:method="@{${estacion.id == null} ? 'post' : 'put'}" th:object="${estacion}">
+			<form th:action="@{/estaciones}" th:method="@{${estacion.id == null} ? 'post' : 'put'}" th:object="${estacion}">
 				<div class="row justify-content-center">
 					<div class="col-8">
 						<input type="hidden" th:field="*{id}" />
@@ -30,8 +30,8 @@
 					<input id="EstacionCodigo" name="EstacionCodigo" type="text" class="form-control" th:field="*{EstacionCodigo}" />  
 				</div> 
 				<div class="form-group"> 
-					<label for="IdEstaciontipo">IdEstaciontipo</label>  
-					<input id="IdEstaciontipo" name="IdEstaciontipo" type="text" class="form-control" th:field="*{IdEstaciontipo}" />  
+					<label for="idEstacionTipo">idEstacionTipo</label>  
+					<input id="idEstacionTipo" name="idEstacionTipo" type="text" class="form-control" th:field="*{idEstacionTipo}" />  
 				</div> 
 				<div class="form-group"> 
 					<label for="EstacionDistribucion">EstacionDistribucion</label>  
@@ -70,7 +70,7 @@
 
 					<div class="col-12 mt-3">
 						<div class="d-flex justify-content-end">
-							<a th:href="@{/estacions}" class="btn btn-secondary mr-2">Atrás</a>
+							<a th:href="@{/estaciones}" class="btn btn-secondary mr-2">Atrás</a>
 							<button type="submit" class="btn btn-primary">Guardar</button>
 						</div>
 					</div>

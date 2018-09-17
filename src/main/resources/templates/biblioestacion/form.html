@@ -20,7 +20,7 @@
 			<h1 th:if="${biblioestacion.id != null}">Editar Biblioestacion</h1>
 			<hr />
 
-			<form th:action="@{/biblioestacions}" th:method="@{${biblioestacion.id == null} ? 'post' : 'put'}" th:object="${biblioestacion}">
+			<form th:action="@{/biblioestaciones}" th:method="@{${biblioestacion.id == null} ? 'post' : 'put'}" th:object="${biblioestacion}">
 				<div class="row justify-content-center">
 					<div class="col-8">
 						<input type="hidden" th:field="*{id}" />
@@ -54,7 +54,7 @@
 
 					<div class="col-12 mt-3">
 						<div class="d-flex justify-content-end">
-							<a th:href="@{/biblioestacions}" class="btn btn-secondary mr-2">Atrás</a>
+							<a th:href="@{/biblioestaciones}" class="btn btn-secondary mr-2">Atrás</a>
 							<button type="submit" class="btn btn-primary">Guardar</button>
 						</div>
 					</div>

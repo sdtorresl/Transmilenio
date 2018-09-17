@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${toma.id == null}">Agregar Toma</h1>
+			<h1 th:if="${toma.id != null}">Editar Toma</h1>
+			<hr />
+
+			<form th:action="@{/tomas}" th:method="@{${toma.id == null} ? 'post' : 'put'}" th:object="${toma}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="TomaDestruido">TomaDestruido</label>  
+					<input id="TomaDestruido" name="TomaDestruido" type="text" class="form-control" th:field="*{TomaDestruido}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdToma">IdToma</label>  
+					<input id="IdToma" name="IdToma" type="text" class="form-control" th:field="*{IdToma}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TomaNumero">TomaNumero</label>  
+					<input id="TomaNumero" name="TomaNumero" type="text" class="form-control" th:field="*{TomaNumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TomaTipo">TomaTipo</label>  
+					<input id="TomaTipo" name="TomaTipo" type="text" class="form-control" th:field="*{TomaTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TomaCostado">TomaCostado</label>  
+					<input id="TomaCostado" name="TomaCostado" type="text" class="form-control" th:field="*{TomaCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TomaAveria">TomaAveria</label>  
+					<input id="TomaAveria" name="TomaAveria" type="text" class="form-control" th:field="*{TomaAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TomaTension">TomaTension</label>  
+					<input id="TomaTension" name="TomaTension" type="text" class="form-control" th:field="*{TomaTension}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TomaTapafalta">TomaTapafalta</label>  
+					<input id="TomaTapafalta" name="TomaTapafalta" type="text" class="form-control" th:field="*{TomaTapafalta}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TomaPorcentajetapafalta">TomaPorcentajetapafalta</label>  
+					<input id="TomaPorcentajetapafalta" name="TomaPorcentajetapafalta" type="text" class="form-control" th:field="*{TomaPorcentajetapafalta}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TomaSinservicio">TomaSinservicio</label>  
+					<input id="TomaSinservicio" name="TomaSinservicio" type="text" class="form-control" th:field="*{TomaSinservicio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TomaCableado">TomaCableado</label>  
+					<input id="TomaCableado" name="TomaCableado" type="text" class="form-control" th:field="*{TomaCableado}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/tomas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

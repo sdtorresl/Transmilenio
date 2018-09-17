@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Rampa</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="IdRampa">IdRampa: </label>  
+			<span th:text="${rampa.IdRampa}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${rampa.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="RampaId">RampaId: </label>  
+			<span th:text="${rampa.RampaId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="RampaLongitud">RampaLongitud: </label>  
+			<span th:text="${rampa.RampaLongitud}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="RampaArea">RampaArea: </label>  
+			<span th:text="${rampa.RampaArea}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="RampaAveria">RampaAveria: </label>  
+			<span th:text="${rampa.RampaAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="RampaPorcentajeaveria">RampaPorcentajeaveria: </label>  
+			<span th:text="${rampa.RampaPorcentajeaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdMaterialAveria">IdMaterialAveria: </label>  
+			<span th:text="${rampa.IdMaterialAveria}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/rampas}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/rampas/delete/{id}(id = ${rampa.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/rampas/edit/{id}(id = ${rampa.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

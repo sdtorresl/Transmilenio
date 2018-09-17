@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Tableros</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>TableroRutaImagen</th> 
+					<th>TableroImagen</th> 
+					<th>TableroTipo</th> 
+					<th>TableroNombre</th> 
+					<th>IdTablero</th> 
+					<th>IdSeccionestacion</th> 
+					<th>TableroNumero</th> 
+					<th>TableroAveria</th> 
+					<th>TableroSucio</th> 
+					<th>TableroCorrosion</th> 
+					<th>TableroFaltapintura</th> 
+					<th>TableroSincerradura</th> 
+					<th>TableroSintapa</th> 
+					<th>TableroMalanclaje</th> 
+					<th>TableroVidriofisura</th> 
+					<th>TableroVidriofaltante</th> 
+					<th>TableroCablederretido</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="tablero : ${listTablero}">
+										<td th:text="${tablero.TableroRutaImagen}"></td> 
+					<td th:text="${tablero.TableroImagen}"></td> 
+					<td th:text="${tablero.TableroTipo}"></td> 
+					<td th:text="${tablero.TableroNombre}"></td> 
+					<td th:text="${tablero.IdTablero}"></td> 
+					<td th:text="${tablero.IdSeccionestacion}"></td> 
+					<td th:text="${tablero.TableroNumero}"></td> 
+					<td th:text="${tablero.TableroAveria}"></td> 
+					<td th:text="${tablero.TableroSucio}"></td> 
+					<td th:text="${tablero.TableroCorrosion}"></td> 
+					<td th:text="${tablero.TableroFaltapintura}"></td> 
+					<td th:text="${tablero.TableroSincerradura}"></td> 
+					<td th:text="${tablero.TableroSintapa}"></td> 
+					<td th:text="${tablero.TableroMalanclaje}"></td> 
+					<td th:text="${tablero.TableroVidriofisura}"></td> 
+					<td th:text="${tablero.TableroVidriofaltante}"></td> 
+					<td th:text="${tablero.TableroCablederretido}"></td> 
+					<td>
+							<a th:href="@{/tableros/{id}(id = ${tablero.id})}">Show</a> 
+					 		<a th:href="@{/tableros/edit/{id}(id = ${tablero.id})}">Edit</a> 
+							<a th:href="@{/tableros/delete/{id}(id = ${tablero.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/tableros/{id}(id = ${tablero.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/tableros/edit/{id}(id = ${tablero.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/tableros/delete/{id}(id = ${tablero.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/tableros/new}" class="btn btn-primary">Crear Tablero</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

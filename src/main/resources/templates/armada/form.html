@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${armada.id == null}">Agregar Armada</h1>
+			<h1 th:if="${armada.id != null}">Editar Armada</h1>
+			<hr />
+
+			<form th:action="@{/armadas}" th:method="@{${armada.id == null} ? 'post' : 'put'}" th:object="${armada}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="ArmadaLongitud">ArmadaLongitud</label>  
+					<input id="ArmadaLongitud" name="ArmadaLongitud" type="text" class="form-control" th:field="*{ArmadaLongitud}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdArmada">IdArmada</label>  
+					<input id="IdArmada" name="IdArmada" type="text" class="form-control" th:field="*{IdArmada}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ArmadaId">ArmadaId</label>  
+					<input id="ArmadaId" name="ArmadaId" type="text" class="form-control" th:field="*{ArmadaId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ArmadaAlto">ArmadaAlto</label>  
+					<input id="ArmadaAlto" name="ArmadaAlto" type="text" class="form-control" th:field="*{ArmadaAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ArmadaAveria">ArmadaAveria</label>  
+					<input id="ArmadaAveria" name="ArmadaAveria" type="text" class="form-control" th:field="*{ArmadaAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ArmadaPorcentajeaveria">ArmadaPorcentajeaveria</label>  
+					<input id="ArmadaPorcentajeaveria" name="ArmadaPorcentajeaveria" type="text" class="form-control" th:field="*{ArmadaPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ArmadaGrietas">ArmadaGrietas</label>  
+					<input id="ArmadaGrietas" name="ArmadaGrietas" type="text" class="form-control" th:field="*{ArmadaGrietas}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ArmadaFiltraciones">ArmadaFiltraciones</label>  
+					<input id="ArmadaFiltraciones" name="ArmadaFiltraciones" type="text" class="form-control" th:field="*{ArmadaFiltraciones}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ArmadaDeformaciones">ArmadaDeformaciones</label>  
+					<input id="ArmadaDeformaciones" name="ArmadaDeformaciones" type="text" class="form-control" th:field="*{ArmadaDeformaciones}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ArmadaContaminacion">ArmadaContaminacion</label>  
+					<input id="ArmadaContaminacion" name="ArmadaContaminacion" type="text" class="form-control" th:field="*{ArmadaContaminacion}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/armadas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

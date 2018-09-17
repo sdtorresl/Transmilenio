@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${acceso.id == null}">Agregar Acceso</h1>
+			<h1 th:if="${acceso.id != null}">Editar Acceso</h1>
+			<hr />
+
+			<form th:action="@{/accesos}" th:method="@{${acceso.id == null} ? 'post' : 'put'}" th:object="${acceso}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdAcceso">IdAcceso</label>  
+					<input id="IdAcceso" name="IdAcceso" type="text" class="form-control" th:field="*{IdAcceso}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AccesoFormaingreso">AccesoFormaingreso</label>  
+					<input id="AccesoFormaingreso" name="AccesoFormaingreso" type="text" class="form-control" th:field="*{AccesoFormaingreso}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AccesoTotal">AccesoTotal</label>  
+					<input id="AccesoTotal" name="AccesoTotal" type="text" class="form-control" th:field="*{AccesoTotal}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AccesoTorniquete">AccesoTorniquete</label>  
+					<input id="AccesoTorniquete" name="AccesoTorniquete" type="text" class="form-control" th:field="*{AccesoTorniquete}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AccesoDistribucion">AccesoDistribucion</label>  
+					<input id="AccesoDistribucion" name="AccesoDistribucion" type="text" class="form-control" th:field="*{AccesoDistribucion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AccesoId">AccesoId</label>  
+					<input id="AccesoId" name="AccesoId" type="text" class="form-control" th:field="*{AccesoId}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/accesos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

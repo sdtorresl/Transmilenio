@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Incendio</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="IncendioHachaperdida">IncendioHachaperdida: </label>  
+			<span th:text="${incendio.IncendioHachaperdida}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioMartilloroto">IncendioMartilloroto: </label>  
+			<span th:text="${incendio.IncendioMartilloroto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioMartilloperdido">IncendioMartilloperdido: </label>  
+			<span th:text="${incendio.IncendioMartilloperdido}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioVidrioroto">IncendioVidrioroto: </label>  
+			<span th:text="${incendio.IncendioVidrioroto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioId">IncendioId: </label>  
+			<span th:text="${incendio.IncendioId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioAlto">IncendioAlto: </label>  
+			<span th:text="${incendio.IncendioAlto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioAncho">IncendioAncho: </label>  
+			<span th:text="${incendio.IncendioAncho}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioCostado">IncendioCostado: </label>  
+			<span th:text="${incendio.IncendioCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioTipo">IncendioTipo: </label>  
+			<span th:text="${incendio.IncendioTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioExtintorvencido">IncendioExtintorvencido: </label>  
+			<span th:text="${incendio.IncendioExtintorvencido}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioExtintorperdido">IncendioExtintorperdido: </label>  
+			<span th:text="${incendio.IncendioExtintorperdido}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioManguerarota">IncendioManguerarota: </label>  
+			<span th:text="${incendio.IncendioManguerarota}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioMangueraperdida">IncendioMangueraperdida: </label>  
+			<span th:text="${incendio.IncendioMangueraperdida}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioHacharota">IncendioHacharota: </label>  
+			<span th:text="${incendio.IncendioHacharota}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioImagen">IncendioImagen: </label>  
+			<span th:text="${incendio.IncendioImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioRutaImagen">IncendioRutaImagen: </label>  
+			<span th:text="${incendio.IncendioRutaImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioAgua">IncendioAgua: </label>  
+			<span th:text="${incendio.IncendioAgua}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IncendioVidriofaltante">IncendioVidriofaltante: </label>  
+			<span th:text="${incendio.IncendioVidriofaltante}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdIncendio">IdIncendio: </label>  
+			<span th:text="${incendio.IdIncendio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${incendio.IdSeccionestacion}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/incendios}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/incendios/delete/{id}(id = ${incendio.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/incendios/edit/{id}(id = ${incendio.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

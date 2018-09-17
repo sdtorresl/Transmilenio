@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${mapa.id == null}">Agregar Mapa</h1>
+			<h1 th:if="${mapa.id != null}">Editar Mapa</h1>
+			<hr />
+
+			<form th:action="@{/mapas}" th:method="@{${mapa.id == null} ? 'post' : 'put'}" th:object="${mapa}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="MapaImagen">MapaImagen</label>  
+					<input id="MapaImagen" name="MapaImagen" type="text" class="form-control" th:field="*{MapaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdMapa">IdMapa</label>  
+					<input id="IdMapa" name="IdMapa" type="text" class="form-control" th:field="*{IdMapa}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MapaId">MapaId</label>  
+					<input id="MapaId" name="MapaId" type="text" class="form-control" th:field="*{MapaId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MapaAlto">MapaAlto</label>  
+					<input id="MapaAlto" name="MapaAlto" type="text" class="form-control" th:field="*{MapaAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MapaAncho">MapaAncho</label>  
+					<input id="MapaAncho" name="MapaAncho" type="text" class="form-control" th:field="*{MapaAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MapaCostado">MapaCostado</label>  
+					<input id="MapaCostado" name="MapaCostado" type="text" class="form-control" th:field="*{MapaCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MapaPlacamalestado">MapaPlacamalestado</label>  
+					<input id="MapaPlacamalestado" name="MapaPlacamalestado" type="text" class="form-control" th:field="*{MapaPlacamalestado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MapaPlacaperdidaelemento">MapaPlacaperdidaelemento</label>  
+					<input id="MapaPlacaperdidaelemento" name="MapaPlacaperdidaelemento" type="text" class="form-control" th:field="*{MapaPlacaperdidaelemento}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MapaPlacalegible">MapaPlacalegible</label>  
+					<input id="MapaPlacalegible" name="MapaPlacalegible" type="text" class="form-control" th:field="*{MapaPlacalegible}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MapaEsquemaaveria">MapaEsquemaaveria</label>  
+					<input id="MapaEsquemaaveria" name="MapaEsquemaaveria" type="text" class="form-control" th:field="*{MapaEsquemaaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MapaEsquemacontaminacion">MapaEsquemacontaminacion</label>  
+					<input id="MapaEsquemacontaminacion" name="MapaEsquemacontaminacion" type="text" class="form-control" th:field="*{MapaEsquemacontaminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MapaEsquemalegible">MapaEsquemalegible</label>  
+					<input id="MapaEsquemalegible" name="MapaEsquemalegible" type="text" class="form-control" th:field="*{MapaEsquemalegible}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="MapaRutaImagen">MapaRutaImagen</label>  
+					<input id="MapaRutaImagen" name="MapaRutaImagen" type="text" class="form-control" th:field="*{MapaRutaImagen}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/mapas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

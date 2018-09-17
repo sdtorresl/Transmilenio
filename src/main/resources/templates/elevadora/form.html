@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${elevadora.id == null}">Agregar Elevadora</h1>
+			<h1 th:if="${elevadora.id != null}">Editar Elevadora</h1>
+			<hr />
+
+			<form th:action="@{/elevadoras}" th:method="@{${elevadora.id == null} ? 'post' : 'put'}" th:object="${elevadora}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="ElevadoraPorcentajefisura">ElevadoraPorcentajefisura</label>  
+					<input id="ElevadoraPorcentajefisura" name="ElevadoraPorcentajefisura" type="text" class="form-control" th:field="*{ElevadoraPorcentajefisura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdElevadora">IdElevadora</label>  
+					<input id="IdElevadora" name="IdElevadora" type="text" class="form-control" th:field="*{IdElevadora}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ElevadoraId">ElevadoraId</label>  
+					<input id="ElevadoraId" name="ElevadoraId" type="text" class="form-control" th:field="*{ElevadoraId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ElevadoraUbicacion">ElevadoraUbicacion</label>  
+					<input id="ElevadoraUbicacion" name="ElevadoraUbicacion" type="text" class="form-control" th:field="*{ElevadoraUbicacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ElevadoraAveria">ElevadoraAveria</label>  
+					<input id="ElevadoraAveria" name="ElevadoraAveria" type="text" class="form-control" th:field="*{ElevadoraAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ElevadoraSinservicio">ElevadoraSinservicio</label>  
+					<input id="ElevadoraSinservicio" name="ElevadoraSinservicio" type="text" class="form-control" th:field="*{ElevadoraSinservicio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ElevadoraContaminacion">ElevadoraContaminacion</label>  
+					<input id="ElevadoraContaminacion" name="ElevadoraContaminacion" type="text" class="form-control" th:field="*{ElevadoraContaminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ElevadoraFisura">ElevadoraFisura</label>  
+					<input id="ElevadoraFisura" name="ElevadoraFisura" type="text" class="form-control" th:field="*{ElevadoraFisura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ElevadoraRutaImagen">ElevadoraRutaImagen</label>  
+					<input id="ElevadoraRutaImagen" name="ElevadoraRutaImagen" type="text" class="form-control" th:field="*{ElevadoraRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ElevadoraImagen">ElevadoraImagen</label>  
+					<input id="ElevadoraImagen" name="ElevadoraImagen" type="text" class="form-control" th:field="*{ElevadoraImagen}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/elevadoras}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Gamin</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${gamin.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="GaminId">GaminId: </label>  
+			<span th:text="${gamin.GaminId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="GaminLamina">GaminLamina: </label>  
+			<span th:text="${gamin.GaminLamina}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="GaminCelosia">GaminCelosia: </label>  
+			<span th:text="${gamin.GaminCelosia}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="GaminAveria">GaminAveria: </label>  
+			<span th:text="${gamin.GaminAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="GaminDoblado">GaminDoblado: </label>  
+			<span th:text="${gamin.GaminDoblado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="GaminRoto">GaminRoto: </label>  
+			<span th:text="${gamin.GaminRoto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="GaminExtraviado">GaminExtraviado: </label>  
+			<span th:text="${gamin.GaminExtraviado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdGamin">IdGamin: </label>  
+			<span th:text="${gamin.IdGamin}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/gamins}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/gamins/delete/{id}(id = ${gamin.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/gamins/edit/{id}(id = ${gamin.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

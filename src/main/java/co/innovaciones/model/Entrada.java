@@ -15,24 +15,33 @@ public class Entrada implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "inv_id_entrada")
 	private Integer id;
 
+    @Column(name = "inv_id_entrada")
+    private Double IdEntrada;
+
+    @Column(name = "inv_entrada_id")
+    private Double EntradaId;
+
     @Column(name = "inv_entrada_nivel")
-    private String nivel;
+    private String EntradaNivel;
 
     @Column(name = "inv_entrada_largo")
-    private Double largo;
+    private Double EntradaLargo;
 
     @Column(name = "inv_entrada_ancho")
-    private Double ancho;
+    private Double EntradaAncho;
 
-	public void setNivel(String nivel) {this.nivel = nivel;}
-	public String getNivel() {return nivel;}
-	public void setLargo(Double largo) {this.largo = largo;}
-	public Double getLargo() {return largo;}
-	public void setAncho(Double ancho) {this.ancho = ancho;}
-	public Double getAncho() {return ancho;}
+	public void setIdEntrada(Double IdEntrada) {this.IdEntrada = IdEntrada;}
+	public Double getIdEntrada() {return IdEntrada;}
+	public void setEntradaId(Double EntradaId) {this.EntradaId = EntradaId;}
+	public Double getEntradaId() {return EntradaId;}
+	public void setEntradaNivel(String EntradaNivel) {this.EntradaNivel = EntradaNivel;}
+	public String getEntradaNivel() {return EntradaNivel;}
+	public void setEntradaLargo(Double EntradaLargo) {this.EntradaLargo = EntradaLargo;}
+	public Double getEntradaLargo() {return EntradaLargo;}
+	public void setEntradaAncho(Double EntradaAncho) {this.EntradaAncho = EntradaAncho;}
+	public Double getEntradaAncho() {return EntradaAncho;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

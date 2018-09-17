@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${troncal.id == null}">Agregar Troncal</h1>
+			<h1 th:if="${troncal.id != null}">Editar Troncal</h1>
+			<hr />
+
+			<form th:action="@{/troncals}" th:method="@{${troncal.id == null} ? 'post' : 'put'}" th:object="${troncal}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdTroncal">IdTroncal</label>  
+					<input id="IdTroncal" name="IdTroncal" type="text" class="form-control" th:field="*{IdTroncal}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TroncalOrientacion">TroncalOrientacion</label>  
+					<input id="TroncalOrientacion" name="TroncalOrientacion" type="text" class="form-control" th:field="*{TroncalOrientacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TroncalZona">TroncalZona</label>  
+					<input id="TroncalZona" name="TroncalZona" type="text" class="form-control" th:field="*{TroncalZona}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TroncalNombre">TroncalNombre</label>  
+					<input id="TroncalNombre" name="TroncalNombre" type="text" class="form-control" th:field="*{TroncalNombre}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TroncalDescipcion">TroncalDescipcion</label>  
+					<input id="TroncalDescipcion" name="TroncalDescipcion" type="text" class="form-control" th:field="*{TroncalDescipcion}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/troncals}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

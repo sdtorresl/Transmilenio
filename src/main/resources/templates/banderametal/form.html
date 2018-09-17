@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${banderametal.id == null}">Agregar Banderametal</h1>
+			<h1 th:if="${banderametal.id != null}">Editar Banderametal</h1>
+			<hr />
+
+			<form th:action="@{/banderametals}" th:method="@{${banderametal.id == null} ? 'post' : 'put'}" th:object="${banderametal}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdBanderametal">IdBanderametal</label>  
+					<input id="IdBanderametal" name="IdBanderametal" type="text" class="form-control" th:field="*{IdBanderametal}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanderametalId">BanderametalId</label>  
+					<input id="BanderametalId" name="BanderametalId" type="text" class="form-control" th:field="*{BanderametalId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanderametalCostado">BanderametalCostado</label>  
+					<input id="BanderametalCostado" name="BanderametalCostado" type="text" class="form-control" th:field="*{BanderametalCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanderametalVagonnumero">BanderametalVagonnumero</label>  
+					<input id="BanderametalVagonnumero" name="BanderametalVagonnumero" type="text" class="form-control" th:field="*{BanderametalVagonnumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanderametalNumero">BanderametalNumero</label>  
+					<input id="BanderametalNumero" name="BanderametalNumero" type="text" class="form-control" th:field="*{BanderametalNumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanderametalDoblado">BanderametalDoblado</label>  
+					<input id="BanderametalDoblado" name="BanderametalDoblado" type="text" class="form-control" th:field="*{BanderametalDoblado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanderametalRoto">BanderametalRoto</label>  
+					<input id="BanderametalRoto" name="BanderametalRoto" type="text" class="form-control" th:field="*{BanderametalRoto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanderametalDesaparecido">BanderametalDesaparecido</label>  
+					<input id="BanderametalDesaparecido" name="BanderametalDesaparecido" type="text" class="form-control" th:field="*{BanderametalDesaparecido}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/banderametals}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

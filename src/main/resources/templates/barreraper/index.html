@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Barrerapers</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdBarreraper</th> 
+					<th>IdSeccionestacion</th> 
+					<th>BarreraperId</th> 
+					<th>BarreraperTipo</th> 
+					<th>BarreraperAltomenor</th> 
+					<th>BarreraperAltomayor</th> 
+					<th>BarreraperLargo</th> 
+					<th>BarreraperDistanciatubos</th> 
+					<th>BarreraperNumerotubos</th> 
+					<th>BarreraperAveria</th> 
+					<th>BarreraperPorcentajeaveria</th> 
+					<th>BarreraperDesintegravigacon</th> 
+					<th>BarreraperExposicionarmaduraacero</th> 
+					<th>BarreraperCorrosiontubo</th> 
+					<th>BarreraperCorrosiontubonumero</th> 
+					<th>BarreraperDesgastepintura</th> 
+					<th>BarreraperDesgastepinturanumero</th> 
+					<th>BarreraperPerdidatubo</th> 
+					<th>BarreraperPerdidatubonumero</th> 
+					<th>BarreraperPandeotubo</th> 
+					<th>BarreraperPandeotubotubonumero</th> 
+					<th>BarreraperUbicacion</th> 
+					<th>BarreraperRutaImagen</th> 
+					<th>BarreraperImagen</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="barreraper : ${listBarreraper}">
+										<td th:text="${barreraper.IdBarreraper}"></td> 
+					<td th:text="${barreraper.IdSeccionestacion}"></td> 
+					<td th:text="${barreraper.BarreraperId}"></td> 
+					<td th:text="${barreraper.BarreraperTipo}"></td> 
+					<td th:text="${barreraper.BarreraperAltomenor}"></td> 
+					<td th:text="${barreraper.BarreraperAltomayor}"></td> 
+					<td th:text="${barreraper.BarreraperLargo}"></td> 
+					<td th:text="${barreraper.BarreraperDistanciatubos}"></td> 
+					<td th:text="${barreraper.BarreraperNumerotubos}"></td> 
+					<td th:text="${barreraper.BarreraperAveria}"></td> 
+					<td th:text="${barreraper.BarreraperPorcentajeaveria}"></td> 
+					<td th:text="${barreraper.BarreraperDesintegravigacon}"></td> 
+					<td th:text="${barreraper.BarreraperExposicionarmaduraacero}"></td> 
+					<td th:text="${barreraper.BarreraperCorrosiontubo}"></td> 
+					<td th:text="${barreraper.BarreraperCorrosiontubonumero}"></td> 
+					<td th:text="${barreraper.BarreraperDesgastepintura}"></td> 
+					<td th:text="${barreraper.BarreraperDesgastepinturanumero}"></td> 
+					<td th:text="${barreraper.BarreraperPerdidatubo}"></td> 
+					<td th:text="${barreraper.BarreraperPerdidatubonumero}"></td> 
+					<td th:text="${barreraper.BarreraperPandeotubo}"></td> 
+					<td th:text="${barreraper.BarreraperPandeotubotubonumero}"></td> 
+					<td th:text="${barreraper.BarreraperUbicacion}"></td> 
+					<td th:text="${barreraper.BarreraperRutaImagen}"></td> 
+					<td th:text="${barreraper.BarreraperImagen}"></td> 
+					<td>
+							<a th:href="@{/barrerapers/{id}(id = ${barreraper.id})}">Show</a> 
+					 		<a th:href="@{/barrerapers/edit/{id}(id = ${barreraper.id})}">Edit</a> 
+							<a th:href="@{/barrerapers/delete/{id}(id = ${barreraper.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/barrerapers/{id}(id = ${barreraper.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/barrerapers/edit/{id}(id = ${barreraper.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/barrerapers/delete/{id}(id = ${barreraper.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/barrerapers/new}" class="btn btn-primary">Crear Barreraper</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

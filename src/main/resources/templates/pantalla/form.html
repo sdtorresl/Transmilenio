@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${pantalla.id == null}">Agregar Pantalla</h1>
+			<h1 th:if="${pantalla.id != null}">Editar Pantalla</h1>
+			<hr />
+
+			<form th:action="@{/pantallas}" th:method="@{${pantalla.id == null} ? 'post' : 'put'}" th:object="${pantalla}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="PantallaPorcentajemanchas">PantallaPorcentajemanchas</label>  
+					<input id="PantallaPorcentajemanchas" name="PantallaPorcentajemanchas" type="text" class="form-control" th:field="*{PantallaPorcentajemanchas}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PantallaFisura">PantallaFisura</label>  
+					<input id="PantallaFisura" name="PantallaFisura" type="text" class="form-control" th:field="*{PantallaFisura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PantallaSinservicio">PantallaSinservicio</label>  
+					<input id="PantallaSinservicio" name="PantallaSinservicio" type="text" class="form-control" th:field="*{PantallaSinservicio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PantallaNumero">PantallaNumero</label>  
+					<input id="PantallaNumero" name="PantallaNumero" type="text" class="form-control" th:field="*{PantallaNumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdPantalla">IdPantalla</label>  
+					<input id="IdPantalla" name="IdPantalla" type="text" class="form-control" th:field="*{IdPantalla}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PantallaCostado">PantallaCostado</label>  
+					<input id="PantallaCostado" name="PantallaCostado" type="text" class="form-control" th:field="*{PantallaCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PantallaAveria">PantallaAveria</label>  
+					<input id="PantallaAveria" name="PantallaAveria" type="text" class="form-control" th:field="*{PantallaAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PantallaManchas">PantallaManchas</label>  
+					<input id="PantallaManchas" name="PantallaManchas" type="text" class="form-control" th:field="*{PantallaManchas}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/pantallas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

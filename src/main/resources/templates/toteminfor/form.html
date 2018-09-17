@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${toteminfor.id == null}">Agregar Toteminfor</h1>
+			<h1 th:if="${toteminfor.id != null}">Editar Toteminfor</h1>
+			<hr />
+
+			<form th:action="@{/toteminfors}" th:method="@{${toteminfor.id == null} ? 'post' : 'put'}" th:object="${toteminfor}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="ToteminforDeformacion">ToteminforDeformacion</label>  
+					<input id="ToteminforDeformacion" name="ToteminforDeformacion" type="text" class="form-control" th:field="*{ToteminforDeformacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdTotem">IdTotem</label>  
+					<input id="IdTotem" name="IdTotem" type="text" class="form-control" th:field="*{IdTotem}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ToteminforId">ToteminforId</label>  
+					<input id="ToteminforId" name="ToteminforId" type="text" class="form-control" th:field="*{ToteminforId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ToteminforLongitud">ToteminforLongitud</label>  
+					<input id="ToteminforLongitud" name="ToteminforLongitud" type="text" class="form-control" th:field="*{ToteminforLongitud}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ToteminforAltura">ToteminforAltura</label>  
+					<input id="ToteminforAltura" name="ToteminforAltura" type="text" class="form-control" th:field="*{ToteminforAltura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ToteminforAveria">ToteminforAveria</label>  
+					<input id="ToteminforAveria" name="ToteminforAveria" type="text" class="form-control" th:field="*{ToteminforAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ToteminforPorcentajeaveria">ToteminforPorcentajeaveria</label>  
+					<input id="ToteminforPorcentajeaveria" name="ToteminforPorcentajeaveria" type="text" class="form-control" th:field="*{ToteminforPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ToteminforCorrosion">ToteminforCorrosion</label>  
+					<input id="ToteminforCorrosion" name="ToteminforCorrosion" type="text" class="form-control" th:field="*{ToteminforCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ToteminforPerdidaestrucmetal">ToteminforPerdidaestrucmetal</label>  
+					<input id="ToteminforPerdidaestrucmetal" name="ToteminforPerdidaestrucmetal" type="text" class="form-control" th:field="*{ToteminforPerdidaestrucmetal}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ToteminforContamivisual">ToteminforContamivisual</label>  
+					<input id="ToteminforContamivisual" name="ToteminforContamivisual" type="text" class="form-control" th:field="*{ToteminforContamivisual}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ToteminforFisuraestrucmetalica">ToteminforFisuraestrucmetalica</label>  
+					<input id="ToteminforFisuraestrucmetalica" name="ToteminforFisuraestrucmetalica" type="text" class="form-control" th:field="*{ToteminforFisuraestrucmetalica}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ToteminforAcrilicoausente">ToteminforAcrilicoausente</label>  
+					<input id="ToteminforAcrilicoausente" name="ToteminforAcrilicoausente" type="text" class="form-control" th:field="*{ToteminforAcrilicoausente}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ToteminforRutaImagen">ToteminforRutaImagen</label>  
+					<input id="ToteminforRutaImagen" name="ToteminforRutaImagen" type="text" class="form-control" th:field="*{ToteminforRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ToteminforImagen">ToteminforImagen</label>  
+					<input id="ToteminforImagen" name="ToteminforImagen" type="text" class="form-control" th:field="*{ToteminforImagen}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/toteminfors}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${bano.id == null}">Agregar Bano</h1>
+			<h1 th:if="${bano.id != null}">Editar Bano</h1>
+			<hr />
+
+			<form th:action="@{/banos}" th:method="@{${bano.id == null} ? 'post' : 'put'}" th:object="${bano}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="BanoBaldosfisurada">BanoBaldosfisurada</label>  
+					<input id="BanoBaldosfisurada" name="BanoBaldosfisurada" type="text" class="form-control" th:field="*{BanoBaldosfisurada}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdBano">IdBano</label>  
+					<input id="IdBano" name="IdBano" type="text" class="form-control" th:field="*{IdBano}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoId">BanoId</label>  
+					<input id="BanoId" name="BanoId" type="text" class="form-control" th:field="*{BanoId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoArea">BanoArea</label>  
+					<input id="BanoArea" name="BanoArea" type="text" class="form-control" th:field="*{BanoArea}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoSanitarios">BanoSanitarios</label>  
+					<input id="BanoSanitarios" name="BanoSanitarios" type="text" class="form-control" th:field="*{BanoSanitarios}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoLavamanos">BanoLavamanos</label>  
+					<input id="BanoLavamanos" name="BanoLavamanos" type="text" class="form-control" th:field="*{BanoLavamanos}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoEspejos">BanoEspejos</label>  
+					<input id="BanoEspejos" name="BanoEspejos" type="text" class="form-control" th:field="*{BanoEspejos}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoAveria">BanoAveria</label>  
+					<input id="BanoAveria" name="BanoAveria" type="text" class="form-control" th:field="*{BanoAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoPorcentajeaveria">BanoPorcentajeaveria</label>  
+					<input id="BanoPorcentajeaveria" name="BanoPorcentajeaveria" type="text" class="form-control" th:field="*{BanoPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoEnservicio">BanoEnservicio</label>  
+					<input id="BanoEnservicio" name="BanoEnservicio" type="text" class="form-control" th:field="*{BanoEnservicio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoEspejoRoto">BanoEspejoRoto</label>  
+					<input id="BanoEspejoRoto" name="BanoEspejoRoto" type="text" class="form-control" th:field="*{BanoEspejoRoto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoSinservicioinodoro">BanoSinservicioinodoro</label>  
+					<input id="BanoSinservicioinodoro" name="BanoSinservicioinodoro" type="text" class="form-control" th:field="*{BanoSinservicioinodoro}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoOrinales">BanoOrinales</label>  
+					<input id="BanoOrinales" name="BanoOrinales" type="text" class="form-control" th:field="*{BanoOrinales}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoSinservicioorinal">BanoSinservicioorinal</label>  
+					<input id="BanoSinservicioorinal" name="BanoSinservicioorinal" type="text" class="form-control" th:field="*{BanoSinservicioorinal}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoRutaImagen">BanoRutaImagen</label>  
+					<input id="BanoRutaImagen" name="BanoRutaImagen" type="text" class="form-control" th:field="*{BanoRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="BanoImagen">BanoImagen</label>  
+					<input id="BanoImagen" name="BanoImagen" type="text" class="form-control" th:field="*{BanoImagen}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/banos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

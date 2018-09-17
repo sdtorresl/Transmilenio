@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Neopreno</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="NeoprenoId">NeoprenoId: </label>  
+			<span th:text="${neopreno.NeoprenoId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="NeoprenoDesprendido">NeoprenoDesprendido: </label>  
+			<span th:text="${neopreno.NeoprenoDesprendido}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="NeoprenoInexistente">NeoprenoInexistente: </label>  
+			<span th:text="${neopreno.NeoprenoInexistente}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="NeoprenoFisurado">NeoprenoFisurado: </label>  
+			<span th:text="${neopreno.NeoprenoFisurado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="NeoprenoDesgaste">NeoprenoDesgaste: </label>  
+			<span th:text="${neopreno.NeoprenoDesgaste}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdNeopreno">IdNeopreno: </label>  
+			<span th:text="${neopreno.IdNeopreno}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="NeoprenoAveria">NeoprenoAveria: </label>  
+			<span th:text="${neopreno.NeoprenoAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="NeoprenoCuadrado">NeoprenoCuadrado: </label>  
+			<span th:text="${neopreno.NeoprenoCuadrado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="NeoprenoSemicircular">NeoprenoSemicircular: </label>  
+			<span th:text="${neopreno.NeoprenoSemicircular}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="NeoprenoLargo">NeoprenoLargo: </label>  
+			<span th:text="${neopreno.NeoprenoLargo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="NeoprenoAncho">NeoprenoAncho: </label>  
+			<span th:text="${neopreno.NeoprenoAncho}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="NeoprenoCostado">NeoprenoCostado: </label>  
+			<span th:text="${neopreno.NeoprenoCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${neopreno.IdSeccionestacion}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/neoprenos}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/neoprenos/delete/{id}(id = ${neopreno.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/neoprenos/edit/{id}(id = ${neopreno.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${ciclopar.id == null}">Agregar Ciclopar</h1>
+			<h1 th:if="${ciclopar.id != null}">Editar Ciclopar</h1>
+			<hr />
+
+			<form th:action="@{/ciclopars}" th:method="@{${ciclopar.id == null} ? 'post' : 'put'}" th:object="${ciclopar}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="CicloparTechoindependiente">CicloparTechoindependiente</label>  
+					<input id="CicloparTechoindependiente" name="CicloparTechoindependiente" type="text" class="form-control" th:field="*{CicloparTechoindependiente}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CicloparRutaImagen">CicloparRutaImagen</label>  
+					<input id="CicloparRutaImagen" name="CicloparRutaImagen" type="text" class="form-control" th:field="*{CicloparRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CicloparImagen">CicloparImagen</label>  
+					<input id="CicloparImagen" name="CicloparImagen" type="text" class="form-control" th:field="*{CicloparImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CicloparArea">CicloparArea</label>  
+					<input id="CicloparArea" name="CicloparArea" type="text" class="form-control" th:field="*{CicloparArea}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdCiclopar">IdCiclopar</label>  
+					<input id="IdCiclopar" name="IdCiclopar" type="text" class="form-control" th:field="*{IdCiclopar}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CicloparId">CicloparId</label>  
+					<input id="CicloparId" name="CicloparId" type="text" class="form-control" th:field="*{CicloparId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CicloparCapacidad">CicloparCapacidad</label>  
+					<input id="CicloparCapacidad" name="CicloparCapacidad" type="text" class="form-control" th:field="*{CicloparCapacidad}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CicloparAreacubierta">CicloparAreacubierta</label>  
+					<input id="CicloparAreacubierta" name="CicloparAreacubierta" type="text" class="form-control" th:field="*{CicloparAreacubierta}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CicloparTiporack">CicloparTiporack</label>  
+					<input id="CicloparTiporack" name="CicloparTiporack" type="text" class="form-control" th:field="*{CicloparTiporack}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/ciclopars}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

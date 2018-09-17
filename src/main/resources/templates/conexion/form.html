@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${conexion.id == null}">Agregar Conexion</h1>
+			<h1 th:if="${conexion.id != null}">Editar Conexion</h1>
+			<hr />
+
+			<form th:action="@{/conexions}" th:method="@{${conexion.id == null} ? 'post' : 'put'}" th:object="${conexion}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="ConexionElevacion">ConexionElevacion</label>  
+					<input id="ConexionElevacion" name="ConexionElevacion" type="text" class="form-control" th:field="*{ConexionElevacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdConexion">IdConexion</label>  
+					<input id="IdConexion" name="IdConexion" type="text" class="form-control" th:field="*{IdConexion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ConexionId">ConexionId</label>  
+					<input id="ConexionId" name="ConexionId" type="text" class="form-control" th:field="*{ConexionId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ConexionNumero">ConexionNumero</label>  
+					<input id="ConexionNumero" name="ConexionNumero" type="text" class="form-control" th:field="*{ConexionNumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ConexionTipo">ConexionTipo</label>  
+					<input id="ConexionTipo" name="ConexionTipo" type="text" class="form-control" th:field="*{ConexionTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ConexionLargo">ConexionLargo</label>  
+					<input id="ConexionLargo" name="ConexionLargo" type="text" class="form-control" th:field="*{ConexionLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ConexionAncho">ConexionAncho</label>  
+					<input id="ConexionAncho" name="ConexionAncho" type="text" class="form-control" th:field="*{ConexionAncho}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/conexions}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Evacuacions</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdEvacuacion</th> 
+					<th>EvacuacionId</th> 
+					<th>IdSeccionestacion</th> 
+					<th>EvacuacionAveria</th> 
+					<th>EvacuacionMalestado</th> 
+					<th>EvacuacionLegible</th> 
+					<th>EvacuacionPerdida</th> 
+					<th>EvacuacionTipologia</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="evacuacion : ${listEvacuacion}">
+										<td th:text="${evacuacion.IdEvacuacion}"></td> 
+					<td th:text="${evacuacion.EvacuacionId}"></td> 
+					<td th:text="${evacuacion.IdSeccionestacion}"></td> 
+					<td th:text="${evacuacion.EvacuacionAveria}"></td> 
+					<td th:text="${evacuacion.EvacuacionMalestado}"></td> 
+					<td th:text="${evacuacion.EvacuacionLegible}"></td> 
+					<td th:text="${evacuacion.EvacuacionPerdida}"></td> 
+					<td th:text="${evacuacion.EvacuacionTipologia}"></td> 
+					<td>
+							<a th:href="@{/evacuacions/{id}(id = ${evacuacion.id})}">Show</a> 
+					 		<a th:href="@{/evacuacions/edit/{id}(id = ${evacuacion.id})}">Edit</a> 
+							<a th:href="@{/evacuacions/delete/{id}(id = ${evacuacion.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/evacuacions/{id}(id = ${evacuacion.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/evacuacions/edit/{id}(id = ${evacuacion.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/evacuacions/delete/{id}(id = ${evacuacion.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/evacuacions/new}" class="btn btn-primary">Crear Evacuacion</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

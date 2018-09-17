@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${compensacion.id == null}">Agregar Compensacion</h1>
+			<h1 th:if="${compensacion.id != null}">Editar Compensacion</h1>
+			<hr />
+
+			<form th:action="@{/compensacions}" th:method="@{${compensacion.id == null} ? 'post' : 'put'}" th:object="${compensacion}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CompensacionPotenciareactiva">CompensacionPotenciareactiva</label>  
+					<input id="CompensacionPotenciareactiva" name="CompensacionPotenciareactiva" type="text" class="form-control" th:field="*{CompensacionPotenciareactiva}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CompensacionTension">CompensacionTension</label>  
+					<input id="CompensacionTension" name="CompensacionTension" type="text" class="form-control" th:field="*{CompensacionTension}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CompensacionCapacidad">CompensacionCapacidad</label>  
+					<input id="CompensacionCapacidad" name="CompensacionCapacidad" type="text" class="form-control" th:field="*{CompensacionCapacidad}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CompensacionUbicacion">CompensacionUbicacion</label>  
+					<input id="CompensacionUbicacion" name="CompensacionUbicacion" type="text" class="form-control" th:field="*{CompensacionUbicacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CompensacionAveria">CompensacionAveria</label>  
+					<input id="CompensacionAveria" name="CompensacionAveria" type="text" class="form-control" th:field="*{CompensacionAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CompensacionGabinetecorrosion">CompensacionGabinetecorrosion</label>  
+					<input id="CompensacionGabinetecorrosion" name="CompensacionGabinetecorrosion" type="text" class="form-control" th:field="*{CompensacionGabinetecorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CompensacionGabinetecorrosionarea">CompensacionGabinetecorrosionarea</label>  
+					<input id="CompensacionGabinetecorrosionarea" name="CompensacionGabinetecorrosionarea" type="text" class="form-control" th:field="*{CompensacionGabinetecorrosionarea}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CompensacionCablesderretidos">CompensacionCablesderretidos</label>  
+					<input id="CompensacionCablesderretidos" name="CompensacionCablesderretidos" type="text" class="form-control" th:field="*{CompensacionCablesderretidos}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CompensacionRutaImagen">CompensacionRutaImagen</label>  
+					<input id="CompensacionRutaImagen" name="CompensacionRutaImagen" type="text" class="form-control" th:field="*{CompensacionRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CompensacionImagen">CompensacionImagen</label>  
+					<input id="CompensacionImagen" name="CompensacionImagen" type="text" class="form-control" th:field="*{CompensacionImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdCompensacion">IdCompensacion</label>  
+					<input id="IdCompensacion" name="IdCompensacion" type="text" class="form-control" th:field="*{IdCompensacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CompensacionId">CompensacionId</label>  
+					<input id="CompensacionId" name="CompensacionId" type="text" class="form-control" th:field="*{CompensacionId}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/compensacions}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

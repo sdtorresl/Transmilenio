@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${poste.id == null}">Agregar Poste</h1>
+			<h1 th:if="${poste.id != null}">Editar Poste</h1>
+			<hr />
+
+			<form th:action="@{/postes}" th:method="@{${poste.id == null} ? 'post' : 'put'}" th:object="${poste}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="PosteTipo">PosteTipo</label>  
+					<input id="PosteTipo" name="PosteTipo" type="text" class="form-control" th:field="*{PosteTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PosteDeformacion">PosteDeformacion</label>  
+					<input id="PosteDeformacion" name="PosteDeformacion" type="text" class="form-control" th:field="*{PosteDeformacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PosteCorrosion">PosteCorrosion</label>  
+					<input id="PosteCorrosion" name="PosteCorrosion" type="text" class="form-control" th:field="*{PosteCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PosteContaminacion">PosteContaminacion</label>  
+					<input id="PosteContaminacion" name="PosteContaminacion" type="text" class="form-control" th:field="*{PosteContaminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PostePintura">PostePintura</label>  
+					<input id="PostePintura" name="PostePintura" type="text" class="form-control" th:field="*{PostePintura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PostePerdida">PostePerdida</label>  
+					<input id="PostePerdida" name="PostePerdida" type="text" class="form-control" th:field="*{PostePerdida}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdPoste">IdPoste</label>  
+					<input id="IdPoste" name="IdPoste" type="text" class="form-control" th:field="*{IdPoste}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PostePorcentajeaveria">PostePorcentajeaveria</label>  
+					<input id="PostePorcentajeaveria" name="PostePorcentajeaveria" type="text" class="form-control" th:field="*{PostePorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PosteId">PosteId</label>  
+					<input id="PosteId" name="PosteId" type="text" class="form-control" th:field="*{PosteId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PosteAveria">PosteAveria</label>  
+					<input id="PosteAveria" name="PosteAveria" type="text" class="form-control" th:field="*{PosteAveria}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/postes}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

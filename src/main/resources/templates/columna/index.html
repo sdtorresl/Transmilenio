@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Columnas</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>ColumnaFisura</th> 
+					<th>IdColumna</th> 
+					<th>ColumnaDescascaramiento</th> 
+					<th>ColumnaPorcentajeaveria</th> 
+					<th>ColumnaTipo</th> 
+					<th>ColumnaAveria</th> 
+					<th>ColumnaPerimetro</th> 
+					<th>ColumnaId</th> 
+					<th>IdSeccionestacion</th> 
+					<th>ColumnaGrieta</th> 
+					<th>ColumnaCorrosion</th> 
+					<th>ColumnaDeformacion</th> 
+					<th>ColumnaPerdida</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="columna : ${listColumna}">
+										<td th:text="${columna.ColumnaFisura}"></td> 
+					<td th:text="${columna.IdColumna}"></td> 
+					<td th:text="${columna.ColumnaDescascaramiento}"></td> 
+					<td th:text="${columna.ColumnaPorcentajeaveria}"></td> 
+					<td th:text="${columna.ColumnaTipo}"></td> 
+					<td th:text="${columna.ColumnaAveria}"></td> 
+					<td th:text="${columna.ColumnaPerimetro}"></td> 
+					<td th:text="${columna.ColumnaId}"></td> 
+					<td th:text="${columna.IdSeccionestacion}"></td> 
+					<td th:text="${columna.ColumnaGrieta}"></td> 
+					<td th:text="${columna.ColumnaCorrosion}"></td> 
+					<td th:text="${columna.ColumnaDeformacion}"></td> 
+					<td th:text="${columna.ColumnaPerdida}"></td> 
+					<td>
+							<a th:href="@{/columnas/{id}(id = ${columna.id})}">Show</a> 
+					 		<a th:href="@{/columnas/edit/{id}(id = ${columna.id})}">Edit</a> 
+							<a th:href="@{/columnas/delete/{id}(id = ${columna.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/columnas/{id}(id = ${columna.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/columnas/edit/{id}(id = ${columna.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/columnas/delete/{id}(id = ${columna.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/columnas/new}" class="btn btn-primary">Crear Columna</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

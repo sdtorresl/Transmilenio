@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${celosia.id == null}">Agregar Celosia</h1>
+			<h1 th:if="${celosia.id != null}">Editar Celosia</h1>
+			<hr />
+
+			<form th:action="@{/celosias}" th:method="@{${celosia.id == null} ? 'post' : 'put'}" th:object="${celosia}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="CelosiaId">CelosiaId</label>  
+					<input id="CelosiaId" name="CelosiaId" type="text" class="form-control" th:field="*{CelosiaId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdCelosia">IdCelosia</label>  
+					<input id="IdCelosia" name="IdCelosia" type="text" class="form-control" th:field="*{IdCelosia}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaCostado">CelosiaCostado</label>  
+					<input id="CelosiaCostado" name="CelosiaCostado" type="text" class="form-control" th:field="*{CelosiaCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaTipo">CelosiaTipo</label>  
+					<input id="CelosiaTipo" name="CelosiaTipo" type="text" class="form-control" th:field="*{CelosiaTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaAlto">CelosiaAlto</label>  
+					<input id="CelosiaAlto" name="CelosiaAlto" type="text" class="form-control" th:field="*{CelosiaAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaAveria">CelosiaAveria</label>  
+					<input id="CelosiaAveria" name="CelosiaAveria" type="text" class="form-control" th:field="*{CelosiaAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaPorcentajeaveria">CelosiaPorcentajeaveria</label>  
+					<input id="CelosiaPorcentajeaveria" name="CelosiaPorcentajeaveria" type="text" class="form-control" th:field="*{CelosiaPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaCorrosion">CelosiaCorrosion</label>  
+					<input id="CelosiaCorrosion" name="CelosiaCorrosion" type="text" class="form-control" th:field="*{CelosiaCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaDesgastepintura">CelosiaDesgastepintura</label>  
+					<input id="CelosiaDesgastepintura" name="CelosiaDesgastepintura" type="text" class="form-control" th:field="*{CelosiaDesgastepintura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaTubofaltante">CelosiaTubofaltante</label>  
+					<input id="CelosiaTubofaltante" name="CelosiaTubofaltante" type="text" class="form-control" th:field="*{CelosiaTubofaltante}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaPiezasfaltante">CelosiaPiezasfaltante</label>  
+					<input id="CelosiaPiezasfaltante" name="CelosiaPiezasfaltante" type="text" class="form-control" th:field="*{CelosiaPiezasfaltante}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaContaminacionvisual">CelosiaContaminacionvisual</label>  
+					<input id="CelosiaContaminacionvisual" name="CelosiaContaminacionvisual" type="text" class="form-control" th:field="*{CelosiaContaminacionvisual}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaObservacion">CelosiaObservacion</label>  
+					<input id="CelosiaObservacion" name="CelosiaObservacion" type="text" class="form-control" th:field="*{CelosiaObservacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaLargo">CelosiaLargo</label>  
+					<input id="CelosiaLargo" name="CelosiaLargo" type="text" class="form-control" th:field="*{CelosiaLargo}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/celosias}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Barreraper</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="IdBarreraper">IdBarreraper: </label>  
+			<span th:text="${barreraper.IdBarreraper}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${barreraper.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperId">BarreraperId: </label>  
+			<span th:text="${barreraper.BarreraperId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperTipo">BarreraperTipo: </label>  
+			<span th:text="${barreraper.BarreraperTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperAltomenor">BarreraperAltomenor: </label>  
+			<span th:text="${barreraper.BarreraperAltomenor}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperAltomayor">BarreraperAltomayor: </label>  
+			<span th:text="${barreraper.BarreraperAltomayor}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperLargo">BarreraperLargo: </label>  
+			<span th:text="${barreraper.BarreraperLargo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperDistanciatubos">BarreraperDistanciatubos: </label>  
+			<span th:text="${barreraper.BarreraperDistanciatubos}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperNumerotubos">BarreraperNumerotubos: </label>  
+			<span th:text="${barreraper.BarreraperNumerotubos}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperAveria">BarreraperAveria: </label>  
+			<span th:text="${barreraper.BarreraperAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperPorcentajeaveria">BarreraperPorcentajeaveria: </label>  
+			<span th:text="${barreraper.BarreraperPorcentajeaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperDesintegravigacon">BarreraperDesintegravigacon: </label>  
+			<span th:text="${barreraper.BarreraperDesintegravigacon}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperExposicionarmaduraacero">BarreraperExposicionarmaduraacero: </label>  
+			<span th:text="${barreraper.BarreraperExposicionarmaduraacero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperCorrosiontubo">BarreraperCorrosiontubo: </label>  
+			<span th:text="${barreraper.BarreraperCorrosiontubo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperCorrosiontubonumero">BarreraperCorrosiontubonumero: </label>  
+			<span th:text="${barreraper.BarreraperCorrosiontubonumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperDesgastepintura">BarreraperDesgastepintura: </label>  
+			<span th:text="${barreraper.BarreraperDesgastepintura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperDesgastepinturanumero">BarreraperDesgastepinturanumero: </label>  
+			<span th:text="${barreraper.BarreraperDesgastepinturanumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperPerdidatubo">BarreraperPerdidatubo: </label>  
+			<span th:text="${barreraper.BarreraperPerdidatubo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperPerdidatubonumero">BarreraperPerdidatubonumero: </label>  
+			<span th:text="${barreraper.BarreraperPerdidatubonumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperPandeotubo">BarreraperPandeotubo: </label>  
+			<span th:text="${barreraper.BarreraperPandeotubo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperPandeotubotubonumero">BarreraperPandeotubotubonumero: </label>  
+			<span th:text="${barreraper.BarreraperPandeotubotubonumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperUbicacion">BarreraperUbicacion: </label>  
+			<span th:text="${barreraper.BarreraperUbicacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperRutaImagen">BarreraperRutaImagen: </label>  
+			<span th:text="${barreraper.BarreraperRutaImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarreraperImagen">BarreraperImagen: </label>  
+			<span th:text="${barreraper.BarreraperImagen}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/barrerapers}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/barrerapers/delete/{id}(id = ${barreraper.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/barrerapers/edit/{id}(id = ${barreraper.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

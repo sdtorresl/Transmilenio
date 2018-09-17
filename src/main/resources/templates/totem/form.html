@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${totem.id == null}">Agregar Totem</h1>
+			<h1 th:if="${totem.id != null}">Editar Totem</h1>
+			<hr />
+
+			<form th:action="@{/totems}" th:method="@{${totem.id == null} ? 'post' : 'put'}" th:object="${totem}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="TotemImagen">TotemImagen</label>  
+					<input id="TotemImagen" name="TotemImagen" type="text" class="form-control" th:field="*{TotemImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemRutaImagen">TotemRutaImagen</label>  
+					<input id="TotemRutaImagen" name="TotemRutaImagen" type="text" class="form-control" th:field="*{TotemRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemDesprendimiento">TotemDesprendimiento</label>  
+					<input id="TotemDesprendimiento" name="TotemDesprendimiento" type="text" class="form-control" th:field="*{TotemDesprendimiento}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemDeterioroPinturaepoxica">TotemDeterioroPinturaepoxica</label>  
+					<input id="TotemDeterioroPinturaepoxica" name="TotemDeterioroPinturaepoxica" type="text" class="form-control" th:field="*{TotemDeterioroPinturaepoxica}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemPerdidaLegibilidad">TotemPerdidaLegibilidad</label>  
+					<input id="TotemPerdidaLegibilidad" name="TotemPerdidaLegibilidad" type="text" class="form-control" th:field="*{TotemPerdidaLegibilidad}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemContaminacion">TotemContaminacion</label>  
+					<input id="TotemContaminacion" name="TotemContaminacion" type="text" class="form-control" th:field="*{TotemContaminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemCorrosion">TotemCorrosion</label>  
+					<input id="TotemCorrosion" name="TotemCorrosion" type="text" class="form-control" th:field="*{TotemCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemAbolladura">TotemAbolladura</label>  
+					<input id="TotemAbolladura" name="TotemAbolladura" type="text" class="form-control" th:field="*{TotemAbolladura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemPorcentajeaveria">TotemPorcentajeaveria</label>  
+					<input id="TotemPorcentajeaveria" name="TotemPorcentajeaveria" type="text" class="form-control" th:field="*{TotemPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemAveria">TotemAveria</label>  
+					<input id="TotemAveria" name="TotemAveria" type="text" class="form-control" th:field="*{TotemAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemLargo">TotemLargo</label>  
+					<input id="TotemLargo" name="TotemLargo" type="text" class="form-control" th:field="*{TotemLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemAlto">TotemAlto</label>  
+					<input id="TotemAlto" name="TotemAlto" type="text" class="form-control" th:field="*{TotemAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemAncho">TotemAncho</label>  
+					<input id="TotemAncho" name="TotemAncho" type="text" class="form-control" th:field="*{TotemAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TotemId">TotemId</label>  
+					<input id="TotemId" name="TotemId" type="text" class="form-control" th:field="*{TotemId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdTotem">IdTotem</label>  
+					<input id="IdTotem" name="IdTotem" type="text" class="form-control" th:field="*{IdTotem}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/totems}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

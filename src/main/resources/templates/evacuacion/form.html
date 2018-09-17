@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${evacuacion.id == null}">Agregar Evacuacion</h1>
+			<h1 th:if="${evacuacion.id != null}">Editar Evacuacion</h1>
+			<hr />
+
+			<form th:action="@{/evacuacions}" th:method="@{${evacuacion.id == null} ? 'post' : 'put'}" th:object="${evacuacion}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdEvacuacion">IdEvacuacion</label>  
+					<input id="IdEvacuacion" name="IdEvacuacion" type="text" class="form-control" th:field="*{IdEvacuacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EvacuacionId">EvacuacionId</label>  
+					<input id="EvacuacionId" name="EvacuacionId" type="text" class="form-control" th:field="*{EvacuacionId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EvacuacionAveria">EvacuacionAveria</label>  
+					<input id="EvacuacionAveria" name="EvacuacionAveria" type="text" class="form-control" th:field="*{EvacuacionAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EvacuacionMalestado">EvacuacionMalestado</label>  
+					<input id="EvacuacionMalestado" name="EvacuacionMalestado" type="text" class="form-control" th:field="*{EvacuacionMalestado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EvacuacionLegible">EvacuacionLegible</label>  
+					<input id="EvacuacionLegible" name="EvacuacionLegible" type="text" class="form-control" th:field="*{EvacuacionLegible}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EvacuacionPerdida">EvacuacionPerdida</label>  
+					<input id="EvacuacionPerdida" name="EvacuacionPerdida" type="text" class="form-control" th:field="*{EvacuacionPerdida}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EvacuacionTipologia">EvacuacionTipologia</label>  
+					<input id="EvacuacionTipologia" name="EvacuacionTipologia" type="text" class="form-control" th:field="*{EvacuacionTipologia}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/evacuacions}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

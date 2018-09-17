@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Toteminfor</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="ToteminforDeformacion">ToteminforDeformacion: </label>  
+			<span th:text="${toteminfor.ToteminforDeformacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdTotem">IdTotem: </label>  
+			<span th:text="${toteminfor.IdTotem}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${toteminfor.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ToteminforId">ToteminforId: </label>  
+			<span th:text="${toteminfor.ToteminforId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ToteminforLongitud">ToteminforLongitud: </label>  
+			<span th:text="${toteminfor.ToteminforLongitud}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ToteminforAltura">ToteminforAltura: </label>  
+			<span th:text="${toteminfor.ToteminforAltura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ToteminforAveria">ToteminforAveria: </label>  
+			<span th:text="${toteminfor.ToteminforAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ToteminforPorcentajeaveria">ToteminforPorcentajeaveria: </label>  
+			<span th:text="${toteminfor.ToteminforPorcentajeaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ToteminforCorrosion">ToteminforCorrosion: </label>  
+			<span th:text="${toteminfor.ToteminforCorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ToteminforPerdidaestrucmetal">ToteminforPerdidaestrucmetal: </label>  
+			<span th:text="${toteminfor.ToteminforPerdidaestrucmetal}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ToteminforContamivisual">ToteminforContamivisual: </label>  
+			<span th:text="${toteminfor.ToteminforContamivisual}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ToteminforFisuraestrucmetalica">ToteminforFisuraestrucmetalica: </label>  
+			<span th:text="${toteminfor.ToteminforFisuraestrucmetalica}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ToteminforAcrilicoausente">ToteminforAcrilicoausente: </label>  
+			<span th:text="${toteminfor.ToteminforAcrilicoausente}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ToteminforRutaImagen">ToteminforRutaImagen: </label>  
+			<span th:text="${toteminfor.ToteminforRutaImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ToteminforImagen">ToteminforImagen: </label>  
+			<span th:text="${toteminfor.ToteminforImagen}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/toteminfors}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/toteminfors/delete/{id}(id = ${toteminfor.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/toteminfors/edit/{id}(id = ${toteminfor.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

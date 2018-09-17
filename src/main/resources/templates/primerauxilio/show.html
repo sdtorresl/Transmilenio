@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Primerauxilio</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="PrimerauxilioTipo">PrimerauxilioTipo: </label>  
+			<span th:text="${primerauxilio.PrimerauxilioTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PrimerauxilioBotiquincorrosion">PrimerauxilioBotiquincorrosion: </label>  
+			<span th:text="${primerauxilio.PrimerauxilioBotiquincorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PrimerauxilioBotiquinanclaje">PrimerauxilioBotiquinanclaje: </label>  
+			<span th:text="${primerauxilio.PrimerauxilioBotiquinanclaje}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PrimerauxilioBotiquinvencido">PrimerauxilioBotiquinvencido: </label>  
+			<span th:text="${primerauxilio.PrimerauxilioBotiquinvencido}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PrimerauxilioBotiquinfalta">PrimerauxilioBotiquinfalta: </label>  
+			<span th:text="${primerauxilio.PrimerauxilioBotiquinfalta}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PrimerauxilioCamillacerradura">PrimerauxilioCamillacerradura: </label>  
+			<span th:text="${primerauxilio.PrimerauxilioCamillacerradura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PrimerauxilioCamillaanclaje">PrimerauxilioCamillaanclaje: </label>  
+			<span th:text="${primerauxilio.PrimerauxilioCamillaanclaje}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PrimerauxilioCamillaaveria">PrimerauxilioCamillaaveria: </label>  
+			<span th:text="${primerauxilio.PrimerauxilioCamillaaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PrimerauxilioCamilladesaparece">PrimerauxilioCamilladesaparece: </label>  
+			<span th:text="${primerauxilio.PrimerauxilioCamilladesaparece}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PrimerauxilioCostado">PrimerauxilioCostado: </label>  
+			<span th:text="${primerauxilio.PrimerauxilioCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PrimerauxilioId">PrimerauxilioId: </label>  
+			<span th:text="${primerauxilio.PrimerauxilioId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${primerauxilio.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdPrimerauxilio">IdPrimerauxilio: </label>  
+			<span th:text="${primerauxilio.IdPrimerauxilio}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/primerauxilios}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/primerauxilios/delete/{id}(id = ${primerauxilio.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/primerauxilios/edit/{id}(id = ${primerauxilio.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

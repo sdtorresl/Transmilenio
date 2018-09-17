@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${transformador.id == null}">Agregar Transformador</h1>
+			<h1 th:if="${transformador.id != null}">Editar Transformador</h1>
+			<hr />
+
+			<form th:action="@{/transformadors}" th:method="@{${transformador.id == null} ? 'post' : 'put'}" th:object="${transformador}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="TransformadorCablederretido">TransformadorCablederretido</label>  
+					<input id="TransformadorCablederretido" name="TransformadorCablederretido" type="text" class="form-control" th:field="*{TransformadorCablederretido}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransformadorId">TransformadorId</label>  
+					<input id="TransformadorId" name="TransformadorId" type="text" class="form-control" th:field="*{TransformadorId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransformadorPotencia">TransformadorPotencia</label>  
+					<input id="TransformadorPotencia" name="TransformadorPotencia" type="text" class="form-control" th:field="*{TransformadorPotencia}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransformadorPrimario">TransformadorPrimario</label>  
+					<input id="TransformadorPrimario" name="TransformadorPrimario" type="text" class="form-control" th:field="*{TransformadorPrimario}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransformadorSecundario">TransformadorSecundario</label>  
+					<input id="TransformadorSecundario" name="TransformadorSecundario" type="text" class="form-control" th:field="*{TransformadorSecundario}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransformadorUbicacion">TransformadorUbicacion</label>  
+					<input id="TransformadorUbicacion" name="TransformadorUbicacion" type="text" class="form-control" th:field="*{TransformadorUbicacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransformadorAveria">TransformadorAveria</label>  
+					<input id="TransformadorAveria" name="TransformadorAveria" type="text" class="form-control" th:field="*{TransformadorAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransformadorGabinetecorrosion">TransformadorGabinetecorrosion</label>  
+					<input id="TransformadorGabinetecorrosion" name="TransformadorGabinetecorrosion" type="text" class="form-control" th:field="*{TransformadorGabinetecorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransformadorGabinetecorrosionarea">TransformadorGabinetecorrosionarea</label>  
+					<input id="TransformadorGabinetecorrosionarea" name="TransformadorGabinetecorrosionarea" type="text" class="form-control" th:field="*{TransformadorGabinetecorrosionarea}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransformadorImagen">TransformadorImagen</label>  
+					<input id="TransformadorImagen" name="TransformadorImagen" type="text" class="form-control" th:field="*{TransformadorImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdTransformador">IdTransformador</label>  
+					<input id="IdTransformador" name="IdTransformador" type="text" class="form-control" th:field="*{IdTransformador}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/transformadors}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

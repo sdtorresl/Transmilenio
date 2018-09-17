@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Sillas</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>SillaLargo</th> 
+					<th>SillaId</th> 
+					<th>IdSeccionestacion</th> 
+					<th>IdSilla</th> 
+					<th>SillaFaltante</th> 
+					<th>SillaCarbonatacion</th> 
+					<th>SillaDesintegracion</th> 
+					<th>SillaPandeo</th> 
+					<th>SillaPandeoEstructura</th> 
+					<th>SillaAlto</th> 
+					<th>SillaAveria</th> 
+					<th>SillaCorrosion</th> 
+					<th>SillaAncho</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="silla : ${listSilla}">
+										<td th:text="${silla.SillaLargo}"></td> 
+					<td th:text="${silla.SillaId}"></td> 
+					<td th:text="${silla.IdSeccionestacion}"></td> 
+					<td th:text="${silla.IdSilla}"></td> 
+					<td th:text="${silla.SillaFaltante}"></td> 
+					<td th:text="${silla.SillaCarbonatacion}"></td> 
+					<td th:text="${silla.SillaDesintegracion}"></td> 
+					<td th:text="${silla.SillaPandeo}"></td> 
+					<td th:text="${silla.SillaPandeoEstructura}"></td> 
+					<td th:text="${silla.SillaAlto}"></td> 
+					<td th:text="${silla.SillaAveria}"></td> 
+					<td th:text="${silla.SillaCorrosion}"></td> 
+					<td th:text="${silla.SillaAncho}"></td> 
+					<td>
+							<a th:href="@{/sillas/{id}(id = ${silla.id})}">Show</a> 
+					 		<a th:href="@{/sillas/edit/{id}(id = ${silla.id})}">Edit</a> 
+							<a th:href="@{/sillas/delete/{id}(id = ${silla.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/sillas/{id}(id = ${silla.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/sillas/edit/{id}(id = ${silla.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/sillas/delete/{id}(id = ${silla.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/sillas/new}" class="btn btn-primary">Crear Silla</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${ascensor.id == null}">Agregar Ascensor</h1>
+			<h1 th:if="${ascensor.id != null}">Editar Ascensor</h1>
+			<hr />
+
+			<form th:action="@{/ascensors}" th:method="@{${ascensor.id == null} ? 'post' : 'put'}" th:object="${ascensor}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdAscensor">IdAscensor</label>  
+					<input id="IdAscensor" name="IdAscensor" type="text" class="form-control" th:field="*{IdAscensor}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AscensorId">AscensorId</label>  
+					<input id="AscensorId" name="AscensorId" type="text" class="form-control" th:field="*{AscensorId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AscensorMarca">AscensorMarca</label>  
+					<input id="AscensorMarca" name="AscensorMarca" type="text" class="form-control" th:field="*{AscensorMarca}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AscensorAveriapuerta">AscensorAveriapuerta</label>  
+					<input id="AscensorAveriapuerta" name="AscensorAveriapuerta" type="text" class="form-control" th:field="*{AscensorAveriapuerta}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AscensorAveriatablero">AscensorAveriatablero</label>  
+					<input id="AscensorAveriatablero" name="AscensorAveriatablero" type="text" class="form-control" th:field="*{AscensorAveriatablero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AscensorSincronizacion">AscensorSincronizacion</label>  
+					<input id="AscensorSincronizacion" name="AscensorSincronizacion" type="text" class="form-control" th:field="*{AscensorSincronizacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AscensorEmision">AscensorEmision</label>  
+					<input id="AscensorEmision" name="AscensorEmision" type="text" class="form-control" th:field="*{AscensorEmision}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AscensorAverialuz">AscensorAverialuz</label>  
+					<input id="AscensorAverialuz" name="AscensorAverialuz" type="text" class="form-control" th:field="*{AscensorAverialuz}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AscensorFisuravidrio">AscensorFisuravidrio</label>  
+					<input id="AscensorFisuravidrio" name="AscensorFisuravidrio" type="text" class="form-control" th:field="*{AscensorFisuravidrio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AscensorSinservicio">AscensorSinservicio</label>  
+					<input id="AscensorSinservicio" name="AscensorSinservicio" type="text" class="form-control" th:field="*{AscensorSinservicio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AscensorRutaImagen">AscensorRutaImagen</label>  
+					<input id="AscensorRutaImagen" name="AscensorRutaImagen" type="text" class="form-control" th:field="*{AscensorRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AscensorImagen">AscensorImagen</label>  
+					<input id="AscensorImagen" name="AscensorImagen" type="text" class="form-control" th:field="*{AscensorImagen}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/ascensors}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

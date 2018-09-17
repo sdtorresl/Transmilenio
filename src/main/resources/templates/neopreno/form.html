@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${neopreno.id == null}">Agregar Neopreno</h1>
+			<h1 th:if="${neopreno.id != null}">Editar Neopreno</h1>
+			<hr />
+
+			<form th:action="@{/neoprenos}" th:method="@{${neopreno.id == null} ? 'post' : 'put'}" th:object="${neopreno}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="NeoprenoId">NeoprenoId</label>  
+					<input id="NeoprenoId" name="NeoprenoId" type="text" class="form-control" th:field="*{NeoprenoId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="NeoprenoDesprendido">NeoprenoDesprendido</label>  
+					<input id="NeoprenoDesprendido" name="NeoprenoDesprendido" type="text" class="form-control" th:field="*{NeoprenoDesprendido}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="NeoprenoInexistente">NeoprenoInexistente</label>  
+					<input id="NeoprenoInexistente" name="NeoprenoInexistente" type="text" class="form-control" th:field="*{NeoprenoInexistente}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="NeoprenoFisurado">NeoprenoFisurado</label>  
+					<input id="NeoprenoFisurado" name="NeoprenoFisurado" type="text" class="form-control" th:field="*{NeoprenoFisurado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="NeoprenoDesgaste">NeoprenoDesgaste</label>  
+					<input id="NeoprenoDesgaste" name="NeoprenoDesgaste" type="text" class="form-control" th:field="*{NeoprenoDesgaste}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdNeopreno">IdNeopreno</label>  
+					<input id="IdNeopreno" name="IdNeopreno" type="text" class="form-control" th:field="*{IdNeopreno}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="NeoprenoAveria">NeoprenoAveria</label>  
+					<input id="NeoprenoAveria" name="NeoprenoAveria" type="text" class="form-control" th:field="*{NeoprenoAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="NeoprenoCuadrado">NeoprenoCuadrado</label>  
+					<input id="NeoprenoCuadrado" name="NeoprenoCuadrado" type="text" class="form-control" th:field="*{NeoprenoCuadrado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="NeoprenoSemicircular">NeoprenoSemicircular</label>  
+					<input id="NeoprenoSemicircular" name="NeoprenoSemicircular" type="text" class="form-control" th:field="*{NeoprenoSemicircular}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="NeoprenoLargo">NeoprenoLargo</label>  
+					<input id="NeoprenoLargo" name="NeoprenoLargo" type="text" class="form-control" th:field="*{NeoprenoLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="NeoprenoAncho">NeoprenoAncho</label>  
+					<input id="NeoprenoAncho" name="NeoprenoAncho" type="text" class="form-control" th:field="*{NeoprenoAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="NeoprenoCostado">NeoprenoCostado</label>  
+					<input id="NeoprenoCostado" name="NeoprenoCostado" type="text" class="form-control" th:field="*{NeoprenoCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/neoprenos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Publicidads</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>PublicidadFisuravidrio</th> 
+					<th>IdPublicidad</th> 
+					<th>IdSeccionestacion</th> 
+					<th>VentilacionId</th> 
+					<th>PublicidadAlto</th> 
+					<th>PublicidadAncho</th> 
+					<th>PublicidadCostado</th> 
+					<th>PublicidadAveria</th> 
+					<th>PublicidadDeteriorometalico</th> 
+					<th>PublicidadIluminacion</th> 
+					<th>PublicidadParpadeoluz</th> 
+					<th>PublicidadSinvidrio</th> 
+					<th>PublicidadDeteriorovidrio</th> 
+					<th>PublicidadContaminacionvisual</th> 
+					<th>PublicidadConpublicidad</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="publicidad : ${listPublicidad}">
+										<td th:text="${publicidad.PublicidadFisuravidrio}"></td> 
+					<td th:text="${publicidad.IdPublicidad}"></td> 
+					<td th:text="${publicidad.IdSeccionestacion}"></td> 
+					<td th:text="${publicidad.VentilacionId}"></td> 
+					<td th:text="${publicidad.PublicidadAlto}"></td> 
+					<td th:text="${publicidad.PublicidadAncho}"></td> 
+					<td th:text="${publicidad.PublicidadCostado}"></td> 
+					<td th:text="${publicidad.PublicidadAveria}"></td> 
+					<td th:text="${publicidad.PublicidadDeteriorometalico}"></td> 
+					<td th:text="${publicidad.PublicidadIluminacion}"></td> 
+					<td th:text="${publicidad.PublicidadParpadeoluz}"></td> 
+					<td th:text="${publicidad.PublicidadSinvidrio}"></td> 
+					<td th:text="${publicidad.PublicidadDeteriorovidrio}"></td> 
+					<td th:text="${publicidad.PublicidadContaminacionvisual}"></td> 
+					<td th:text="${publicidad.PublicidadConpublicidad}"></td> 
+					<td>
+							<a th:href="@{/publicidads/{id}(id = ${publicidad.id})}">Show</a> 
+					 		<a th:href="@{/publicidads/edit/{id}(id = ${publicidad.id})}">Edit</a> 
+							<a th:href="@{/publicidads/delete/{id}(id = ${publicidad.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/publicidads/{id}(id = ${publicidad.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/publicidads/edit/{id}(id = ${publicidad.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/publicidads/delete/{id}(id = ${publicidad.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/publicidads/new}" class="btn btn-primary">Crear Publicidad</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

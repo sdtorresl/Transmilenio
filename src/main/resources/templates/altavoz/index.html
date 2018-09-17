@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Altavozs</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdSeccionestacion</th> 
+					<th>AltavozPartesfaltantes</th> 
+					<th>AltavozDesaparecido</th> 
+					<th>AltavozCostado</th> 
+					<th>IdAltavoz</th> 
+					<th>AltavozAveria</th> 
+					<th>AltavozId</th> 
+					<th>AltavozAveriasoporte</th> 
+					<th>AltavozContaminacion</th> 
+					<th>AltavozPorcentajecontaminacion</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="altavoz : ${listAltavoz}">
+										<td th:text="${altavoz.IdSeccionestacion}"></td> 
+					<td th:text="${altavoz.AltavozPartesfaltantes}"></td> 
+					<td th:text="${altavoz.AltavozDesaparecido}"></td> 
+					<td th:text="${altavoz.AltavozCostado}"></td> 
+					<td th:text="${altavoz.IdAltavoz}"></td> 
+					<td th:text="${altavoz.AltavozAveria}"></td> 
+					<td th:text="${altavoz.AltavozId}"></td> 
+					<td th:text="${altavoz.AltavozAveriasoporte}"></td> 
+					<td th:text="${altavoz.AltavozContaminacion}"></td> 
+					<td th:text="${altavoz.AltavozPorcentajecontaminacion}"></td> 
+					<td>
+							<a th:href="@{/altavozs/{id}(id = ${altavoz.id})}">Show</a> 
+					 		<a th:href="@{/altavozs/edit/{id}(id = ${altavoz.id})}">Edit</a> 
+							<a th:href="@{/altavozs/delete/{id}(id = ${altavoz.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/altavozs/{id}(id = ${altavoz.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/altavozs/edit/{id}(id = ${altavoz.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/altavozs/delete/{id}(id = ${altavoz.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/altavozs/new}" class="btn btn-primary">Crear Altavoz</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

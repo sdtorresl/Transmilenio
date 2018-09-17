@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${primerauxilio.id == null}">Agregar Primerauxilio</h1>
+			<h1 th:if="${primerauxilio.id != null}">Editar Primerauxilio</h1>
+			<hr />
+
+			<form th:action="@{/primerauxilios}" th:method="@{${primerauxilio.id == null} ? 'post' : 'put'}" th:object="${primerauxilio}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="PrimerauxilioTipo">PrimerauxilioTipo</label>  
+					<input id="PrimerauxilioTipo" name="PrimerauxilioTipo" type="text" class="form-control" th:field="*{PrimerauxilioTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PrimerauxilioBotiquincorrosion">PrimerauxilioBotiquincorrosion</label>  
+					<input id="PrimerauxilioBotiquincorrosion" name="PrimerauxilioBotiquincorrosion" type="text" class="form-control" th:field="*{PrimerauxilioBotiquincorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PrimerauxilioBotiquinanclaje">PrimerauxilioBotiquinanclaje</label>  
+					<input id="PrimerauxilioBotiquinanclaje" name="PrimerauxilioBotiquinanclaje" type="text" class="form-control" th:field="*{PrimerauxilioBotiquinanclaje}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PrimerauxilioBotiquinvencido">PrimerauxilioBotiquinvencido</label>  
+					<input id="PrimerauxilioBotiquinvencido" name="PrimerauxilioBotiquinvencido" type="text" class="form-control" th:field="*{PrimerauxilioBotiquinvencido}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PrimerauxilioBotiquinfalta">PrimerauxilioBotiquinfalta</label>  
+					<input id="PrimerauxilioBotiquinfalta" name="PrimerauxilioBotiquinfalta" type="text" class="form-control" th:field="*{PrimerauxilioBotiquinfalta}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PrimerauxilioCamillacerradura">PrimerauxilioCamillacerradura</label>  
+					<input id="PrimerauxilioCamillacerradura" name="PrimerauxilioCamillacerradura" type="text" class="form-control" th:field="*{PrimerauxilioCamillacerradura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PrimerauxilioCamillaanclaje">PrimerauxilioCamillaanclaje</label>  
+					<input id="PrimerauxilioCamillaanclaje" name="PrimerauxilioCamillaanclaje" type="text" class="form-control" th:field="*{PrimerauxilioCamillaanclaje}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PrimerauxilioCamillaaveria">PrimerauxilioCamillaaveria</label>  
+					<input id="PrimerauxilioCamillaaveria" name="PrimerauxilioCamillaaveria" type="text" class="form-control" th:field="*{PrimerauxilioCamillaaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PrimerauxilioCamilladesaparece">PrimerauxilioCamilladesaparece</label>  
+					<input id="PrimerauxilioCamilladesaparece" name="PrimerauxilioCamilladesaparece" type="text" class="form-control" th:field="*{PrimerauxilioCamilladesaparece}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PrimerauxilioCostado">PrimerauxilioCostado</label>  
+					<input id="PrimerauxilioCostado" name="PrimerauxilioCostado" type="text" class="form-control" th:field="*{PrimerauxilioCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PrimerauxilioId">PrimerauxilioId</label>  
+					<input id="PrimerauxilioId" name="PrimerauxilioId" type="text" class="form-control" th:field="*{PrimerauxilioId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdPrimerauxilio">IdPrimerauxilio</label>  
+					<input id="IdPrimerauxilio" name="IdPrimerauxilio" type="text" class="form-control" th:field="*{IdPrimerauxilio}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/primerauxilios}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

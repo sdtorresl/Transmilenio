@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Pasamanos</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>PasamanoCorrosion</th> 
+					<th>IdPasamano</th> 
+					<th>IdSeccionestacion</th> 
+					<th>PasamanoId</th> 
+					<th>PasamanoCostado</th> 
+					<th>PasamanoLargo</th> 
+					<th>PasamanoAlto</th> 
+					<th>PasamanoLongitudmodulo</th> 
+					<th>PasamanoNumeromodulos</th> 
+					<th>PasamanoAveria</th> 
+					<th>PasamanoPorcentajeaveria</th> 
+					<th>PasamanoSoldaduraaveria</th> 
+					<th>PasamanoPiezafaltante</th> 
+					<th>PasamanoAbolladuras</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="pasamano : ${listPasamano}">
+										<td th:text="${pasamano.PasamanoCorrosion}"></td> 
+					<td th:text="${pasamano.IdPasamano}"></td> 
+					<td th:text="${pasamano.IdSeccionestacion}"></td> 
+					<td th:text="${pasamano.PasamanoId}"></td> 
+					<td th:text="${pasamano.PasamanoCostado}"></td> 
+					<td th:text="${pasamano.PasamanoLargo}"></td> 
+					<td th:text="${pasamano.PasamanoAlto}"></td> 
+					<td th:text="${pasamano.PasamanoLongitudmodulo}"></td> 
+					<td th:text="${pasamano.PasamanoNumeromodulos}"></td> 
+					<td th:text="${pasamano.PasamanoAveria}"></td> 
+					<td th:text="${pasamano.PasamanoPorcentajeaveria}"></td> 
+					<td th:text="${pasamano.PasamanoSoldaduraaveria}"></td> 
+					<td th:text="${pasamano.PasamanoPiezafaltante}"></td> 
+					<td th:text="${pasamano.PasamanoAbolladuras}"></td> 
+					<td>
+							<a th:href="@{/pasamanos/{id}(id = ${pasamano.id})}">Show</a> 
+					 		<a th:href="@{/pasamanos/edit/{id}(id = ${pasamano.id})}">Edit</a> 
+							<a th:href="@{/pasamanos/delete/{id}(id = ${pasamano.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/pasamanos/{id}(id = ${pasamano.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/pasamanos/edit/{id}(id = ${pasamano.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/pasamanos/delete/{id}(id = ${pasamano.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/pasamanos/new}" class="btn btn-primary">Crear Pasamano</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

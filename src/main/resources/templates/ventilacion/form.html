@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${ventilacion.id == null}">Agregar Ventilacion</h1>
+			<h1 th:if="${ventilacion.id != null}">Editar Ventilacion</h1>
+			<hr />
+
+			<form th:action="@{/ventilacions}" th:method="@{${ventilacion.id == null} ? 'post' : 'put'}" th:object="${ventilacion}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="VentilacionTipo">VentilacionTipo</label>  
+					<input id="VentilacionTipo" name="VentilacionTipo" type="text" class="form-control" th:field="*{VentilacionTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VentilacionId">VentilacionId</label>  
+					<input id="VentilacionId" name="VentilacionId" type="text" class="form-control" th:field="*{VentilacionId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdVentilacion">IdVentilacion</label>  
+					<input id="IdVentilacion" name="IdVentilacion" type="text" class="form-control" th:field="*{IdVentilacion}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/ventilacions}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

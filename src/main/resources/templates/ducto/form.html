@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${ducto.id == null}">Agregar Ducto</h1>
+			<h1 th:if="${ducto.id != null}">Editar Ducto</h1>
+			<hr />
+
+			<form th:action="@{/ductos}" th:method="@{${ducto.id == null} ? 'post' : 'put'}" th:object="${ducto}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdDucto">IdDucto</label>  
+					<input id="IdDucto" name="IdDucto" type="text" class="form-control" th:field="*{IdDucto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="DuctoId">DuctoId</label>  
+					<input id="DuctoId" name="DuctoId" type="text" class="form-control" th:field="*{DuctoId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="DuctoTipo">DuctoTipo</label>  
+					<input id="DuctoTipo" name="DuctoTipo" type="text" class="form-control" th:field="*{DuctoTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="DuctoCorrosion">DuctoCorrosion</label>  
+					<input id="DuctoCorrosion" name="DuctoCorrosion" type="text" class="form-control" th:field="*{DuctoCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="DuctoFisura">DuctoFisura</label>  
+					<input id="DuctoFisura" name="DuctoFisura" type="text" class="form-control" th:field="*{DuctoFisura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="DuctoPieza">DuctoPieza</label>  
+					<input id="DuctoPieza" name="DuctoPieza" type="text" class="form-control" th:field="*{DuctoPieza}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/ductos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

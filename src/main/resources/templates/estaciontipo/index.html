@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Estaciontipos</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdEstaciontipo</th> 
+					<th>EstaciontipoIntercambio</th> 
+					<th>EstaciontipoDescripcion</th> 
+					<th>EstaciontipoNombre</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="estaciontipo : ${listEstaciontipo}">
+										<td th:text="${estaciontipo.IdEstaciontipo}"></td> 
+					<td th:text="${estaciontipo.EstaciontipoIntercambio}"></td> 
+					<td th:text="${estaciontipo.EstaciontipoDescripcion}"></td> 
+					<td th:text="${estaciontipo.EstaciontipoNombre}"></td> 
+					<td>
+							<a th:href="@{/estaciontipos/{id}(id = ${estaciontipo.id})}">Show</a> 
+					 		<a th:href="@{/estaciontipos/edit/{id}(id = ${estaciontipo.id})}">Edit</a> 
+							<a th:href="@{/estaciontipos/delete/{id}(id = ${estaciontipo.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/estaciontipos/{id}(id = ${estaciontipo.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/estaciontipos/edit/{id}(id = ${estaciontipo.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/estaciontipos/delete/{id}(id = ${estaciontipo.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/estaciontipos/new}" class="btn btn-primary">Crear Estaciontipo</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

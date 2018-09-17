@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${puerta.id == null}">Agregar Puerta</h1>
+			<h1 th:if="${puerta.id != null}">Editar Puerta</h1>
+			<hr />
+
+			<form th:action="@{/puertas}" th:method="@{${puerta.id == null} ? 'post' : 'put'}" th:object="${puerta}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdPuerta">IdPuerta</label>  
+					<input id="IdPuerta" name="IdPuerta" type="text" class="form-control" th:field="*{IdPuerta}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaId">PuertaId</label>  
+					<input id="PuertaId" name="PuertaId" type="text" class="form-control" th:field="*{PuertaId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaTipo">PuertaTipo</label>  
+					<input id="PuertaTipo" name="PuertaTipo" type="text" class="form-control" th:field="*{PuertaTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaAncho">PuertaAncho</label>  
+					<input id="PuertaAncho" name="PuertaAncho" type="text" class="form-control" th:field="*{PuertaAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaAveria">PuertaAveria</label>  
+					<input id="PuertaAveria" name="PuertaAveria" type="text" class="form-control" th:field="*{PuertaAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaPorcentajeaveria">PuertaPorcentajeaveria</label>  
+					<input id="PuertaPorcentajeaveria" name="PuertaPorcentajeaveria" type="text" class="form-control" th:field="*{PuertaPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaRejaMetalicaRota">PuertaRejaMetalicaRota</label>  
+					<input id="PuertaRejaMetalicaRota" name="PuertaRejaMetalicaRota" type="text" class="form-control" th:field="*{PuertaRejaMetalicaRota}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaAveriaCierre">PuertaAveriaCierre</label>  
+					<input id="PuertaAveriaCierre" name="PuertaAveriaCierre" type="text" class="form-control" th:field="*{PuertaAveriaCierre}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaContaVisual">PuertaContaVisual</label>  
+					<input id="PuertaContaVisual" name="PuertaContaVisual" type="text" class="form-control" th:field="*{PuertaContaVisual}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaDescolgada">PuertaDescolgada</label>  
+					<input id="PuertaDescolgada" name="PuertaDescolgada" type="text" class="form-control" th:field="*{PuertaDescolgada}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaFaltabisagra">PuertaFaltabisagra</label>  
+					<input id="PuertaFaltabisagra" name="PuertaFaltabisagra" type="text" class="form-control" th:field="*{PuertaFaltabisagra}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaCorrosion">PuertaCorrosion</label>  
+					<input id="PuertaCorrosion" name="PuertaCorrosion" type="text" class="form-control" th:field="*{PuertaCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaPerdida">PuertaPerdida</label>  
+					<input id="PuertaPerdida" name="PuertaPerdida" type="text" class="form-control" th:field="*{PuertaPerdida}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaMalestado">PuertaMalestado</label>  
+					<input id="PuertaMalestado" name="PuertaMalestado" type="text" class="form-control" th:field="*{PuertaMalestado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertaAlto">PuertaAlto</label>  
+					<input id="PuertaAlto" name="PuertaAlto" type="text" class="form-control" th:field="*{PuertaAlto}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/puertas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

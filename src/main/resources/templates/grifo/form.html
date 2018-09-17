@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${grifo.id == null}">Agregar Grifo</h1>
+			<h1 th:if="${grifo.id != null}">Editar Grifo</h1>
+			<hr />
+
+			<form th:action="@{/grifos}" th:method="@{${grifo.id == null} ? 'post' : 'put'}" th:object="${grifo}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdGrifo">IdGrifo</label>  
+					<input id="IdGrifo" name="IdGrifo" type="text" class="form-control" th:field="*{IdGrifo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="GrifoId">GrifoId</label>  
+					<input id="GrifoId" name="GrifoId" type="text" class="form-control" th:field="*{GrifoId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="GrifoCostado">GrifoCostado</label>  
+					<input id="GrifoCostado" name="GrifoCostado" type="text" class="form-control" th:field="*{GrifoCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="GrifoAveria">GrifoAveria</label>  
+					<input id="GrifoAveria" name="GrifoAveria" type="text" class="form-control" th:field="*{GrifoAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="GrifoCorrosion">GrifoCorrosion</label>  
+					<input id="GrifoCorrosion" name="GrifoCorrosion" type="text" class="form-control" th:field="*{GrifoCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="GrifoEscapeagua">GrifoEscapeagua</label>  
+					<input id="GrifoEscapeagua" name="GrifoEscapeagua" type="text" class="form-control" th:field="*{GrifoEscapeagua}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="GrifoSinagua">GrifoSinagua</label>  
+					<input id="GrifoSinagua" name="GrifoSinagua" type="text" class="form-control" th:field="*{GrifoSinagua}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="GrifoFaltantes">GrifoFaltantes</label>  
+					<input id="GrifoFaltantes" name="GrifoFaltantes" type="text" class="form-control" th:field="*{GrifoFaltantes}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/grifos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

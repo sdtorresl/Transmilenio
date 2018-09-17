@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Mapas</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>MapaImagen</th> 
+					<th>IdMapa</th> 
+					<th>IdSeccionestacion</th> 
+					<th>MapaId</th> 
+					<th>MapaAlto</th> 
+					<th>MapaAncho</th> 
+					<th>MapaCostado</th> 
+					<th>MapaPlacamalestado</th> 
+					<th>MapaPlacaperdidaelemento</th> 
+					<th>MapaPlacalegible</th> 
+					<th>MapaEsquemaaveria</th> 
+					<th>MapaEsquemacontaminacion</th> 
+					<th>MapaEsquemalegible</th> 
+					<th>MapaRutaImagen</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="mapa : ${listMapa}">
+										<td th:text="${mapa.MapaImagen}"></td> 
+					<td th:text="${mapa.IdMapa}"></td> 
+					<td th:text="${mapa.IdSeccionestacion}"></td> 
+					<td th:text="${mapa.MapaId}"></td> 
+					<td th:text="${mapa.MapaAlto}"></td> 
+					<td th:text="${mapa.MapaAncho}"></td> 
+					<td th:text="${mapa.MapaCostado}"></td> 
+					<td th:text="${mapa.MapaPlacamalestado}"></td> 
+					<td th:text="${mapa.MapaPlacaperdidaelemento}"></td> 
+					<td th:text="${mapa.MapaPlacalegible}"></td> 
+					<td th:text="${mapa.MapaEsquemaaveria}"></td> 
+					<td th:text="${mapa.MapaEsquemacontaminacion}"></td> 
+					<td th:text="${mapa.MapaEsquemalegible}"></td> 
+					<td th:text="${mapa.MapaRutaImagen}"></td> 
+					<td>
+							<a th:href="@{/mapas/{id}(id = ${mapa.id})}">Show</a> 
+					 		<a th:href="@{/mapas/edit/{id}(id = ${mapa.id})}">Edit</a> 
+							<a th:href="@{/mapas/delete/{id}(id = ${mapa.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/mapas/{id}(id = ${mapa.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/mapas/edit/{id}(id = ${mapa.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/mapas/delete/{id}(id = ${mapa.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/mapas/new}" class="btn btn-primary">Crear Mapa</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

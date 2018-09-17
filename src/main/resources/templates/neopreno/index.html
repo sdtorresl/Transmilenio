@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Neoprenos</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>NeoprenoId</th> 
+					<th>NeoprenoDesprendido</th> 
+					<th>NeoprenoInexistente</th> 
+					<th>NeoprenoFisurado</th> 
+					<th>NeoprenoDesgaste</th> 
+					<th>IdNeopreno</th> 
+					<th>NeoprenoAveria</th> 
+					<th>NeoprenoCuadrado</th> 
+					<th>NeoprenoSemicircular</th> 
+					<th>NeoprenoLargo</th> 
+					<th>NeoprenoAncho</th> 
+					<th>NeoprenoCostado</th> 
+					<th>IdSeccionestacion</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="neopreno : ${listNeopreno}">
+										<td th:text="${neopreno.NeoprenoId}"></td> 
+					<td th:text="${neopreno.NeoprenoDesprendido}"></td> 
+					<td th:text="${neopreno.NeoprenoInexistente}"></td> 
+					<td th:text="${neopreno.NeoprenoFisurado}"></td> 
+					<td th:text="${neopreno.NeoprenoDesgaste}"></td> 
+					<td th:text="${neopreno.IdNeopreno}"></td> 
+					<td th:text="${neopreno.NeoprenoAveria}"></td> 
+					<td th:text="${neopreno.NeoprenoCuadrado}"></td> 
+					<td th:text="${neopreno.NeoprenoSemicircular}"></td> 
+					<td th:text="${neopreno.NeoprenoLargo}"></td> 
+					<td th:text="${neopreno.NeoprenoAncho}"></td> 
+					<td th:text="${neopreno.NeoprenoCostado}"></td> 
+					<td th:text="${neopreno.IdSeccionestacion}"></td> 
+					<td>
+							<a th:href="@{/neoprenos/{id}(id = ${neopreno.id})}">Show</a> 
+					 		<a th:href="@{/neoprenos/edit/{id}(id = ${neopreno.id})}">Edit</a> 
+							<a th:href="@{/neoprenos/delete/{id}(id = ${neopreno.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/neoprenos/{id}(id = ${neopreno.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/neoprenos/edit/{id}(id = ${neopreno.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/neoprenos/delete/{id}(id = ${neopreno.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/neoprenos/new}" class="btn btn-primary">Crear Neopreno</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

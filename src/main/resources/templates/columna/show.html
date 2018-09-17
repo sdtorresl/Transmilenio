@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Columna</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="ColumnaFisura">ColumnaFisura: </label>  
+			<span th:text="${columna.ColumnaFisura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdColumna">IdColumna: </label>  
+			<span th:text="${columna.IdColumna}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ColumnaDescascaramiento">ColumnaDescascaramiento: </label>  
+			<span th:text="${columna.ColumnaDescascaramiento}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ColumnaPorcentajeaveria">ColumnaPorcentajeaveria: </label>  
+			<span th:text="${columna.ColumnaPorcentajeaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ColumnaTipo">ColumnaTipo: </label>  
+			<span th:text="${columna.ColumnaTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ColumnaAveria">ColumnaAveria: </label>  
+			<span th:text="${columna.ColumnaAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ColumnaPerimetro">ColumnaPerimetro: </label>  
+			<span th:text="${columna.ColumnaPerimetro}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ColumnaId">ColumnaId: </label>  
+			<span th:text="${columna.ColumnaId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${columna.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ColumnaGrieta">ColumnaGrieta: </label>  
+			<span th:text="${columna.ColumnaGrieta}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ColumnaCorrosion">ColumnaCorrosion: </label>  
+			<span th:text="${columna.ColumnaCorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ColumnaDeformacion">ColumnaDeformacion: </label>  
+			<span th:text="${columna.ColumnaDeformacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="ColumnaPerdida">ColumnaPerdida: </label>  
+			<span th:text="${columna.ColumnaPerdida}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/columnas}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/columnas/delete/{id}(id = ${columna.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/columnas/edit/{id}(id = ${columna.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

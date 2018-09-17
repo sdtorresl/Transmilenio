@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Ciclopar</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="CicloparTechoindependiente">CicloparTechoindependiente: </label>  
+			<span th:text="${ciclopar.CicloparTechoindependiente}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CicloparRutaImagen">CicloparRutaImagen: </label>  
+			<span th:text="${ciclopar.CicloparRutaImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CicloparImagen">CicloparImagen: </label>  
+			<span th:text="${ciclopar.CicloparImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CicloparArea">CicloparArea: </label>  
+			<span th:text="${ciclopar.CicloparArea}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdCiclopar">IdCiclopar: </label>  
+			<span th:text="${ciclopar.IdCiclopar}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${ciclopar.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CicloparId">CicloparId: </label>  
+			<span th:text="${ciclopar.CicloparId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CicloparCapacidad">CicloparCapacidad: </label>  
+			<span th:text="${ciclopar.CicloparCapacidad}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CicloparAreacubierta">CicloparAreacubierta: </label>  
+			<span th:text="${ciclopar.CicloparAreacubierta}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CicloparTiporack">CicloparTiporack: </label>  
+			<span th:text="${ciclopar.CicloparTiporack}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/ciclopars}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/ciclopars/delete/{id}(id = ${ciclopar.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/ciclopars/edit/{id}(id = ${ciclopar.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Barandaentrada</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="IdBarandaentrada">IdBarandaentrada: </label>  
+			<span th:text="${barandaentrada.IdBarandaentrada}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${barandaentrada.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarandaentradaId">BarandaentradaId: </label>  
+			<span th:text="${barandaentrada.BarandaentradaId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarandaentradaCostado">BarandaentradaCostado: </label>  
+			<span th:text="${barandaentrada.BarandaentradaCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarandaentradaLargo">BarandaentradaLargo: </label>  
+			<span th:text="${barandaentrada.BarandaentradaLargo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarandaentradaAlto">BarandaentradaAlto: </label>  
+			<span th:text="${barandaentrada.BarandaentradaAlto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarandaentradaMalestado">BarandaentradaMalestado: </label>  
+			<span th:text="${barandaentrada.BarandaentradaMalestado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarandaentradaRayones">BarandaentradaRayones: </label>  
+			<span th:text="${barandaentrada.BarandaentradaRayones}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarandaentradaFisura">BarandaentradaFisura: </label>  
+			<span th:text="${barandaentrada.BarandaentradaFisura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarandaentradaContaminacion">BarandaentradaContaminacion: </label>  
+			<span th:text="${barandaentrada.BarandaentradaContaminacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarandaentradaDesaparicionvidrio">BarandaentradaDesaparicionvidrio: </label>  
+			<span th:text="${barandaentrada.BarandaentradaDesaparicionvidrio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarandaentradaSinclar">BarandaentradaSinclar: </label>  
+			<span th:text="${barandaentrada.BarandaentradaSinclar}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarandaentradaPerdida">BarandaentradaPerdida: </label>  
+			<span th:text="${barandaentrada.BarandaentradaPerdida}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/barandaentradas}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/barandaentradas/delete/{id}(id = ${barandaentrada.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/barandaentradas/edit/{id}(id = ${barandaentrada.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

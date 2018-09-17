@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Barrerapasamano</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="IdBarrerapasamano">IdBarrerapasamano: </label>  
+			<span th:text="${barrerapasamano.IdBarrerapasamano}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${barrerapasamano.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoId">BarrerapasamanoId: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoCostado">BarrerapasamanoCostado: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoLargo">BarrerapasamanoLargo: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoLargo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoAlto">BarrerapasamanoAlto: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoAlto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoNumeromodulos">BarrerapasamanoNumeromodulos: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoNumeromodulos}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoLongitudmodulos">BarrerapasamanoLongitudmodulos: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoLongitudmodulos}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoAlturamodulo">BarrerapasamanoAlturamodulo: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoAlturamodulo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoTipo">BarrerapasamanoTipo: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoAveria">BarrerapasamanoAveria: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoPorcentajeaveria">BarrerapasamanoPorcentajeaveria: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoPorcentajeaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoCorrosion">BarrerapasamanoCorrosion: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoCorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoAbolladuras">BarrerapasamanoAbolladuras: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoAbolladuras}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoPintura">BarrerapasamanoPintura: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoPintura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoTubofaltante">BarrerapasamanoTubofaltante: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoTubofaltante}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoContaminacion">BarrerapasamanoContaminacion: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoContaminacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BarrerapasamanoSoldadura">BarrerapasamanoSoldadura: </label>  
+			<span th:text="${barrerapasamano.BarrerapasamanoSoldadura}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/barrerapasamanos}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/barrerapasamanos/delete/{id}(id = ${barrerapasamano.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/barrerapasamanos/edit/{id}(id = ${barrerapasamano.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${portamapa.id == null}">Agregar Portamapa</h1>
+			<h1 th:if="${portamapa.id != null}">Editar Portamapa</h1>
+			<hr />
+
+			<form th:action="@{/portamapas}" th:method="@{${portamapa.id == null} ? 'post' : 'put'}" th:object="${portamapa}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="PortamapaId">PortamapaId</label>  
+					<input id="PortamapaId" name="PortamapaId" type="text" class="form-control" th:field="*{PortamapaId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PortamapaCorroido">PortamapaCorroido</label>  
+					<input id="PortamapaCorroido" name="PortamapaCorroido" type="text" class="form-control" th:field="*{PortamapaCorroido}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PortamapaMalaconexion">PortamapaMalaconexion</label>  
+					<input id="PortamapaMalaconexion" name="PortamapaMalaconexion" type="text" class="form-control" th:field="*{PortamapaMalaconexion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PortamapaAveria">PortamapaAveria</label>  
+					<input id="PortamapaAveria" name="PortamapaAveria" type="text" class="form-control" th:field="*{PortamapaAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PortamapaCostado">PortamapaCostado</label>  
+					<input id="PortamapaCostado" name="PortamapaCostado" type="text" class="form-control" th:field="*{PortamapaCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PortamapaAncho">PortamapaAncho</label>  
+					<input id="PortamapaAncho" name="PortamapaAncho" type="text" class="form-control" th:field="*{PortamapaAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PortamapaAlto">PortamapaAlto</label>  
+					<input id="PortamapaAlto" name="PortamapaAlto" type="text" class="form-control" th:field="*{PortamapaAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PortamapaPresentamapa">PortamapaPresentamapa</label>  
+					<input id="PortamapaPresentamapa" name="PortamapaPresentamapa" type="text" class="form-control" th:field="*{PortamapaPresentamapa}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdPortamapa">IdPortamapa</label>  
+					<input id="IdPortamapa" name="IdPortamapa" type="text" class="form-control" th:field="*{IdPortamapa}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/portamapas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

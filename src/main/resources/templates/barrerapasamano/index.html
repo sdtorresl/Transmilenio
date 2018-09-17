@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Barrerapasamanos</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdBarrerapasamano</th> 
+					<th>IdSeccionestacion</th> 
+					<th>BarrerapasamanoId</th> 
+					<th>BarrerapasamanoCostado</th> 
+					<th>BarrerapasamanoLargo</th> 
+					<th>BarrerapasamanoAlto</th> 
+					<th>BarrerapasamanoNumeromodulos</th> 
+					<th>BarrerapasamanoLongitudmodulos</th> 
+					<th>BarrerapasamanoAlturamodulo</th> 
+					<th>BarrerapasamanoTipo</th> 
+					<th>BarrerapasamanoAveria</th> 
+					<th>BarrerapasamanoPorcentajeaveria</th> 
+					<th>BarrerapasamanoCorrosion</th> 
+					<th>BarrerapasamanoAbolladuras</th> 
+					<th>BarrerapasamanoPintura</th> 
+					<th>BarrerapasamanoTubofaltante</th> 
+					<th>BarrerapasamanoContaminacion</th> 
+					<th>BarrerapasamanoSoldadura</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="barrerapasamano : ${listBarrerapasamano}">
+										<td th:text="${barrerapasamano.IdBarrerapasamano}"></td> 
+					<td th:text="${barrerapasamano.IdSeccionestacion}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoId}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoCostado}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoLargo}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoAlto}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoNumeromodulos}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoLongitudmodulos}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoAlturamodulo}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoTipo}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoAveria}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoPorcentajeaveria}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoCorrosion}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoAbolladuras}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoPintura}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoTubofaltante}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoContaminacion}"></td> 
+					<td th:text="${barrerapasamano.BarrerapasamanoSoldadura}"></td> 
+					<td>
+							<a th:href="@{/barrerapasamanos/{id}(id = ${barrerapasamano.id})}">Show</a> 
+					 		<a th:href="@{/barrerapasamanos/edit/{id}(id = ${barrerapasamano.id})}">Edit</a> 
+							<a th:href="@{/barrerapasamanos/delete/{id}(id = ${barrerapasamano.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/barrerapasamanos/{id}(id = ${barrerapasamano.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/barrerapasamanos/edit/{id}(id = ${barrerapasamano.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/barrerapasamanos/delete/{id}(id = ${barrerapasamano.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/barrerapasamanos/new}" class="btn btn-primary">Crear Barrerapasamano</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

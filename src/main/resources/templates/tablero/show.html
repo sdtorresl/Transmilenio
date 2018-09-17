@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Tablero</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="TableroRutaImagen">TableroRutaImagen: </label>  
+			<span th:text="${tablero.TableroRutaImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroImagen">TableroImagen: </label>  
+			<span th:text="${tablero.TableroImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroTipo">TableroTipo: </label>  
+			<span th:text="${tablero.TableroTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroNombre">TableroNombre: </label>  
+			<span th:text="${tablero.TableroNombre}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdTablero">IdTablero: </label>  
+			<span th:text="${tablero.IdTablero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${tablero.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroNumero">TableroNumero: </label>  
+			<span th:text="${tablero.TableroNumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroAveria">TableroAveria: </label>  
+			<span th:text="${tablero.TableroAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroSucio">TableroSucio: </label>  
+			<span th:text="${tablero.TableroSucio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroCorrosion">TableroCorrosion: </label>  
+			<span th:text="${tablero.TableroCorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroFaltapintura">TableroFaltapintura: </label>  
+			<span th:text="${tablero.TableroFaltapintura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroSincerradura">TableroSincerradura: </label>  
+			<span th:text="${tablero.TableroSincerradura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroSintapa">TableroSintapa: </label>  
+			<span th:text="${tablero.TableroSintapa}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroMalanclaje">TableroMalanclaje: </label>  
+			<span th:text="${tablero.TableroMalanclaje}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroVidriofisura">TableroVidriofisura: </label>  
+			<span th:text="${tablero.TableroVidriofisura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroVidriofaltante">TableroVidriofaltante: </label>  
+			<span th:text="${tablero.TableroVidriofaltante}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="TableroCablederretido">TableroCablederretido: </label>  
+			<span th:text="${tablero.TableroCablederretido}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/tableros}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/tableros/delete/{id}(id = ${tablero.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/tableros/edit/{id}(id = ${tablero.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

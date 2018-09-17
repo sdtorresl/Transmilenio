@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Compensacion</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${compensacion.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CompensacionPotenciareactiva">CompensacionPotenciareactiva: </label>  
+			<span th:text="${compensacion.CompensacionPotenciareactiva}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CompensacionTension">CompensacionTension: </label>  
+			<span th:text="${compensacion.CompensacionTension}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CompensacionCapacidad">CompensacionCapacidad: </label>  
+			<span th:text="${compensacion.CompensacionCapacidad}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CompensacionUbicacion">CompensacionUbicacion: </label>  
+			<span th:text="${compensacion.CompensacionUbicacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CompensacionAveria">CompensacionAveria: </label>  
+			<span th:text="${compensacion.CompensacionAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CompensacionGabinetecorrosion">CompensacionGabinetecorrosion: </label>  
+			<span th:text="${compensacion.CompensacionGabinetecorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CompensacionGabinetecorrosionarea">CompensacionGabinetecorrosionarea: </label>  
+			<span th:text="${compensacion.CompensacionGabinetecorrosionarea}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CompensacionCablesderretidos">CompensacionCablesderretidos: </label>  
+			<span th:text="${compensacion.CompensacionCablesderretidos}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CompensacionRutaImagen">CompensacionRutaImagen: </label>  
+			<span th:text="${compensacion.CompensacionRutaImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CompensacionImagen">CompensacionImagen: </label>  
+			<span th:text="${compensacion.CompensacionImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdCompensacion">IdCompensacion: </label>  
+			<span th:text="${compensacion.IdCompensacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CompensacionId">CompensacionId: </label>  
+			<span th:text="${compensacion.CompensacionId}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/compensacions}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/compensacions/delete/{id}(id = ${compensacion.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/compensacions/edit/{id}(id = ${compensacion.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

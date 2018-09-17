@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${piso.id == null}">Agregar Piso</h1>
+			<h1 th:if="${piso.id != null}">Editar Piso</h1>
+			<hr />
+
+			<form th:action="@{/pisos}" th:method="@{${piso.id == null} ? 'post' : 'put'}" th:object="${piso}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdPiso">IdPiso</label>  
+					<input id="IdPiso" name="IdPiso" type="text" class="form-control" th:field="*{IdPiso}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PisoPorcentajeaveria">PisoPorcentajeaveria</label>  
+					<input id="PisoPorcentajeaveria" name="PisoPorcentajeaveria" type="text" class="form-control" th:field="*{PisoPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PisoAveria">PisoAveria</label>  
+					<input id="PisoAveria" name="PisoAveria" type="text" class="form-control" th:field="*{PisoAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PisoArea">PisoArea</label>  
+					<input id="PisoArea" name="PisoArea" type="text" class="form-control" th:field="*{PisoArea}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PisoLongitud">PisoLongitud</label>  
+					<input id="PisoLongitud" name="PisoLongitud" type="text" class="form-control" th:field="*{PisoLongitud}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PisoModulo">PisoModulo</label>  
+					<input id="PisoModulo" name="PisoModulo" type="text" class="form-control" th:field="*{PisoModulo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/pisos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

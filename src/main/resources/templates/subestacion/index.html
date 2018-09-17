@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Subestacions</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>SubestacionNominalfusible</th> 
+					<th>SubestacionNominal</th> 
+					<th>SubestacionAislamiento</th> 
+					<th>SubestacionTransforsecundario</th> 
+					<th>SubestacionTransforprimario</th> 
+					<th>SubestacionTransfornumero</th> 
+					<th>SubestacionTransforpotencia</th> 
+					<th>SubestacionCablederretido</th> 
+					<th>SubestacionGabinetecorrosionarea</th> 
+					<th>IdSubestacion</th> 
+					<th>IdSeccionestacion</th> 
+					<th>SubestacionId</th> 
+					<th>SubestacionPotencia</th> 
+					<th>SubestacionTransformacion</th> 
+					<th>SubestacionUbicacion</th> 
+					<th>SubestacionAveria</th> 
+					<th>SubestacionImagen</th> 
+					<th>SubestacionGabinetecorrosion</th> 
+					<th>SubestacionRutaImagen</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="subestacion : ${listSubestacion}">
+										<td th:text="${subestacion.SubestacionNominalfusible}"></td> 
+					<td th:text="${subestacion.SubestacionNominal}"></td> 
+					<td th:text="${subestacion.SubestacionAislamiento}"></td> 
+					<td th:text="${subestacion.SubestacionTransforsecundario}"></td> 
+					<td th:text="${subestacion.SubestacionTransforprimario}"></td> 
+					<td th:text="${subestacion.SubestacionTransfornumero}"></td> 
+					<td th:text="${subestacion.SubestacionTransforpotencia}"></td> 
+					<td th:text="${subestacion.SubestacionCablederretido}"></td> 
+					<td th:text="${subestacion.SubestacionGabinetecorrosionarea}"></td> 
+					<td th:text="${subestacion.IdSubestacion}"></td> 
+					<td th:text="${subestacion.IdSeccionestacion}"></td> 
+					<td th:text="${subestacion.SubestacionId}"></td> 
+					<td th:text="${subestacion.SubestacionPotencia}"></td> 
+					<td th:text="${subestacion.SubestacionTransformacion}"></td> 
+					<td th:text="${subestacion.SubestacionUbicacion}"></td> 
+					<td th:text="${subestacion.SubestacionAveria}"></td> 
+					<td th:text="${subestacion.SubestacionImagen}"></td> 
+					<td th:text="${subestacion.SubestacionGabinetecorrosion}"></td> 
+					<td th:text="${subestacion.SubestacionRutaImagen}"></td> 
+					<td>
+							<a th:href="@{/subestacions/{id}(id = ${subestacion.id})}">Show</a> 
+					 		<a th:href="@{/subestacions/edit/{id}(id = ${subestacion.id})}">Edit</a> 
+							<a th:href="@{/subestacions/delete/{id}(id = ${subestacion.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/subestacions/{id}(id = ${subestacion.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/subestacions/edit/{id}(id = ${subestacion.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/subestacions/delete/{id}(id = ${subestacion.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/subestacions/new}" class="btn btn-primary">Crear Subestacion</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${camara.id == null}">Agregar Camara</h1>
+			<h1 th:if="${camara.id != null}">Editar Camara</h1>
+			<hr />
+
+			<form th:action="@{/camaras}" th:method="@{${camara.id == null} ? 'post' : 'put'}" th:object="${camara}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdCamara">IdCamara</label>  
+					<input id="IdCamara" name="IdCamara" type="text" class="form-control" th:field="*{IdCamara}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CamaraId">CamaraId</label>  
+					<input id="CamaraId" name="CamaraId" type="text" class="form-control" th:field="*{CamaraId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CamaraTipoVision">CamaraTipoVision</label>  
+					<input id="CamaraTipoVision" name="CamaraTipoVision" type="text" class="form-control" th:field="*{CamaraTipoVision}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CamaraTipo">CamaraTipo</label>  
+					<input id="CamaraTipo" name="CamaraTipo" type="text" class="form-control" th:field="*{CamaraTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CamaraCostado">CamaraCostado</label>  
+					<input id="CamaraCostado" name="CamaraCostado" type="text" class="form-control" th:field="*{CamaraCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CamaraAveria">CamaraAveria</label>  
+					<input id="CamaraAveria" name="CamaraAveria" type="text" class="form-control" th:field="*{CamaraAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CamaraFaltapieza">CamaraFaltapieza</label>  
+					<input id="CamaraFaltapieza" name="CamaraFaltapieza" type="text" class="form-control" th:field="*{CamaraFaltapieza}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CamaraPorcentajepiezafalta">CamaraPorcentajepiezafalta</label>  
+					<input id="CamaraPorcentajepiezafalta" name="CamaraPorcentajepiezafalta" type="text" class="form-control" th:field="*{CamaraPorcentajepiezafalta}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CamaraFalta">CamaraFalta</label>  
+					<input id="CamaraFalta" name="CamaraFalta" type="text" class="form-control" th:field="*{CamaraFalta}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CamaraAveriasoporte">CamaraAveriasoporte</label>  
+					<input id="CamaraAveriasoporte" name="CamaraAveriasoporte" type="text" class="form-control" th:field="*{CamaraAveriasoporte}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/camaras}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

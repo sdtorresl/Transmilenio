@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${isquiatico.id == null}">Agregar Isquiatico</h1>
+			<h1 th:if="${isquiatico.id != null}">Editar Isquiatico</h1>
+			<hr />
+
+			<form th:action="@{/isquiaticos}" th:method="@{${isquiatico.id == null} ? 'post' : 'put'}" th:object="${isquiatico}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IsquiaticoCorrosion">IsquiaticoCorrosion</label>  
+					<input id="IsquiaticoCorrosion" name="IsquiaticoCorrosion" type="text" class="form-control" th:field="*{IsquiaticoCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdIsquiatico">IdIsquiatico</label>  
+					<input id="IdIsquiatico" name="IdIsquiatico" type="text" class="form-control" th:field="*{IdIsquiatico}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IsquiaticoId">IsquiaticoId</label>  
+					<input id="IsquiaticoId" name="IsquiaticoId" type="text" class="form-control" th:field="*{IsquiaticoId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IsquiaticoCostado">IsquiaticoCostado</label>  
+					<input id="IsquiaticoCostado" name="IsquiaticoCostado" type="text" class="form-control" th:field="*{IsquiaticoCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IsquiaticoLargo">IsquiaticoLargo</label>  
+					<input id="IsquiaticoLargo" name="IsquiaticoLargo" type="text" class="form-control" th:field="*{IsquiaticoLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IsquiaticoAveria">IsquiaticoAveria</label>  
+					<input id="IsquiaticoAveria" name="IsquiaticoAveria" type="text" class="form-control" th:field="*{IsquiaticoAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IsquiaticoPorcentajeaveria">IsquiaticoPorcentajeaveria</label>  
+					<input id="IsquiaticoPorcentajeaveria" name="IsquiaticoPorcentajeaveria" type="text" class="form-control" th:field="*{IsquiaticoPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IsquiaticoSoldaduraaveria">IsquiaticoSoldaduraaveria</label>  
+					<input id="IsquiaticoSoldaduraaveria" name="IsquiaticoSoldaduraaveria" type="text" class="form-control" th:field="*{IsquiaticoSoldaduraaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IsquiaticoPiezasfaltante">IsquiaticoPiezasfaltante</label>  
+					<input id="IsquiaticoPiezasfaltante" name="IsquiaticoPiezasfaltante" type="text" class="form-control" th:field="*{IsquiaticoPiezasfaltante}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IsquiaticoAbolladuras">IsquiaticoAbolladuras</label>  
+					<input id="IsquiaticoAbolladuras" name="IsquiaticoAbolladuras" type="text" class="form-control" th:field="*{IsquiaticoAbolladuras}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/isquiaticos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

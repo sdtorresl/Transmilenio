@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Racks</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdRack</th> 
+					<th>IdSeccionestacion</th> 
+					<th>RackNumero</th> 
+					<th>RackPropietario</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="rack : ${listRack}">
+										<td th:text="${rack.IdRack}"></td> 
+					<td th:text="${rack.IdSeccionestacion}"></td> 
+					<td th:text="${rack.RackNumero}"></td> 
+					<td th:text="${rack.RackPropietario}"></td> 
+					<td>
+							<a th:href="@{/racks/{id}(id = ${rack.id})}">Show</a> 
+					 		<a th:href="@{/racks/edit/{id}(id = ${rack.id})}">Edit</a> 
+							<a th:href="@{/racks/delete/{id}(id = ${rack.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/racks/{id}(id = ${rack.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/racks/edit/{id}(id = ${rack.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/racks/delete/{id}(id = ${rack.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/racks/new}" class="btn btn-primary">Crear Rack</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

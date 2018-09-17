@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${altavoz.id == null}">Agregar Altavoz</h1>
+			<h1 th:if="${altavoz.id != null}">Editar Altavoz</h1>
+			<hr />
+
+			<form th:action="@{/altavozs}" th:method="@{${altavoz.id == null} ? 'post' : 'put'}" th:object="${altavoz}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AltavozPartesfaltantes">AltavozPartesfaltantes</label>  
+					<input id="AltavozPartesfaltantes" name="AltavozPartesfaltantes" type="text" class="form-control" th:field="*{AltavozPartesfaltantes}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AltavozDesaparecido">AltavozDesaparecido</label>  
+					<input id="AltavozDesaparecido" name="AltavozDesaparecido" type="text" class="form-control" th:field="*{AltavozDesaparecido}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AltavozCostado">AltavozCostado</label>  
+					<input id="AltavozCostado" name="AltavozCostado" type="text" class="form-control" th:field="*{AltavozCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdAltavoz">IdAltavoz</label>  
+					<input id="IdAltavoz" name="IdAltavoz" type="text" class="form-control" th:field="*{IdAltavoz}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AltavozAveria">AltavozAveria</label>  
+					<input id="AltavozAveria" name="AltavozAveria" type="text" class="form-control" th:field="*{AltavozAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AltavozId">AltavozId</label>  
+					<input id="AltavozId" name="AltavozId" type="text" class="form-control" th:field="*{AltavozId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AltavozAveriasoporte">AltavozAveriasoporte</label>  
+					<input id="AltavozAveriasoporte" name="AltavozAveriasoporte" type="text" class="form-control" th:field="*{AltavozAveriasoporte}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AltavozContaminacion">AltavozContaminacion</label>  
+					<input id="AltavozContaminacion" name="AltavozContaminacion" type="text" class="form-control" th:field="*{AltavozContaminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="AltavozPorcentajecontaminacion">AltavozPorcentajecontaminacion</label>  
+					<input id="AltavozPorcentajecontaminacion" name="AltavozPorcentajecontaminacion" type="text" class="form-control" th:field="*{AltavozPorcentajecontaminacion}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/altavozs}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

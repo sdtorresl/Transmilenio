@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${puenteexterno.id == null}">Agregar Puenteexterno</h1>
+			<h1 th:if="${puenteexterno.id != null}">Editar Puenteexterno</h1>
+			<hr />
+
+			<form th:action="@{/puenteexternos}" th:method="@{${puenteexterno.id == null} ? 'post' : 'put'}" th:object="${puenteexterno}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdPuenteexterno">IdPuenteexterno</label>  
+					<input id="IdPuenteexterno" name="IdPuenteexterno" type="text" class="form-control" th:field="*{IdPuenteexterno}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuenteexternoId">PuenteexternoId</label>  
+					<input id="PuenteexternoId" name="PuenteexternoId" type="text" class="form-control" th:field="*{PuenteexternoId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdMaterialPisoescalera">IdMaterialPisoescalera</label>  
+					<input id="IdMaterialPisoescalera" name="IdMaterialPisoescalera" type="text" class="form-control" th:field="*{IdMaterialPisoescalera}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuenteexternoUbicacion">PuenteexternoUbicacion</label>  
+					<input id="PuenteexternoUbicacion" name="PuenteexternoUbicacion" type="text" class="form-control" th:field="*{PuenteexternoUbicacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuenteexternoNumeroascensor">PuenteexternoNumeroascensor</label>  
+					<input id="PuenteexternoNumeroascensor" name="PuenteexternoNumeroascensor" type="text" class="form-control" th:field="*{PuenteexternoNumeroascensor}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuenteexternoPmr">PuenteexternoPmr</label>  
+					<input id="PuenteexternoPmr" name="PuenteexternoPmr" type="text" class="form-control" th:field="*{PuenteexternoPmr}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuenteexternoAveriatablerometalico">PuenteexternoAveriatablerometalico</label>  
+					<input id="PuenteexternoAveriatablerometalico" name="PuenteexternoAveriatablerometalico" type="text" class="form-control" th:field="*{PuenteexternoAveriatablerometalico}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuenteexternoAveriatablerobaldosa">PuenteexternoAveriatablerobaldosa</label>  
+					<input id="PuenteexternoAveriatablerobaldosa" name="PuenteexternoAveriatablerobaldosa" type="text" class="form-control" th:field="*{PuenteexternoAveriatablerobaldosa}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuenteexternoAveriatableroconcreto">PuenteexternoAveriatableroconcreto</label>  
+					<input id="PuenteexternoAveriatableroconcreto" name="PuenteexternoAveriatableroconcreto" type="text" class="form-control" th:field="*{PuenteexternoAveriatableroconcreto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuenteexternoAveriatableromadera">PuenteexternoAveriatableromadera</label>  
+					<input id="PuenteexternoAveriatableromadera" name="PuenteexternoAveriatableromadera" type="text" class="form-control" th:field="*{PuenteexternoAveriatableromadera}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuenteexternoRutaImagen">PuenteexternoRutaImagen</label>  
+					<input id="PuenteexternoRutaImagen" name="PuenteexternoRutaImagen" type="text" class="form-control" th:field="*{PuenteexternoRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuenteexternoImagen">PuenteexternoImagen</label>  
+					<input id="PuenteexternoImagen" name="PuenteexternoImagen" type="text" class="form-control" th:field="*{PuenteexternoImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuenteexternoNumerorampa">PuenteexternoNumerorampa</label>  
+					<input id="PuenteexternoNumerorampa" name="PuenteexternoNumerorampa" type="text" class="form-control" th:field="*{PuenteexternoNumerorampa}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuenteexternoNumeroescalera">PuenteexternoNumeroescalera</label>  
+					<input id="PuenteexternoNumeroescalera" name="PuenteexternoNumeroescalera" type="text" class="form-control" th:field="*{PuenteexternoNumeroescalera}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/puenteexternos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

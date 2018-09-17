@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${planta.id == null}">Agregar Planta</h1>
+			<h1 th:if="${planta.id != null}">Editar Planta</h1>
+			<hr />
+
+			<form th:action="@{/plantas}" th:method="@{${planta.id == null} ? 'post' : 'put'}" th:object="${planta}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="PlantaPotencia">PlantaPotencia</label>  
+					<input id="PlantaPotencia" name="PlantaPotencia" type="text" class="form-control" th:field="*{PlantaPotencia}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PlantaImagen">PlantaImagen</label>  
+					<input id="PlantaImagen" name="PlantaImagen" type="text" class="form-control" th:field="*{PlantaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PlantaRutaImagen">PlantaRutaImagen</label>  
+					<input id="PlantaRutaImagen" name="PlantaRutaImagen" type="text" class="form-control" th:field="*{PlantaRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PlantaUbicacion">PlantaUbicacion</label>  
+					<input id="PlantaUbicacion" name="PlantaUbicacion" type="text" class="form-control" th:field="*{PlantaUbicacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PlantaTension">PlantaTension</label>  
+					<input id="PlantaTension" name="PlantaTension" type="text" class="form-control" th:field="*{PlantaTension}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PlantaId">PlantaId</label>  
+					<input id="PlantaId" name="PlantaId" type="text" class="form-control" th:field="*{PlantaId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdPlanta">IdPlanta</label>  
+					<input id="IdPlanta" name="IdPlanta" type="text" class="form-control" th:field="*{IdPlanta}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/plantas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Conos</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>ConoAveria</th> 
+					<th>ConoHayconos</th> 
+					<th>ConoPorcentajeaveria</th> 
+					<th>ConoId</th> 
+					<th>IdSeccionestacion</th> 
+					<th>IdCono</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="cono : ${listCono}">
+										<td th:text="${cono.ConoAveria}"></td> 
+					<td th:text="${cono.ConoHayconos}"></td> 
+					<td th:text="${cono.ConoPorcentajeaveria}"></td> 
+					<td th:text="${cono.ConoId}"></td> 
+					<td th:text="${cono.IdSeccionestacion}"></td> 
+					<td th:text="${cono.IdCono}"></td> 
+					<td>
+							<a th:href="@{/conos/{id}(id = ${cono.id})}">Show</a> 
+					 		<a th:href="@{/conos/edit/{id}(id = ${cono.id})}">Edit</a> 
+							<a th:href="@{/conos/delete/{id}(id = ${cono.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/conos/{id}(id = ${cono.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/conos/edit/{id}(id = ${cono.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/conos/delete/{id}(id = ${cono.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/conos/new}" class="btn btn-primary">Crear Cono</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ascensors</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdAscensor</th> 
+					<th>IdSeccionestacion</th> 
+					<th>AscensorId</th> 
+					<th>AscensorMarca</th> 
+					<th>AscensorAveriapuerta</th> 
+					<th>AscensorAveriatablero</th> 
+					<th>AscensorSincronizacion</th> 
+					<th>AscensorEmision</th> 
+					<th>AscensorAverialuz</th> 
+					<th>AscensorFisuravidrio</th> 
+					<th>AscensorSinservicio</th> 
+					<th>AscensorRutaImagen</th> 
+					<th>AscensorImagen</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="ascensor : ${listAscensor}">
+										<td th:text="${ascensor.IdAscensor}"></td> 
+					<td th:text="${ascensor.IdSeccionestacion}"></td> 
+					<td th:text="${ascensor.AscensorId}"></td> 
+					<td th:text="${ascensor.AscensorMarca}"></td> 
+					<td th:text="${ascensor.AscensorAveriapuerta}"></td> 
+					<td th:text="${ascensor.AscensorAveriatablero}"></td> 
+					<td th:text="${ascensor.AscensorSincronizacion}"></td> 
+					<td th:text="${ascensor.AscensorEmision}"></td> 
+					<td th:text="${ascensor.AscensorAverialuz}"></td> 
+					<td th:text="${ascensor.AscensorFisuravidrio}"></td> 
+					<td th:text="${ascensor.AscensorSinservicio}"></td> 
+					<td th:text="${ascensor.AscensorRutaImagen}"></td> 
+					<td th:text="${ascensor.AscensorImagen}"></td> 
+					<td>
+							<a th:href="@{/ascensors/{id}(id = ${ascensor.id})}">Show</a> 
+					 		<a th:href="@{/ascensors/edit/{id}(id = ${ascensor.id})}">Edit</a> 
+							<a th:href="@{/ascensors/delete/{id}(id = ${ascensor.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/ascensors/{id}(id = ${ascensor.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/ascensors/edit/{id}(id = ${ascensor.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/ascensors/delete/{id}(id = ${ascensor.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/ascensors/new}" class="btn btn-primary">Crear Ascensor</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

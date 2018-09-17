@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${torniquete.id == null}">Agregar Torniquete</h1>
+			<h1 th:if="${torniquete.id != null}">Editar Torniquete</h1>
+			<hr />
+
+			<form th:action="@{/torniquetes}" th:method="@{${torniquete.id == null} ? 'post' : 'put'}" th:object="${torniquete}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdAcceso">IdAcceso</label>  
+					<input id="IdAcceso" name="IdAcceso" type="text" class="form-control" th:field="*{IdAcceso}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TorniqueteTipo">TorniqueteTipo</label>  
+					<input id="TorniqueteTipo" name="TorniqueteTipo" type="text" class="form-control" th:field="*{TorniqueteTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TorniqueteEstructuraMalEstado">TorniqueteEstructuraMalEstado</label>  
+					<input id="TorniqueteEstructuraMalEstado" name="TorniqueteEstructuraMalEstado" type="text" class="form-control" th:field="*{TorniqueteEstructuraMalEstado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TorniqueteSistemaelectrmalestado">TorniqueteSistemaelectrmalestado</label>  
+					<input id="TorniqueteSistemaelectrmalestado" name="TorniqueteSistemaelectrmalestado" type="text" class="form-control" th:field="*{TorniqueteSistemaelectrmalestado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TorniqueteSistemamecanicomalestado">TorniqueteSistemamecanicomalestado</label>  
+					<input id="TorniqueteSistemamecanicomalestado" name="TorniqueteSistemamecanicomalestado" type="text" class="form-control" th:field="*{TorniqueteSistemamecanicomalestado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TorniqueteCorrosion">TorniqueteCorrosion</label>  
+					<input id="TorniqueteCorrosion" name="TorniqueteCorrosion" type="text" class="form-control" th:field="*{TorniqueteCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TorniqueteId">TorniqueteId</label>  
+					<input id="TorniqueteId" name="TorniqueteId" type="text" class="form-control" th:field="*{TorniqueteId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdTorniquete">IdTorniquete</label>  
+					<input id="IdTorniquete" name="IdTorniquete" type="text" class="form-control" th:field="*{IdTorniquete}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/torniquetes}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${incendio.id == null}">Agregar Incendio</h1>
+			<h1 th:if="${incendio.id != null}">Editar Incendio</h1>
+			<hr />
+
+			<form th:action="@{/incendios}" th:method="@{${incendio.id == null} ? 'post' : 'put'}" th:object="${incendio}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IncendioHachaperdida">IncendioHachaperdida</label>  
+					<input id="IncendioHachaperdida" name="IncendioHachaperdida" type="text" class="form-control" th:field="*{IncendioHachaperdida}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioMartilloroto">IncendioMartilloroto</label>  
+					<input id="IncendioMartilloroto" name="IncendioMartilloroto" type="text" class="form-control" th:field="*{IncendioMartilloroto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioMartilloperdido">IncendioMartilloperdido</label>  
+					<input id="IncendioMartilloperdido" name="IncendioMartilloperdido" type="text" class="form-control" th:field="*{IncendioMartilloperdido}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioVidrioroto">IncendioVidrioroto</label>  
+					<input id="IncendioVidrioroto" name="IncendioVidrioroto" type="text" class="form-control" th:field="*{IncendioVidrioroto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioId">IncendioId</label>  
+					<input id="IncendioId" name="IncendioId" type="text" class="form-control" th:field="*{IncendioId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioAlto">IncendioAlto</label>  
+					<input id="IncendioAlto" name="IncendioAlto" type="text" class="form-control" th:field="*{IncendioAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioAncho">IncendioAncho</label>  
+					<input id="IncendioAncho" name="IncendioAncho" type="text" class="form-control" th:field="*{IncendioAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioCostado">IncendioCostado</label>  
+					<input id="IncendioCostado" name="IncendioCostado" type="text" class="form-control" th:field="*{IncendioCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioTipo">IncendioTipo</label>  
+					<input id="IncendioTipo" name="IncendioTipo" type="text" class="form-control" th:field="*{IncendioTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioExtintorvencido">IncendioExtintorvencido</label>  
+					<input id="IncendioExtintorvencido" name="IncendioExtintorvencido" type="text" class="form-control" th:field="*{IncendioExtintorvencido}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioExtintorperdido">IncendioExtintorperdido</label>  
+					<input id="IncendioExtintorperdido" name="IncendioExtintorperdido" type="text" class="form-control" th:field="*{IncendioExtintorperdido}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioManguerarota">IncendioManguerarota</label>  
+					<input id="IncendioManguerarota" name="IncendioManguerarota" type="text" class="form-control" th:field="*{IncendioManguerarota}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioMangueraperdida">IncendioMangueraperdida</label>  
+					<input id="IncendioMangueraperdida" name="IncendioMangueraperdida" type="text" class="form-control" th:field="*{IncendioMangueraperdida}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioHacharota">IncendioHacharota</label>  
+					<input id="IncendioHacharota" name="IncendioHacharota" type="text" class="form-control" th:field="*{IncendioHacharota}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioImagen">IncendioImagen</label>  
+					<input id="IncendioImagen" name="IncendioImagen" type="text" class="form-control" th:field="*{IncendioImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioRutaImagen">IncendioRutaImagen</label>  
+					<input id="IncendioRutaImagen" name="IncendioRutaImagen" type="text" class="form-control" th:field="*{IncendioRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioAgua">IncendioAgua</label>  
+					<input id="IncendioAgua" name="IncendioAgua" type="text" class="form-control" th:field="*{IncendioAgua}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IncendioVidriofaltante">IncendioVidriofaltante</label>  
+					<input id="IncendioVidriofaltante" name="IncendioVidriofaltante" type="text" class="form-control" th:field="*{IncendioVidriofaltante}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdIncendio">IdIncendio</label>  
+					<input id="IdIncendio" name="IdIncendio" type="text" class="form-control" th:field="*{IdIncendio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/incendios}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

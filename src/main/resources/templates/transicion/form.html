@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${transicion.id == null}">Agregar Transicion</h1>
+			<h1 th:if="${transicion.id != null}">Editar Transicion</h1>
+			<hr />
+
+			<form th:action="@{/transicions}" th:method="@{${transicion.id == null} ? 'post' : 'put'}" th:object="${transicion}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdTransicion">IdTransicion</label>  
+					<input id="IdTransicion" name="IdTransicion" type="text" class="form-control" th:field="*{IdTransicion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransicionId">TransicionId</label>  
+					<input id="TransicionId" name="TransicionId" type="text" class="form-control" th:field="*{TransicionId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransicionNumero">TransicionNumero</label>  
+					<input id="TransicionNumero" name="TransicionNumero" type="text" class="form-control" th:field="*{TransicionNumero}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransicionLargo">TransicionLargo</label>  
+					<input id="TransicionLargo" name="TransicionLargo" type="text" class="form-control" th:field="*{TransicionLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TransicionAncho">TransicionAncho</label>  
+					<input id="TransicionAncho" name="TransicionAncho" type="text" class="form-control" th:field="*{TransicionAncho}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/transicions}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

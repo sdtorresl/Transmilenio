@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Pasamano</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="PasamanoCorrosion">PasamanoCorrosion: </label>  
+			<span th:text="${pasamano.PasamanoCorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdPasamano">IdPasamano: </label>  
+			<span th:text="${pasamano.IdPasamano}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${pasamano.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PasamanoId">PasamanoId: </label>  
+			<span th:text="${pasamano.PasamanoId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PasamanoCostado">PasamanoCostado: </label>  
+			<span th:text="${pasamano.PasamanoCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PasamanoLargo">PasamanoLargo: </label>  
+			<span th:text="${pasamano.PasamanoLargo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PasamanoAlto">PasamanoAlto: </label>  
+			<span th:text="${pasamano.PasamanoAlto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PasamanoLongitudmodulo">PasamanoLongitudmodulo: </label>  
+			<span th:text="${pasamano.PasamanoLongitudmodulo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PasamanoNumeromodulos">PasamanoNumeromodulos: </label>  
+			<span th:text="${pasamano.PasamanoNumeromodulos}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PasamanoAveria">PasamanoAveria: </label>  
+			<span th:text="${pasamano.PasamanoAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PasamanoPorcentajeaveria">PasamanoPorcentajeaveria: </label>  
+			<span th:text="${pasamano.PasamanoPorcentajeaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PasamanoSoldaduraaveria">PasamanoSoldaduraaveria: </label>  
+			<span th:text="${pasamano.PasamanoSoldaduraaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PasamanoPiezafaltante">PasamanoPiezafaltante: </label>  
+			<span th:text="${pasamano.PasamanoPiezafaltante}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PasamanoAbolladuras">PasamanoAbolladuras: </label>  
+			<span th:text="${pasamano.PasamanoAbolladuras}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/pasamanos}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/pasamanos/delete/{id}(id = ${pasamano.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/pasamanos/edit/{id}(id = ${pasamano.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Celosiaestribo</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="CelosiaestriboCostado">CelosiaestriboCostado: </label>  
+			<span th:text="${celosiaestribo.CelosiaestriboCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaestriboLargo">CelosiaestriboLargo: </label>  
+			<span th:text="${celosiaestribo.CelosiaestriboLargo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaestriboAlto">CelosiaestriboAlto: </label>  
+			<span th:text="${celosiaestribo.CelosiaestriboAlto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaestriboAveria">CelosiaestriboAveria: </label>  
+			<span th:text="${celosiaestribo.CelosiaestriboAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaestriboPorcentajeaveria">CelosiaestriboPorcentajeaveria: </label>  
+			<span th:text="${celosiaestribo.CelosiaestriboPorcentajeaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaestriboCorrosion">CelosiaestriboCorrosion: </label>  
+			<span th:text="${celosiaestribo.CelosiaestriboCorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaestriboDoblado">CelosiaestriboDoblado: </label>  
+			<span th:text="${celosiaestribo.CelosiaestriboDoblado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaestriboRobado">CelosiaestriboRobado: </label>  
+			<span th:text="${celosiaestribo.CelosiaestriboRobado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VelosiaestriboObservacion">VelosiaestriboObservacion: </label>  
+			<span th:text="${celosiaestribo.VelosiaestriboObservacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdCelosiaestribo">IdCelosiaestribo: </label>  
+			<span th:text="${celosiaestribo.IdCelosiaestribo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${celosiaestribo.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CelosiaestriboId">CelosiaestriboId: </label>  
+			<span th:text="${celosiaestribo.CelosiaestriboId}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/celosiaestribos}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/celosiaestribos/delete/{id}(id = ${celosiaestribo.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/celosiaestribos/edit/{id}(id = ${celosiaestribo.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

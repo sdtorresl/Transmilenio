@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${publicidad.id == null}">Agregar Publicidad</h1>
+			<h1 th:if="${publicidad.id != null}">Editar Publicidad</h1>
+			<hr />
+
+			<form th:action="@{/publicidads}" th:method="@{${publicidad.id == null} ? 'post' : 'put'}" th:object="${publicidad}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="PublicidadFisuravidrio">PublicidadFisuravidrio</label>  
+					<input id="PublicidadFisuravidrio" name="PublicidadFisuravidrio" type="text" class="form-control" th:field="*{PublicidadFisuravidrio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdPublicidad">IdPublicidad</label>  
+					<input id="IdPublicidad" name="IdPublicidad" type="text" class="form-control" th:field="*{IdPublicidad}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VentilacionId">VentilacionId</label>  
+					<input id="VentilacionId" name="VentilacionId" type="text" class="form-control" th:field="*{VentilacionId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PublicidadAlto">PublicidadAlto</label>  
+					<input id="PublicidadAlto" name="PublicidadAlto" type="text" class="form-control" th:field="*{PublicidadAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PublicidadAncho">PublicidadAncho</label>  
+					<input id="PublicidadAncho" name="PublicidadAncho" type="text" class="form-control" th:field="*{PublicidadAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PublicidadCostado">PublicidadCostado</label>  
+					<input id="PublicidadCostado" name="PublicidadCostado" type="text" class="form-control" th:field="*{PublicidadCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PublicidadAveria">PublicidadAveria</label>  
+					<input id="PublicidadAveria" name="PublicidadAveria" type="text" class="form-control" th:field="*{PublicidadAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PublicidadDeteriorometalico">PublicidadDeteriorometalico</label>  
+					<input id="PublicidadDeteriorometalico" name="PublicidadDeteriorometalico" type="text" class="form-control" th:field="*{PublicidadDeteriorometalico}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PublicidadIluminacion">PublicidadIluminacion</label>  
+					<input id="PublicidadIluminacion" name="PublicidadIluminacion" type="text" class="form-control" th:field="*{PublicidadIluminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PublicidadParpadeoluz">PublicidadParpadeoluz</label>  
+					<input id="PublicidadParpadeoluz" name="PublicidadParpadeoluz" type="text" class="form-control" th:field="*{PublicidadParpadeoluz}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PublicidadSinvidrio">PublicidadSinvidrio</label>  
+					<input id="PublicidadSinvidrio" name="PublicidadSinvidrio" type="text" class="form-control" th:field="*{PublicidadSinvidrio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PublicidadDeteriorovidrio">PublicidadDeteriorovidrio</label>  
+					<input id="PublicidadDeteriorovidrio" name="PublicidadDeteriorovidrio" type="text" class="form-control" th:field="*{PublicidadDeteriorovidrio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PublicidadContaminacionvisual">PublicidadContaminacionvisual</label>  
+					<input id="PublicidadContaminacionvisual" name="PublicidadContaminacionvisual" type="text" class="form-control" th:field="*{PublicidadContaminacionvisual}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PublicidadConpublicidad">PublicidadConpublicidad</label>  
+					<input id="PublicidadConpublicidad" name="PublicidadConpublicidad" type="text" class="form-control" th:field="*{PublicidadConpublicidad}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/publicidads}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

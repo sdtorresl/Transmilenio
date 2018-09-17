@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Elevadoras</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>ElevadoraPorcentajefisura</th> 
+					<th>IdElevadora</th> 
+					<th>IdSeccionestacion</th> 
+					<th>ElevadoraId</th> 
+					<th>ElevadoraUbicacion</th> 
+					<th>ElevadoraAveria</th> 
+					<th>ElevadoraSinservicio</th> 
+					<th>ElevadoraContaminacion</th> 
+					<th>ElevadoraFisura</th> 
+					<th>ElevadoraRutaImagen</th> 
+					<th>ElevadoraImagen</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="elevadora : ${listElevadora}">
+										<td th:text="${elevadora.ElevadoraPorcentajefisura}"></td> 
+					<td th:text="${elevadora.IdElevadora}"></td> 
+					<td th:text="${elevadora.IdSeccionestacion}"></td> 
+					<td th:text="${elevadora.ElevadoraId}"></td> 
+					<td th:text="${elevadora.ElevadoraUbicacion}"></td> 
+					<td th:text="${elevadora.ElevadoraAveria}"></td> 
+					<td th:text="${elevadora.ElevadoraSinservicio}"></td> 
+					<td th:text="${elevadora.ElevadoraContaminacion}"></td> 
+					<td th:text="${elevadora.ElevadoraFisura}"></td> 
+					<td th:text="${elevadora.ElevadoraRutaImagen}"></td> 
+					<td th:text="${elevadora.ElevadoraImagen}"></td> 
+					<td>
+							<a th:href="@{/elevadoras/{id}(id = ${elevadora.id})}">Show</a> 
+					 		<a th:href="@{/elevadoras/edit/{id}(id = ${elevadora.id})}">Edit</a> 
+							<a th:href="@{/elevadoras/delete/{id}(id = ${elevadora.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/elevadoras/{id}(id = ${elevadora.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/elevadoras/edit/{id}(id = ${elevadora.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/elevadoras/delete/{id}(id = ${elevadora.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/elevadoras/new}" class="btn btn-primary">Crear Elevadora</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

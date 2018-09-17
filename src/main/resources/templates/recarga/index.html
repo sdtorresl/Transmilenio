@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Recargas</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdRecarga</th> 
+					<th>IdSeccionestacion</th> 
+					<th>RecargaId</th> 
+					<th>RecargaCostado</th> 
+					<th>RecargaEnservicio</th> 
+					<th>RecargaContaminacion</th> 
+					<th>RecargaRutaImagen</th> 
+					<th>RecargaImagen</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="recarga : ${listRecarga}">
+										<td th:text="${recarga.IdRecarga}"></td> 
+					<td th:text="${recarga.IdSeccionestacion}"></td> 
+					<td th:text="${recarga.RecargaId}"></td> 
+					<td th:text="${recarga.RecargaCostado}"></td> 
+					<td th:text="${recarga.RecargaEnservicio}"></td> 
+					<td th:text="${recarga.RecargaContaminacion}"></td> 
+					<td th:text="${recarga.RecargaRutaImagen}"></td> 
+					<td th:text="${recarga.RecargaImagen}"></td> 
+					<td>
+							<a th:href="@{/recargas/{id}(id = ${recarga.id})}">Show</a> 
+					 		<a th:href="@{/recargas/edit/{id}(id = ${recarga.id})}">Edit</a> 
+							<a th:href="@{/recargas/delete/{id}(id = ${recarga.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/recargas/{id}(id = ${recarga.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/recargas/edit/{id}(id = ${recarga.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/recargas/delete/{id}(id = ${recarga.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/recargas/new}" class="btn btn-primary">Crear Recarga</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

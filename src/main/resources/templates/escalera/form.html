@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${escalera.id == null}">Agregar Escalera</h1>
+			<h1 th:if="${escalera.id != null}">Editar Escalera</h1>
+			<hr />
+
+			<form th:action="@{/escaleras}" th:method="@{${escalera.id == null} ? 'post' : 'put'}" th:object="${escalera}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdEscalera">IdEscalera</label>  
+					<input id="IdEscalera" name="IdEscalera" type="text" class="form-control" th:field="*{IdEscalera}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EscaleraId">EscaleraId</label>  
+					<input id="EscaleraId" name="EscaleraId" type="text" class="form-control" th:field="*{EscaleraId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EscaleraAveria">EscaleraAveria</label>  
+					<input id="EscaleraAveria" name="EscaleraAveria" type="text" class="form-control" th:field="*{EscaleraAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EscaleraPorcentajeaveria">EscaleraPorcentajeaveria</label>  
+					<input id="EscaleraPorcentajeaveria" name="EscaleraPorcentajeaveria" type="text" class="form-control" th:field="*{EscaleraPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EscaleraTipo">EscaleraTipo</label>  
+					<input id="EscaleraTipo" name="EscaleraTipo" type="text" class="form-control" th:field="*{EscaleraTipo}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/escaleras}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

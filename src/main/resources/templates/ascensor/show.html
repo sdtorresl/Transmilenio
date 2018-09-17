@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Ascensor</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="IdAscensor">IdAscensor: </label>  
+			<span th:text="${ascensor.IdAscensor}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${ascensor.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AscensorId">AscensorId: </label>  
+			<span th:text="${ascensor.AscensorId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AscensorMarca">AscensorMarca: </label>  
+			<span th:text="${ascensor.AscensorMarca}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AscensorAveriapuerta">AscensorAveriapuerta: </label>  
+			<span th:text="${ascensor.AscensorAveriapuerta}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AscensorAveriatablero">AscensorAveriatablero: </label>  
+			<span th:text="${ascensor.AscensorAveriatablero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AscensorSincronizacion">AscensorSincronizacion: </label>  
+			<span th:text="${ascensor.AscensorSincronizacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AscensorEmision">AscensorEmision: </label>  
+			<span th:text="${ascensor.AscensorEmision}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AscensorAverialuz">AscensorAverialuz: </label>  
+			<span th:text="${ascensor.AscensorAverialuz}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AscensorFisuravidrio">AscensorFisuravidrio: </label>  
+			<span th:text="${ascensor.AscensorFisuravidrio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AscensorSinservicio">AscensorSinservicio: </label>  
+			<span th:text="${ascensor.AscensorSinservicio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AscensorRutaImagen">AscensorRutaImagen: </label>  
+			<span th:text="${ascensor.AscensorRutaImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AscensorImagen">AscensorImagen: </label>  
+			<span th:text="${ascensor.AscensorImagen}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/ascensors}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/ascensors/delete/{id}(id = ${ascensor.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/ascensors/edit/{id}(id = ${ascensor.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

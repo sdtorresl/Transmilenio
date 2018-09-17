@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${vidrio.id == null}">Agregar Vidrio</h1>
+			<h1 th:if="${vidrio.id != null}">Editar Vidrio</h1>
+			<hr />
+
+			<form th:action="@{/vidrios}" th:method="@{${vidrio.id == null} ? 'post' : 'put'}" th:object="${vidrio}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="VidrioFisurado">VidrioFisurado</label>  
+					<input id="VidrioFisurado" name="VidrioFisurado" type="text" class="form-control" th:field="*{VidrioFisurado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidrioAncho">VidrioAncho</label>  
+					<input id="VidrioAncho" name="VidrioAncho" type="text" class="form-control" th:field="*{VidrioAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidrioId">VidrioId</label>  
+					<input id="VidrioId" name="VidrioId" type="text" class="form-control" th:field="*{VidrioId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidrioCostado">VidrioCostado</label>  
+					<input id="VidrioCostado" name="VidrioCostado" type="text" class="form-control" th:field="*{VidrioCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidrioAlto">VidrioAlto</label>  
+					<input id="VidrioAlto" name="VidrioAlto" type="text" class="form-control" th:field="*{VidrioAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidrioTipo">VidrioTipo</label>  
+					<input id="VidrioTipo" name="VidrioTipo" type="text" class="form-control" th:field="*{VidrioTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdVidrio">IdVidrio</label>  
+					<input id="IdVidrio" name="IdVidrio" type="text" class="form-control" th:field="*{IdVidrio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidrioDeterioro">VidrioDeterioro</label>  
+					<input id="VidrioDeterioro" name="VidrioDeterioro" type="text" class="form-control" th:field="*{VidrioDeterioro}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidrioDesaparecido">VidrioDesaparecido</label>  
+					<input id="VidrioDesaparecido" name="VidrioDesaparecido" type="text" class="form-control" th:field="*{VidrioDesaparecido}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VidrioContaminacion">VidrioContaminacion</label>  
+					<input id="VidrioContaminacion" name="VidrioContaminacion" type="text" class="form-control" th:field="*{VidrioContaminacion}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/vidrios}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

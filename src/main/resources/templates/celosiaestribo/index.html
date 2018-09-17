@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Celosiaestribos</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>CelosiaestriboCostado</th> 
+					<th>CelosiaestriboLargo</th> 
+					<th>CelosiaestriboAlto</th> 
+					<th>CelosiaestriboAveria</th> 
+					<th>CelosiaestriboPorcentajeaveria</th> 
+					<th>CelosiaestriboCorrosion</th> 
+					<th>CelosiaestriboDoblado</th> 
+					<th>CelosiaestriboRobado</th> 
+					<th>VelosiaestriboObservacion</th> 
+					<th>IdCelosiaestribo</th> 
+					<th>IdSeccionestacion</th> 
+					<th>CelosiaestriboId</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="celosiaestribo : ${listCelosiaestribo}">
+										<td th:text="${celosiaestribo.CelosiaestriboCostado}"></td> 
+					<td th:text="${celosiaestribo.CelosiaestriboLargo}"></td> 
+					<td th:text="${celosiaestribo.CelosiaestriboAlto}"></td> 
+					<td th:text="${celosiaestribo.CelosiaestriboAveria}"></td> 
+					<td th:text="${celosiaestribo.CelosiaestriboPorcentajeaveria}"></td> 
+					<td th:text="${celosiaestribo.CelosiaestriboCorrosion}"></td> 
+					<td th:text="${celosiaestribo.CelosiaestriboDoblado}"></td> 
+					<td th:text="${celosiaestribo.CelosiaestriboRobado}"></td> 
+					<td th:text="${celosiaestribo.VelosiaestriboObservacion}"></td> 
+					<td th:text="${celosiaestribo.IdCelosiaestribo}"></td> 
+					<td th:text="${celosiaestribo.IdSeccionestacion}"></td> 
+					<td th:text="${celosiaestribo.CelosiaestriboId}"></td> 
+					<td>
+							<a th:href="@{/celosiaestribos/{id}(id = ${celosiaestribo.id})}">Show</a> 
+					 		<a th:href="@{/celosiaestribos/edit/{id}(id = ${celosiaestribo.id})}">Edit</a> 
+							<a th:href="@{/celosiaestribos/delete/{id}(id = ${celosiaestribo.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/celosiaestribos/{id}(id = ${celosiaestribo.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/celosiaestribos/edit/{id}(id = ${celosiaestribo.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/celosiaestribos/delete/{id}(id = ${celosiaestribo.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/celosiaestribos/new}" class="btn btn-primary">Crear Celosiaestribo</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

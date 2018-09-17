@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Taquillas</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>TaquillaImagen</th> 
+					<th>IdTaquilla</th> 
+					<th>IdSeccionestacion</th> 
+					<th>TaquillaId</th> 
+					<th>TaquillaCostado</th> 
+					<th>TaquillaPunto</th> 
+					<th>TaquillaArea</th> 
+					<th>TaquillaOrientador</th> 
+					<th>TaquillaOrientadormetro</th> 
+					<th>TaquillaAcomuladorbasura</th> 
+					<th>TaquillaDeterioro</th> 
+					<th>TaquillaCorrosion</th> 
+					<th>TaquillaFiltrasion</th> 
+					<th>TaquillaContaminacion</th> 
+					<th>TaquillaSinluminacion</th> 
+					<th>TaquillaPerdidaelementos</th> 
+					<th>TaquillaVidrioroto</th> 
+					<th>TaquillaTipo</th> 
+					<th>TaquillaRutaImagen</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="taquilla : ${listTaquilla}">
+										<td th:text="${taquilla.TaquillaImagen}"></td> 
+					<td th:text="${taquilla.IdTaquilla}"></td> 
+					<td th:text="${taquilla.IdSeccionestacion}"></td> 
+					<td th:text="${taquilla.TaquillaId}"></td> 
+					<td th:text="${taquilla.TaquillaCostado}"></td> 
+					<td th:text="${taquilla.TaquillaPunto}"></td> 
+					<td th:text="${taquilla.TaquillaArea}"></td> 
+					<td th:text="${taquilla.TaquillaOrientador}"></td> 
+					<td th:text="${taquilla.TaquillaOrientadormetro}"></td> 
+					<td th:text="${taquilla.TaquillaAcomuladorbasura}"></td> 
+					<td th:text="${taquilla.TaquillaDeterioro}"></td> 
+					<td th:text="${taquilla.TaquillaCorrosion}"></td> 
+					<td th:text="${taquilla.TaquillaFiltrasion}"></td> 
+					<td th:text="${taquilla.TaquillaContaminacion}"></td> 
+					<td th:text="${taquilla.TaquillaSinluminacion}"></td> 
+					<td th:text="${taquilla.TaquillaPerdidaelementos}"></td> 
+					<td th:text="${taquilla.TaquillaVidrioroto}"></td> 
+					<td th:text="${taquilla.TaquillaTipo}"></td> 
+					<td th:text="${taquilla.TaquillaRutaImagen}"></td> 
+					<td>
+							<a th:href="@{/taquillas/{id}(id = ${taquilla.id})}">Show</a> 
+					 		<a th:href="@{/taquillas/edit/{id}(id = ${taquilla.id})}">Edit</a> 
+							<a th:href="@{/taquillas/delete/{id}(id = ${taquilla.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/taquillas/{id}(id = ${taquilla.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/taquillas/edit/{id}(id = ${taquilla.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/taquillas/delete/{id}(id = ${taquilla.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/taquillas/new}" class="btn btn-primary">Crear Taquilla</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

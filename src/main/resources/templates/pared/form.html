@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${pared.id == null}">Agregar Pared</h1>
+			<h1 th:if="${pared.id != null}">Editar Pared</h1>
+			<hr />
+
+			<form th:action="@{/pareds}" th:method="@{${pared.id == null} ? 'post' : 'put'}" th:object="${pared}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ParedId">ParedId</label>  
+					<input id="ParedId" name="ParedId" type="text" class="form-control" th:field="*{ParedId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ParedAveria">ParedAveria</label>  
+					<input id="ParedAveria" name="ParedAveria" type="text" class="form-control" th:field="*{ParedAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ParedArea">ParedArea</label>  
+					<input id="ParedArea" name="ParedArea" type="text" class="form-control" th:field="*{ParedArea}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ParedPorcentajeaveria">ParedPorcentajeaveria</label>  
+					<input id="ParedPorcentajeaveria" name="ParedPorcentajeaveria" type="text" class="form-control" th:field="*{ParedPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="ParedTipo">ParedTipo</label>  
+					<input id="ParedTipo" name="ParedTipo" type="text" class="form-control" th:field="*{ParedTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdPared">IdPared</label>  
+					<input id="IdPared" name="IdPared" type="text" class="form-control" th:field="*{IdPared}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/pareds}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

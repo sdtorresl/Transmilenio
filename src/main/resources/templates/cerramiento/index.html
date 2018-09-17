@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Cerramientos</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>CerramientoLibricacionNumero</th> 
+					<th>CerramientoTipo</th> 
+					<th>CerramientoPiezafaltante</th> 
+					<th>CerramientoPiezafaltanteNumero</th> 
+					<th>CerramientoDesnivel</th> 
+					<th>CerramientoDesnivelNumero</th> 
+					<th>CerramientoPasadore</th> 
+					<th>CerramientoPasadorenumero</th> 
+					<th>CerramientoBisagra</th> 
+					<th>CerramientoBisagranumero</th> 
+					<th>CerramientoCorrosionNumero</th> 
+					<th>CerramientoCorrosion</th> 
+					<th>CerramientoAveria</th> 
+					<th>CerramientoId</th> 
+					<th>IdSeccionestacion</th> 
+					<th>IdCerramiento</th> 
+					<th>CerramientoLubricacion</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="cerramiento : ${listCerramiento}">
+										<td th:text="${cerramiento.CerramientoLibricacionNumero}"></td> 
+					<td th:text="${cerramiento.CerramientoTipo}"></td> 
+					<td th:text="${cerramiento.CerramientoPiezafaltante}"></td> 
+					<td th:text="${cerramiento.CerramientoPiezafaltanteNumero}"></td> 
+					<td th:text="${cerramiento.CerramientoDesnivel}"></td> 
+					<td th:text="${cerramiento.CerramientoDesnivelNumero}"></td> 
+					<td th:text="${cerramiento.CerramientoPasadore}"></td> 
+					<td th:text="${cerramiento.CerramientoPasadorenumero}"></td> 
+					<td th:text="${cerramiento.CerramientoBisagra}"></td> 
+					<td th:text="${cerramiento.CerramientoBisagranumero}"></td> 
+					<td th:text="${cerramiento.CerramientoCorrosionNumero}"></td> 
+					<td th:text="${cerramiento.CerramientoCorrosion}"></td> 
+					<td th:text="${cerramiento.CerramientoAveria}"></td> 
+					<td th:text="${cerramiento.CerramientoId}"></td> 
+					<td th:text="${cerramiento.IdSeccionestacion}"></td> 
+					<td th:text="${cerramiento.IdCerramiento}"></td> 
+					<td th:text="${cerramiento.CerramientoLubricacion}"></td> 
+					<td>
+							<a th:href="@{/cerramientos/{id}(id = ${cerramiento.id})}">Show</a> 
+					 		<a th:href="@{/cerramientos/edit/{id}(id = ${cerramiento.id})}">Edit</a> 
+							<a th:href="@{/cerramientos/delete/{id}(id = ${cerramiento.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/cerramientos/{id}(id = ${cerramiento.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/cerramientos/edit/{id}(id = ${cerramiento.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/cerramientos/delete/{id}(id = ${cerramiento.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/cerramientos/new}" class="btn btn-primary">Crear Cerramiento</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

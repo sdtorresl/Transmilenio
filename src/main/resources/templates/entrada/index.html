@@ -22,17 +22,21 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>Nivel</th> 
-					<th>Largo</th> 
-					<th>Ancho</th> 
+										<th>IdEntrada</th> 
+					<th>EntradaId</th> 
+					<th>EntradaNivel</th> 
+					<th>EntradaLargo</th> 
+					<th>EntradaAncho</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
 				<tbody>
 				<tr th:each="entrada : ${listEntrada}">
-										<td th:text="${entrada.nivel}"></td> 
-					<td th:text="${entrada.largo}"></td> 
-					<td th:text="${entrada.ancho}"></td> 
+										<td th:text="${entrada.IdEntrada}"></td> 
+					<td th:text="${entrada.EntradaId}"></td> 
+					<td th:text="${entrada.EntradaNivel}"></td> 
+					<td th:text="${entrada.EntradaLargo}"></td> 
+					<td th:text="${entrada.EntradaAncho}"></td> 
 					<td>
 							<a th:href="@{/entradas/{id}(id = ${entrada.id})}">Show</a> 
 					 		<a th:href="@{/entradas/edit/{id}(id = ${entrada.id})}">Edit</a> 

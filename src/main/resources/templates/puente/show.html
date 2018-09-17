@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Puente</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="PuentePorcentajetablero">PuentePorcentajetablero: </label>  
+			<span th:text="${puente.PuentePorcentajetablero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteRutaImagen">PuenteRutaImagen: </label>  
+			<span th:text="${puente.PuenteRutaImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteImagen">PuenteImagen: </label>  
+			<span th:text="${puente.PuenteImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuentePorcentajepasamanos">PuentePorcentajepasamanos: </label>  
+			<span th:text="${puente.PuentePorcentajepasamanos}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteAveriapasamanos">PuenteAveriapasamanos: </label>  
+			<span th:text="${puente.PuenteAveriapasamanos}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteMaterialtablero">PuenteMaterialtablero: </label>  
+			<span th:text="${puente.PuenteMaterialtablero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteAncho">PuenteAncho: </label>  
+			<span th:text="${puente.PuenteAncho}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteLongitud">PuenteLongitud: </label>  
+			<span th:text="${puente.PuenteLongitud}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteBuenmovilidadreducida">PuenteBuenmovilidadreducida: </label>  
+			<span th:text="${puente.PuenteBuenmovilidadreducida}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteRampatipo">PuenteRampatipo: </label>  
+			<span th:text="${puente.PuenteRampatipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${puente.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdPuente">IdPuente: </label>  
+			<span th:text="${puente.IdPuente}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteId">PuenteId: </label>  
+			<span th:text="${puente.PuenteId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdTipopuente">IdTipopuente: </label>  
+			<span th:text="${puente.IdTipopuente}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteNumeroascensor">PuenteNumeroascensor: </label>  
+			<span th:text="${puente.PuenteNumeroascensor}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteNumeroescalera">PuenteNumeroescalera: </label>  
+			<span th:text="${puente.PuenteNumeroescalera}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdTipoescalera">IdTipoescalera: </label>  
+			<span th:text="${puente.IdTipoescalera}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteNumerorampa">PuenteNumerorampa: </label>  
+			<span th:text="${puente.PuenteNumerorampa}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PuenteAveriatablero">PuenteAveriatablero: </label>  
+			<span th:text="${puente.PuenteAveriatablero}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/puentes}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/puentes/delete/{id}(id = ${puente.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/puentes/edit/{id}(id = ${puente.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

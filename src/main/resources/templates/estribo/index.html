@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Estribos</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>EstriboPerdida</th> 
+					<th>EstriboPandeo</th> 
+					<th>IdEstribo</th> 
+					<th>IdSeccionestacion</th> 
+					<th>EstriboId</th> 
+					<th>EstriboCostado</th> 
+					<th>EstriboLargo</th> 
+					<th>EstriboAncho</th> 
+					<th>EstriboAlfajor</th> 
+					<th>EstriboAveria</th> 
+					<th>EstriboDesgaste</th> 
+					<th>EstriboFisurado</th> 
+					<th>EstriboCorrosion</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="estribo : ${listEstribo}">
+										<td th:text="${estribo.EstriboPerdida}"></td> 
+					<td th:text="${estribo.EstriboPandeo}"></td> 
+					<td th:text="${estribo.IdEstribo}"></td> 
+					<td th:text="${estribo.IdSeccionestacion}"></td> 
+					<td th:text="${estribo.EstriboId}"></td> 
+					<td th:text="${estribo.EstriboCostado}"></td> 
+					<td th:text="${estribo.EstriboLargo}"></td> 
+					<td th:text="${estribo.EstriboAncho}"></td> 
+					<td th:text="${estribo.EstriboAlfajor}"></td> 
+					<td th:text="${estribo.EstriboAveria}"></td> 
+					<td th:text="${estribo.EstriboDesgaste}"></td> 
+					<td th:text="${estribo.EstriboFisurado}"></td> 
+					<td th:text="${estribo.EstriboCorrosion}"></td> 
+					<td>
+							<a th:href="@{/estribos/{id}(id = ${estribo.id})}">Show</a> 
+					 		<a th:href="@{/estribos/edit/{id}(id = ${estribo.id})}">Edit</a> 
+							<a th:href="@{/estribos/delete/{id}(id = ${estribo.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/estribos/{id}(id = ${estribo.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/estribos/edit/{id}(id = ${estribo.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/estribos/delete/{id}(id = ${estribo.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/estribos/new}" class="btn btn-primary">Crear Estribo</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

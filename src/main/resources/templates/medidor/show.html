@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Medidor</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="MedidorAveria">MedidorAveria: </label>  
+			<span th:text="${medidor.MedidorAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MedidorCablederretido">MedidorCablederretido: </label>  
+			<span th:text="${medidor.MedidorCablederretido}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MedidorGabinetecerradura">MedidorGabinetecerradura: </label>  
+			<span th:text="${medidor.MedidorGabinetecerradura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MedidorSerial">MedidorSerial: </label>  
+			<span th:text="${medidor.MedidorSerial}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MedidorPropietario">MedidorPropietario: </label>  
+			<span th:text="${medidor.MedidorPropietario}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MedidorTipo">MedidorTipo: </label>  
+			<span th:text="${medidor.MedidorTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MedidorGabinetepintura">MedidorGabinetepintura: </label>  
+			<span th:text="${medidor.MedidorGabinetepintura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MedidorGabinetecorrosion">MedidorGabinetecorrosion: </label>  
+			<span th:text="${medidor.MedidorGabinetecorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MedidorImagen">MedidorImagen: </label>  
+			<span th:text="${medidor.MedidorImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MedidorGabinetesucio">MedidorGabinetesucio: </label>  
+			<span th:text="${medidor.MedidorGabinetesucio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdMedidor">IdMedidor: </label>  
+			<span th:text="${medidor.IdMedidor}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${medidor.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MedidorId">MedidorId: </label>  
+			<span th:text="${medidor.MedidorId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="MedidorRutaImagen">MedidorRutaImagen: </label>  
+			<span th:text="${medidor.MedidorRutaImagen}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/medidors}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/medidors/delete/{id}(id = ${medidor.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/medidors/edit/{id}(id = ${medidor.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

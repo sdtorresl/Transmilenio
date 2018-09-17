@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Puenteexternos</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdPuenteexterno</th> 
+					<th>IdSeccionestacion</th> 
+					<th>PuenteexternoId</th> 
+					<th>IdMaterialPisoescalera</th> 
+					<th>PuenteexternoUbicacion</th> 
+					<th>PuenteexternoNumeroascensor</th> 
+					<th>PuenteexternoPmr</th> 
+					<th>PuenteexternoAveriatablerometalico</th> 
+					<th>PuenteexternoAveriatablerobaldosa</th> 
+					<th>PuenteexternoAveriatableroconcreto</th> 
+					<th>PuenteexternoAveriatableromadera</th> 
+					<th>PuenteexternoRutaImagen</th> 
+					<th>PuenteexternoImagen</th> 
+					<th>PuenteexternoNumerorampa</th> 
+					<th>PuenteexternoNumeroescalera</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="puenteexterno : ${listPuenteexterno}">
+										<td th:text="${puenteexterno.IdPuenteexterno}"></td> 
+					<td th:text="${puenteexterno.IdSeccionestacion}"></td> 
+					<td th:text="${puenteexterno.PuenteexternoId}"></td> 
+					<td th:text="${puenteexterno.IdMaterialPisoescalera}"></td> 
+					<td th:text="${puenteexterno.PuenteexternoUbicacion}"></td> 
+					<td th:text="${puenteexterno.PuenteexternoNumeroascensor}"></td> 
+					<td th:text="${puenteexterno.PuenteexternoPmr}"></td> 
+					<td th:text="${puenteexterno.PuenteexternoAveriatablerometalico}"></td> 
+					<td th:text="${puenteexterno.PuenteexternoAveriatablerobaldosa}"></td> 
+					<td th:text="${puenteexterno.PuenteexternoAveriatableroconcreto}"></td> 
+					<td th:text="${puenteexterno.PuenteexternoAveriatableromadera}"></td> 
+					<td th:text="${puenteexterno.PuenteexternoRutaImagen}"></td> 
+					<td th:text="${puenteexterno.PuenteexternoImagen}"></td> 
+					<td th:text="${puenteexterno.PuenteexternoNumerorampa}"></td> 
+					<td th:text="${puenteexterno.PuenteexternoNumeroescalera}"></td> 
+					<td>
+							<a th:href="@{/puenteexternos/{id}(id = ${puenteexterno.id})}">Show</a> 
+					 		<a th:href="@{/puenteexternos/edit/{id}(id = ${puenteexterno.id})}">Edit</a> 
+							<a th:href="@{/puenteexternos/delete/{id}(id = ${puenteexterno.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/puenteexternos/{id}(id = ${puenteexterno.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/puenteexternos/edit/{id}(id = ${puenteexterno.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/puenteexternos/delete/{id}(id = ${puenteexterno.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/puenteexternos/new}" class="btn btn-primary">Crear Puenteexterno</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

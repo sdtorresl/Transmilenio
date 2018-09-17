@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Pareds</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdSeccionestacion</th> 
+					<th>ParedId</th> 
+					<th>ParedAveria</th> 
+					<th>ParedArea</th> 
+					<th>ParedPorcentajeaveria</th> 
+					<th>ParedTipo</th> 
+					<th>IdPared</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="pared : ${listPared}">
+										<td th:text="${pared.IdSeccionestacion}"></td> 
+					<td th:text="${pared.ParedId}"></td> 
+					<td th:text="${pared.ParedAveria}"></td> 
+					<td th:text="${pared.ParedArea}"></td> 
+					<td th:text="${pared.ParedPorcentajeaveria}"></td> 
+					<td th:text="${pared.ParedTipo}"></td> 
+					<td th:text="${pared.IdPared}"></td> 
+					<td>
+							<a th:href="@{/pareds/{id}(id = ${pared.id})}">Show</a> 
+					 		<a th:href="@{/pareds/edit/{id}(id = ${pared.id})}">Edit</a> 
+							<a th:href="@{/pareds/delete/{id}(id = ${pared.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/pareds/{id}(id = ${pared.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/pareds/edit/{id}(id = ${pared.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/pareds/delete/{id}(id = ${pared.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/pareds/new}" class="btn btn-primary">Crear Pared</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Estribo</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="EstriboPerdida">EstriboPerdida: </label>  
+			<span th:text="${estribo.EstriboPerdida}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="EstriboPandeo">EstriboPandeo: </label>  
+			<span th:text="${estribo.EstriboPandeo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdEstribo">IdEstribo: </label>  
+			<span th:text="${estribo.IdEstribo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${estribo.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="EstriboId">EstriboId: </label>  
+			<span th:text="${estribo.EstriboId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="EstriboCostado">EstriboCostado: </label>  
+			<span th:text="${estribo.EstriboCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="EstriboLargo">EstriboLargo: </label>  
+			<span th:text="${estribo.EstriboLargo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="EstriboAncho">EstriboAncho: </label>  
+			<span th:text="${estribo.EstriboAncho}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="EstriboAlfajor">EstriboAlfajor: </label>  
+			<span th:text="${estribo.EstriboAlfajor}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="EstriboAveria">EstriboAveria: </label>  
+			<span th:text="${estribo.EstriboAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="EstriboDesgaste">EstriboDesgaste: </label>  
+			<span th:text="${estribo.EstriboDesgaste}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="EstriboFisurado">EstriboFisurado: </label>  
+			<span th:text="${estribo.EstriboFisurado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="EstriboCorrosion">EstriboCorrosion: </label>  
+			<span th:text="${estribo.EstriboCorrosion}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/estribos}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/estribos/delete/{id}(id = ${estribo.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/estribos/edit/{id}(id = ${estribo.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

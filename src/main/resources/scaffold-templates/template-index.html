@@ -16,39 +16,29 @@
 
 		<div id="main-content" class="shadow-sm bg-white">
 
-			<h1>Entradas</h1>
+			<h1>${className}s</h1>
 			<hr />
 
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>Nivel</th> 
-					<th>Largo</th> 
-					<th>Ancho</th> 
-					<th>Action</th>
+					${th_attributes}
 				</tr>
 				</thead>
 				<tbody>
-				<tr th:each="entrada : ${listEntrada}">
-										<td th:text="${entrada.nivel}"></td> 
-					<td th:text="${entrada.largo}"></td> 
-					<td th:text="${entrada.ancho}"></td> 
+				<tr th:each="paramClassName : ${list${className}}">
+					${td_attributes}
 					<td>
-							<a th:href="@{/entradas/{id}(id = ${entrada.id})}">Show</a> 
-					 		<a th:href="@{/entradas/edit/{id}(id = ${entrada.id})}">Edit</a> 
-							<a th:href="@{/entradas/delete/{id}(id = ${entrada.id})}">Destroy</a> 
-					</td>
-					<td>
-						<a class="action" th:href="@{/entradas/{id}(id = ${entrada.id})}"><i class="flaticon-search"></i></a>
-						<a class="action" th:href="@{/entradas/edit/{id}(id = ${entrada.id})}"><i class="flaticon-edit"></i></a>
-						<a class="action" th:href="@{/entradas/delete/{id}(id = ${entrada.id})}"><i class="flaticon-trash"></i></a>
+						<a class="action" th:href="@{url_path/{id}(id = ${paramClassName.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{url_path/edit/{id}(id = ${paramClassName.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{url_path/delete/{id}(id = ${paramClassName.id})}"><i class="flaticon-trash"></i></a>
 					</td>
 				</tr>
 				</tbody>
 			</table>
 
 			<div class="d-flex justify-content-end">
-				<a th:href="@{/entradas/new}" class="btn btn-primary">Crear Entrada</a>
+				<a th:href="@{url_path/new}" class="btn btn-primary">Crear ${className}</a>
 			</div>
 		</div>
 

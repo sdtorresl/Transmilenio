@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdGrifo</th> 
-					<th>GrifoId</th> 
+										<th>GrifoId</th> 
 					<th>GrifoCostado</th> 
 					<th>GrifoAveria</th> 
 					<th>GrifoCorrosion</th> 
@@ -36,8 +35,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="grifo : ${listGrifo}">
-										<td th:text="${grifo.IdGrifo}"></td> 
-					<td th:text="${grifo.GrifoId}"></td> 
+										<td th:text="${grifo.GrifoId}"></td> 
 					<td th:text="${grifo.GrifoCostado}"></td> 
 					<td th:text="${grifo.GrifoAveria}"></td> 
 					<td th:text="${grifo.GrifoCorrosion}"></td> 

@@ -20,9 +20,6 @@ public class Publicidad implements Serializable {
     @Column(name = "inv_publicidad_fisuravidrio")
     private Boolean PublicidadFisuravidrio;
 
-    @Column(name = "inv_id_publicidad")
-    private Double IdPublicidad;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -64,8 +61,6 @@ public class Publicidad implements Serializable {
 
 	public void setPublicidadFisuravidrio(Boolean PublicidadFisuravidrio) {this.PublicidadFisuravidrio = PublicidadFisuravidrio;}
 	public Boolean getPublicidadFisuravidrio() {return PublicidadFisuravidrio;}
-	public void setIdPublicidad(Double IdPublicidad) {this.IdPublicidad = IdPublicidad;}
-	public Double getIdPublicidad() {return IdPublicidad;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setVentilacionId(Double VentilacionId) {this.VentilacionId = VentilacionId;}

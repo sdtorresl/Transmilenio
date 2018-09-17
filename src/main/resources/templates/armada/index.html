@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>ArmadaLongitud</th> 
-					<th>IdArmada</th> 
 					<th>IdSeccionestacion</th> 
 					<th>ArmadaId</th> 
 					<th>ArmadaAlto</th> 
@@ -39,7 +38,6 @@
 				<tbody>
 				<tr th:each="armada : ${listArmada}">
 										<td th:text="${armada.ArmadaLongitud}"></td> 
-					<td th:text="${armada.IdArmada}"></td> 
 					<td th:text="${armada.IdSeccionestacion}"></td> 
 					<td th:text="${armada.ArmadaId}"></td> 
 					<td th:text="${armada.ArmadaAlto}"></td> 

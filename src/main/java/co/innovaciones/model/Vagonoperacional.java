@@ -23,15 +23,10 @@ public class Vagonoperacional implements Serializable {
     @Column(name = "inv_vagon_nomenclatura")
     private String VagonNomenclatura;
 
-    @Column(name = "inv_id_vagonoperacional")
-    private Double IdVagonoperacional;
-
 	public void setVagonoperacionalId(Double VagonoperacionalId) {this.VagonoperacionalId = VagonoperacionalId;}
 	public Double getVagonoperacionalId() {return VagonoperacionalId;}
 	public void setVagonNomenclatura(String VagonNomenclatura) {this.VagonNomenclatura = VagonNomenclatura;}
 	public String getVagonNomenclatura() {return VagonNomenclatura;}
-	public void setIdVagonoperacional(Double IdVagonoperacional) {this.IdVagonoperacional = IdVagonoperacional;}
-	public Double getIdVagonoperacional() {return IdVagonoperacional;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

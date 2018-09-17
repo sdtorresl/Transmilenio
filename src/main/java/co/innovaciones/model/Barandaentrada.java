@@ -17,9 +17,6 @@ public class Barandaentrada implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_barandaentrada")
-    private Double IdBarandaentrada;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -56,8 +53,6 @@ public class Barandaentrada implements Serializable {
     @Column(name = "inv_barandaentrada_perdida")
     private Boolean BarandaentradaPerdida;
 
-	public void setIdBarandaentrada(Double IdBarandaentrada) {this.IdBarandaentrada = IdBarandaentrada;}
-	public Double getIdBarandaentrada() {return IdBarandaentrada;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setBarandaentradaId(Double BarandaentradaId) {this.BarandaentradaId = BarandaentradaId;}

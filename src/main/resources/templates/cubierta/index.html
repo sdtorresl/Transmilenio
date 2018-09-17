@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>CubiertaAncholucemario</th> 
-					<th>IdCubierta</th> 
 					<th>IdSeccionestacion</th> 
 					<th>CubiertaLucemario</th> 
 					<th>CubiertaAncho</th> 
@@ -36,7 +35,6 @@
 				<tbody>
 				<tr th:each="cubierta : ${listCubierta}">
 										<td th:text="${cubierta.CubiertaAncholucemario}"></td> 
-					<td th:text="${cubierta.IdCubierta}"></td> 
 					<td th:text="${cubierta.IdSeccionestacion}"></td> 
 					<td th:text="${cubierta.CubiertaLucemario}"></td> 
 					<td th:text="${cubierta.CubiertaAncho}"></td> 

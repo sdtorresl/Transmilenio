@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdBiblioestacion</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>BiblioestacionArea</th> 
 					<th>BiblioestacionAncho</th> 
 					<th>BiblioestacionLargo</th> 
@@ -34,8 +33,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="biblioestacion : ${listBiblioestacion}">
-										<td th:text="${biblioestacion.IdBiblioestacion}"></td> 
-					<td th:text="${biblioestacion.IdSeccionestacion}"></td> 
+										<td th:text="${biblioestacion.IdSeccionestacion}"></td> 
 					<td th:text="${biblioestacion.BiblioestacionArea}"></td> 
 					<td th:text="${biblioestacion.BiblioestacionAncho}"></td> 
 					<td th:text="${biblioestacion.BiblioestacionLargo}"></td> 

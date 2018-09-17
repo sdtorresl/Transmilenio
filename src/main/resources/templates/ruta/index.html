@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>RutaId</th> 
-					<th>IdRuta</th> 
 					<th>IdSeccionestacion</th> 
 					<th>RutaCostado</th> 
 					<th>RutaDescripcion</th> 
@@ -34,7 +33,6 @@
 				<tbody>
 				<tr th:each="ruta : ${listRuta}">
 										<td th:text="${ruta.RutaId}"></td> 
-					<td th:text="${ruta.IdRuta}"></td> 
 					<td th:text="${ruta.IdSeccionestacion}"></td> 
 					<td th:text="${ruta.RutaCostado}"></td> 
 					<td th:text="${ruta.RutaDescripcion}"></td> 

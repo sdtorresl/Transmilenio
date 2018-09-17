@@ -29,9 +29,6 @@ public class Tablero implements Serializable {
     @Column(name = "inv_tablero_nombre")
     private String TableroNombre;
 
-    @Column(name = "inv_id_tablero")
-    private Double IdTablero;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -76,8 +73,6 @@ public class Tablero implements Serializable {
 	public String getTableroTipo() {return TableroTipo;}
 	public void setTableroNombre(String TableroNombre) {this.TableroNombre = TableroNombre;}
 	public String getTableroNombre() {return TableroNombre;}
-	public void setIdTablero(Double IdTablero) {this.IdTablero = IdTablero;}
-	public Double getIdTablero() {return IdTablero;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setTableroNumero(String TableroNumero) {this.TableroNumero = TableroNumero;}

@@ -44,9 +44,6 @@ public class Portamapa implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_portamapa")
-    private Double IdPortamapa;
-
 	public void setPortamapaId(String PortamapaId) {this.PortamapaId = PortamapaId;}
 	public String getPortamapaId() {return PortamapaId;}
 	public void setPortamapaCorroido(Boolean PortamapaCorroido) {this.PortamapaCorroido = PortamapaCorroido;}
@@ -65,8 +62,6 @@ public class Portamapa implements Serializable {
 	public Boolean getPortamapaPresentamapa() {return PortamapaPresentamapa;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdPortamapa(Double IdPortamapa) {this.IdPortamapa = IdPortamapa;}
-	public Double getIdPortamapa() {return IdPortamapa;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

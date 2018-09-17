@@ -17,9 +17,6 @@ public class Cuarto implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_cuarto")
-    private Double IdCuarto;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -32,8 +29,6 @@ public class Cuarto implements Serializable {
     @Column(name = "inv_cuarto_tipo")
     private String CuartoTipo;
 
-	public void setIdCuarto(Double IdCuarto) {this.IdCuarto = IdCuarto;}
-	public Double getIdCuarto() {return IdCuarto;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setCuartoId(Double CuartoId) {this.CuartoId = CuartoId;}

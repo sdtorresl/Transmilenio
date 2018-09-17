@@ -22,16 +22,14 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdReStringida</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>ReStringidaId</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
 				<tbody>
 				<tr th:each="restringida : ${listReStringida}">
-										<td th:text="${restringida.IdReStringida}"></td> 
-					<td th:text="${restringida.IdSeccionestacion}"></td> 
+										<td th:text="${restringida.IdSeccionestacion}"></td> 
 					<td th:text="${restringida.ReStringidaId}"></td> 
 					<td>
 							<a th:href="@{/restringidas/{id}(id = ${restringida.id})}">Show</a> 

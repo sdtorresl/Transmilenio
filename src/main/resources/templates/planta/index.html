@@ -29,7 +29,6 @@
 					<th>PlantaTension</th> 
 					<th>PlantaId</th> 
 					<th>IdSeccionestacion</th> 
-					<th>IdPlanta</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -42,7 +41,6 @@
 					<td th:text="${planta.PlantaTension}"></td> 
 					<td th:text="${planta.PlantaId}"></td> 
 					<td th:text="${planta.IdSeccionestacion}"></td> 
-					<td th:text="${planta.IdPlanta}"></td> 
 					<td>
 							<a th:href="@{/plantas/{id}(id = ${planta.id})}">Show</a> 
 					 		<a th:href="@{/plantas/edit/{id}(id = ${planta.id})}">Edit</a> 

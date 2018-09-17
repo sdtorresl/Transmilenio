@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdCanal</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>CanalId</th> 
 					<th>CanalAveria</th> 
 					<th>CanalPorcentajeaveria</th> 
@@ -35,8 +34,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="canal : ${listCanal}">
-										<td th:text="${canal.IdCanal}"></td> 
-					<td th:text="${canal.IdSeccionestacion}"></td> 
+										<td th:text="${canal.IdSeccionestacion}"></td> 
 					<td th:text="${canal.CanalId}"></td> 
 					<td th:text="${canal.CanalAveria}"></td> 
 					<td th:text="${canal.CanalPorcentajeaveria}"></td> 

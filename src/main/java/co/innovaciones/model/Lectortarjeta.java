@@ -35,9 +35,6 @@ public class Lectortarjeta implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_lectortarjeta")
-    private Double IdLectortarjeta;
-
 	public void setLectortarjetaImagen(String LectortarjetaImagen) {this.LectortarjetaImagen = LectortarjetaImagen;}
 	public String getLectortarjetaImagen() {return LectortarjetaImagen;}
 	public void setLectortarjetaRutaImagen(String LectortarjetaRutaImagen) {this.LectortarjetaRutaImagen = LectortarjetaRutaImagen;}
@@ -50,8 +47,6 @@ public class Lectortarjeta implements Serializable {
 	public Double getLectortarjetaId() {return LectortarjetaId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdLectortarjeta(Double IdLectortarjeta) {this.IdLectortarjeta = IdLectortarjeta;}
-	public Double getIdLectortarjeta() {return IdLectortarjeta;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

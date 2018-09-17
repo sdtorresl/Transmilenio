@@ -37,7 +37,6 @@
 					<th>CerramientoAveria</th> 
 					<th>CerramientoId</th> 
 					<th>IdSeccionestacion</th> 
-					<th>IdCerramiento</th> 
 					<th>CerramientoLubricacion</th> 
 					<th>Action</th>
 				</tr>
@@ -59,7 +58,6 @@
 					<td th:text="${cerramiento.CerramientoAveria}"></td> 
 					<td th:text="${cerramiento.CerramientoId}"></td> 
 					<td th:text="${cerramiento.IdSeccionestacion}"></td> 
-					<td th:text="${cerramiento.IdCerramiento}"></td> 
 					<td th:text="${cerramiento.CerramientoLubricacion}"></td> 
 					<td>
 							<a th:href="@{/cerramientos/{id}(id = ${cerramiento.id})}">Show</a> 

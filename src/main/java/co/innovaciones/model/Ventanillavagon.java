@@ -17,9 +17,6 @@ public class Ventanillavagon implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_ventanillavagon")
-    private Double IdVentanillavagon;
-
     @Column(name = "inv_ventanillavagon_cantidadaverias")
     private Integer VentanillavagonCantidadaverias;
 
@@ -32,8 +29,6 @@ public class Ventanillavagon implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-	public void setIdVentanillavagon(Double IdVentanillavagon) {this.IdVentanillavagon = IdVentanillavagon;}
-	public Double getIdVentanillavagon() {return IdVentanillavagon;}
 	public void setVentanillavagonCantidadaverias(Integer VentanillavagonCantidadaverias) {this.VentanillavagonCantidadaverias = VentanillavagonCantidadaverias;}
 	public Integer getVentanillavagonCantidadaverias() {return VentanillavagonCantidadaverias;}
 	public void setVentanillavagonCantidad(Integer VentanillavagonCantidad) {this.VentanillavagonCantidad = VentanillavagonCantidad;}

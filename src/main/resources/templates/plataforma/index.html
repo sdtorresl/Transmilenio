@@ -27,7 +27,6 @@
 					<th>PlataformaEstructura</th> 
 					<th>PlataformaTipo</th> 
 					<th>PlataformaLargo</th> 
-					<th>IdPlataforma</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -38,7 +37,6 @@
 					<td th:text="${plataforma.PlataformaEstructura}"></td> 
 					<td th:text="${plataforma.PlataformaTipo}"></td> 
 					<td th:text="${plataforma.PlataformaLargo}"></td> 
-					<td th:text="${plataforma.IdPlataforma}"></td> 
 					<td>
 							<a th:href="@{/plataformas/{id}(id = ${plataforma.id})}">Show</a> 
 					 		<a th:href="@{/plataformas/edit/{id}(id = ${plataforma.id})}">Edit</a> 

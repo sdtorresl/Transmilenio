@@ -17,9 +17,6 @@ public class Barreraper implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_barreraper")
-    private Double IdBarreraper;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -89,8 +86,6 @@ public class Barreraper implements Serializable {
     @Column(name = "inv_barreraper_imagen")
     private String BarreraperImagen;
 
-	public void setIdBarreraper(Double IdBarreraper) {this.IdBarreraper = IdBarreraper;}
-	public Double getIdBarreraper() {return IdBarreraper;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setBarreraperId(String BarreraperId) {this.BarreraperId = BarreraperId;}

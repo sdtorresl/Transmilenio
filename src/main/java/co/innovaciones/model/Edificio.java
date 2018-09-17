@@ -17,9 +17,6 @@ public class Edificio implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_edificio")
-    private Double IdEdificio;
-
     @Column(name = "inv_edificio_id")
     private Double EdificioId;
 
@@ -32,8 +29,6 @@ public class Edificio implements Serializable {
     @Column(name = "inv_edificio_nivel")
     private String EdificioNivel;
 
-	public void setIdEdificio(Double IdEdificio) {this.IdEdificio = IdEdificio;}
-	public Double getIdEdificio() {return IdEdificio;}
 	public void setEdificioId(Double EdificioId) {this.EdificioId = EdificioId;}
 	public Double getEdificioId() {return EdificioId;}
 	public void setEdificioAncho(Double EdificioAncho) {this.EdificioAncho = EdificioAncho;}

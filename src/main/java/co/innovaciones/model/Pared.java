@@ -35,9 +35,6 @@ public class Pared implements Serializable {
     @Column(name = "inv_pared_tipo")
     private String ParedTipo;
 
-    @Column(name = "inv_id_pared")
-    private Double IdPared;
-
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setParedId(Double ParedId) {this.ParedId = ParedId;}
@@ -50,8 +47,6 @@ public class Pared implements Serializable {
 	public Double getParedPorcentajeaveria() {return ParedPorcentajeaveria;}
 	public void setParedTipo(String ParedTipo) {this.ParedTipo = ParedTipo;}
 	public String getParedTipo() {return ParedTipo;}
-	public void setIdPared(Double IdPared) {this.IdPared = IdPared;}
-	public Double getIdPared() {return IdPared;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

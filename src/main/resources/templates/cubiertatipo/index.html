@@ -22,16 +22,14 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdCubiertatipo</th> 
-					<th>IdCubierta</th> 
+										<th>IdCubierta</th> 
 					<th>CubiertatipoMaterial</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
 				<tbody>
 				<tr th:each="cubiertatipo : ${listCubiertatipo}">
-										<td th:text="${cubiertatipo.IdCubiertatipo}"></td> 
-					<td th:text="${cubiertatipo.IdCubierta}"></td> 
+										<td th:text="${cubiertatipo.IdCubierta}"></td> 
 					<td th:text="${cubiertatipo.CubiertatipoMaterial}"></td> 
 					<td>
 							<a th:href="@{/cubiertatipos/{id}(id = ${cubiertatipo.id})}">Show</a> 

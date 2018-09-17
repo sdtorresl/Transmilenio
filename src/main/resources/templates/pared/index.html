@@ -28,7 +28,6 @@
 					<th>ParedArea</th> 
 					<th>ParedPorcentajeaveria</th> 
 					<th>ParedTipo</th> 
-					<th>IdPared</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -40,7 +39,6 @@
 					<td th:text="${pared.ParedArea}"></td> 
 					<td th:text="${pared.ParedPorcentajeaveria}"></td> 
 					<td th:text="${pared.ParedTipo}"></td> 
-					<td th:text="${pared.IdPared}"></td> 
 					<td>
 							<a th:href="@{/pareds/{id}(id = ${pared.id})}">Show</a> 
 					 		<a th:href="@{/pareds/edit/{id}(id = ${pared.id})}">Edit</a> 

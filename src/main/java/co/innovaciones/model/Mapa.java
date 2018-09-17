@@ -20,9 +20,6 @@ public class Mapa implements Serializable {
     @Column(name = "inv_mapa_imagen")
     private String MapaImagen;
 
-    @Column(name = "inv_id_mapa")
-    private Double IdMapa;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -61,8 +58,6 @@ public class Mapa implements Serializable {
 
 	public void setMapaImagen(String MapaImagen) {this.MapaImagen = MapaImagen;}
 	public String getMapaImagen() {return MapaImagen;}
-	public void setIdMapa(Double IdMapa) {this.IdMapa = IdMapa;}
-	public Double getIdMapa() {return IdMapa;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setMapaId(Double MapaId) {this.MapaId = MapaId;}

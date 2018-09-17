@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>CajeroelecId</th> 
-					<th>IdCajeroelec</th> 
 					<th>IdSeccionestacion</th> 
 					<th>CajeroelecEntidad</th> 
 					<th>CajeroelecSinservicio</th> 
@@ -36,7 +35,6 @@
 				<tbody>
 				<tr th:each="cajeroelec : ${listCajeroelec}">
 										<td th:text="${cajeroelec.CajeroelecId}"></td> 
-					<td th:text="${cajeroelec.IdCajeroelec}"></td> 
 					<td th:text="${cajeroelec.IdSeccionestacion}"></td> 
 					<td th:text="${cajeroelec.CajeroelecEntidad}"></td> 
 					<td th:text="${cajeroelec.CajeroelecSinservicio}"></td> 

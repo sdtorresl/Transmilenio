@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdBandera</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>BanderametalId</th> 
 					<th>BanderametalCostado</th> 
 					<th>BanderametalVagonNumero</th> 
@@ -36,8 +35,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="bandera : ${listBandera}">
-										<td th:text="${bandera.IdBandera}"></td> 
-					<td th:text="${bandera.IdSeccionestacion}"></td> 
+										<td th:text="${bandera.IdSeccionestacion}"></td> 
 					<td th:text="${bandera.BanderametalId}"></td> 
 					<td th:text="${bandera.BanderametalCostado}"></td> 
 					<td th:text="${bandera.BanderametalVagonNumero}"></td> 

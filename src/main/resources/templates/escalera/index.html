@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdEscalera</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>EscaleraId</th> 
 					<th>EscaleraAveria</th> 
 					<th>EscaleraPorcentajeaveria</th> 
@@ -33,8 +32,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="escalera : ${listEscalera}">
-										<td th:text="${escalera.IdEscalera}"></td> 
-					<td th:text="${escalera.IdSeccionestacion}"></td> 
+										<td th:text="${escalera.IdSeccionestacion}"></td> 
 					<td th:text="${escalera.EscaleraId}"></td> 
 					<td th:text="${escalera.EscaleraAveria}"></td> 
 					<td th:text="${escalera.EscaleraPorcentajeaveria}"></td> 

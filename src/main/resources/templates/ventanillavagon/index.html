@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdVentanillavagon</th> 
-					<th>VentanillavagonCantidadaverias</th> 
+										<th>VentanillavagonCantidadaverias</th> 
 					<th>VentanillavagonCantidad</th> 
 					<th>VentanillavagonCostado</th> 
 					<th>IdSeccionestacion</th> 
@@ -32,8 +31,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="ventanillavagon : ${listVentanillavagon}">
-										<td th:text="${ventanillavagon.IdVentanillavagon}"></td> 
-					<td th:text="${ventanillavagon.VentanillavagonCantidadaverias}"></td> 
+										<td th:text="${ventanillavagon.VentanillavagonCantidadaverias}"></td> 
 					<td th:text="${ventanillavagon.VentanillavagonCantidad}"></td> 
 					<td th:text="${ventanillavagon.VentanillavagonCostado}"></td> 
 					<td th:text="${ventanillavagon.IdSeccionestacion}"></td> 

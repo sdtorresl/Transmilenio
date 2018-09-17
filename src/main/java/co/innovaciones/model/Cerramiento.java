@@ -62,9 +62,6 @@ public class Cerramiento implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_cerramiento")
-    private Double IdCerramiento;
-
     @Column(name = "inv_cerramiento_lubricacion")
     private Boolean CerramientoLubricacion;
 
@@ -98,8 +95,6 @@ public class Cerramiento implements Serializable {
 	public Double getCerramientoId() {return CerramientoId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdCerramiento(Double IdCerramiento) {this.IdCerramiento = IdCerramiento;}
-	public Double getIdCerramiento() {return IdCerramiento;}
 	public void setCerramientoLubricacion(Boolean CerramientoLubricacion) {this.CerramientoLubricacion = CerramientoLubricacion;}
 	public Boolean getCerramientoLubricacion() {return CerramientoLubricacion;}
 

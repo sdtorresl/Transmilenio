@@ -17,9 +17,6 @@ public class Canal implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_canal")
-    private Double IdCanal;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -41,8 +38,6 @@ public class Canal implements Serializable {
     @Column(name = "inv_canal_desajustado")
     private Boolean CanalDesajustado;
 
-	public void setIdCanal(Double IdCanal) {this.IdCanal = IdCanal;}
-	public Double getIdCanal() {return IdCanal;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setCanalId(Double CanalId) {this.CanalId = CanalId;}

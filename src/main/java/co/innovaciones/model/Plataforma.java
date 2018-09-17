@@ -32,9 +32,6 @@ public class Plataforma implements Serializable {
     @Column(name = "inv_plataforma_largo")
     private Double PlataformaLargo;
 
-    @Column(name = "inv_id_plataforma")
-    private Double IdPlataforma;
-
 	public void setPlataformaAncho(Double PlataformaAncho) {this.PlataformaAncho = PlataformaAncho;}
 	public Double getPlataformaAncho() {return PlataformaAncho;}
 	public void setPlataformaId(Double PlataformaId) {this.PlataformaId = PlataformaId;}
@@ -45,8 +42,6 @@ public class Plataforma implements Serializable {
 	public String getPlataformaTipo() {return PlataformaTipo;}
 	public void setPlataformaLargo(Double PlataformaLargo) {this.PlataformaLargo = PlataformaLargo;}
 	public Double getPlataformaLargo() {return PlataformaLargo;}
-	public void setIdPlataforma(Double IdPlataforma) {this.IdPlataforma = IdPlataforma;}
-	public Double getIdPlataforma() {return IdPlataforma;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

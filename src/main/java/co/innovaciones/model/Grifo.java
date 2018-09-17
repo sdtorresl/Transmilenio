@@ -17,9 +17,6 @@ public class Grifo implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_grifo")
-    private Double IdGrifo;
-
     @Column(name = "inv_grifo_id")
     private Double GrifoId;
 
@@ -44,8 +41,6 @@ public class Grifo implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-	public void setIdGrifo(Double IdGrifo) {this.IdGrifo = IdGrifo;}
-	public Double getIdGrifo() {return IdGrifo;}
 	public void setGrifoId(Double GrifoId) {this.GrifoId = GrifoId;}
 	public Double getGrifoId() {return GrifoId;}
 	public void setGrifoCostado(String GrifoCostado) {this.GrifoCostado = GrifoCostado;}

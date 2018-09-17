@@ -27,7 +27,6 @@
 					<th>ExtractorUbicacion</th> 
 					<th>ExtractorCorrosion</th> 
 					<th>ExtractorSinservicio</th> 
-					<th>IdExtractor</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -38,7 +37,6 @@
 					<td th:text="${extractor.ExtractorUbicacion}"></td> 
 					<td th:text="${extractor.ExtractorCorrosion}"></td> 
 					<td th:text="${extractor.ExtractorSinservicio}"></td> 
-					<td th:text="${extractor.IdExtractor}"></td> 
 					<td>
 							<a th:href="@{/extractors/{id}(id = ${extractor.id})}">Show</a> 
 					 		<a th:href="@{/extractors/edit/{id}(id = ${extractor.id})}">Edit</a> 

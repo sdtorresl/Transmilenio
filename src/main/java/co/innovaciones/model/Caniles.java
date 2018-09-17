@@ -17,9 +17,6 @@ public class Caniles implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_caniles")
-    private Double IdCaniles;
-
     @Column(name = "inv_caniles_imagen")
     private String CanilesImagen;
 
@@ -44,8 +41,6 @@ public class Caniles implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-	public void setIdCaniles(Double IdCaniles) {this.IdCaniles = IdCaniles;}
-	public Double getIdCaniles() {return IdCaniles;}
 	public void setCanilesImagen(String CanilesImagen) {this.CanilesImagen = CanilesImagen;}
 	public String getCanilesImagen() {return CanilesImagen;}
 	public void setCanilesRutaImagen(String CanilesRutaImagen) {this.CanilesRutaImagen = CanilesRutaImagen;}

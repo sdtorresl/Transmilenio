@@ -17,9 +17,6 @@ public class Ducto implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_ducto")
-    private Double IdDucto;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -38,8 +35,6 @@ public class Ducto implements Serializable {
     @Column(name = "inv_ducto_pieza")
     private Boolean DuctoPieza;
 
-	public void setIdDucto(Double IdDucto) {this.IdDucto = IdDucto;}
-	public Double getIdDucto() {return IdDucto;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setDuctoId(Double DuctoId) {this.DuctoId = DuctoId;}

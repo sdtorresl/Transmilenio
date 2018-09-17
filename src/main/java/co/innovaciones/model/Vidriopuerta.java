@@ -26,9 +26,6 @@ public class Vidriopuerta implements Serializable {
     @Column(name = "inv_vidriopuerta_numerocontaminacion")
     private Double VidriopuertaNumerocontaminacion;
 
-    @Column(name = "inv_id_vidriopuerta")
-    private Double IdVidriopuerta;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -68,8 +65,6 @@ public class Vidriopuerta implements Serializable {
 	public Boolean getVidriopuertaContaminacion() {return VidriopuertaContaminacion;}
 	public void setVidriopuertaNumerocontaminacion(Double VidriopuertaNumerocontaminacion) {this.VidriopuertaNumerocontaminacion = VidriopuertaNumerocontaminacion;}
 	public Double getVidriopuertaNumerocontaminacion() {return VidriopuertaNumerocontaminacion;}
-	public void setIdVidriopuerta(Double IdVidriopuerta) {this.IdVidriopuerta = IdVidriopuerta;}
-	public Double getIdVidriopuerta() {return IdVidriopuerta;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setVidriopuertaId(Double VidriopuertaId) {this.VidriopuertaId = VidriopuertaId;}

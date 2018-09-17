@@ -50,9 +50,6 @@ public class Puente implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_puente")
-    private Double IdPuente;
-
     @Column(name = "inv_puente_id")
     private Double PuenteId;
 
@@ -96,8 +93,6 @@ public class Puente implements Serializable {
 	public String getPuenteRampatipo() {return PuenteRampatipo;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdPuente(Double IdPuente) {this.IdPuente = IdPuente;}
-	public Double getIdPuente() {return IdPuente;}
 	public void setPuenteId(Double PuenteId) {this.PuenteId = PuenteId;}
 	public Double getPuenteId() {return PuenteId;}
 	public void setIdTipopuente(String IdTipopuente) {this.IdTipopuente = IdTipopuente;}

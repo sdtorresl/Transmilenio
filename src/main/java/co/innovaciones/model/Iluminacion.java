@@ -20,9 +20,6 @@ public class Iluminacion implements Serializable {
     @Column(name = "inv_iluminacion_sirveparcialporcentaje")
     private Double IluminacionSirveparcialporcentaje;
 
-    @Column(name = "inv_id_iluminacion")
-    private Double IdIluminacion;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -58,8 +55,6 @@ public class Iluminacion implements Serializable {
 
 	public void setIluminacionSirveparcialporcentaje(Double IluminacionSirveparcialporcentaje) {this.IluminacionSirveparcialporcentaje = IluminacionSirveparcialporcentaje;}
 	public Double getIluminacionSirveparcialporcentaje() {return IluminacionSirveparcialporcentaje;}
-	public void setIdIluminacion(Double IdIluminacion) {this.IdIluminacion = IdIluminacion;}
-	public Double getIdIluminacion() {return IdIluminacion;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setIluminacionId(Double IluminacionId) {this.IluminacionId = IluminacionId;}

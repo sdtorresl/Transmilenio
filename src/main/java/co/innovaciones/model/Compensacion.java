@@ -50,9 +50,6 @@ public class Compensacion implements Serializable {
     @Column(name = "inv_compensacion_imagen")
     private String CompensacionImagen;
 
-    @Column(name = "inv_id_compensacion")
-    private Double IdCompensacion;
-
     @Column(name = "inv_compensacion_id")
     private Double CompensacionId;
 
@@ -78,8 +75,6 @@ public class Compensacion implements Serializable {
 	public String getCompensacionRutaImagen() {return CompensacionRutaImagen;}
 	public void setCompensacionImagen(String CompensacionImagen) {this.CompensacionImagen = CompensacionImagen;}
 	public String getCompensacionImagen() {return CompensacionImagen;}
-	public void setIdCompensacion(Double IdCompensacion) {this.IdCompensacion = IdCompensacion;}
-	public Double getIdCompensacion() {return IdCompensacion;}
 	public void setCompensacionId(Double CompensacionId) {this.CompensacionId = CompensacionId;}
 	public Double getCompensacionId() {return CompensacionId;}
 

@@ -38,9 +38,6 @@ public class Cercha implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_cercha")
-    private Double IdCercha;
-
     @Column(name = "inv_cercha_pinturaepoxica")
     private Boolean CerchaPinturaepoxica;
 
@@ -58,8 +55,6 @@ public class Cercha implements Serializable {
 	public Double getCerchaId() {return CerchaId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdCercha(Double IdCercha) {this.IdCercha = IdCercha;}
-	public Double getIdCercha() {return IdCercha;}
 	public void setCerchaPinturaepoxica(Boolean CerchaPinturaepoxica) {this.CerchaPinturaepoxica = CerchaPinturaepoxica;}
 	public Boolean getCerchaPinturaepoxica() {return CerchaPinturaepoxica;}
 

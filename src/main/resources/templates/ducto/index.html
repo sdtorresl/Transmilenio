@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdDucto</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>DuctoId</th> 
 					<th>DuctoTipo</th> 
 					<th>DuctoCorrosion</th> 
@@ -34,8 +33,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="ducto : ${listDucto}">
-										<td th:text="${ducto.IdDucto}"></td> 
-					<td th:text="${ducto.IdSeccionestacion}"></td> 
+										<td th:text="${ducto.IdSeccionestacion}"></td> 
 					<td th:text="${ducto.DuctoId}"></td> 
 					<td th:text="${ducto.DuctoTipo}"></td> 
 					<td th:text="${ducto.DuctoCorrosion}"></td> 

@@ -20,9 +20,6 @@ public class Isquiatico implements Serializable {
     @Column(name = "inv_isquiatico_corrosion")
     private Boolean IsquiaticoCorrosion;
 
-    @Column(name = "inv_id_isquiatico")
-    private Double IdIsquiatico;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -52,8 +49,6 @@ public class Isquiatico implements Serializable {
 
 	public void setIsquiaticoCorrosion(Boolean IsquiaticoCorrosion) {this.IsquiaticoCorrosion = IsquiaticoCorrosion;}
 	public Boolean getIsquiaticoCorrosion() {return IsquiaticoCorrosion;}
-	public void setIdIsquiatico(Double IdIsquiatico) {this.IdIsquiatico = IdIsquiatico;}
-	public Double getIdIsquiatico() {return IdIsquiatico;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setIsquiaticoId(Double IsquiaticoId) {this.IsquiaticoId = IsquiaticoId;}

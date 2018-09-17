@@ -26,17 +26,12 @@ public class Ventilacion implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_ventilacion")
-    private Double IdVentilacion;
-
 	public void setVentilacionTipo(Double VentilacionTipo) {this.VentilacionTipo = VentilacionTipo;}
 	public Double getVentilacionTipo() {return VentilacionTipo;}
 	public void setVentilacionId(Double VentilacionId) {this.VentilacionId = VentilacionId;}
 	public Double getVentilacionId() {return VentilacionId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdVentilacion(Double IdVentilacion) {this.IdVentilacion = IdVentilacion;}
-	public Double getIdVentilacion() {return IdVentilacion;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

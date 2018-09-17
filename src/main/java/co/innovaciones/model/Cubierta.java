@@ -20,9 +20,6 @@ public class Cubierta implements Serializable {
     @Column(name = "inv_cubierta_ancholucemario")
     private Double CubiertaAncholucemario;
 
-    @Column(name = "inv_id_cubierta")
-    private Double IdCubierta;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -43,8 +40,6 @@ public class Cubierta implements Serializable {
 
 	public void setCubiertaAncholucemario(Double CubiertaAncholucemario) {this.CubiertaAncholucemario = CubiertaAncholucemario;}
 	public Double getCubiertaAncholucemario() {return CubiertaAncholucemario;}
-	public void setIdCubierta(Double IdCubierta) {this.IdCubierta = IdCubierta;}
-	public Double getIdCubierta() {return IdCubierta;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setCubiertaLucemario(Boolean CubiertaLucemario) {this.CubiertaLucemario = CubiertaLucemario;}

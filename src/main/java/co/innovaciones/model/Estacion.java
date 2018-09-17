@@ -20,9 +20,6 @@ public class Estacion implements Serializable {
     @Column(name = "inv_estacion_codigo")
     private String EstacionCodigo;
 
-    @Column(name = "inv_id_estacion")
-    private Double IdEstacion;
-
     @Column(name = "inv_id_estaciontipo")
     private Double IdEstaciontipo;
 
@@ -52,8 +49,6 @@ public class Estacion implements Serializable {
 
 	public void setEstacionCodigo(String EstacionCodigo) {this.EstacionCodigo = EstacionCodigo;}
 	public String getEstacionCodigo() {return EstacionCodigo;}
-	public void setIdEstacion(Double IdEstacion) {this.IdEstacion = IdEstacion;}
-	public Double getIdEstacion() {return IdEstacion;}
 	public void setIdEstaciontipo(Double IdEstaciontipo) {this.IdEstaciontipo = IdEstaciontipo;}
 	public Double getIdEstaciontipo() {return IdEstaciontipo;}
 	public void setEstacionDistribucion(String EstacionDistribucion) {this.EstacionDistribucion = EstacionDistribucion;}

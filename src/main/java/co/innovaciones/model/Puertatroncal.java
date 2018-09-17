@@ -50,9 +50,6 @@ public class Puertatroncal implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_puertatroncal")
-    private Double IdPuertatroncal;
-
     @Column(name = "inv_puertatroncal_mecatronico")
     private Boolean PuertatroncalMecatronico;
 
@@ -87,8 +84,6 @@ public class Puertatroncal implements Serializable {
 	public Double getPuertatroncalId() {return PuertatroncalId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdPuertatroncal(Double IdPuertatroncal) {this.IdPuertatroncal = IdPuertatroncal;}
-	public Double getIdPuertatroncal() {return IdPuertatroncal;}
 	public void setPuertatroncalMecatronico(Boolean PuertatroncalMecatronico) {this.PuertatroncalMecatronico = PuertatroncalMecatronico;}
 	public Boolean getPuertatroncalMecatronico() {return PuertatroncalMecatronico;}
 	public void setPuertatroncalMarco(String PuertatroncalMarco) {this.PuertatroncalMarco = PuertatroncalMarco;}

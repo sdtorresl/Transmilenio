@@ -23,9 +23,6 @@ public class Logo implements Serializable {
     @Column(name = "inv_logo_perdida")
     private Boolean LogoPerdida;
 
-    @Column(name = "inv_id_logo")
-    private Double IdLogo;
-
     @Column(name = "inv_logo_legible")
     private Boolean LogoLegible;
 
@@ -48,8 +45,6 @@ public class Logo implements Serializable {
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setLogoPerdida(Boolean LogoPerdida) {this.LogoPerdida = LogoPerdida;}
 	public Boolean getLogoPerdida() {return LogoPerdida;}
-	public void setIdLogo(Double IdLogo) {this.IdLogo = IdLogo;}
-	public Double getIdLogo() {return IdLogo;}
 	public void setLogoLegible(Boolean LogoLegible) {this.LogoLegible = LogoLegible;}
 	public Boolean getLogoLegible() {return LogoLegible;}
 	public void setLogoMalestado(Boolean LogoMalestado) {this.LogoMalestado = LogoMalestado;}

@@ -17,9 +17,6 @@ public class Acceso implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_acceso")
-    private Double IdAcceso;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -38,8 +35,6 @@ public class Acceso implements Serializable {
     @Column(name = "inv_acceso_id")
     private Double AccesoId;
 
-	public void setIdAcceso(Double IdAcceso) {this.IdAcceso = IdAcceso;}
-	public Double getIdAcceso() {return IdAcceso;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setAccesoFormaingreso(String AccesoFormaingreso) {this.AccesoFormaingreso = AccesoFormaingreso;}

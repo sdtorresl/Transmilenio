@@ -24,7 +24,6 @@
 				<tr>
 										<th>IdSeccionestacion</th> 
 					<th>LogoPerdida</th> 
-					<th>IdLogo</th> 
 					<th>LogoLegible</th> 
 					<th>LogoMalestado</th> 
 					<th>LogoAveria</th> 
@@ -38,7 +37,6 @@
 				<tr th:each="logo : ${listLogo}">
 										<td th:text="${logo.IdSeccionestacion}"></td> 
 					<td th:text="${logo.LogoPerdida}"></td> 
-					<td th:text="${logo.IdLogo}"></td> 
 					<td th:text="${logo.LogoLegible}"></td> 
 					<td th:text="${logo.LogoMalestado}"></td> 
 					<td th:text="${logo.LogoAveria}"></td> 

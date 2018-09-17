@@ -31,7 +31,6 @@
 					<th>PortamapaAlto</th> 
 					<th>PortamapaPresentamapa</th> 
 					<th>IdSeccionestacion</th> 
-					<th>IdPortamapa</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -46,7 +45,6 @@
 					<td th:text="${portamapa.PortamapaAlto}"></td> 
 					<td th:text="${portamapa.PortamapaPresentamapa}"></td> 
 					<td th:text="${portamapa.IdSeccionestacion}"></td> 
-					<td th:text="${portamapa.IdPortamapa}"></td> 
 					<td>
 							<a th:href="@{/portamapas/{id}(id = ${portamapa.id})}">Show</a> 
 					 		<a th:href="@{/portamapas/edit/{id}(id = ${portamapa.id})}">Edit</a> 

@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdCorredor</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>CorredorId</th> 
 					<th>CorredorTipo</th> 
 					<th>CorredorArea</th> 
@@ -32,8 +31,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="corredor : ${listCorredor}">
-										<td th:text="${corredor.IdCorredor}"></td> 
-					<td th:text="${corredor.IdSeccionestacion}"></td> 
+										<td th:text="${corredor.IdSeccionestacion}"></td> 
 					<td th:text="${corredor.CorredorId}"></td> 
 					<td th:text="${corredor.CorredorTipo}"></td> 
 					<td th:text="${corredor.CorredorArea}"></td> 

@@ -29,9 +29,6 @@ public class Ciclopar implements Serializable {
     @Column(name = "inv_ciclopar_area")
     private Double CicloparArea;
 
-    @Column(name = "inv_id_ciclopar")
-    private Double IdCiclopar;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -55,8 +52,6 @@ public class Ciclopar implements Serializable {
 	public String getCicloparImagen() {return CicloparImagen;}
 	public void setCicloparArea(Double CicloparArea) {this.CicloparArea = CicloparArea;}
 	public Double getCicloparArea() {return CicloparArea;}
-	public void setIdCiclopar(Double IdCiclopar) {this.IdCiclopar = IdCiclopar;}
-	public Double getIdCiclopar() {return IdCiclopar;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setCicloparId(Double CicloparId) {this.CicloparId = CicloparId;}

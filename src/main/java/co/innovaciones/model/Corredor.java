@@ -17,9 +17,6 @@ public class Corredor implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_corredor")
-    private Double IdCorredor;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -32,8 +29,6 @@ public class Corredor implements Serializable {
     @Column(name = "inv_corredor_area")
     private Double CorredorArea;
 
-	public void setIdCorredor(Double IdCorredor) {this.IdCorredor = IdCorredor;}
-	public Double getIdCorredor() {return IdCorredor;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setCorredorId(Double CorredorId) {this.CorredorId = CorredorId;}

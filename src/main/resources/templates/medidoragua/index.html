@@ -26,7 +26,6 @@
 					<th>MedidoraguaId</th> 
 					<th>MedidoraguaFuga</th> 
 					<th>MedidoraguaUbicacion</th> 
-					<th>IdMedidoragua</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -36,7 +35,6 @@
 					<td th:text="${medidoragua.MedidoraguaId}"></td> 
 					<td th:text="${medidoragua.MedidoraguaFuga}"></td> 
 					<td th:text="${medidoragua.MedidoraguaUbicacion}"></td> 
-					<td th:text="${medidoragua.IdMedidoragua}"></td> 
 					<td>
 							<a th:href="@{/medidoraguas/{id}(id = ${medidoragua.id})}">Show</a> 
 					 		<a th:href="@{/medidoraguas/edit/{id}(id = ${medidoragua.id})}">Edit</a> 

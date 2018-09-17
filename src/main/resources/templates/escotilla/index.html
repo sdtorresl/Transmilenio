@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdEscotilla</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>EscotillaId</th> 
 					<th>EscotillaLargo</th> 
 					<th>EscotillaAncho</th> 
@@ -34,8 +33,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="escotilla : ${listEscotilla}">
-										<td th:text="${escotilla.IdEscotilla}"></td> 
-					<td th:text="${escotilla.IdSeccionestacion}"></td> 
+										<td th:text="${escotilla.IdSeccionestacion}"></td> 
 					<td th:text="${escotilla.EscotillaId}"></td> 
 					<td th:text="${escotilla.EscotillaLargo}"></td> 
 					<td th:text="${escotilla.EscotillaAncho}"></td> 

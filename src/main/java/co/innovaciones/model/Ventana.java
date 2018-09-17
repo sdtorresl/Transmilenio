@@ -17,9 +17,6 @@ public class Ventana implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_ventana")
-    private Double IdVentana;
-
     @Column(name = "inv_ventana_desaparicion")
     private Boolean VentanaDesaparicion;
 
@@ -53,8 +50,6 @@ public class Ventana implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-	public void setIdVentana(Double IdVentana) {this.IdVentana = IdVentana;}
-	public Double getIdVentana() {return IdVentana;}
 	public void setVentanaDesaparicion(Boolean VentanaDesaparicion) {this.VentanaDesaparicion = VentanaDesaparicion;}
 	public Boolean getVentanaDesaparicion() {return VentanaDesaparicion;}
 	public void setVentanaRayones(Boolean VentanaRayones) {this.VentanaRayones = VentanaRayones;}

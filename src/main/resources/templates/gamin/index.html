@@ -30,7 +30,6 @@
 					<th>GaminDoblado</th> 
 					<th>GaminRoto</th> 
 					<th>GaminExtraviado</th> 
-					<th>IdGamin</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -44,7 +43,6 @@
 					<td th:text="${gamin.GaminDoblado}"></td> 
 					<td th:text="${gamin.GaminRoto}"></td> 
 					<td th:text="${gamin.GaminExtraviado}"></td> 
-					<td th:text="${gamin.IdGamin}"></td> 
 					<td>
 							<a th:href="@{/gamins/{id}(id = ${gamin.id})}">Show</a> 
 					 		<a th:href="@{/gamins/edit/{id}(id = ${gamin.id})}">Edit</a> 

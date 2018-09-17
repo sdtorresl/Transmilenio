@@ -33,7 +33,6 @@
 					<th>TransformadorGabinetecorrosion</th> 
 					<th>TransformadorGabinetecorrosionarea</th> 
 					<th>TransformadorImagen</th> 
-					<th>IdTransformador</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -50,7 +49,6 @@
 					<td th:text="${transformador.TransformadorGabinetecorrosion}"></td> 
 					<td th:text="${transformador.TransformadorGabinetecorrosionarea}"></td> 
 					<td th:text="${transformador.TransformadorImagen}"></td> 
-					<td th:text="${transformador.IdTransformador}"></td> 
 					<td>
 							<a th:href="@{/transformadors/{id}(id = ${transformador.id})}">Show</a> 
 					 		<a th:href="@{/transformadors/edit/{id}(id = ${transformador.id})}">Edit</a> 

@@ -23,15 +23,10 @@ public class Rampamaterial implements Serializable {
     @Column(name = "inv_id_rampa")
     private Double IdRampa;
 
-    @Column(name = "inv_id_rampamaterial")
-    private Double IdRampamaterial;
-
 	public void setRampamaterialTipo(String RampamaterialTipo) {this.RampamaterialTipo = RampamaterialTipo;}
 	public String getRampamaterialTipo() {return RampamaterialTipo;}
 	public void setIdRampa(Double IdRampa) {this.IdRampa = IdRampa;}
 	public Double getIdRampa() {return IdRampa;}
-	public void setIdRampamaterial(Double IdRampamaterial) {this.IdRampamaterial = IdRampamaterial;}
-	public Double getIdRampamaterial() {return IdRampamaterial;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

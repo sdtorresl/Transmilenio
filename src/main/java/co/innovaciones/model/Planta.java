@@ -38,9 +38,6 @@ public class Planta implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_planta")
-    private Double IdPlanta;
-
 	public void setPlantaPotencia(Double PlantaPotencia) {this.PlantaPotencia = PlantaPotencia;}
 	public Double getPlantaPotencia() {return PlantaPotencia;}
 	public void setPlantaImagen(String PlantaImagen) {this.PlantaImagen = PlantaImagen;}
@@ -55,8 +52,6 @@ public class Planta implements Serializable {
 	public Double getPlantaId() {return PlantaId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdPlanta(Double IdPlanta) {this.IdPlanta = IdPlanta;}
-	public Double getIdPlanta() {return IdPlanta;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

@@ -17,9 +17,6 @@ public class Piso implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_piso")
-    private Double IdPiso;
-
     @Column(name = "inv_piso_porcentajeaveria")
     private Double PisoPorcentajeaveria;
 
@@ -38,8 +35,6 @@ public class Piso implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-	public void setIdPiso(Double IdPiso) {this.IdPiso = IdPiso;}
-	public Double getIdPiso() {return IdPiso;}
 	public void setPisoPorcentajeaveria(Double PisoPorcentajeaveria) {this.PisoPorcentajeaveria = PisoPorcentajeaveria;}
 	public Double getPisoPorcentajeaveria() {return PisoPorcentajeaveria;}
 	public void setPisoAveria(Boolean PisoAveria) {this.PisoAveria = PisoAveria;}

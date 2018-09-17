@@ -44,9 +44,6 @@ public class Celosiaestribo implements Serializable {
     @Column(name = "inv_velosiaestribo_observacion")
     private String VelosiaestriboObservacion;
 
-    @Column(name = "inv_id_celosiaestribo")
-    private Double IdCelosiaestribo;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -71,8 +68,6 @@ public class Celosiaestribo implements Serializable {
 	public Boolean getCelosiaestriboRobado() {return CelosiaestriboRobado;}
 	public void setVelosiaestriboObservacion(String VelosiaestriboObservacion) {this.VelosiaestriboObservacion = VelosiaestriboObservacion;}
 	public String getVelosiaestriboObservacion() {return VelosiaestriboObservacion;}
-	public void setIdCelosiaestribo(Double IdCelosiaestribo) {this.IdCelosiaestribo = IdCelosiaestribo;}
-	public Double getIdCelosiaestribo() {return IdCelosiaestribo;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setCelosiaestriboId(Double CelosiaestriboId) {this.CelosiaestriboId = CelosiaestriboId;}

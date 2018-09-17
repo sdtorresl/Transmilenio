@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>EstacionCodigo</th> 
-					<th>IdEstacion</th> 
 					<th>IdEstaciontipo</th> 
 					<th>EstacionDistribucion</th> 
 					<th>IdTroncal</th> 
@@ -39,7 +38,6 @@
 				<tbody>
 				<tr th:each="estacion : ${listEstacion}">
 										<td th:text="${estacion.EstacionCodigo}"></td> 
-					<td th:text="${estacion.IdEstacion}"></td> 
 					<td th:text="${estacion.IdEstaciontipo}"></td> 
 					<td th:text="${estacion.EstacionDistribucion}"></td> 
 					<td th:text="${estacion.IdTroncal}"></td> 

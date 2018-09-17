@@ -17,9 +17,6 @@ public class Estaciontipo implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_estaciontipo")
-    private Double IdEstaciontipo;
-
     @Column(name = "inv_estaciontipo_intercambio")
     private Boolean EstaciontipoIntercambio;
 
@@ -29,8 +26,6 @@ public class Estaciontipo implements Serializable {
     @Column(name = "inv_estaciontipo_nombre")
     private String EstaciontipoNombre;
 
-	public void setIdEstaciontipo(Double IdEstaciontipo) {this.IdEstaciontipo = IdEstaciontipo;}
-	public Double getIdEstaciontipo() {return IdEstaciontipo;}
 	public void setEstaciontipoIntercambio(Boolean EstaciontipoIntercambio) {this.EstaciontipoIntercambio = EstaciontipoIntercambio;}
 	public Boolean getEstaciontipoIntercambio() {return EstaciontipoIntercambio;}
 	public void setEstaciontipoDescripcion(String EstaciontipoDescripcion) {this.EstaciontipoDescripcion = EstaciontipoDescripcion;}

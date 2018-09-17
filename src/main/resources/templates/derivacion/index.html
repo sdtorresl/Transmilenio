@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdDerivacion</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>DerivacionId</th> 
 					<th>DerivacionCostado</th> 
 					<th>DerivacionAveria</th> 
@@ -36,8 +35,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="derivacion : ${listDerivacion}">
-										<td th:text="${derivacion.IdDerivacion}"></td> 
-					<td th:text="${derivacion.IdSeccionestacion}"></td> 
+										<td th:text="${derivacion.IdSeccionestacion}"></td> 
 					<td th:text="${derivacion.DerivacionId}"></td> 
 					<td th:text="${derivacion.DerivacionCostado}"></td> 
 					<td th:text="${derivacion.DerivacionAveria}"></td> 

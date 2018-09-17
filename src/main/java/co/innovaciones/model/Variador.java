@@ -26,9 +26,6 @@ public class Variador implements Serializable {
     @Column(name = "inv_variador_ubicacion")
     private String VariadorUbicacion;
 
-    @Column(name = "inv_id_variador")
-    private Double IdVariador;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -38,8 +35,6 @@ public class Variador implements Serializable {
 	public String getVariadorMarca() {return VariadorMarca;}
 	public void setVariadorUbicacion(String VariadorUbicacion) {this.VariadorUbicacion = VariadorUbicacion;}
 	public String getVariadorUbicacion() {return VariadorUbicacion;}
-	public void setIdVariador(Double IdVariador) {this.IdVariador = IdVariador;}
-	public Double getIdVariador() {return IdVariador;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 

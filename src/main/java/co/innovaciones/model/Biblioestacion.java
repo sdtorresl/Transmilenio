@@ -17,9 +17,6 @@ public class Biblioestacion implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_biblioestacion")
-    private Double IdBiblioestacion;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -38,8 +35,6 @@ public class Biblioestacion implements Serializable {
     @Column(name = "inv_biblioestacion_imagen")
     private String BiblioestacionImagen;
 
-	public void setIdBiblioestacion(Double IdBiblioestacion) {this.IdBiblioestacion = IdBiblioestacion;}
-	public Double getIdBiblioestacion() {return IdBiblioestacion;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setBiblioestacionArea(Double BiblioestacionArea) {this.BiblioestacionArea = BiblioestacionArea;}

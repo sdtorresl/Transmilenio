@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdTroncal</th> 
-					<th>TroncalOrientacion</th> 
+										<th>TroncalOrientacion</th> 
 					<th>TroncalZona</th> 
 					<th>TroncalNombre</th> 
 					<th>TroncalDescipcion</th> 
@@ -32,8 +31,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="troncal : ${listTroncal}">
-										<td th:text="${troncal.IdTroncal}"></td> 
-					<td th:text="${troncal.TroncalOrientacion}"></td> 
+										<td th:text="${troncal.TroncalOrientacion}"></td> 
 					<td th:text="${troncal.TroncalZona}"></td> 
 					<td th:text="${troncal.TroncalNombre}"></td> 
 					<td th:text="${troncal.TroncalDescipcion}"></td> 

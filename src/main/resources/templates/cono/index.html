@@ -27,7 +27,6 @@
 					<th>ConoPorcentajeaveria</th> 
 					<th>ConoId</th> 
 					<th>IdSeccionestacion</th> 
-					<th>IdCono</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -38,7 +37,6 @@
 					<td th:text="${cono.ConoPorcentajeaveria}"></td> 
 					<td th:text="${cono.ConoId}"></td> 
 					<td th:text="${cono.IdSeccionestacion}"></td> 
-					<td th:text="${cono.IdCono}"></td> 
 					<td>
 							<a th:href="@{/conos/{id}(id = ${cono.id})}">Show</a> 
 					 		<a th:href="@{/conos/edit/{id}(id = ${cono.id})}">Edit</a> 

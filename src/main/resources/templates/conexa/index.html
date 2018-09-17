@@ -22,16 +22,14 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdConexa</th> 
-					<th>ConexaArea</th> 
+										<th>ConexaArea</th> 
 					<th>ConexaNumero</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
 				<tbody>
 				<tr th:each="conexa : ${listConexa}">
-										<td th:text="${conexa.IdConexa}"></td> 
-					<td th:text="${conexa.ConexaArea}"></td> 
+										<td th:text="${conexa.ConexaArea}"></td> 
 					<td th:text="${conexa.ConexaNumero}"></td> 
 					<td>
 							<a th:href="@{/conexas/{id}(id = ${conexa.id})}">Show</a> 

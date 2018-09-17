@@ -20,9 +20,6 @@ public class Camara implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_camara")
-    private Double IdCamara;
-
     @Column(name = "inv_camara_id")
     private Double CamaraId;
 
@@ -52,8 +49,6 @@ public class Camara implements Serializable {
 
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdCamara(Double IdCamara) {this.IdCamara = IdCamara;}
-	public Double getIdCamara() {return IdCamara;}
 	public void setCamaraId(Double CamaraId) {this.CamaraId = CamaraId;}
 	public Double getCamaraId() {return CamaraId;}
 	public void setCamaraTipoVision(String CamaraTipoVision) {this.CamaraTipoVision = CamaraTipoVision;}

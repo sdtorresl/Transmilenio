@@ -24,7 +24,6 @@
 				<tr>
 										<th>RampamaterialTipo</th> 
 					<th>IdRampa</th> 
-					<th>IdRampamaterial</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -32,7 +31,6 @@
 				<tr th:each="rampamaterial : ${listRampamaterial}">
 										<td th:text="${rampamaterial.RampamaterialTipo}"></td> 
 					<td th:text="${rampamaterial.IdRampa}"></td> 
-					<td th:text="${rampamaterial.IdRampamaterial}"></td> 
 					<td>
 							<a th:href="@{/rampamaterials/{id}(id = ${rampamaterial.id})}">Show</a> 
 					 		<a th:href="@{/rampamaterials/edit/{id}(id = ${rampamaterial.id})}">Edit</a> 

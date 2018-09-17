@@ -20,9 +20,6 @@ public class Cajeroelec implements Serializable {
     @Column(name = "inv_cajeroelec_id")
     private Double CajeroelecId;
 
-    @Column(name = "inv_id_cajeroelec")
-    private Double IdCajeroelec;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -43,8 +40,6 @@ public class Cajeroelec implements Serializable {
 
 	public void setCajeroelecId(Double CajeroelecId) {this.CajeroelecId = CajeroelecId;}
 	public Double getCajeroelecId() {return CajeroelecId;}
-	public void setIdCajeroelec(Double IdCajeroelec) {this.IdCajeroelec = IdCajeroelec;}
-	public Double getIdCajeroelec() {return IdCajeroelec;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setCajeroelecEntidad(String CajeroelecEntidad) {this.CajeroelecEntidad = CajeroelecEntidad;}

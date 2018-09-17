@@ -32,9 +32,6 @@ public class Extractor implements Serializable {
     @Column(name = "inv_extractor_sinservicio")
     private Boolean ExtractorSinservicio;
 
-    @Column(name = "inv_id_extractor")
-    private Double IdExtractor;
-
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setExtractorId(Double ExtractorId) {this.ExtractorId = ExtractorId;}
@@ -45,8 +42,6 @@ public class Extractor implements Serializable {
 	public Boolean getExtractorCorrosion() {return ExtractorCorrosion;}
 	public void setExtractorSinservicio(Boolean ExtractorSinservicio) {this.ExtractorSinservicio = ExtractorSinservicio;}
 	public Boolean getExtractorSinservicio() {return ExtractorSinservicio;}
-	public void setIdExtractor(Double IdExtractor) {this.IdExtractor = IdExtractor;}
-	public Double getIdExtractor() {return IdExtractor;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

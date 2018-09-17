@@ -17,9 +17,6 @@ public class Entrada implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_entrada")
-    private Double IdEntrada;
-
     @Column(name = "inv_entrada_id")
     private Double EntradaId;
 
@@ -32,8 +29,6 @@ public class Entrada implements Serializable {
     @Column(name = "inv_entrada_ancho")
     private Double EntradaAncho;
 
-	public void setIdEntrada(Double IdEntrada) {this.IdEntrada = IdEntrada;}
-	public Double getIdEntrada() {return IdEntrada;}
 	public void setEntradaId(Double EntradaId) {this.EntradaId = EntradaId;}
 	public Double getEntradaId() {return EntradaId;}
 	public void setEntradaNivel(String EntradaNivel) {this.EntradaNivel = EntradaNivel;}

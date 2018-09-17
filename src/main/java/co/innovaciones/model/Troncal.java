@@ -17,9 +17,6 @@ public class Troncal implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_troncal")
-    private Double IdTroncal;
-
     @Column(name = "inv_troncal_orientacion")
     private String TroncalOrientacion;
 
@@ -32,8 +29,6 @@ public class Troncal implements Serializable {
     @Column(name = "inv_troncal_descipcion")
     private String TroncalDescipcion;
 
-	public void setIdTroncal(Double IdTroncal) {this.IdTroncal = IdTroncal;}
-	public Double getIdTroncal() {return IdTroncal;}
 	public void setTroncalOrientacion(String TroncalOrientacion) {this.TroncalOrientacion = TroncalOrientacion;}
 	public String getTroncalOrientacion() {return TroncalOrientacion;}
 	public void setTroncalZona(String TroncalZona) {this.TroncalZona = TroncalZona;}

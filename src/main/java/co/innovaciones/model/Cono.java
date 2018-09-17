@@ -32,9 +32,6 @@ public class Cono implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_cono")
-    private Double IdCono;
-
 	public void setConoAveria(Boolean ConoAveria) {this.ConoAveria = ConoAveria;}
 	public Boolean getConoAveria() {return ConoAveria;}
 	public void setConoHayconos(Boolean ConoHayconos) {this.ConoHayconos = ConoHayconos;}
@@ -45,8 +42,6 @@ public class Cono implements Serializable {
 	public Double getConoId() {return ConoId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdCono(Double IdCono) {this.IdCono = IdCono;}
-	public Double getIdCono() {return IdCono;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

@@ -24,7 +24,6 @@
 				<tr>
 										<th>InformadorId</th> 
 					<th>IdSeccionestacion</th> 
-					<th>IdInformador</th> 
 					<th>InformadorCostado</th> 
 					<th>InformadorSoporteaveria</th> 
 					<th>InformadorPorcentajeaveria</th> 
@@ -39,7 +38,6 @@
 				<tr th:each="informador : ${listInformador}">
 										<td th:text="${informador.InformadorId}"></td> 
 					<td th:text="${informador.IdSeccionestacion}"></td> 
-					<td th:text="${informador.IdInformador}"></td> 
 					<td th:text="${informador.InformadorCostado}"></td> 
 					<td th:text="${informador.InformadorSoporteaveria}"></td> 
 					<td th:text="${informador.InformadorPorcentajeaveria}"></td> 

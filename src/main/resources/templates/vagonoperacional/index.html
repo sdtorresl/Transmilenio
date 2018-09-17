@@ -24,7 +24,6 @@
 				<tr>
 										<th>VagonoperacionalId</th> 
 					<th>VagonNomenclatura</th> 
-					<th>IdVagonoperacional</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -32,7 +31,6 @@
 				<tr th:each="vagonoperacional : ${listVagonoperacional}">
 										<td th:text="${vagonoperacional.VagonoperacionalId}"></td> 
 					<td th:text="${vagonoperacional.VagonNomenclatura}"></td> 
-					<td th:text="${vagonoperacional.IdVagonoperacional}"></td> 
 					<td>
 							<a th:href="@{/vagonoperacionals/{id}(id = ${vagonoperacional.id})}">Show</a> 
 					 		<a th:href="@{/vagonoperacionals/edit/{id}(id = ${vagonoperacional.id})}">Edit</a> 

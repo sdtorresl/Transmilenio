@@ -47,9 +47,6 @@ public class Medidor implements Serializable {
     @Column(name = "inv_medidor_gabinetesucio")
     private Boolean MedidorGabinetesucio;
 
-    @Column(name = "inv_id_medidor")
-    private Double IdMedidor;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -79,8 +76,6 @@ public class Medidor implements Serializable {
 	public String getMedidorImagen() {return MedidorImagen;}
 	public void setMedidorGabinetesucio(Boolean MedidorGabinetesucio) {this.MedidorGabinetesucio = MedidorGabinetesucio;}
 	public Boolean getMedidorGabinetesucio() {return MedidorGabinetesucio;}
-	public void setIdMedidor(Double IdMedidor) {this.IdMedidor = IdMedidor;}
-	public Double getIdMedidor() {return IdMedidor;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setMedidorId(Double MedidorId) {this.MedidorId = MedidorId;}

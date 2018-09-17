@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>CelosiaId</th> 
-					<th>IdCelosia</th> 
 					<th>IdSeccionestacion</th> 
 					<th>CelosiaCostado</th> 
 					<th>CelosiaTipo</th> 
@@ -43,7 +42,6 @@
 				<tbody>
 				<tr th:each="celosia : ${listCelosia}">
 										<td th:text="${celosia.CelosiaId}"></td> 
-					<td th:text="${celosia.IdCelosia}"></td> 
 					<td th:text="${celosia.IdSeccionestacion}"></td> 
 					<td th:text="${celosia.CelosiaCostado}"></td> 
 					<td th:text="${celosia.CelosiaTipo}"></td> 

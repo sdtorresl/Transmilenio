@@ -28,7 +28,6 @@
 					<th>LectortarjetaCostado</th> 
 					<th>LectortarjetaId</th> 
 					<th>IdSeccionestacion</th> 
-					<th>IdLectortarjeta</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -40,7 +39,6 @@
 					<td th:text="${lectortarjeta.LectortarjetaCostado}"></td> 
 					<td th:text="${lectortarjeta.LectortarjetaId}"></td> 
 					<td th:text="${lectortarjeta.IdSeccionestacion}"></td> 
-					<td th:text="${lectortarjeta.IdLectortarjeta}"></td> 
 					<td>
 							<a th:href="@{/lectortarjetas/{id}(id = ${lectortarjeta.id})}">Show</a> 
 					 		<a th:href="@{/lectortarjetas/edit/{id}(id = ${lectortarjeta.id})}">Edit</a> 

@@ -25,7 +25,6 @@
 										<th>IdSeccionestacion</th> 
 					<th>ParqueId</th> 
 					<th>ParqueArea</th> 
-					<th>IdParque</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -34,7 +33,6 @@
 										<td th:text="${parque.IdSeccionestacion}"></td> 
 					<td th:text="${parque.ParqueId}"></td> 
 					<td th:text="${parque.ParqueArea}"></td> 
-					<td th:text="${parque.IdParque}"></td> 
 					<td>
 							<a th:href="@{/parques/{id}(id = ${parque.id})}">Show</a> 
 					 		<a th:href="@{/parques/edit/{id}(id = ${parque.id})}">Edit</a> 

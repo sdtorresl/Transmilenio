@@ -17,9 +17,6 @@ public class Noopera implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_noopera")
-    private Double IdNoopera;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -29,8 +26,6 @@ public class Noopera implements Serializable {
     @Column(name = "inv_noopera_area")
     private Double NooperaArea;
 
-	public void setIdNoopera(Double IdNoopera) {this.IdNoopera = IdNoopera;}
-	public Double getIdNoopera() {return IdNoopera;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setNooperaTipo(String NooperaTipo) {this.NooperaTipo = NooperaTipo;}

@@ -20,9 +20,6 @@ public class Bano implements Serializable {
     @Column(name = "inv_bano_baldosfisurada")
     private Boolean BanoBaldosfisurada;
 
-    @Column(name = "inv_id_bano")
-    private Double IdBano;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -70,8 +67,6 @@ public class Bano implements Serializable {
 
 	public void setBanoBaldosfisurada(Boolean BanoBaldosfisurada) {this.BanoBaldosfisurada = BanoBaldosfisurada;}
 	public Boolean getBanoBaldosfisurada() {return BanoBaldosfisurada;}
-	public void setIdBano(Double IdBano) {this.IdBano = IdBano;}
-	public Double getIdBano() {return IdBano;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setBanoId(Double BanoId) {this.BanoId = BanoId;}

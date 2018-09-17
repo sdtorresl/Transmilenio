@@ -41,9 +41,6 @@ public class Torniquete implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_torniquete")
-    private Double IdTorniquete;
-
 	public void setIdAcceso(Double IdAcceso) {this.IdAcceso = IdAcceso;}
 	public Double getIdAcceso() {return IdAcceso;}
 	public void setTorniqueteTipo(String TorniqueteTipo) {this.TorniqueteTipo = TorniqueteTipo;}
@@ -60,8 +57,6 @@ public class Torniquete implements Serializable {
 	public Double getTorniqueteId() {return TorniqueteId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdTorniquete(Double IdTorniquete) {this.IdTorniquete = IdTorniquete;}
-	public Double getIdTorniquete() {return IdTorniquete;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

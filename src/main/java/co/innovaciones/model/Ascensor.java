@@ -17,9 +17,6 @@ public class Ascensor implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_ascensor")
-    private Double IdAscensor;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -56,8 +53,6 @@ public class Ascensor implements Serializable {
     @Column(name = "inv_ascensor_imagen")
     private String AscensorImagen;
 
-	public void setIdAscensor(Double IdAscensor) {this.IdAscensor = IdAscensor;}
-	public Double getIdAscensor() {return IdAscensor;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setAscensorId(Double AscensorId) {this.AscensorId = AscensorId;}

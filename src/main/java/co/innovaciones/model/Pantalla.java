@@ -32,9 +32,6 @@ public class Pantalla implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_pantalla")
-    private Double IdPantalla;
-
     @Column(name = "inv_pantalla_costado")
     private String PantallaCostado;
 
@@ -54,8 +51,6 @@ public class Pantalla implements Serializable {
 	public Double getPantallaNumero() {return PantallaNumero;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdPantalla(Double IdPantalla) {this.IdPantalla = IdPantalla;}
-	public Double getIdPantalla() {return IdPantalla;}
 	public void setPantallaCostado(String PantallaCostado) {this.PantallaCostado = PantallaCostado;}
 	public String getPantallaCostado() {return PantallaCostado;}
 	public void setPantallaAveria(Boolean PantallaAveria) {this.PantallaAveria = PantallaAveria;}

@@ -30,7 +30,6 @@
 					<th>TorniqueteCorrosion</th> 
 					<th>TorniqueteId</th> 
 					<th>IdSeccionestacion</th> 
-					<th>IdTorniquete</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -44,7 +43,6 @@
 					<td th:text="${torniquete.TorniqueteCorrosion}"></td> 
 					<td th:text="${torniquete.TorniqueteId}"></td> 
 					<td th:text="${torniquete.IdSeccionestacion}"></td> 
-					<td th:text="${torniquete.IdTorniquete}"></td> 
 					<td>
 							<a th:href="@{/torniquetes/{id}(id = ${torniquete.id})}">Show</a> 
 					 		<a th:href="@{/torniquetes/edit/{id}(id = ${torniquete.id})}">Edit</a> 

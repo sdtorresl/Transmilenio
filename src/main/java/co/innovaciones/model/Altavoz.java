@@ -29,9 +29,6 @@ public class Altavoz implements Serializable {
     @Column(name = "inv_altavoz_costado")
     private String AltavozCostado;
 
-    @Column(name = "inv_id_altavoz")
-    private Double IdAltavoz;
-
     @Column(name = "inv_altavoz_averia")
     private Boolean AltavozAveria;
 
@@ -55,8 +52,6 @@ public class Altavoz implements Serializable {
 	public Boolean getAltavozDesaparecido() {return AltavozDesaparecido;}
 	public void setAltavozCostado(String AltavozCostado) {this.AltavozCostado = AltavozCostado;}
 	public String getAltavozCostado() {return AltavozCostado;}
-	public void setIdAltavoz(Double IdAltavoz) {this.IdAltavoz = IdAltavoz;}
-	public Double getIdAltavoz() {return IdAltavoz;}
 	public void setAltavozAveria(Boolean AltavozAveria) {this.AltavozAveria = AltavozAveria;}
 	public Boolean getAltavozAveria() {return AltavozAveria;}
 	public void setAltavozId(Double AltavozId) {this.AltavozId = AltavozId;}

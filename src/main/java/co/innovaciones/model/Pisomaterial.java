@@ -17,17 +17,12 @@ public class Pisomaterial implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_pisomaterial")
-    private Double IdPisomaterial;
-
     @Column(name = "inv_id_piso")
     private Double IdPiso;
 
     @Column(name = "inv_pisomaterial_tipo")
     private String PisomaterialTipo;
 
-	public void setIdPisomaterial(Double IdPisomaterial) {this.IdPisomaterial = IdPisomaterial;}
-	public Double getIdPisomaterial() {return IdPisomaterial;}
 	public void setIdPiso(Double IdPiso) {this.IdPiso = IdPiso;}
 	public Double getIdPiso() {return IdPiso;}
 	public void setPisomaterialTipo(String PisomaterialTipo) {this.PisomaterialTipo = PisomaterialTipo;}

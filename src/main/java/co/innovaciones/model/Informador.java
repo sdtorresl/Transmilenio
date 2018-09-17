@@ -23,9 +23,6 @@ public class Informador implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_informador")
-    private Double IdInformador;
-
     @Column(name = "inv_informador_costado")
     private String InformadorCostado;
 
@@ -51,8 +48,6 @@ public class Informador implements Serializable {
 	public Double getInformadorId() {return InformadorId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdInformador(Double IdInformador) {this.IdInformador = IdInformador;}
-	public Double getIdInformador() {return IdInformador;}
 	public void setInformadorCostado(String InformadorCostado) {this.InformadorCostado = InformadorCostado;}
 	public String getInformadorCostado() {return InformadorCostado;}
 	public void setInformadorSoporteaveria(Boolean InformadorSoporteaveria) {this.InformadorSoporteaveria = InformadorSoporteaveria;}

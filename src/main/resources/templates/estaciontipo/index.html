@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdEstaciontipo</th> 
-					<th>EstaciontipoIntercambio</th> 
+										<th>EstaciontipoIntercambio</th> 
 					<th>EstaciontipoDescripcion</th> 
 					<th>EstaciontipoNombre</th> 
 					<th>Action</th>
@@ -31,8 +30,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="estaciontipo : ${listEstaciontipo}">
-										<td th:text="${estaciontipo.IdEstaciontipo}"></td> 
-					<td th:text="${estaciontipo.EstaciontipoIntercambio}"></td> 
+										<td th:text="${estaciontipo.EstaciontipoIntercambio}"></td> 
 					<td th:text="${estaciontipo.EstaciontipoDescripcion}"></td> 
 					<td th:text="${estaciontipo.EstaciontipoNombre}"></td> 
 					<td>

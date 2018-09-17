@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>IsquiaticoCorrosion</th> 
-					<th>IdIsquiatico</th> 
 					<th>IdSeccionestacion</th> 
 					<th>IsquiaticoId</th> 
 					<th>IsquiaticoCostado</th> 
@@ -39,7 +38,6 @@
 				<tbody>
 				<tr th:each="isquiatico : ${listIsquiatico}">
 										<td th:text="${isquiatico.IsquiaticoCorrosion}"></td> 
-					<td th:text="${isquiatico.IdIsquiatico}"></td> 
 					<td th:text="${isquiatico.IdSeccionestacion}"></td> 
 					<td th:text="${isquiatico.IsquiaticoId}"></td> 
 					<td th:text="${isquiatico.IsquiaticoCostado}"></td> 

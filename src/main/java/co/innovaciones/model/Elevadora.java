@@ -20,9 +20,6 @@ public class Elevadora implements Serializable {
     @Column(name = "inv_elevadora_porcentajefisura")
     private Double ElevadoraPorcentajefisura;
 
-    @Column(name = "inv_id_elevadora")
-    private Double IdElevadora;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -52,8 +49,6 @@ public class Elevadora implements Serializable {
 
 	public void setElevadoraPorcentajefisura(Double ElevadoraPorcentajefisura) {this.ElevadoraPorcentajefisura = ElevadoraPorcentajefisura;}
 	public Double getElevadoraPorcentajefisura() {return ElevadoraPorcentajefisura;}
-	public void setIdElevadora(Double IdElevadora) {this.IdElevadora = IdElevadora;}
-	public Double getIdElevadora() {return IdElevadora;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setElevadoraId(Double ElevadoraId) {this.ElevadoraId = ElevadoraId;}

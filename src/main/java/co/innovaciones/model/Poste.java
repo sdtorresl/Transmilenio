@@ -35,9 +35,6 @@ public class Poste implements Serializable {
     @Column(name = "inv_poste_perdida")
     private Boolean PostePerdida;
 
-    @Column(name = "inv_id_poste")
-    private Double IdPoste;
-
     @Column(name = "inv_poste_porcentajeaveria")
     private Double PostePorcentajeaveria;
 
@@ -62,8 +59,6 @@ public class Poste implements Serializable {
 	public Boolean getPostePintura() {return PostePintura;}
 	public void setPostePerdida(Boolean PostePerdida) {this.PostePerdida = PostePerdida;}
 	public Boolean getPostePerdida() {return PostePerdida;}
-	public void setIdPoste(Double IdPoste) {this.IdPoste = IdPoste;}
-	public Double getIdPoste() {return IdPoste;}
 	public void setPostePorcentajeaveria(Double PostePorcentajeaveria) {this.PostePorcentajeaveria = PostePorcentajeaveria;}
 	public Double getPostePorcentajeaveria() {return PostePorcentajeaveria;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}

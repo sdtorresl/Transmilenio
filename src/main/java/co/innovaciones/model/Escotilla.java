@@ -17,9 +17,6 @@ public class Escotilla implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_escotilla")
-    private Double IdEscotilla;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -38,8 +35,6 @@ public class Escotilla implements Serializable {
     @Column(name = "inv_escotilla_averia")
     private Boolean EscotillaAveria;
 
-	public void setIdEscotilla(Double IdEscotilla) {this.IdEscotilla = IdEscotilla;}
-	public Double getIdEscotilla() {return IdEscotilla;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setEscotillaId(Double EscotillaId) {this.EscotillaId = EscotillaId;}

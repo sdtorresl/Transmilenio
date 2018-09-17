@@ -17,9 +17,6 @@ public class Puenteexterno implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_puenteexterno")
-    private Double IdPuenteexterno;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -62,8 +59,6 @@ public class Puenteexterno implements Serializable {
     @Column(name = "inv_puenteexterno_numeroescalera")
     private Double PuenteexternoNumeroescalera;
 
-	public void setIdPuenteexterno(Double IdPuenteexterno) {this.IdPuenteexterno = IdPuenteexterno;}
-	public Double getIdPuenteexterno() {return IdPuenteexterno;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setPuenteexternoId(Double PuenteexternoId) {this.PuenteexternoId = PuenteexternoId;}

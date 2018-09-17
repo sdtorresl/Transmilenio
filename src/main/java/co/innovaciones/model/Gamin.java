@@ -41,9 +41,6 @@ public class Gamin implements Serializable {
     @Column(name = "inv_gamin_extraviado")
     private Boolean GaminExtraviado;
 
-    @Column(name = "inv_id_gamin")
-    private Double IdGamin;
-
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setGaminId(Double GaminId) {this.GaminId = GaminId;}
@@ -60,8 +57,6 @@ public class Gamin implements Serializable {
 	public Boolean getGaminRoto() {return GaminRoto;}
 	public void setGaminExtraviado(Boolean GaminExtraviado) {this.GaminExtraviado = GaminExtraviado;}
 	public Boolean getGaminExtraviado() {return GaminExtraviado;}
-	public void setIdGamin(Double IdGamin) {this.IdGamin = IdGamin;}
-	public Double getIdGamin() {return IdGamin;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

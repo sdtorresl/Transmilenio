@@ -29,9 +29,6 @@ public class Medidoragua implements Serializable {
     @Column(name = "inv_medidoragua_ubicacion")
     private String MedidoraguaUbicacion;
 
-    @Column(name = "inv_id_medidoragua")
-    private Double IdMedidoragua;
-
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setMedidoraguaId(Double MedidoraguaId) {this.MedidoraguaId = MedidoraguaId;}
@@ -40,8 +37,6 @@ public class Medidoragua implements Serializable {
 	public Boolean getMedidoraguaFuga() {return MedidoraguaFuga;}
 	public void setMedidoraguaUbicacion(String MedidoraguaUbicacion) {this.MedidoraguaUbicacion = MedidoraguaUbicacion;}
 	public String getMedidoraguaUbicacion() {return MedidoraguaUbicacion;}
-	public void setIdMedidoragua(Double IdMedidoragua) {this.IdMedidoragua = IdMedidoragua;}
-	public Double getIdMedidoragua() {return IdMedidoragua;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

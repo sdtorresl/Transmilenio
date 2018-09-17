@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>TaquillaImagen</th> 
-					<th>IdTaquilla</th> 
 					<th>IdSeccionestacion</th> 
 					<th>TaquillaId</th> 
 					<th>TaquillaCostado</th> 
@@ -47,7 +46,6 @@
 				<tbody>
 				<tr th:each="taquilla : ${listTaquilla}">
 										<td th:text="${taquilla.TaquillaImagen}"></td> 
-					<td th:text="${taquilla.IdTaquilla}"></td> 
 					<td th:text="${taquilla.IdSeccionestacion}"></td> 
 					<td th:text="${taquilla.TaquillaId}"></td> 
 					<td th:text="${taquilla.TaquillaCostado}"></td> 

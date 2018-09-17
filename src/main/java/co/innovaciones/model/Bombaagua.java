@@ -17,9 +17,6 @@ public class Bombaagua implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_bombaagua")
-    private Double IdBombaagua;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -35,8 +32,6 @@ public class Bombaagua implements Serializable {
     @Column(name = "inv_bombaagua_imagen")
     private String BombaaguaImagen;
 
-	public void setIdBombaagua(Double IdBombaagua) {this.IdBombaagua = IdBombaagua;}
-	public Double getIdBombaagua() {return IdBombaagua;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setBombaaguaId(Double BombaaguaId) {this.BombaaguaId = BombaaguaId;}

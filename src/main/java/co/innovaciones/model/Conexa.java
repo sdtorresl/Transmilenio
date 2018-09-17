@@ -17,17 +17,12 @@ public class Conexa implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_conexa")
-    private Double IdConexa;
-
     @Column(name = "inv_conexa_area")
     private Double ConexaArea;
 
     @Column(name = "inv_conexa_numero")
     private Double ConexaNumero;
 
-	public void setIdConexa(Double IdConexa) {this.IdConexa = IdConexa;}
-	public Double getIdConexa() {return IdConexa;}
 	public void setConexaArea(Double ConexaArea) {this.ConexaArea = ConexaArea;}
 	public Double getConexaArea() {return ConexaArea;}
 	public void setConexaNumero(Double ConexaNumero) {this.ConexaNumero = ConexaNumero;}

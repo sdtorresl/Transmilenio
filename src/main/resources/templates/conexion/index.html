@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>ConexionElevacion</th> 
-					<th>IdConexion</th> 
 					<th>ConexionId</th> 
 					<th>ConexionNumero</th> 
 					<th>ConexionTipo</th> 
@@ -35,7 +34,6 @@
 				<tbody>
 				<tr th:each="conexion : ${listConexion}">
 										<td th:text="${conexion.ConexionElevacion}"></td> 
-					<td th:text="${conexion.IdConexion}"></td> 
 					<td th:text="${conexion.ConexionId}"></td> 
 					<td th:text="${conexion.ConexionNumero}"></td> 
 					<td th:text="${conexion.ConexionTipo}"></td> 

@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>ColumnaFisura</th> 
-					<th>IdColumna</th> 
 					<th>ColumnaDescascaramiento</th> 
 					<th>ColumnaPorcentajeaveria</th> 
 					<th>ColumnaTipo</th> 
@@ -41,7 +40,6 @@
 				<tbody>
 				<tr th:each="columna : ${listColumna}">
 										<td th:text="${columna.ColumnaFisura}"></td> 
-					<td th:text="${columna.IdColumna}"></td> 
 					<td th:text="${columna.ColumnaDescascaramiento}"></td> 
 					<td th:text="${columna.ColumnaPorcentajeaveria}"></td> 
 					<td th:text="${columna.ColumnaTipo}"></td> 

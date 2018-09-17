@@ -32,9 +32,6 @@ public class Neopreno implements Serializable {
     @Column(name = "inv_neopreno_desgaste")
     private Boolean NeoprenoDesgaste;
 
-    @Column(name = "inv_id_neopreno")
-    private Double IdNeopreno;
-
     @Column(name = "inv_neopreno_averia")
     private Boolean NeoprenoAveria;
 
@@ -66,8 +63,6 @@ public class Neopreno implements Serializable {
 	public Boolean getNeoprenoFisurado() {return NeoprenoFisurado;}
 	public void setNeoprenoDesgaste(Boolean NeoprenoDesgaste) {this.NeoprenoDesgaste = NeoprenoDesgaste;}
 	public Boolean getNeoprenoDesgaste() {return NeoprenoDesgaste;}
-	public void setIdNeopreno(Double IdNeopreno) {this.IdNeopreno = IdNeopreno;}
-	public Double getIdNeopreno() {return IdNeopreno;}
 	public void setNeoprenoAveria(Boolean NeoprenoAveria) {this.NeoprenoAveria = NeoprenoAveria;}
 	public Boolean getNeoprenoAveria() {return NeoprenoAveria;}
 	public void setNeoprenoCuadrado(Boolean NeoprenoCuadrado) {this.NeoprenoCuadrado = NeoprenoCuadrado;}

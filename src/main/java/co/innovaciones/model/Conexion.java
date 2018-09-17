@@ -20,9 +20,6 @@ public class Conexion implements Serializable {
     @Column(name = "inv_conexion_elevacion")
     private String ConexionElevacion;
 
-    @Column(name = "inv_id_conexion")
-    private Double IdConexion;
-
     @Column(name = "inv_conexion_id")
     private Double ConexionId;
 
@@ -40,8 +37,6 @@ public class Conexion implements Serializable {
 
 	public void setConexionElevacion(String ConexionElevacion) {this.ConexionElevacion = ConexionElevacion;}
 	public String getConexionElevacion() {return ConexionElevacion;}
-	public void setIdConexion(Double IdConexion) {this.IdConexion = IdConexion;}
-	public Double getIdConexion() {return IdConexion;}
 	public void setConexionId(Double ConexionId) {this.ConexionId = ConexionId;}
 	public Double getConexionId() {return ConexionId;}
 	public void setConexionNumero(Double ConexionNumero) {this.ConexionNumero = ConexionNumero;}

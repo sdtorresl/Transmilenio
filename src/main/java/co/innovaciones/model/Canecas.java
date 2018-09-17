@@ -20,9 +20,6 @@ public class Canecas implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_canecas")
-    private Double IdCanecas;
-
     @Column(name = "inv_canecas_id")
     private Double CanecasId;
 
@@ -40,8 +37,6 @@ public class Canecas implements Serializable {
 
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdCanecas(Double IdCanecas) {this.IdCanecas = IdCanecas;}
-	public Double getIdCanecas() {return IdCanecas;}
 	public void setCanecasId(Double CanecasId) {this.CanecasId = CanecasId;}
 	public Double getCanecasId() {return CanecasId;}
 	public void setCanecasCostado(String CanecasCostado) {this.CanecasCostado = CanecasCostado;}

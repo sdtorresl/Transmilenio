@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdCuarto</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>CuartoId</th> 
 					<th>CuartoUso</th> 
 					<th>CuartoTipo</th> 
@@ -32,8 +31,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="cuarto : ${listCuarto}">
-										<td th:text="${cuarto.IdCuarto}"></td> 
-					<td th:text="${cuarto.IdSeccionestacion}"></td> 
+										<td th:text="${cuarto.IdSeccionestacion}"></td> 
 					<td th:text="${cuarto.CuartoId}"></td> 
 					<td th:text="${cuarto.CuartoUso}"></td> 
 					<td th:text="${cuarto.CuartoTipo}"></td> 

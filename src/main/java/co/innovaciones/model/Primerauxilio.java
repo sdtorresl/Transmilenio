@@ -53,9 +53,6 @@ public class Primerauxilio implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_primerauxilio")
-    private Double IdPrimerauxilio;
-
 	public void setPrimerauxilioTipo(String PrimerauxilioTipo) {this.PrimerauxilioTipo = PrimerauxilioTipo;}
 	public String getPrimerauxilioTipo() {return PrimerauxilioTipo;}
 	public void setPrimerauxilioBotiquincorrosion(Boolean PrimerauxilioBotiquincorrosion) {this.PrimerauxilioBotiquincorrosion = PrimerauxilioBotiquincorrosion;}
@@ -80,8 +77,6 @@ public class Primerauxilio implements Serializable {
 	public Double getPrimerauxilioId() {return PrimerauxilioId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdPrimerauxilio(Double IdPrimerauxilio) {this.IdPrimerauxilio = IdPrimerauxilio;}
-	public Double getIdPrimerauxilio() {return IdPrimerauxilio;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

@@ -17,9 +17,6 @@ public class Recarga implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_recarga")
-    private Double IdRecarga;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -41,8 +38,6 @@ public class Recarga implements Serializable {
     @Column(name = "inv_recarga_imagen")
     private String RecargaImagen;
 
-	public void setIdRecarga(Double IdRecarga) {this.IdRecarga = IdRecarga;}
-	public Double getIdRecarga() {return IdRecarga;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setRecargaId(Double RecargaId) {this.RecargaId = RecargaId;}

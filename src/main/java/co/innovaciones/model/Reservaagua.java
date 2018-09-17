@@ -20,9 +20,6 @@ public class Reservaagua implements Serializable {
     @Column(name = "inv_reservaagua_id")
     private Double ReservaaguaId;
 
-    @Column(name = "inv_id_reservaagua")
-    private Double IdReservaagua;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -34,8 +31,6 @@ public class Reservaagua implements Serializable {
 
 	public void setReservaaguaId(Double ReservaaguaId) {this.ReservaaguaId = ReservaaguaId;}
 	public Double getReservaaguaId() {return ReservaaguaId;}
-	public void setIdReservaagua(Double IdReservaagua) {this.IdReservaagua = IdReservaagua;}
-	public Double getIdReservaagua() {return IdReservaagua;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setReservaaguaCapacidad(Double ReservaaguaCapacidad) {this.ReservaaguaCapacidad = ReservaaguaCapacidad;}

@@ -17,9 +17,6 @@ public class Banderametal implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_banderametal")
-    private Double IdBanderametal;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -44,8 +41,6 @@ public class Banderametal implements Serializable {
     @Column(name = "inv_banderametal_desaparecido")
     private Boolean BanderametalDesaparecido;
 
-	public void setIdBanderametal(Double IdBanderametal) {this.IdBanderametal = IdBanderametal;}
-	public Double getIdBanderametal() {return IdBanderametal;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setBanderametalId(Double BanderametalId) {this.BanderametalId = BanderametalId;}

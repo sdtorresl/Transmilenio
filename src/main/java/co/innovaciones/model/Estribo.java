@@ -23,9 +23,6 @@ public class Estribo implements Serializable {
     @Column(name = "inv_estribo_pandeo")
     private Boolean EstriboPandeo;
 
-    @Column(name = "inv_id_estribo")
-    private Double IdEstribo;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -60,8 +57,6 @@ public class Estribo implements Serializable {
 	public Boolean getEstriboPerdida() {return EstriboPerdida;}
 	public void setEstriboPandeo(Boolean EstriboPandeo) {this.EstriboPandeo = EstriboPandeo;}
 	public Boolean getEstriboPandeo() {return EstriboPandeo;}
-	public void setIdEstribo(Double IdEstribo) {this.IdEstribo = IdEstribo;}
-	public Double getIdEstribo() {return IdEstribo;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setEstriboId(Double EstriboId) {this.EstriboId = EstriboId;}

@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>MapaImagen</th> 
-					<th>IdMapa</th> 
 					<th>IdSeccionestacion</th> 
 					<th>MapaId</th> 
 					<th>MapaAlto</th> 
@@ -42,7 +41,6 @@
 				<tbody>
 				<tr th:each="mapa : ${listMapa}">
 										<td th:text="${mapa.MapaImagen}"></td> 
-					<td th:text="${mapa.IdMapa}"></td> 
 					<td th:text="${mapa.IdSeccionestacion}"></td> 
 					<td th:text="${mapa.MapaId}"></td> 
 					<td th:text="${mapa.MapaAlto}"></td> 

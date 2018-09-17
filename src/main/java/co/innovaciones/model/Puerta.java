@@ -20,9 +20,6 @@ public class Puerta implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_puerta")
-    private Double IdPuerta;
-
     @Column(name = "inv_puerta_id")
     private Double PuertaId;
 
@@ -67,8 +64,6 @@ public class Puerta implements Serializable {
 
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdPuerta(Double IdPuerta) {this.IdPuerta = IdPuerta;}
-	public Double getIdPuerta() {return IdPuerta;}
 	public void setPuertaId(Double PuertaId) {this.PuertaId = PuertaId;}
 	public Double getPuertaId() {return PuertaId;}
 	public void setPuertaTipo(String PuertaTipo) {this.PuertaTipo = PuertaTipo;}

@@ -17,9 +17,6 @@ public class Barrerapasamano implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_barrerapasamano")
-    private Double IdBarrerapasamano;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -71,8 +68,6 @@ public class Barrerapasamano implements Serializable {
     @Column(name = "inv_barrerapasamano_soldadura")
     private Boolean BarrerapasamanoSoldadura;
 
-	public void setIdBarrerapasamano(Double IdBarrerapasamano) {this.IdBarrerapasamano = IdBarrerapasamano;}
-	public Double getIdBarrerapasamano() {return IdBarrerapasamano;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setBarrerapasamanoId(Double BarrerapasamanoId) {this.BarrerapasamanoId = BarrerapasamanoId;}

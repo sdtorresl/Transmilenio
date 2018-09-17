@@ -25,7 +25,6 @@
 										<th>VentilacionTipo</th> 
 					<th>VentilacionId</th> 
 					<th>IdSeccionestacion</th> 
-					<th>IdVentilacion</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -34,7 +33,6 @@
 										<td th:text="${ventilacion.VentilacionTipo}"></td> 
 					<td th:text="${ventilacion.VentilacionId}"></td> 
 					<td th:text="${ventilacion.IdSeccionestacion}"></td> 
-					<td th:text="${ventilacion.IdVentilacion}"></td> 
 					<td>
 							<a th:href="@{/ventilacions/{id}(id = ${ventilacion.id})}">Show</a> 
 					 		<a th:href="@{/ventilacions/edit/{id}(id = ${ventilacion.id})}">Edit</a> 

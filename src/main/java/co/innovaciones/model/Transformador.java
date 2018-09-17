@@ -50,9 +50,6 @@ public class Transformador implements Serializable {
     @Column(name = "inv_transformador_imagen")
     private String TransformadorImagen;
 
-    @Column(name = "inv_id_transformador")
-    private Double IdTransformador;
-
 	public void setTransformadorCablederretido(Boolean TransformadorCablederretido) {this.TransformadorCablederretido = TransformadorCablederretido;}
 	public Boolean getTransformadorCablederretido() {return TransformadorCablederretido;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
@@ -75,8 +72,6 @@ public class Transformador implements Serializable {
 	public Double getTransformadorGabinetecorrosionarea() {return TransformadorGabinetecorrosionarea;}
 	public void setTransformadorImagen(String TransformadorImagen) {this.TransformadorImagen = TransformadorImagen;}
 	public String getTransformadorImagen() {return TransformadorImagen;}
-	public void setIdTransformador(Double IdTransformador) {this.IdTransformador = IdTransformador;}
-	public Double getIdTransformador() {return IdTransformador;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

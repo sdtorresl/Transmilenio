@@ -35,9 +35,6 @@ public class Vidrio implements Serializable {
     @Column(name = "inv_vidrio_tipo")
     private String VidrioTipo;
 
-    @Column(name = "inv_id_vidrio")
-    private Double IdVidrio;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -62,8 +59,6 @@ public class Vidrio implements Serializable {
 	public Double getVidrioAlto() {return VidrioAlto;}
 	public void setVidrioTipo(String VidrioTipo) {this.VidrioTipo = VidrioTipo;}
 	public String getVidrioTipo() {return VidrioTipo;}
-	public void setIdVidrio(Double IdVidrio) {this.IdVidrio = IdVidrio;}
-	public Double getIdVidrio() {return IdVidrio;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setVidrioDeterioro(Boolean VidrioDeterioro) {this.VidrioDeterioro = VidrioDeterioro;}

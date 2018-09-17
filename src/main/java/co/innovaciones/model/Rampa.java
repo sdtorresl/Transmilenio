@@ -17,9 +17,6 @@ public class Rampa implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_rampa")
-    private Double IdRampa;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -41,8 +38,6 @@ public class Rampa implements Serializable {
     @Column(name = "inv_id_material_averia")
     private Double IdMaterialAveria;
 
-	public void setIdRampa(Double IdRampa) {this.IdRampa = IdRampa;}
-	public Double getIdRampa() {return IdRampa;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setRampaId(Double RampaId) {this.RampaId = RampaId;}

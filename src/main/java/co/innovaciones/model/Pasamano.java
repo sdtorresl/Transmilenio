@@ -20,9 +20,6 @@ public class Pasamano implements Serializable {
     @Column(name = "inv_pasamano_corrosion")
     private Boolean PasamanoCorrosion;
 
-    @Column(name = "inv_id_pasamano")
-    private Double IdPasamano;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -61,8 +58,6 @@ public class Pasamano implements Serializable {
 
 	public void setPasamanoCorrosion(Boolean PasamanoCorrosion) {this.PasamanoCorrosion = PasamanoCorrosion;}
 	public Boolean getPasamanoCorrosion() {return PasamanoCorrosion;}
-	public void setIdPasamano(Double IdPasamano) {this.IdPasamano = IdPasamano;}
-	public Double getIdPasamano() {return IdPasamano;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setPasamanoId(Double PasamanoId) {this.PasamanoId = PasamanoId;}

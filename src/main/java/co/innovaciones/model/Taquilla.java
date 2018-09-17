@@ -20,9 +20,6 @@ public class Taquilla implements Serializable {
     @Column(name = "inv_taquilla_imagen")
     private String TaquillaImagen;
 
-    @Column(name = "inv_id_taquilla")
-    private Double IdTaquilla;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -76,8 +73,6 @@ public class Taquilla implements Serializable {
 
 	public void setTaquillaImagen(String TaquillaImagen) {this.TaquillaImagen = TaquillaImagen;}
 	public String getTaquillaImagen() {return TaquillaImagen;}
-	public void setIdTaquilla(Double IdTaquilla) {this.IdTaquilla = IdTaquilla;}
-	public Double getIdTaquilla() {return IdTaquilla;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setTaquillaId(Double TaquillaId) {this.TaquillaId = TaquillaId;}

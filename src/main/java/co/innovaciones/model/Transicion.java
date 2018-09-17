@@ -17,9 +17,6 @@ public class Transicion implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_transicion")
-    private Double IdTransicion;
-
     @Column(name = "inv_transicion_id")
     private String TransicionId;
 
@@ -32,8 +29,6 @@ public class Transicion implements Serializable {
     @Column(name = "inv_transicion_ancho")
     private Double TransicionAncho;
 
-	public void setIdTransicion(Double IdTransicion) {this.IdTransicion = IdTransicion;}
-	public Double getIdTransicion() {return IdTransicion;}
 	public void setTransicionId(String TransicionId) {this.TransicionId = TransicionId;}
 	public String getTransicionId() {return TransicionId;}
 	public void setTransicionNumero(Double TransicionNumero) {this.TransicionNumero = TransicionNumero;}

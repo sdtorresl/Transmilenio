@@ -20,9 +20,6 @@ public class Fotoelectrica implements Serializable {
     @Column(name = "inv_fotoelectrica_ubicacion")
     private String FotoelectricaUbicacion;
 
-    @Column(name = "inv_id_fotoelectrica")
-    private Double IdFotoelectrica;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -37,8 +34,6 @@ public class Fotoelectrica implements Serializable {
 
 	public void setFotoelectricaUbicacion(String FotoelectricaUbicacion) {this.FotoelectricaUbicacion = FotoelectricaUbicacion;}
 	public String getFotoelectricaUbicacion() {return FotoelectricaUbicacion;}
-	public void setIdFotoelectrica(Double IdFotoelectrica) {this.IdFotoelectrica = IdFotoelectrica;}
-	public Double getIdFotoelectrica() {return IdFotoelectrica;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setFotoelectricaId(Double FotoelectricaId) {this.FotoelectricaId = FotoelectricaId;}

@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>IdSeccionestacion</th> 
-					<th>IdPlazoleta</th> 
 					<th>PlazoletaId</th> 
 					<th>Action</th>
 				</tr>
@@ -31,7 +30,6 @@
 				<tbody>
 				<tr th:each="plazoleta : ${listPlazoleta}">
 										<td th:text="${plazoleta.IdSeccionestacion}"></td> 
-					<td th:text="${plazoleta.IdPlazoleta}"></td> 
 					<td th:text="${plazoleta.PlazoletaId}"></td> 
 					<td>
 							<a th:href="@{/plazoletas/{id}(id = ${plazoleta.id})}">Show</a> 

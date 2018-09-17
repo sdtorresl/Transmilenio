@@ -20,9 +20,6 @@ public class Tanquecombustible implements Serializable {
     @Column(name = "inv_tanquecombustible_id")
     private Double TanquecombustibleId;
 
-    @Column(name = "inv_id_tanquecombustible")
-    private Double IdTanquecombustible;
-
     @Column(name = "inv_tanquecombustible_ubicacion")
     private String TanquecombustibleUbicacion;
 
@@ -34,8 +31,6 @@ public class Tanquecombustible implements Serializable {
 
 	public void setTanquecombustibleId(Double TanquecombustibleId) {this.TanquecombustibleId = TanquecombustibleId;}
 	public Double getTanquecombustibleId() {return TanquecombustibleId;}
-	public void setIdTanquecombustible(Double IdTanquecombustible) {this.IdTanquecombustible = IdTanquecombustible;}
-	public Double getIdTanquecombustible() {return IdTanquecombustible;}
 	public void setTanquecombustibleUbicacion(String TanquecombustibleUbicacion) {this.TanquecombustibleUbicacion = TanquecombustibleUbicacion;}
 	public String getTanquecombustibleUbicacion() {return TanquecombustibleUbicacion;}
 	public void setTanquecombustibleCapacidad(String TanquecombustibleCapacidad) {this.TanquecombustibleCapacidad = TanquecombustibleCapacidad;}

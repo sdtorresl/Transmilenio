@@ -62,9 +62,6 @@ public class Totem implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_totem")
-    private Double IdTotem;
-
 	public void setTotemImagen(String TotemImagen) {this.TotemImagen = TotemImagen;}
 	public String getTotemImagen() {return TotemImagen;}
 	public void setTotemRutaImagen(String TotemRutaImagen) {this.TotemRutaImagen = TotemRutaImagen;}
@@ -95,8 +92,6 @@ public class Totem implements Serializable {
 	public Double getTotemId() {return TotemId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdTotem(Double IdTotem) {this.IdTotem = IdTotem;}
-	public Double getIdTotem() {return IdTotem;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

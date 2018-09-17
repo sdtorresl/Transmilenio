@@ -40,7 +40,6 @@
 					<th>IncendioRutaImagen</th> 
 					<th>IncendioAgua</th> 
 					<th>IncendioVidriofaltante</th> 
-					<th>IdIncendio</th> 
 					<th>IdSeccionestacion</th> 
 					<th>Action</th>
 				</tr>
@@ -65,7 +64,6 @@
 					<td th:text="${incendio.IncendioRutaImagen}"></td> 
 					<td th:text="${incendio.IncendioAgua}"></td> 
 					<td th:text="${incendio.IncendioVidriofaltante}"></td> 
-					<td th:text="${incendio.IdIncendio}"></td> 
 					<td th:text="${incendio.IdSeccionestacion}"></td> 
 					<td>
 							<a th:href="@{/incendios/{id}(id = ${incendio.id})}">Show</a> 

@@ -32,9 +32,6 @@ public class Carpa implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_carpa")
-    private Double IdCarpa;
-
     @Column(name = "inv_carpa_rota")
     private Boolean CarpaRota;
 
@@ -48,8 +45,6 @@ public class Carpa implements Serializable {
 	public Double getCarpaId() {return CarpaId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdCarpa(Double IdCarpa) {this.IdCarpa = IdCarpa;}
-	public Double getIdCarpa() {return IdCarpa;}
 	public void setCarpaRota(Boolean CarpaRota) {this.CarpaRota = CarpaRota;}
 	public Boolean getCarpaRota() {return CarpaRota;}
 

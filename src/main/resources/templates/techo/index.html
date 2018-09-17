@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>TechoTipo</th> 
-					<th>IdTecho</th> 
 					<th>TechoAveria</th> 
 					<th>TechoArea</th> 
 					<th>IdSeccionestacion</th> 
@@ -33,7 +32,6 @@
 				<tbody>
 				<tr th:each="techo : ${listTecho}">
 										<td th:text="${techo.TechoTipo}"></td> 
-					<td th:text="${techo.IdTecho}"></td> 
 					<td th:text="${techo.TechoAveria}"></td> 
 					<td th:text="${techo.TechoArea}"></td> 
 					<td th:text="${techo.IdSeccionestacion}"></td> 

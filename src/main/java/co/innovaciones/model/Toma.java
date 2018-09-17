@@ -20,9 +20,6 @@ public class Toma implements Serializable {
     @Column(name = "inv_toma_destruido")
     private Boolean TomaDestruido;
 
-    @Column(name = "inv_id_toma")
-    private Double IdToma;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -55,8 +52,6 @@ public class Toma implements Serializable {
 
 	public void setTomaDestruido(Boolean TomaDestruido) {this.TomaDestruido = TomaDestruido;}
 	public Boolean getTomaDestruido() {return TomaDestruido;}
-	public void setIdToma(Double IdToma) {this.IdToma = IdToma;}
-	public Double getIdToma() {return IdToma;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setTomaNumero(Double TomaNumero) {this.TomaNumero = TomaNumero;}

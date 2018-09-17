@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdAscensor</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>AscensorId</th> 
 					<th>AscensorMarca</th> 
 					<th>AscensorAveriapuerta</th> 
@@ -40,8 +39,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="ascensor : ${listAscensor}">
-										<td th:text="${ascensor.IdAscensor}"></td> 
-					<td th:text="${ascensor.IdSeccionestacion}"></td> 
+										<td th:text="${ascensor.IdSeccionestacion}"></td> 
 					<td th:text="${ascensor.AscensorId}"></td> 
 					<td th:text="${ascensor.AscensorMarca}"></td> 
 					<td th:text="${ascensor.AscensorAveriapuerta}"></td> 

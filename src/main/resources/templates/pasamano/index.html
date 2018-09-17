@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>PasamanoCorrosion</th> 
-					<th>IdPasamano</th> 
 					<th>IdSeccionestacion</th> 
 					<th>PasamanoId</th> 
 					<th>PasamanoCostado</th> 
@@ -42,7 +41,6 @@
 				<tbody>
 				<tr th:each="pasamano : ${listPasamano}">
 										<td th:text="${pasamano.PasamanoCorrosion}"></td> 
-					<td th:text="${pasamano.IdPasamano}"></td> 
 					<td th:text="${pasamano.IdSeccionestacion}"></td> 
 					<td th:text="${pasamano.PasamanoId}"></td> 
 					<td th:text="${pasamano.PasamanoCostado}"></td> 

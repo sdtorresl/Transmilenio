@@ -34,7 +34,6 @@
 					<th>PrimerauxilioCostado</th> 
 					<th>PrimerauxilioId</th> 
 					<th>IdSeccionestacion</th> 
-					<th>IdPrimerauxilio</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -52,7 +51,6 @@
 					<td th:text="${primerauxilio.PrimerauxilioCostado}"></td> 
 					<td th:text="${primerauxilio.PrimerauxilioId}"></td> 
 					<td th:text="${primerauxilio.IdSeccionestacion}"></td> 
-					<td th:text="${primerauxilio.IdPrimerauxilio}"></td> 
 					<td>
 							<a th:href="@{/primerauxilios/{id}(id = ${primerauxilio.id})}">Show</a> 
 					 		<a th:href="@{/primerauxilios/edit/{id}(id = ${primerauxilio.id})}">Edit</a> 

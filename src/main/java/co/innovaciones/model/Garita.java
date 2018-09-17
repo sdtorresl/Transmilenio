@@ -23,9 +23,6 @@ public class Garita implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_garita")
-    private Double IdGarita;
-
     @Column(name = "inv_garita_observaciones")
     private String GaritaObservaciones;
 
@@ -45,8 +42,6 @@ public class Garita implements Serializable {
 	public Double getGaritaAncho() {return GaritaAncho;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdGarita(Double IdGarita) {this.IdGarita = IdGarita;}
-	public Double getIdGarita() {return IdGarita;}
 	public void setGaritaObservaciones(String GaritaObservaciones) {this.GaritaObservaciones = GaritaObservaciones;}
 	public String getGaritaObservaciones() {return GaritaObservaciones;}
 	public void setGaritaId(Integer GaritaId) {this.GaritaId = GaritaId;}

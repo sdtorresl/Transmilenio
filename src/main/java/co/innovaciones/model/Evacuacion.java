@@ -17,9 +17,6 @@ public class Evacuacion implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_evacuacion")
-    private Double IdEvacuacion;
-
     @Column(name = "inv_evacuacion_id")
     private Double EvacuacionId;
 
@@ -41,8 +38,6 @@ public class Evacuacion implements Serializable {
     @Column(name = "inv_evacuacion_tipologia")
     private String EvacuacionTipologia;
 
-	public void setIdEvacuacion(Double IdEvacuacion) {this.IdEvacuacion = IdEvacuacion;}
-	public Double getIdEvacuacion() {return IdEvacuacion;}
 	public void setEvacuacionId(Double EvacuacionId) {this.EvacuacionId = EvacuacionId;}
 	public Double getEvacuacionId() {return EvacuacionId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}

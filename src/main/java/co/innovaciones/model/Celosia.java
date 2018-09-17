@@ -20,9 +20,6 @@ public class Celosia implements Serializable {
     @Column(name = "inv_celosia_id")
     private Double CelosiaId;
 
-    @Column(name = "inv_id_celosia")
-    private Double IdCelosia;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -64,8 +61,6 @@ public class Celosia implements Serializable {
 
 	public void setCelosiaId(Double CelosiaId) {this.CelosiaId = CelosiaId;}
 	public Double getCelosiaId() {return CelosiaId;}
-	public void setIdCelosia(Double IdCelosia) {this.IdCelosia = IdCelosia;}
-	public Double getIdCelosia() {return IdCelosia;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setCelosiaCostado(String CelosiaCostado) {this.CelosiaCostado = CelosiaCostado;}

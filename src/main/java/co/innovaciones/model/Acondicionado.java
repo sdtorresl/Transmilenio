@@ -17,9 +17,6 @@ public class Acondicionado implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_acondicionado")
-    private Double IdAcondicionado;
-
     @Column(name = "inv_acondicionado_id")
     private Double AcondicionadoId;
 
@@ -29,8 +26,6 @@ public class Acondicionado implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-	public void setIdAcondicionado(Double IdAcondicionado) {this.IdAcondicionado = IdAcondicionado;}
-	public Double getIdAcondicionado() {return IdAcondicionado;}
 	public void setAcondicionadoId(Double AcondicionadoId) {this.AcondicionadoId = AcondicionadoId;}
 	public Double getAcondicionadoId() {return AcondicionadoId;}
 	public void setAcondicionadoUbicacion(String AcondicionadoUbicacion) {this.AcondicionadoUbicacion = AcondicionadoUbicacion;}

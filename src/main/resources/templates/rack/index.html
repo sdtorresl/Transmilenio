@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdRack</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>RackNumero</th> 
 					<th>RackPropietario</th> 
 					<th>Action</th>
@@ -31,8 +30,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="rack : ${listRack}">
-										<td th:text="${rack.IdRack}"></td> 
-					<td th:text="${rack.IdSeccionestacion}"></td> 
+										<td th:text="${rack.IdSeccionestacion}"></td> 
 					<td th:text="${rack.RackNumero}"></td> 
 					<td th:text="${rack.RackPropietario}"></td> 
 					<td>

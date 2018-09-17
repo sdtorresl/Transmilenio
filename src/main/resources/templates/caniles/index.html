@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdCaniles</th> 
-					<th>CanilesImagen</th> 
+										<th>CanilesImagen</th> 
 					<th>CanilesRutaImagen</th> 
 					<th>CanilesTotal</th> 
 					<th>CanilesNumeroaveriados</th> 
@@ -36,8 +35,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="caniles : ${listCaniles}">
-										<td th:text="${caniles.IdCaniles}"></td> 
-					<td th:text="${caniles.CanilesImagen}"></td> 
+										<td th:text="${caniles.CanilesImagen}"></td> 
 					<td th:text="${caniles.CanilesRutaImagen}"></td> 
 					<td th:text="${caniles.CanilesTotal}"></td> 
 					<td th:text="${caniles.CanilesNumeroaveriados}"></td> 

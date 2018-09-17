@@ -20,9 +20,6 @@ public class Armada implements Serializable {
     @Column(name = "inv_armada_longitud")
     private Double ArmadaLongitud;
 
-    @Column(name = "inv_id_armada")
-    private Double IdArmada;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -52,8 +49,6 @@ public class Armada implements Serializable {
 
 	public void setArmadaLongitud(Double ArmadaLongitud) {this.ArmadaLongitud = ArmadaLongitud;}
 	public Double getArmadaLongitud() {return ArmadaLongitud;}
-	public void setIdArmada(Double IdArmada) {this.IdArmada = IdArmada;}
-	public Double getIdArmada() {return IdArmada;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setArmadaId(Double ArmadaId) {this.ArmadaId = ArmadaId;}

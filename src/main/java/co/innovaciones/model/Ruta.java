@@ -20,9 +20,6 @@ public class Ruta implements Serializable {
     @Column(name = "inv_ruta_id")
     private Double RutaId;
 
-    @Column(name = "inv_id_ruta")
-    private Double IdRuta;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -37,8 +34,6 @@ public class Ruta implements Serializable {
 
 	public void setRutaId(Double RutaId) {this.RutaId = RutaId;}
 	public Double getRutaId() {return RutaId;}
-	public void setIdRuta(Double IdRuta) {this.IdRuta = IdRuta;}
-	public Double getIdRuta() {return IdRuta;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setRutaCostado(String RutaCostado) {this.RutaCostado = RutaCostado;}

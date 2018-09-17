@@ -71,9 +71,6 @@ public class Incendio implements Serializable {
     @Column(name = "inv_incendio_vidriofaltante")
     private Boolean IncendioVidriofaltante;
 
-    @Column(name = "inv_id_incendio")
-    private Double IdIncendio;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -113,8 +110,6 @@ public class Incendio implements Serializable {
 	public Boolean getIncendioAgua() {return IncendioAgua;}
 	public void setIncendioVidriofaltante(Boolean IncendioVidriofaltante) {this.IncendioVidriofaltante = IncendioVidriofaltante;}
 	public Boolean getIncendioVidriofaltante() {return IncendioVidriofaltante;}
-	public void setIdIncendio(Double IdIncendio) {this.IdIncendio = IdIncendio;}
-	public Double getIdIncendio() {return IdIncendio;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 

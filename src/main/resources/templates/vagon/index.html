@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>IdVagonoperacional</th> 
-					<th>IdVagon</th> 
 					<th>VagonId</th> 
 					<th>VagonNomenclatura</th> 
 					<th>VagonNomoperacional</th> 
@@ -37,7 +36,6 @@
 				<tbody>
 				<tr th:each="vagon : ${listVagon}">
 										<td th:text="${vagon.IdVagonoperacional}"></td> 
-					<td th:text="${vagon.IdVagon}"></td> 
 					<td th:text="${vagon.VagonId}"></td> 
 					<td th:text="${vagon.VagonNomenclatura}"></td> 
 					<td th:text="${vagon.VagonNomoperacional}"></td> 

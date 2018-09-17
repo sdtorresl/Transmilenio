@@ -20,9 +20,6 @@ public class Columna implements Serializable {
     @Column(name = "inv_columna_fisura")
     private Boolean ColumnaFisura;
 
-    @Column(name = "inv_id_columna")
-    private Double IdColumna;
-
     @Column(name = "inv_columna_descascaramiento")
     private Boolean ColumnaDescascaramiento;
 
@@ -58,8 +55,6 @@ public class Columna implements Serializable {
 
 	public void setColumnaFisura(Boolean ColumnaFisura) {this.ColumnaFisura = ColumnaFisura;}
 	public Boolean getColumnaFisura() {return ColumnaFisura;}
-	public void setIdColumna(Double IdColumna) {this.IdColumna = IdColumna;}
-	public Double getIdColumna() {return IdColumna;}
 	public void setColumnaDescascaramiento(Boolean ColumnaDescascaramiento) {this.ColumnaDescascaramiento = ColumnaDescascaramiento;}
 	public Boolean getColumnaDescascaramiento() {return ColumnaDescascaramiento;}
 	public void setColumnaPorcentajeaveria(Double ColumnaPorcentajeaveria) {this.ColumnaPorcentajeaveria = ColumnaPorcentajeaveria;}

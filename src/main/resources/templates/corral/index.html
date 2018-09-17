@@ -26,7 +26,6 @@
 					<th>CorralArea</th> 
 					<th>CorralId</th> 
 					<th>CorralLargo</th> 
-					<th>IdCorral</th> 
 					<th>CorralAncho</th> 
 					<th>Action</th>
 				</tr>
@@ -37,7 +36,6 @@
 					<td th:text="${corral.CorralArea}"></td> 
 					<td th:text="${corral.CorralId}"></td> 
 					<td th:text="${corral.CorralLargo}"></td> 
-					<td th:text="${corral.IdCorral}"></td> 
 					<td th:text="${corral.CorralAncho}"></td> 
 					<td>
 							<a th:href="@{/corrals/{id}(id = ${corral.id})}">Show</a> 

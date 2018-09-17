@@ -35,9 +35,6 @@ public class Casetacomercial implements Serializable {
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
-    @Column(name = "inv_id_casetacomercial")
-    private Double IdCasetacomercial;
-
     @Column(name = "inv_casetacomercial_imagen")
     private String CasetacomercialImagen;
 
@@ -62,8 +59,6 @@ public class Casetacomercial implements Serializable {
 	public Double getCasetacomercialNumeracion() {return CasetacomercialNumeracion;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdCasetacomercial(Double IdCasetacomercial) {this.IdCasetacomercial = IdCasetacomercial;}
-	public Double getIdCasetacomercial() {return IdCasetacomercial;}
 	public void setCasetacomercialImagen(String CasetacomercialImagen) {this.CasetacomercialImagen = CasetacomercialImagen;}
 	public String getCasetacomercialImagen() {return CasetacomercialImagen;}
 	public void setCasetacomercialRutaImagen(String CasetacomercialRutaImagen) {this.CasetacomercialRutaImagen = CasetacomercialRutaImagen;}

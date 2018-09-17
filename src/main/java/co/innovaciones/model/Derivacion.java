@@ -17,9 +17,6 @@ public class Derivacion implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_derivacion")
-    private Double IdDerivacion;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -44,8 +41,6 @@ public class Derivacion implements Serializable {
     @Column(name = "inv_derivacion_sintapa")
     private Boolean DerivacionSintapa;
 
-	public void setIdDerivacion(Double IdDerivacion) {this.IdDerivacion = IdDerivacion;}
-	public Double getIdDerivacion() {return IdDerivacion;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setDerivacionId(Double DerivacionId) {this.DerivacionId = DerivacionId;}

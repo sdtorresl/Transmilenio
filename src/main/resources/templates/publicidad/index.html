@@ -23,7 +23,6 @@
 				<thead class="thead-dark">
 				<tr>
 										<th>PublicidadFisuravidrio</th> 
-					<th>IdPublicidad</th> 
 					<th>IdSeccionestacion</th> 
 					<th>VentilacionId</th> 
 					<th>PublicidadAlto</th> 
@@ -43,7 +42,6 @@
 				<tbody>
 				<tr th:each="publicidad : ${listPublicidad}">
 										<td th:text="${publicidad.PublicidadFisuravidrio}"></td> 
-					<td th:text="${publicidad.IdPublicidad}"></td> 
 					<td th:text="${publicidad.IdSeccionestacion}"></td> 
 					<td th:text="${publicidad.VentilacionId}"></td> 
 					<td th:text="${publicidad.PublicidadAlto}"></td> 

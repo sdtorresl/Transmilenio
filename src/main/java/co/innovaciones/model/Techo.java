@@ -20,9 +20,6 @@ public class Techo implements Serializable {
     @Column(name = "inv_techo_tipo")
     private String TechoTipo;
 
-    @Column(name = "inv_id_techo")
-    private Double IdTecho;
-
     @Column(name = "inv_techo_averia")
     private Boolean TechoAveria;
 
@@ -34,8 +31,6 @@ public class Techo implements Serializable {
 
 	public void setTechoTipo(String TechoTipo) {this.TechoTipo = TechoTipo;}
 	public String getTechoTipo() {return TechoTipo;}
-	public void setIdTecho(Double IdTecho) {this.IdTecho = IdTecho;}
-	public Double getIdTecho() {return IdTecho;}
 	public void setTechoAveria(Boolean TechoAveria) {this.TechoAveria = TechoAveria;}
 	public Boolean getTechoAveria() {return TechoAveria;}
 	public void setTechoArea(Double TechoArea) {this.TechoArea = TechoArea;}

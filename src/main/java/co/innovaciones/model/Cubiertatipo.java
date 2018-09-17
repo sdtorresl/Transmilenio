@@ -17,17 +17,12 @@ public class Cubiertatipo implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_cubiertatipo")
-    private Double IdCubiertatipo;
-
     @Column(name = "inv_id_cubierta")
     private Double IdCubierta;
 
     @Column(name = "inv_cubiertatipo_material")
     private String CubiertatipoMaterial;
 
-	public void setIdCubiertatipo(Double IdCubiertatipo) {this.IdCubiertatipo = IdCubiertatipo;}
-	public Double getIdCubiertatipo() {return IdCubiertatipo;}
 	public void setIdCubierta(Double IdCubierta) {this.IdCubierta = IdCubierta;}
 	public Double getIdCubierta() {return IdCubierta;}
 	public void setCubiertatipoMaterial(String CubiertatipoMaterial) {this.CubiertatipoMaterial = CubiertatipoMaterial;}

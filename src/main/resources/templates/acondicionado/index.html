@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdAcondicionado</th> 
-					<th>AcondicionadoId</th> 
+										<th>AcondicionadoId</th> 
 					<th>AcondicionadoUbicacion</th> 
 					<th>IdSeccionestacion</th> 
 					<th>Action</th>
@@ -31,8 +30,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="acondicionado : ${listAcondicionado}">
-										<td th:text="${acondicionado.IdAcondicionado}"></td> 
-					<td th:text="${acondicionado.AcondicionadoId}"></td> 
+										<td th:text="${acondicionado.AcondicionadoId}"></td> 
 					<td th:text="${acondicionado.AcondicionadoUbicacion}"></td> 
 					<td th:text="${acondicionado.IdSeccionestacion}"></td> 
 					<td>

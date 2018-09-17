@@ -22,8 +22,7 @@
 			<table class="table table-hover text-center">
 				<thead class="thead-dark">
 				<tr>
-										<th>IdRecarga</th> 
-					<th>IdSeccionestacion</th> 
+										<th>IdSeccionestacion</th> 
 					<th>RecargaId</th> 
 					<th>RecargaCostado</th> 
 					<th>RecargaEnservicio</th> 
@@ -35,8 +34,7 @@
 				</thead>
 				<tbody>
 				<tr th:each="recarga : ${listRecarga}">
-										<td th:text="${recarga.IdRecarga}"></td> 
-					<td th:text="${recarga.IdSeccionestacion}"></td> 
+										<td th:text="${recarga.IdSeccionestacion}"></td> 
 					<td th:text="${recarga.RecargaId}"></td> 
 					<td th:text="${recarga.RecargaCostado}"></td> 
 					<td th:text="${recarga.RecargaEnservicio}"></td> 

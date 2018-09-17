@@ -17,9 +17,6 @@ public class Escalera implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-    @Column(name = "inv_id_escalera")
-    private Double IdEscalera;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -35,8 +32,6 @@ public class Escalera implements Serializable {
     @Column(name = "inv_escalera_tipo")
     private String EscaleraTipo;
 
-	public void setIdEscalera(Double IdEscalera) {this.IdEscalera = IdEscalera;}
-	public Double getIdEscalera() {return IdEscalera;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setEscaleraId(Double EscaleraId) {this.EscaleraId = EscaleraId;}

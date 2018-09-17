@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+	<!-- Sidebar -->
+    <head th:replace="layout/default :: sidebar"></head>
+	<!-- Sidebar -->
+
+	<!-- Page Content -->
+    <div id="content">
+		<!-- Top nav -->
+        <nav th:replace="layout/default :: navbar"></nav>
+        <!-- Top nav -->
+
+        <article class="container-fluid">
+            
+            <div id="main-content" class="shadow-sm bg-white mb-5">
+                <h1>Búsqueda rápida</h1>
+                <hr>
+
+                <div class="container-fluid">
+                    <form th:action="@{/}" method="POST" class="row">
+                        <div class="col-6">
+                            <div class="form-group row">
+                                <label for="troncal" class="col-4 col-form-label">Troncal</label>
+                                <div class="col-8">
+                                    <select name="troncal" id="troncal" class="form-control" multiple="multiple">
+                                        <option th:each="troncal : ${troncales}" th:value="${troncal.idTroncal}" th:text="${#strings.capitalizeWords(#strings.toLowerCase(troncal.troncalNombre))}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group row">
+                                <label for="estaciones" class="col-4 col-form-label">Estaciones</label>
+                                <div class="col-8">
+                                    <select name="estaciones" id="estaciones" class="form-control" multiple="multiple">
+                                        <option th:each="estacion : ${estaciones}" th:value="${estacion.idEstacion}" th:text="${estacion.estacionNombre}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group row">
+                                <label for="secciones" class="col-4 col-form-label">Secciones</label>
+                                <div class="col-8">
+                                    <select name="secciones" id="secciones" class="form-control" multiple="multiple">
+                                        <option value="1">Option 1</option>
+                                        <option value="2">Option 2</option>
+                                        <option value="3">Option 3</option>
+                                        <option value="4">Option 4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group row">
+                                <label for="tipoElemento" class="col-4 col-form-label">Tipo de elemento</label>
+                                <div class="col-8">
+                                    <select name="tipoElemento" id="tipoElemento" class="form-control" multiple="multiple">
+                                        <option th:each="tipo : ${tipos}" th:value="${tipo.id}" th:text="${tipo.nombre}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group row">
+                                <label for="estados" class="col-4 col-form-label">Estados</label>
+                                <div class="col-8">
+                                    <select name="estados" id="estados" class="form-control" multiple="multiple">
+                                        <option th:each="estado : ${estados}" th:value="${estado.id}" th:text="${estado.nombre}"></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-3 mb-1">
+                            <div class="d-flex justify-content-center">
+                                <a th:href="@{/}" class="btn btn-secondary mr-2">Limpiar</a>
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+			</div>
+			
+		</article>
+    </div>
+	<!-- Page Content -->
+
+	<!-- Footer -->
+	<footer th:replace="layout/default :: footer"></footer>
+	<!-- Footer -->
+	
+	<!-- Scripts -->
+	<div th:replace="layout/default :: scripts"></div>
+	<!-- Scripts -->
+</body>
+</html>

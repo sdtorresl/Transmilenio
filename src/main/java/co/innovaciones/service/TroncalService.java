@@ -34,6 +34,6 @@ public class TroncalService {
 	public void delete(Troncal entity) {
 		troncalRepository.delete(entity);
 	}
-
+  
+  
 }
-	

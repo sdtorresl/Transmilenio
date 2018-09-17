@@ -11,65 +11,105 @@ import java.io.Serializable;
 @Entity
 @Table(name = "inv_estacion")
 public class Estacion implements Serializable {
-
-	private static final long serialVersionUID = 1L;
-	
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "inv_id_estacion")
-	private Integer id;
-
-    @Column(name = "inv_estacion_codigo")
-    private String EstacionCodigo;
+    private static final long serialVersionUID = 1L;
+    
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "inv_id_estacion")
+    private Integer idEstacion;
 
     @Column(name = "inv_id_estaciontipo")
-    private Double IdEstaciontipo;
+    private Double idEstacionTipo;
 
     @Column(name = "inv_estacion_distribucion")
-    private String EstacionDistribucion;
+    private String estacionDistribucion;
 
     @Column(name = "inv_id_troncal")
-    private Double IdTroncal;
+    private Double idTroncal;
 
     @Column(name = "inv_estacion_nombre")
-    private String EstacionNombre;
+    private String estacionNombre;
 
     @Column(name = "inv_estacion_direccion")
-    private String EstacionDireccion;
+    private String estacionDireccion;
 
     @Column(name = "inv_estacion_fechentrega")
-    private Long EstacionFechentrega;
+    private String estacionFechentrega;
 
     @Column(name = "inv_estacion_fechoperacion")
-    private Long EstacionFechoperacion;
+    private String estacionFechoperacion;
 
     @Column(name = "inv_estacion_fase")
-    private String EstacionFase;
+    private String estacionFase;
 
     @Column(name = "inv_estacion_estado")
-    private String EstacionEstado;
+    private String estacionEstado;
 
-	public void setEstacionCodigo(String EstacionCodigo) {this.EstacionCodigo = EstacionCodigo;}
-	public String getEstacionCodigo() {return EstacionCodigo;}
-	public void setIdEstaciontipo(Double IdEstaciontipo) {this.IdEstaciontipo = IdEstaciontipo;}
-	public Double getIdEstaciontipo() {return IdEstaciontipo;}
-	public void setEstacionDistribucion(String EstacionDistribucion) {this.EstacionDistribucion = EstacionDistribucion;}
-	public String getEstacionDistribucion() {return EstacionDistribucion;}
-	public void setIdTroncal(Double IdTroncal) {this.IdTroncal = IdTroncal;}
-	public Double getIdTroncal() {return IdTroncal;}
-	public void setEstacionNombre(String EstacionNombre) {this.EstacionNombre = EstacionNombre;}
-	public String getEstacionNombre() {return EstacionNombre;}
-	public void setEstacionDireccion(String EstacionDireccion) {this.EstacionDireccion = EstacionDireccion;}
-	public String getEstacionDireccion() {return EstacionDireccion;}
-	public void setEstacionFechentrega(Long EstacionFechentrega) {this.EstacionFechentrega = EstacionFechentrega;}
-	public Long getEstacionFechentrega() {return EstacionFechentrega;}
-	public void setEstacionFechoperacion(Long EstacionFechoperacion) {this.EstacionFechoperacion = EstacionFechoperacion;}
-	public Long getEstacionFechoperacion() {return EstacionFechoperacion;}
-	public void setEstacionFase(String EstacionFase) {this.EstacionFase = EstacionFase;}
-	public String getEstacionFase() {return EstacionFase;}
-	public void setEstacionEstado(String EstacionEstado) {this.EstacionEstado = EstacionEstado;}
-	public String getEstacionEstado() {return EstacionEstado;}
+    @Column(name = "inv_estacion_codigo")
+    private Double estacionCodigo;
 
-	public Integer getId() { return id; }
-	public void setId(Integer id) { this.id = id; }
-	
+    public Integer getIdEstacion() {return  this.idEstacion;}
+    
+    void setIdEstacion(Integer idEstacion) {
+        this.idEstacion = idEstacion;
+    }
+    
+    public Double getIdEstacionTipo() {return this.idEstacionTipo;}
+    
+    void setIdEstacionTipo(Double idEstacionTipo) {
+        this.idEstacionTipo = idEstacionTipo;
+    }
+    
+    public String getEstacionDistribucion() {return this.estacionDistribucion;}
+
+    void setEstacionDistribucion(String estacionDistribucion) {
+        this.estacionDistribucion = estacionDistribucion;
+    }
+
+    public Double getIdTroncal() {return this.idTroncal;}
+
+    void setIdTroncal(Double idTroncal) {
+        this.idTroncal = idTroncal;
+    }
+
+    public String getEstacionNombre() {return this.estacionNombre;}
+
+    void setEstacionNombre(String estacionNombre) {
+        this.estacionNombre = estacionNombre;
+    }
+
+    public String getEstacionDireccion() {return this.estacionDireccion;}
+
+    void setEstacionDireccion(String estacionDireccion) {
+        this.estacionDireccion = estacionDireccion;
+    }
+
+    public String getEstacionFechentrega() {return this.estacionFechentrega;}
+
+    void setEstacionFechentrega(String estacionFechentrega) {
+        this.estacionFechentrega = estacionFechentrega;
+    }
+
+    public String getEstacionFechoperacion() {return this.estacionFechoperacion;}
+
+    void setEstacionFechoperacion(String estacionFechoperacion) {
+        this.estacionFechoperacion = estacionFechoperacion;
+    }
+    public String getEstacionFase() {return this.estacionFase;}
+
+    void setEstacionFase(String estacionFase) {
+        this.estacionFase = estacionFase;
+    }
+
+    public String getEstacionEstado() {return this.estacionEstado;}
+
+    void setEstacionEstado(String estacionEstado) {
+        this.estacionEstado = estacionEstado;
+    }
+
+    public Double getEstacionCodigo() {return this.estacionCodigo;}
+
+    void setEstacionCodigo(Double estacionCodigo) {
+        this.estacionCodigo = estacionCodigo;
+    }
+
 }

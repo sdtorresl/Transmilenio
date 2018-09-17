@@ -15,31 +15,30 @@ public class Troncal implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "inv_id_troncal")
-	private Integer id;
+    @Column(name = "inv_id_troncal")
+    private Double idTroncal;
 
     @Column(name = "inv_troncal_orientacion")
-    private String TroncalOrientacion;
+    private String troncalOrientacion;
 
     @Column(name = "inv_troncal_zona")
-    private String TroncalZona;
+    private String troncalZona;
 
     @Column(name = "inv_troncal_nombre")
-    private String TroncalNombre;
+    private String troncalNombre;
 
     @Column(name = "inv_troncal_descipcion")
-    private String TroncalDescipcion;
+    private String troncalDescripcion;
 
-	public void setTroncalOrientacion(String TroncalOrientacion) {this.TroncalOrientacion = TroncalOrientacion;}
-	public String getTroncalOrientacion() {return TroncalOrientacion;}
-	public void setTroncalZona(String TroncalZona) {this.TroncalZona = TroncalZona;}
-	public String getTroncalZona() {return TroncalZona;}
-	public void setTroncalNombre(String TroncalNombre) {this.TroncalNombre = TroncalNombre;}
-	public String getTroncalNombre() {return TroncalNombre;}
-	public void setTroncalDescipcion(String TroncalDescipcion) {this.TroncalDescipcion = TroncalDescipcion;}
-	public String getTroncalDescipcion() {return TroncalDescipcion;}
+	public void setIdTroncal(Double idTroncal) {this.idTroncal = idTroncal;}
+	public Double getIdTroncal() {return idTroncal;}
+	public void setTroncalOrientacion(String troncalOrientacion) {this.troncalOrientacion = troncalOrientacion;}
+	public String getTroncalOrientacion() {return troncalOrientacion;}
+	public void setTroncalZona(String troncalZona) {this.troncalZona = troncalZona;}
+	public String getTroncalZona() {return troncalZona;}
+	public void setTroncalNombre(String troncalNombre) {this.troncalNombre = troncalNombre;}
+	public String getTroncalNombre() {return troncalNombre;}
+	public void setTroncalDescipcion(String troncalDescripcion) {this.troncalDescripcion = troncalDescripcion;}
+	public String getTroncalDescipcion() {return troncalDescripcion;}
 
-	public Integer getId() { return id; }
-	public void setId(Integer id) { this.id = id; }
-	
 }

@@ -25,10 +25,7 @@
                                 <label for="troncal" class="col-4 col-form-label">Troncal</label>
                                 <div class="col-8">
                                     <select name="troncal" id="troncal" class="form-control" multiple="multiple">
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
-                                        <option value="4">Option 4</option>
+                                        <option th:each="troncal : ${troncales}" th:value="${troncal.idTroncal}" th:text="${#strings.capitalizeWords(#strings.toLowerCase(troncal.troncalNombre))}"></option>
                                     </select>
                                 </div>
                             </div>

@@ -15,13 +15,11 @@ public class Senale implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_senale")
 	private Integer id;
 
     @Column(name = "inv_senale_ilegible")
     private Boolean SenaleIlegible;
-
-    @Column(name = "inv_id_senale")
-    private Double IdSenale;
 
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
@@ -46,8 +44,6 @@ public class Senale implements Serializable {
 
 	public void setSenaleIlegible(Boolean SenaleIlegible) {this.SenaleIlegible = SenaleIlegible;}
 	public Boolean getSenaleIlegible() {return SenaleIlegible;}
-	public void setIdSenale(Double IdSenale) {this.IdSenale = IdSenale;}
-	public Double getIdSenale() {return IdSenale;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setSenaleId(Double SenaleId) {this.SenaleId = SenaleId;}

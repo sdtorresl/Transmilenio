@@ -15,9 +15,10 @@ public class Iluminacion implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_iluminacion")
 	private Integer id;
 
-    @Column(name = "inv_iluminacion_sirveparcialporcentaje")
+    @Column(name = "inv_ilum|acion_sirveparcialporcentaje")
     private Double IluminacionSirveparcialporcentaje;
 
     @Column(name = "inv_id_seccionestacion")

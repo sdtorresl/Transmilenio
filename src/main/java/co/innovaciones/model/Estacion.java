@@ -15,6 +15,7 @@ public class Estacion implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_estacion")
 	private Integer id;
 
     @Column(name = "inv_estacion_codigo")

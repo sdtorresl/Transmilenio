@@ -15,6 +15,7 @@ public class Fotoelectrica implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_fotoelectrica")
 	private Integer id;
 
     @Column(name = "inv_fotoelectrica_ubicacion")

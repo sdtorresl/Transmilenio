@@ -15,6 +15,7 @@ public class Estribo implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_estribo")
 	private Integer id;
 
     @Column(name = "inv_estribo_perdida")

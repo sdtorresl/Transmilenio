@@ -15,6 +15,7 @@ public class Medidoragua implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_medidoragua")
 	private Integer id;
 
     @Column(name = "inv_id_seccionestacion")

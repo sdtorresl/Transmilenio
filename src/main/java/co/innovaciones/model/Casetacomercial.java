@@ -15,6 +15,7 @@ public class Casetacomercial implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_casetacomercial")
 	private Integer id;
 
     @Column(name = "inv_casetacomercial_averia")

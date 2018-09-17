@@ -25,7 +25,6 @@
 										<th>IdEstacion</th> 
 					<th>SeccionSubseccion</th> 
 					<th>IdSeccion</th> 
-					<th>IdSeccionestacion</th> 
 					<th>Action</th>
 				</tr>
 				</thead>
@@ -34,7 +33,6 @@
 										<td th:text="${seccionestacion.IdEstacion}"></td> 
 					<td th:text="${seccionestacion.SeccionSubseccion}"></td> 
 					<td th:text="${seccionestacion.IdSeccion}"></td> 
-					<td th:text="${seccionestacion.IdSeccionestacion}"></td> 
 					<td>
 							<a th:href="@{/seccionestacions/{id}(id = ${seccionestacion.id})}">Show</a> 
 					 		<a th:href="@{/seccionestacions/edit/{id}(id = ${seccionestacion.id})}">Edit</a> 

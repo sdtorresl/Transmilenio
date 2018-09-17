@@ -15,6 +15,7 @@ public class Seccion implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_seccion")
 	private Integer id;
 
     @Column(name = "inv_id_plataforma")
@@ -44,9 +45,6 @@ public class Seccion implements Serializable {
     @Column(name = "inv_seccion_nombre")
     private String SeccionNombre;
 
-    @Column(name = "inv_id_seccion")
-    private Double IdSeccion;
-
 	public void setIdPlataforma(Double IdPlataforma) {this.IdPlataforma = IdPlataforma;}
 	public Double getIdPlataforma() {return IdPlataforma;}
 	public void setIdConexion(Double IdConexion) {this.IdConexion = IdConexion;}
@@ -65,8 +63,6 @@ public class Seccion implements Serializable {
 	public Boolean getSeccionExterna() {return SeccionExterna;}
 	public void setSeccionNombre(String SeccionNombre) {this.SeccionNombre = SeccionNombre;}
 	public String getSeccionNombre() {return SeccionNombre;}
-	public void setIdSeccion(Double IdSeccion) {this.IdSeccion = IdSeccion;}
-	public Double getIdSeccion() {return IdSeccion;}
 
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }

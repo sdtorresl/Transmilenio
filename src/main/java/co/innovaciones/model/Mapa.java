@@ -15,6 +15,7 @@ public class Mapa implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_mapa")
 	private Integer id;
 
     @Column(name = "inv_mapa_imagen")

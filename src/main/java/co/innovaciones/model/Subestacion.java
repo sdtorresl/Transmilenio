@@ -15,6 +15,7 @@ public class Subestacion implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_subestacion")
 	private Integer id;
 
     @Column(name = "inv_subestacion_nominalfusible")
@@ -43,9 +44,6 @@ public class Subestacion implements Serializable {
 
     @Column(name = "inv_subestacion_gabinetecorrosionarea")
     private Double SubestacionGabinetecorrosionarea;
-
-    @Column(name = "inv_id_subestacion")
-    private Double IdSubestacion;
 
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
@@ -92,8 +90,6 @@ public class Subestacion implements Serializable {
 	public Boolean getSubestacionCablederretido() {return SubestacionCablederretido;}
 	public void setSubestacionGabinetecorrosionarea(Double SubestacionGabinetecorrosionarea) {this.SubestacionGabinetecorrosionarea = SubestacionGabinetecorrosionarea;}
 	public Double getSubestacionGabinetecorrosionarea() {return SubestacionGabinetecorrosionarea;}
-	public void setIdSubestacion(Double IdSubestacion) {this.IdSubestacion = IdSubestacion;}
-	public Double getIdSubestacion() {return IdSubestacion;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setSubestacionId(Double SubestacionId) {this.SubestacionId = SubestacionId;}

@@ -26,9 +26,6 @@ public class Subplataforma implements Serializable {
     @Column(name = "inv_subplataforma_tipouso")
     private String SubplataformaTipouso;
 
-    @Column(name = "inv_id_subplataforma")
-    private Double IdSubplataforma;
-
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
 
@@ -41,8 +38,6 @@ public class Subplataforma implements Serializable {
 	public String getSubplataformaTipo() {return SubplataformaTipo;}
 	public void setSubplataformaTipouso(String SubplataformaTipouso) {this.SubplataformaTipouso = SubplataformaTipouso;}
 	public String getSubplataformaTipouso() {return SubplataformaTipouso;}
-	public void setIdSubplataforma(Double IdSubplataforma) {this.IdSubplataforma = IdSubplataforma;}
-	public Double getIdSubplataforma() {return IdSubplataforma;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setSubplataformaAncho(Double SubplataformaAncho) {this.SubplataformaAncho = SubplataformaAncho;}

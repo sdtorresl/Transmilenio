@@ -15,6 +15,7 @@ public class Techo implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_techo")
 	private Integer id;
 
     @Column(name = "inv_techo_tipo")

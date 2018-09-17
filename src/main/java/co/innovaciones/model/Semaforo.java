@@ -15,6 +15,7 @@ public class Semaforo implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_semaforo")
 	private Integer id;
 
     @Column(name = "inv_semaforo_porcentajeaveria")
@@ -25,9 +26,6 @@ public class Semaforo implements Serializable {
 
     @Column(name = "inv_semaforo_perdida")
     private Boolean SemaforoPerdida;
-
-    @Column(name = "inv_id_semaforo")
-    private Integer IdSemaforo;
 
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
@@ -44,8 +42,6 @@ public class Semaforo implements Serializable {
 	public Boolean getSemaforoSinservicio() {return SemaforoSinservicio;}
 	public void setSemaforoPerdida(Boolean SemaforoPerdida) {this.SemaforoPerdida = SemaforoPerdida;}
 	public Boolean getSemaforoPerdida() {return SemaforoPerdida;}
-	public void setIdSemaforo(Integer IdSemaforo) {this.IdSemaforo = IdSemaforo;}
-	public Integer getIdSemaforo() {return IdSemaforo;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
 	public void setSemaforoId(Integer SemaforoId) {this.SemaforoId = SemaforoId;}

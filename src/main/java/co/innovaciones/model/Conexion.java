@@ -15,6 +15,7 @@ public class Conexion implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_conexion")
 	private Integer id;
 
     @Column(name = "inv_conexion_elevacion")

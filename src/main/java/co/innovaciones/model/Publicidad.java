@@ -15,6 +15,7 @@ public class Publicidad implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_publicidad")
 	private Integer id;
 
     @Column(name = "inv_publicidad_fisuravidrio")

@@ -15,6 +15,7 @@ public class Bano implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_bano")
 	private Integer id;
 
     @Column(name = "inv_bano_baldosfisurada")

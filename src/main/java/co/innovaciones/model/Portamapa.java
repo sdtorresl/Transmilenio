@@ -15,6 +15,7 @@ public class Portamapa implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_portamapa")
 	private Integer id;
 
     @Column(name = "inv_portamapa_id")

@@ -15,6 +15,7 @@ public class Silla implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_silla")
 	private Integer id;
 
     @Column(name = "inv_silla_largo")
@@ -25,9 +26,6 @@ public class Silla implements Serializable {
 
     @Column(name = "inv_id_seccionestacion")
     private Double IdSeccionestacion;
-
-    @Column(name = "inv_id_silla")
-    private Double IdSilla;
 
     @Column(name = "inv_silla_faltante")
     private Boolean SillaFaltante;
@@ -62,8 +60,6 @@ public class Silla implements Serializable {
 	public Double getSillaId() {return SillaId;}
 	public void setIdSeccionestacion(Double IdSeccionestacion) {this.IdSeccionestacion = IdSeccionestacion;}
 	public Double getIdSeccionestacion() {return IdSeccionestacion;}
-	public void setIdSilla(Double IdSilla) {this.IdSilla = IdSilla;}
-	public Double getIdSilla() {return IdSilla;}
 	public void setSillaFaltante(Boolean SillaFaltante) {this.SillaFaltante = SillaFaltante;}
 	public Boolean getSillaFaltante() {return SillaFaltante;}
 	public void setSillaCarbonatacion(Boolean SillaCarbonatacion) {this.SillaCarbonatacion = SillaCarbonatacion;}

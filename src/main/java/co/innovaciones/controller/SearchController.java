@@ -13,6 +13,8 @@ import co.innovaciones.model.Estacion;
 import co.innovaciones.service.EstacionService;
 import co.innovaciones.model.Troncal;
 import co.innovaciones.service.TroncalService;
+import co.innovaciones.model.Estado;
+import co.innovaciones.service.EstadoService;
 
 /**
  * Controller class to handle user authentication
@@ -29,6 +31,9 @@ public class SearchController {
 
 	@Autowired
 	private TroncalService troncalService;
+
+	@Autowired
+	private EstadoService estadoService;
 	
 	@GetMapping("/")
 	public String search(Model model, RedirectAttributes flash) {	
@@ -37,6 +42,9 @@ public class SearchController {
 
 		List<Troncal> troncales = troncalService.findAll();
 		model.addAttribute("troncales", troncales);
+
+		List<Estado> estados = estadoService.findAll();
+		model.addAttribute("estados", estados);
 
 		return "search/index";
 	}

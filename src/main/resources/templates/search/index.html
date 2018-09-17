@@ -71,10 +71,7 @@
                                 <label for="estados" class="col-4 col-form-label">Estados</label>
                                 <div class="col-8">
                                     <select name="estados" id="estados" class="form-control" multiple="multiple">
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
-                                        <option value="4">Option 4</option>
+                                        <option th:each="estado : ${estados}" th:value="${estado.id}" th:text="${estado.nombre}"></option>
                                     </select>
                                 </div>
                             </div>

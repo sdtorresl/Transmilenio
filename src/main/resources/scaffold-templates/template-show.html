@@ -16,33 +16,21 @@
 
 		<div id="main-content" class="shadow-sm bg-white">
 
-			<h1>Ver Entrada</h1>
+			<h1>Ver ${className}</h1>
 			<hr />
 
 			<div class="row justify-content-center">
 				<div class="col-8">
-							<div class="form-group"> 
-			<label for="nivel">Nivel: </label>  
-			<span th:text="${entrada.nivel}"></span> 
-		</div> 
-		<div class="form-group"> 
-			<label for="largo">Largo: </label>  
-			<span th:text="${entrada.largo}"></span> 
-		</div> 
-		<div class="form-group"> 
-			<label for="ancho">Ancho: </label>  
-			<span th:text="${entrada.ancho}"></span> 
-		</div> 
-
+					${showAttributes}
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col mt-3">
 					<div class="d-flex justify-content-end">
-						<a class="btn btn-secondary mr-2"th:href="@{/entradas}">Atrás</a>
-						<a class="btn btn-secondary mr-2" th:href="@{/entradas/delete/{id}(id = ${entrada.id})}">Borrar</a>
-						<a class="btn btn-primary" th:href="@{/entradas/edit/{id}(id = ${entrada.id})}">Editar</a>
+						<a class="btn btn-secondary mr-2"th:href="@{/path_url}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/path_url/delete/{id}(id = ${paramClassName.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/path_url/edit/{id}(id = ${paramClassName.id})}">Editar</a>
 					</div>
 				</div>
 			</div>

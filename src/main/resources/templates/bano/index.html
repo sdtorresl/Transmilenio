@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Banos</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>BanoBaldosfisurada</th> 
+					<th>IdSeccionestacion</th> 
+					<th>BanoId</th> 
+					<th>BanoArea</th> 
+					<th>BanoSanitarios</th> 
+					<th>BanoLavamanos</th> 
+					<th>BanoEspejos</th> 
+					<th>BanoAveria</th> 
+					<th>BanoPorcentajeaveria</th> 
+					<th>BanoEnservicio</th> 
+					<th>BanoEspejoRoto</th> 
+					<th>BanoSinservicioinodoro</th> 
+					<th>BanoOrinales</th> 
+					<th>BanoSinservicioorinal</th> 
+					<th>BanoRutaImagen</th> 
+					<th>BanoImagen</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="bano : ${listBano}">
+										<td th:text="${bano.BanoBaldosfisurada}"></td> 
+					<td th:text="${bano.IdSeccionestacion}"></td> 
+					<td th:text="${bano.BanoId}"></td> 
+					<td th:text="${bano.BanoArea}"></td> 
+					<td th:text="${bano.BanoSanitarios}"></td> 
+					<td th:text="${bano.BanoLavamanos}"></td> 
+					<td th:text="${bano.BanoEspejos}"></td> 
+					<td th:text="${bano.BanoAveria}"></td> 
+					<td th:text="${bano.BanoPorcentajeaveria}"></td> 
+					<td th:text="${bano.BanoEnservicio}"></td> 
+					<td th:text="${bano.BanoEspejoRoto}"></td> 
+					<td th:text="${bano.BanoSinservicioinodoro}"></td> 
+					<td th:text="${bano.BanoOrinales}"></td> 
+					<td th:text="${bano.BanoSinservicioorinal}"></td> 
+					<td th:text="${bano.BanoRutaImagen}"></td> 
+					<td th:text="${bano.BanoImagen}"></td> 
+					<td>
+							<a th:href="@{/banos/{id}(id = ${bano.id})}">Show</a> 
+					 		<a th:href="@{/banos/edit/{id}(id = ${bano.id})}">Edit</a> 
+							<a th:href="@{/banos/delete/{id}(id = ${bano.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/banos/{id}(id = ${bano.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/banos/edit/{id}(id = ${bano.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/banos/delete/{id}(id = ${bano.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/banos/new}" class="btn btn-primary">Crear Bano</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

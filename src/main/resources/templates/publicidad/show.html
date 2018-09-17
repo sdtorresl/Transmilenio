@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Publicidad</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="PublicidadFisuravidrio">PublicidadFisuravidrio: </label>  
+			<span th:text="${publicidad.PublicidadFisuravidrio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${publicidad.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="VentilacionId">VentilacionId: </label>  
+			<span th:text="${publicidad.VentilacionId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PublicidadAlto">PublicidadAlto: </label>  
+			<span th:text="${publicidad.PublicidadAlto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PublicidadAncho">PublicidadAncho: </label>  
+			<span th:text="${publicidad.PublicidadAncho}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PublicidadCostado">PublicidadCostado: </label>  
+			<span th:text="${publicidad.PublicidadCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PublicidadAveria">PublicidadAveria: </label>  
+			<span th:text="${publicidad.PublicidadAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PublicidadDeteriorometalico">PublicidadDeteriorometalico: </label>  
+			<span th:text="${publicidad.PublicidadDeteriorometalico}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PublicidadIluminacion">PublicidadIluminacion: </label>  
+			<span th:text="${publicidad.PublicidadIluminacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PublicidadParpadeoluz">PublicidadParpadeoluz: </label>  
+			<span th:text="${publicidad.PublicidadParpadeoluz}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PublicidadSinvidrio">PublicidadSinvidrio: </label>  
+			<span th:text="${publicidad.PublicidadSinvidrio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PublicidadDeteriorovidrio">PublicidadDeteriorovidrio: </label>  
+			<span th:text="${publicidad.PublicidadDeteriorovidrio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PublicidadContaminacionvisual">PublicidadContaminacionvisual: </label>  
+			<span th:text="${publicidad.PublicidadContaminacionvisual}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PublicidadConpublicidad">PublicidadConpublicidad: </label>  
+			<span th:text="${publicidad.PublicidadConpublicidad}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/publicidads}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/publicidads/delete/{id}(id = ${publicidad.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/publicidads/edit/{id}(id = ${publicidad.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

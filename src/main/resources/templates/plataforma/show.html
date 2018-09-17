@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Plataforma</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="PlataformaAncho">PlataformaAncho: </label>  
+			<span th:text="${plataforma.PlataformaAncho}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PlataformaId">PlataformaId: </label>  
+			<span th:text="${plataforma.PlataformaId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PlataformaEstructura">PlataformaEstructura: </label>  
+			<span th:text="${plataforma.PlataformaEstructura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PlataformaTipo">PlataformaTipo: </label>  
+			<span th:text="${plataforma.PlataformaTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PlataformaLargo">PlataformaLargo: </label>  
+			<span th:text="${plataforma.PlataformaLargo}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/plataformas}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/plataformas/delete/{id}(id = ${plataforma.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/plataformas/edit/{id}(id = ${plataforma.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Casetacomercial</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="CasetacomercialAveria">CasetacomercialAveria: </label>  
+			<span th:text="${casetacomercial.CasetacomercialAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CasetacomercialAlto">CasetacomercialAlto: </label>  
+			<span th:text="${casetacomercial.CasetacomercialAlto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CasetacomercialLargo">CasetacomercialLargo: </label>  
+			<span th:text="${casetacomercial.CasetacomercialLargo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CasetacomercialId">CasetacomercialId: </label>  
+			<span th:text="${casetacomercial.CasetacomercialId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CasetacomercialNumeracion">CasetacomercialNumeracion: </label>  
+			<span th:text="${casetacomercial.CasetacomercialNumeracion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${casetacomercial.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CasetacomercialImagen">CasetacomercialImagen: </label>  
+			<span th:text="${casetacomercial.CasetacomercialImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CasetacomercialRutaImagen">CasetacomercialRutaImagen: </label>  
+			<span th:text="${casetacomercial.CasetacomercialRutaImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CasetacomercialContaminacion">CasetacomercialContaminacion: </label>  
+			<span th:text="${casetacomercial.CasetacomercialContaminacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CasetacomercialAveriaestructura">CasetacomercialAveriaestructura: </label>  
+			<span th:text="${casetacomercial.CasetacomercialAveriaestructura}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/casetacomercials}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/casetacomercials/delete/{id}(id = ${casetacomercial.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/casetacomercials/edit/{id}(id = ${casetacomercial.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

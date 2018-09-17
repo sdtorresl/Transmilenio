@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${estacion.id == null}">Agregar Estacion</h1>
+			<h1 th:if="${estacion.id != null}">Editar Estacion</h1>
+			<hr />
+
+			<form th:action="@{/estacions}" th:method="@{${estacion.id == null} ? 'post' : 'put'}" th:object="${estacion}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="EstacionCodigo">EstacionCodigo</label>  
+					<input id="EstacionCodigo" name="EstacionCodigo" type="text" class="form-control" th:field="*{EstacionCodigo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdEstaciontipo">IdEstaciontipo</label>  
+					<input id="IdEstaciontipo" name="IdEstaciontipo" type="text" class="form-control" th:field="*{IdEstaciontipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstacionDistribucion">EstacionDistribucion</label>  
+					<input id="EstacionDistribucion" name="EstacionDistribucion" type="text" class="form-control" th:field="*{EstacionDistribucion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdTroncal">IdTroncal</label>  
+					<input id="IdTroncal" name="IdTroncal" type="text" class="form-control" th:field="*{IdTroncal}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstacionNombre">EstacionNombre</label>  
+					<input id="EstacionNombre" name="EstacionNombre" type="text" class="form-control" th:field="*{EstacionNombre}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstacionDireccion">EstacionDireccion</label>  
+					<input id="EstacionDireccion" name="EstacionDireccion" type="text" class="form-control" th:field="*{EstacionDireccion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstacionFechentrega">EstacionFechentrega</label>  
+					<input id="EstacionFechentrega" name="EstacionFechentrega" type="text" class="form-control" th:field="*{EstacionFechentrega}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstacionFechoperacion">EstacionFechoperacion</label>  
+					<input id="EstacionFechoperacion" name="EstacionFechoperacion" type="text" class="form-control" th:field="*{EstacionFechoperacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstacionFase">EstacionFase</label>  
+					<input id="EstacionFase" name="EstacionFase" type="text" class="form-control" th:field="*{EstacionFase}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="EstacionEstado">EstacionEstado</label>  
+					<input id="EstacionEstado" name="EstacionEstado" type="text" class="form-control" th:field="*{EstacionEstado}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/estacions}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

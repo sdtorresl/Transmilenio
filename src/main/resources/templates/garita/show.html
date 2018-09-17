@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Garita</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="GaritaAncho">GaritaAncho: </label>  
+			<span th:text="${garita.GaritaAncho}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${garita.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="GaritaObservaciones">GaritaObservaciones: </label>  
+			<span th:text="${garita.GaritaObservaciones}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="GaritaId">GaritaId: </label>  
+			<span th:text="${garita.GaritaId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="GaritaArea">GaritaArea: </label>  
+			<span th:text="${garita.GaritaArea}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="GaritaTipo">GaritaTipo: </label>  
+			<span th:text="${garita.GaritaTipo}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="GaritaLargo">GaritaLargo: </label>  
+			<span th:text="${garita.GaritaLargo}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/garitas}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/garitas/delete/{id}(id = ${garita.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/garitas/edit/{id}(id = ${garita.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

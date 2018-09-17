@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Cercha</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="CerchaPiezadeformada">CerchaPiezadeformada: </label>  
+			<span th:text="${cercha.CerchaPiezadeformada}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerchaCorrosion">CerchaCorrosion: </label>  
+			<span th:text="${cercha.CerchaCorrosion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerchaPiezafalta">CerchaPiezafalta: </label>  
+			<span th:text="${cercha.CerchaPiezafalta}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerchaPorcentajeaveria">CerchaPorcentajeaveria: </label>  
+			<span th:text="${cercha.CerchaPorcentajeaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerchaAveria">CerchaAveria: </label>  
+			<span th:text="${cercha.CerchaAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerchaId">CerchaId: </label>  
+			<span th:text="${cercha.CerchaId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${cercha.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CerchaPinturaepoxica">CerchaPinturaepoxica: </label>  
+			<span th:text="${cercha.CerchaPinturaepoxica}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/cerchas}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/cerchas/delete/{id}(id = ${cercha.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/cerchas/edit/{id}(id = ${cercha.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

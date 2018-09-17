@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Postes</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>PosteTipo</th> 
+					<th>PosteDeformacion</th> 
+					<th>PosteCorrosion</th> 
+					<th>PosteContaminacion</th> 
+					<th>PostePintura</th> 
+					<th>PostePerdida</th> 
+					<th>PostePorcentajeaveria</th> 
+					<th>IdSeccionestacion</th> 
+					<th>PosteId</th> 
+					<th>PosteAveria</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="poste : ${listPoste}">
+										<td th:text="${poste.PosteTipo}"></td> 
+					<td th:text="${poste.PosteDeformacion}"></td> 
+					<td th:text="${poste.PosteCorrosion}"></td> 
+					<td th:text="${poste.PosteContaminacion}"></td> 
+					<td th:text="${poste.PostePintura}"></td> 
+					<td th:text="${poste.PostePerdida}"></td> 
+					<td th:text="${poste.PostePorcentajeaveria}"></td> 
+					<td th:text="${poste.IdSeccionestacion}"></td> 
+					<td th:text="${poste.PosteId}"></td> 
+					<td th:text="${poste.PosteAveria}"></td> 
+					<td>
+							<a th:href="@{/postes/{id}(id = ${poste.id})}">Show</a> 
+					 		<a th:href="@{/postes/edit/{id}(id = ${poste.id})}">Edit</a> 
+							<a th:href="@{/postes/delete/{id}(id = ${poste.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/postes/{id}(id = ${poste.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/postes/edit/{id}(id = ${poste.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/postes/delete/{id}(id = ${poste.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/postes/new}" class="btn btn-primary">Crear Poste</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Medidors</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>MedidorAveria</th> 
+					<th>MedidorCablederretido</th> 
+					<th>MedidorGabinetecerradura</th> 
+					<th>MedidorSerial</th> 
+					<th>MedidorPropietario</th> 
+					<th>MedidorTipo</th> 
+					<th>MedidorGabinetepintura</th> 
+					<th>MedidorGabinetecorrosion</th> 
+					<th>MedidorImagen</th> 
+					<th>MedidorGabinetesucio</th> 
+					<th>IdSeccionestacion</th> 
+					<th>MedidorId</th> 
+					<th>MedidorRutaImagen</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="medidor : ${listMedidor}">
+										<td th:text="${medidor.MedidorAveria}"></td> 
+					<td th:text="${medidor.MedidorCablederretido}"></td> 
+					<td th:text="${medidor.MedidorGabinetecerradura}"></td> 
+					<td th:text="${medidor.MedidorSerial}"></td> 
+					<td th:text="${medidor.MedidorPropietario}"></td> 
+					<td th:text="${medidor.MedidorTipo}"></td> 
+					<td th:text="${medidor.MedidorGabinetepintura}"></td> 
+					<td th:text="${medidor.MedidorGabinetecorrosion}"></td> 
+					<td th:text="${medidor.MedidorImagen}"></td> 
+					<td th:text="${medidor.MedidorGabinetesucio}"></td> 
+					<td th:text="${medidor.IdSeccionestacion}"></td> 
+					<td th:text="${medidor.MedidorId}"></td> 
+					<td th:text="${medidor.MedidorRutaImagen}"></td> 
+					<td>
+							<a th:href="@{/medidors/{id}(id = ${medidor.id})}">Show</a> 
+					 		<a th:href="@{/medidors/edit/{id}(id = ${medidor.id})}">Edit</a> 
+							<a th:href="@{/medidors/delete/{id}(id = ${medidor.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/medidors/{id}(id = ${medidor.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/medidors/edit/{id}(id = ${medidor.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/medidors/delete/{id}(id = ${medidor.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/medidors/new}" class="btn btn-primary">Crear Medidor</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

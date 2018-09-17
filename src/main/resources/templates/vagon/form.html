@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${vagon.id == null}">Agregar Vagon</h1>
+			<h1 th:if="${vagon.id != null}">Editar Vagon</h1>
+			<hr />
+
+			<form th:action="@{/vagons}" th:method="@{${vagon.id == null} ? 'post' : 'put'}" th:object="${vagon}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdVagonoperacional">IdVagonoperacional</label>  
+					<input id="IdVagonoperacional" name="IdVagonoperacional" type="text" class="form-control" th:field="*{IdVagonoperacional}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VagonId">VagonId</label>  
+					<input id="VagonId" name="VagonId" type="text" class="form-control" th:field="*{VagonId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VagonNomenclatura">VagonNomenclatura</label>  
+					<input id="VagonNomenclatura" name="VagonNomenclatura" type="text" class="form-control" th:field="*{VagonNomenclatura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VagonNomoperacional">VagonNomoperacional</label>  
+					<input id="VagonNomoperacional" name="VagonNomoperacional" type="text" class="form-control" th:field="*{VagonNomoperacional}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VagonNomusuario">VagonNomusuario</label>  
+					<input id="VagonNomusuario" name="VagonNomusuario" type="text" class="form-control" th:field="*{VagonNomusuario}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VagonLargo">VagonLargo</label>  
+					<input id="VagonLargo" name="VagonLargo" type="text" class="form-control" th:field="*{VagonLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VagonAncho">VagonAncho</label>  
+					<input id="VagonAncho" name="VagonAncho" type="text" class="form-control" th:field="*{VagonAncho}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VagonNivel">VagonNivel</label>  
+					<input id="VagonNivel" name="VagonNivel" type="text" class="form-control" th:field="*{VagonNivel}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/vagons}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

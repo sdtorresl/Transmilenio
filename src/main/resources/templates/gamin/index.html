@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Gamins</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdSeccionestacion</th> 
+					<th>GaminId</th> 
+					<th>GaminLamina</th> 
+					<th>GaminCelosia</th> 
+					<th>GaminAveria</th> 
+					<th>GaminDoblado</th> 
+					<th>GaminRoto</th> 
+					<th>GaminExtraviado</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="gamin : ${listGamin}">
+										<td th:text="${gamin.IdSeccionestacion}"></td> 
+					<td th:text="${gamin.GaminId}"></td> 
+					<td th:text="${gamin.GaminLamina}"></td> 
+					<td th:text="${gamin.GaminCelosia}"></td> 
+					<td th:text="${gamin.GaminAveria}"></td> 
+					<td th:text="${gamin.GaminDoblado}"></td> 
+					<td th:text="${gamin.GaminRoto}"></td> 
+					<td th:text="${gamin.GaminExtraviado}"></td> 
+					<td>
+							<a th:href="@{/gamins/{id}(id = ${gamin.id})}">Show</a> 
+					 		<a th:href="@{/gamins/edit/{id}(id = ${gamin.id})}">Edit</a> 
+							<a th:href="@{/gamins/delete/{id}(id = ${gamin.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/gamins/{id}(id = ${gamin.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/gamins/edit/{id}(id = ${gamin.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/gamins/delete/{id}(id = ${gamin.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/gamins/new}" class="btn btn-primary">Crear Gamin</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

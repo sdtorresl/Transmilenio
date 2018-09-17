@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Vidriopuertas</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>VidriopuertaPeliculaseguridadaveria</th> 
+					<th>VidriopuertaContaminacion</th> 
+					<th>VidriopuertaNumerocontaminacion</th> 
+					<th>IdSeccionestacion</th> 
+					<th>VidriopuertaId</th> 
+					<th>VidriopuertaCostado</th> 
+					<th>VidriopuertaLargo</th> 
+					<th>VidriopuertaAncho</th> 
+					<th>VidriopuertaAveria</th> 
+					<th>VidriopuertaFragmentado</th> 
+					<th>VidriopuertaNumerofragmentado</th> 
+					<th>VidriopuertaPeliculaidentificacion</th> 
+					<th>VidriopuertaNumeropeliculaidentificacion</th> 
+					<th>VidriopuertaNumeropelucilaseguridadaveria</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="vidriopuerta : ${listVidriopuerta}">
+										<td th:text="${vidriopuerta.VidriopuertaPeliculaseguridadaveria}"></td> 
+					<td th:text="${vidriopuerta.VidriopuertaContaminacion}"></td> 
+					<td th:text="${vidriopuerta.VidriopuertaNumerocontaminacion}"></td> 
+					<td th:text="${vidriopuerta.IdSeccionestacion}"></td> 
+					<td th:text="${vidriopuerta.VidriopuertaId}"></td> 
+					<td th:text="${vidriopuerta.VidriopuertaCostado}"></td> 
+					<td th:text="${vidriopuerta.VidriopuertaLargo}"></td> 
+					<td th:text="${vidriopuerta.VidriopuertaAncho}"></td> 
+					<td th:text="${vidriopuerta.VidriopuertaAveria}"></td> 
+					<td th:text="${vidriopuerta.VidriopuertaFragmentado}"></td> 
+					<td th:text="${vidriopuerta.VidriopuertaNumerofragmentado}"></td> 
+					<td th:text="${vidriopuerta.VidriopuertaPeliculaidentificacion}"></td> 
+					<td th:text="${vidriopuerta.VidriopuertaNumeropeliculaidentificacion}"></td> 
+					<td th:text="${vidriopuerta.VidriopuertaNumeropelucilaseguridadaveria}"></td> 
+					<td>
+							<a th:href="@{/vidriopuertas/{id}(id = ${vidriopuerta.id})}">Show</a> 
+					 		<a th:href="@{/vidriopuertas/edit/{id}(id = ${vidriopuerta.id})}">Edit</a> 
+							<a th:href="@{/vidriopuertas/delete/{id}(id = ${vidriopuerta.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/vidriopuertas/{id}(id = ${vidriopuerta.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/vidriopuertas/edit/{id}(id = ${vidriopuerta.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/vidriopuertas/delete/{id}(id = ${vidriopuerta.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/vidriopuertas/new}" class="btn btn-primary">Crear Vidriopuerta</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

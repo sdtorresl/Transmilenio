@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Acceso</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${acceso.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AccesoFormaingreso">AccesoFormaingreso: </label>  
+			<span th:text="${acceso.AccesoFormaingreso}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AccesoTotal">AccesoTotal: </label>  
+			<span th:text="${acceso.AccesoTotal}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AccesoTorniquete">AccesoTorniquete: </label>  
+			<span th:text="${acceso.AccesoTorniquete}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AccesoDistribucion">AccesoDistribucion: </label>  
+			<span th:text="${acceso.AccesoDistribucion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="AccesoId">AccesoId: </label>  
+			<span th:text="${acceso.AccesoId}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/accesos}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/accesos/delete/{id}(id = ${acceso.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/accesos/edit/{id}(id = ${acceso.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

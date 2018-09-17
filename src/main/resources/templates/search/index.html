@@ -25,10 +25,7 @@
                                 <label for="troncal" class="col-4 col-form-label">Troncal</label>
                                 <div class="col-8">
                                     <select name="troncal" id="troncal" class="form-control" multiple="multiple">
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
-                                        <option value="4">Option 4</option>
+                                        <option th:each="troncal : ${troncales}" th:value="${troncal.idTroncal}" th:text="${#strings.capitalizeWords(#strings.toLowerCase(troncal.troncalNombre))}"></option>
                                     </select>
                                 </div>
                             </div>
@@ -61,10 +58,7 @@
                                 <label for="tipoElemento" class="col-4 col-form-label">Tipo de elemento</label>
                                 <div class="col-8">
                                     <select name="tipoElemento" id="tipoElemento" class="form-control" multiple="multiple">
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
-                                        <option value="4">Option 4</option>
+                                        <option th:each="tipo : ${tipos}" th:value="${tipo.id}" th:text="${tipo.nombre}"></option>
                                     </select>
                                 </div>
                             </div>
@@ -74,10 +68,7 @@
                                 <label for="estados" class="col-4 col-form-label">Estados</label>
                                 <div class="col-8">
                                     <select name="estados" id="estados" class="form-control" multiple="multiple">
-                                        <option value="1">Option 1</option>
-                                        <option value="2">Option 2</option>
-                                        <option value="3">Option 3</option>
-                                        <option value="4">Option 4</option>
+                                        <option th:each="estado : ${estados}" th:value="${estado.id}" th:text="${estado.nombre}"></option>
                                     </select>
                                 </div>
                             </div>

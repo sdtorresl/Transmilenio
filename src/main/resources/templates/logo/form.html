@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${logo.id == null}">Agregar Logo</h1>
+			<h1 th:if="${logo.id != null}">Editar Logo</h1>
+			<hr />
+
+			<form th:action="@{/logos}" th:method="@{${logo.id == null} ? 'post' : 'put'}" th:object="${logo}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="LogoPerdida">LogoPerdida</label>  
+					<input id="LogoPerdida" name="LogoPerdida" type="text" class="form-control" th:field="*{LogoPerdida}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="LogoLegible">LogoLegible</label>  
+					<input id="LogoLegible" name="LogoLegible" type="text" class="form-control" th:field="*{LogoLegible}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="LogoMalestado">LogoMalestado</label>  
+					<input id="LogoMalestado" name="LogoMalestado" type="text" class="form-control" th:field="*{LogoMalestado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="LogoAveria">LogoAveria</label>  
+					<input id="LogoAveria" name="LogoAveria" type="text" class="form-control" th:field="*{LogoAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="LogoNumerologos">LogoNumerologos</label>  
+					<input id="LogoNumerologos" name="LogoNumerologos" type="text" class="form-control" th:field="*{LogoNumerologos}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="LogoCostado">LogoCostado</label>  
+					<input id="LogoCostado" name="LogoCostado" type="text" class="form-control" th:field="*{LogoCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="LogoId">LogoId</label>  
+					<input id="LogoId" name="LogoId" type="text" class="form-control" th:field="*{LogoId}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/logos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

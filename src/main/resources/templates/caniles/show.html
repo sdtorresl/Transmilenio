@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Caniles</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="CanilesImagen">CanilesImagen: </label>  
+			<span th:text="${caniles.CanilesImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CanilesRutaImagen">CanilesRutaImagen: </label>  
+			<span th:text="${caniles.CanilesRutaImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CanilesTotal">CanilesTotal: </label>  
+			<span th:text="${caniles.CanilesTotal}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CanilesNumeroaveriados">CanilesNumeroaveriados: </label>  
+			<span th:text="${caniles.CanilesNumeroaveriados}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CanilesNumerosinservicio">CanilesNumerosinservicio: </label>  
+			<span th:text="${caniles.CanilesNumerosinservicio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CanilesCantidad">CanilesCantidad: </label>  
+			<span th:text="${caniles.CanilesCantidad}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="CanilesId">CanilesId: </label>  
+			<span th:text="${caniles.CanilesId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${caniles.IdSeccionestacion}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/caniless}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/caniless/delete/{id}(id = ${caniles.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/caniless/edit/{id}(id = ${caniles.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

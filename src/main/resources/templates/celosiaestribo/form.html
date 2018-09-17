@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${celosiaestribo.id == null}">Agregar Celosiaestribo</h1>
+			<h1 th:if="${celosiaestribo.id != null}">Editar Celosiaestribo</h1>
+			<hr />
+
+			<form th:action="@{/celosiaestribos}" th:method="@{${celosiaestribo.id == null} ? 'post' : 'put'}" th:object="${celosiaestribo}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="CelosiaestriboCostado">CelosiaestriboCostado</label>  
+					<input id="CelosiaestriboCostado" name="CelosiaestriboCostado" type="text" class="form-control" th:field="*{CelosiaestriboCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaestriboLargo">CelosiaestriboLargo</label>  
+					<input id="CelosiaestriboLargo" name="CelosiaestriboLargo" type="text" class="form-control" th:field="*{CelosiaestriboLargo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaestriboAlto">CelosiaestriboAlto</label>  
+					<input id="CelosiaestriboAlto" name="CelosiaestriboAlto" type="text" class="form-control" th:field="*{CelosiaestriboAlto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaestriboAveria">CelosiaestriboAveria</label>  
+					<input id="CelosiaestriboAveria" name="CelosiaestriboAveria" type="text" class="form-control" th:field="*{CelosiaestriboAveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaestriboPorcentajeaveria">CelosiaestriboPorcentajeaveria</label>  
+					<input id="CelosiaestriboPorcentajeaveria" name="CelosiaestriboPorcentajeaveria" type="text" class="form-control" th:field="*{CelosiaestriboPorcentajeaveria}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaestriboCorrosion">CelosiaestriboCorrosion</label>  
+					<input id="CelosiaestriboCorrosion" name="CelosiaestriboCorrosion" type="text" class="form-control" th:field="*{CelosiaestriboCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaestriboDoblado">CelosiaestriboDoblado</label>  
+					<input id="CelosiaestriboDoblado" name="CelosiaestriboDoblado" type="text" class="form-control" th:field="*{CelosiaestriboDoblado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaestriboRobado">CelosiaestriboRobado</label>  
+					<input id="CelosiaestriboRobado" name="CelosiaestriboRobado" type="text" class="form-control" th:field="*{CelosiaestriboRobado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="VelosiaestriboObservacion">VelosiaestriboObservacion</label>  
+					<input id="VelosiaestriboObservacion" name="VelosiaestriboObservacion" type="text" class="form-control" th:field="*{VelosiaestriboObservacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="CelosiaestriboId">CelosiaestriboId</label>  
+					<input id="CelosiaestriboId" name="CelosiaestriboId" type="text" class="form-control" th:field="*{CelosiaestriboId}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/celosiaestribos}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

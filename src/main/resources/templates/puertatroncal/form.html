@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${puertatroncal.id == null}">Agregar Puertatroncal</h1>
+			<h1 th:if="${puertatroncal.id != null}">Editar Puertatroncal</h1>
+			<hr />
+
+			<form th:action="@{/puertatroncals}" th:method="@{${puertatroncal.id == null} ? 'post' : 'put'}" th:object="${puertatroncal}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="PuertatroncalBotonpanico">PuertatroncalBotonpanico</label>  
+					<input id="PuertatroncalBotonpanico" name="PuertatroncalBotonpanico" type="text" class="form-control" th:field="*{PuertatroncalBotonpanico}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertatroncalTapacarter">PuertatroncalTapacarter</label>  
+					<input id="PuertatroncalTapacarter" name="PuertatroncalTapacarter" type="text" class="form-control" th:field="*{PuertatroncalTapacarter}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertatroncalPisavidrio">PuertatroncalPisavidrio</label>  
+					<input id="PuertatroncalPisavidrio" name="PuertatroncalPisavidrio" type="text" class="form-control" th:field="*{PuertatroncalPisavidrio}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertatroncalZocaloinferior">PuertatroncalZocaloinferior</label>  
+					<input id="PuertatroncalZocaloinferior" name="PuertatroncalZocaloinferior" type="text" class="form-control" th:field="*{PuertatroncalZocaloinferior}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertatroncalMarcorobusto">PuertatroncalMarcorobusto</label>  
+					<input id="PuertatroncalMarcorobusto" name="PuertatroncalMarcorobusto" type="text" class="form-control" th:field="*{PuertatroncalMarcorobusto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertatroncalRutas">PuertatroncalRutas</label>  
+					<input id="PuertatroncalRutas" name="PuertatroncalRutas" type="text" class="form-control" th:field="*{PuertatroncalRutas}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertatroncalRutaImagen">PuertatroncalRutaImagen</label>  
+					<input id="PuertatroncalRutaImagen" name="PuertatroncalRutaImagen" type="text" class="form-control" th:field="*{PuertatroncalRutaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertatroncalImagen">PuertatroncalImagen</label>  
+					<input id="PuertatroncalImagen" name="PuertatroncalImagen" type="text" class="form-control" th:field="*{PuertatroncalImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertatroncalCostado">PuertatroncalCostado</label>  
+					<input id="PuertatroncalCostado" name="PuertatroncalCostado" type="text" class="form-control" th:field="*{PuertatroncalCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertatroncalId">PuertatroncalId</label>  
+					<input id="PuertatroncalId" name="PuertatroncalId" type="text" class="form-control" th:field="*{PuertatroncalId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertatroncalMecatronico">PuertatroncalMecatronico</label>  
+					<input id="PuertatroncalMecatronico" name="PuertatroncalMecatronico" type="text" class="form-control" th:field="*{PuertatroncalMecatronico}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertatroncalMarco">PuertatroncalMarco</label>  
+					<input id="PuertatroncalMarco" name="PuertatroncalMarco" type="text" class="form-control" th:field="*{PuertatroncalMarco}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdTipoPuertatroncal">IdTipoPuertatroncal</label>  
+					<input id="IdTipoPuertatroncal" name="IdTipoPuertatroncal" type="text" class="form-control" th:field="*{IdTipoPuertatroncal}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="PuertatroncalDistancia">PuertatroncalDistancia</label>  
+					<input id="PuertatroncalDistancia" name="PuertatroncalDistancia" type="text" class="form-control" th:field="*{PuertatroncalDistancia}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/puertatroncals}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

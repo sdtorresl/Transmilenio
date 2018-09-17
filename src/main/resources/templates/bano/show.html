@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Bano</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="BanoBaldosfisurada">BanoBaldosfisurada: </label>  
+			<span th:text="${bano.BanoBaldosfisurada}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${bano.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoId">BanoId: </label>  
+			<span th:text="${bano.BanoId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoArea">BanoArea: </label>  
+			<span th:text="${bano.BanoArea}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoSanitarios">BanoSanitarios: </label>  
+			<span th:text="${bano.BanoSanitarios}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoLavamanos">BanoLavamanos: </label>  
+			<span th:text="${bano.BanoLavamanos}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoEspejos">BanoEspejos: </label>  
+			<span th:text="${bano.BanoEspejos}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoAveria">BanoAveria: </label>  
+			<span th:text="${bano.BanoAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoPorcentajeaveria">BanoPorcentajeaveria: </label>  
+			<span th:text="${bano.BanoPorcentajeaveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoEnservicio">BanoEnservicio: </label>  
+			<span th:text="${bano.BanoEnservicio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoEspejoRoto">BanoEspejoRoto: </label>  
+			<span th:text="${bano.BanoEspejoRoto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoSinservicioinodoro">BanoSinservicioinodoro: </label>  
+			<span th:text="${bano.BanoSinservicioinodoro}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoOrinales">BanoOrinales: </label>  
+			<span th:text="${bano.BanoOrinales}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoSinservicioorinal">BanoSinservicioorinal: </label>  
+			<span th:text="${bano.BanoSinservicioorinal}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoRutaImagen">BanoRutaImagen: </label>  
+			<span th:text="${bano.BanoRutaImagen}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanoImagen">BanoImagen: </label>  
+			<span th:text="${bano.BanoImagen}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/banos}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/banos/delete/{id}(id = ${bano.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/banos/edit/{id}(id = ${bano.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

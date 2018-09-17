@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Carpas</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>CarpaAlto</th> 
+					<th>CarpaAncho</th> 
+					<th>CarpaLargo</th> 
+					<th>CarpaId</th> 
+					<th>IdSeccionestacion</th> 
+					<th>CarpaRota</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="carpa : ${listCarpa}">
+										<td th:text="${carpa.CarpaAlto}"></td> 
+					<td th:text="${carpa.CarpaAncho}"></td> 
+					<td th:text="${carpa.CarpaLargo}"></td> 
+					<td th:text="${carpa.CarpaId}"></td> 
+					<td th:text="${carpa.IdSeccionestacion}"></td> 
+					<td th:text="${carpa.CarpaRota}"></td> 
+					<td>
+							<a th:href="@{/carpas/{id}(id = ${carpa.id})}">Show</a> 
+					 		<a th:href="@{/carpas/edit/{id}(id = ${carpa.id})}">Edit</a> 
+							<a th:href="@{/carpas/delete/{id}(id = ${carpa.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/carpas/{id}(id = ${carpa.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/carpas/edit/{id}(id = ${carpa.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/carpas/delete/{id}(id = ${carpa.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/carpas/new}" class="btn btn-primary">Crear Carpa</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

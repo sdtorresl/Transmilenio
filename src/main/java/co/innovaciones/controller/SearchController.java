@@ -11,6 +11,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import co.innovaciones.model.Estacion;
 import co.innovaciones.service.EstacionService;
+import co.innovaciones.model.Troncal;
+import co.innovaciones.service.TroncalService;
+import co.innovaciones.model.Estado;
+import co.innovaciones.service.EstadoService;
+import co.innovaciones.model.Tipo;
+import co.innovaciones.service.TipoService;
 
 /**
  * Controller class to handle user authentication
@@ -24,18 +30,29 @@ public class SearchController {
 
 	@Autowired
 	private EstacionService estacionService;
-	
-	private static final String INFO = "info";
-	private static final String ERROR = "error";
-	private static final String SUCCESS = "success";
-	private static final String ALREADY_LOGGED_IN = "Ya ha inciado sesión.";
-	private static final String LOGIN_ERROR = "Error en al iniciar sesión, credenciales incorrectas.";
-	private static final String LOGOUT_SUCCESSFUL = "Ha cerrado sesión con éxito.";
+
+	@Autowired
+	private TroncalService troncalService;
+
+	@Autowired
+	private EstadoService estadoService;
+
+	@Autowired
+	private TipoService tipoService;
 	
 	@GetMapping("/")
 	public String search(Model model, RedirectAttributes flash) {	
 		List<Estacion> estaciones = estacionService.findAll();
 		model.addAttribute("estaciones", estaciones);
+
+		List<Troncal> troncales = troncalService.findAll();
+		model.addAttribute("troncales", troncales);
+
+		List<Estado> estados = estadoService.findAll();
+		model.addAttribute("estados", estados);
+
+		List<Tipo> tipos = tipoService.findAll();
+		model.addAttribute("tipos", tipos);
 
 		return "search/index";
 	}

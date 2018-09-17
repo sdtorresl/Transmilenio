@@ -28,14 +28,10 @@
 
         <ul class="list-unstyled components">
             <li>
-                <a href="#searchMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <a href="/">
                     <i class="flaticon-search"></i>
                     Búsqueda
                 </a>
-                <ul class="collapse list-unstyled" id="searchMenu">
-                    <li><a href="#"><i class="flaticon-list-1"></i>Listar</a></li>
-                    <li><a href="#"><i class="flaticon-add"></i>Agregar</a></li>
-                </ul>
             </li>
             <li>
                 <a href="#inventoryMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
@@ -93,8 +89,8 @@
                     Usuarios
                 </a>
                 <ul class="collapse list-unstyled" id="usersMenu">
-                    <li><a href="#"><i class="flaticon-list-1"></i>Listar</a></li>
-                    <li><a href="#"><i class="flaticon-add"></i>Agregar</a></li>
+                    <li><a th:href="@{/users}"><i class="flaticon-list-1"></i>Listar</a></li>
+                    <li><a th:href="@{/users/new}"><i class="flaticon-add"></i>Agregar</a></li>
                 </ul>
             </li>
         </ul>

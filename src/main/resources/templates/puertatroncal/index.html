@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Puertatroncals</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>PuertatroncalBotonpanico</th> 
+					<th>PuertatroncalTapacarter</th> 
+					<th>PuertatroncalPisavidrio</th> 
+					<th>PuertatroncalZocaloinferior</th> 
+					<th>PuertatroncalMarcorobusto</th> 
+					<th>PuertatroncalRutas</th> 
+					<th>PuertatroncalRutaImagen</th> 
+					<th>PuertatroncalImagen</th> 
+					<th>PuertatroncalCostado</th> 
+					<th>PuertatroncalId</th> 
+					<th>IdSeccionestacion</th> 
+					<th>PuertatroncalMecatronico</th> 
+					<th>PuertatroncalMarco</th> 
+					<th>IdTipoPuertatroncal</th> 
+					<th>PuertatroncalDistancia</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="puertatroncal : ${listPuertatroncal}">
+										<td th:text="${puertatroncal.PuertatroncalBotonpanico}"></td> 
+					<td th:text="${puertatroncal.PuertatroncalTapacarter}"></td> 
+					<td th:text="${puertatroncal.PuertatroncalPisavidrio}"></td> 
+					<td th:text="${puertatroncal.PuertatroncalZocaloinferior}"></td> 
+					<td th:text="${puertatroncal.PuertatroncalMarcorobusto}"></td> 
+					<td th:text="${puertatroncal.PuertatroncalRutas}"></td> 
+					<td th:text="${puertatroncal.PuertatroncalRutaImagen}"></td> 
+					<td th:text="${puertatroncal.PuertatroncalImagen}"></td> 
+					<td th:text="${puertatroncal.PuertatroncalCostado}"></td> 
+					<td th:text="${puertatroncal.PuertatroncalId}"></td> 
+					<td th:text="${puertatroncal.IdSeccionestacion}"></td> 
+					<td th:text="${puertatroncal.PuertatroncalMecatronico}"></td> 
+					<td th:text="${puertatroncal.PuertatroncalMarco}"></td> 
+					<td th:text="${puertatroncal.IdTipoPuertatroncal}"></td> 
+					<td th:text="${puertatroncal.PuertatroncalDistancia}"></td> 
+					<td>
+							<a th:href="@{/puertatroncals/{id}(id = ${puertatroncal.id})}">Show</a> 
+					 		<a th:href="@{/puertatroncals/edit/{id}(id = ${puertatroncal.id})}">Edit</a> 
+							<a th:href="@{/puertatroncals/delete/{id}(id = ${puertatroncal.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/puertatroncals/{id}(id = ${puertatroncal.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/puertatroncals/edit/{id}(id = ${puertatroncal.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/puertatroncals/delete/{id}(id = ${puertatroncal.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/puertatroncals/new}" class="btn btn-primary">Crear Puertatroncal</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1 th:if="${taquilla.id == null}">Agregar Taquilla</h1>
+			<h1 th:if="${taquilla.id != null}">Editar Taquilla</h1>
+			<hr />
+
+			<form th:action="@{/taquillas}" th:method="@{${taquilla.id == null} ? 'post' : 'put'}" th:object="${taquilla}">
+				<div class="row justify-content-center">
+					<div class="col-8">
+						<input type="hidden" th:field="*{id}" />
+
+										<div class="form-group"> 
+					<label for="TaquillaImagen">TaquillaImagen</label>  
+					<input id="TaquillaImagen" name="TaquillaImagen" type="text" class="form-control" th:field="*{TaquillaImagen}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="IdSeccionestacion">IdSeccionestacion</label>  
+					<input id="IdSeccionestacion" name="IdSeccionestacion" type="text" class="form-control" th:field="*{IdSeccionestacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaId">TaquillaId</label>  
+					<input id="TaquillaId" name="TaquillaId" type="text" class="form-control" th:field="*{TaquillaId}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaCostado">TaquillaCostado</label>  
+					<input id="TaquillaCostado" name="TaquillaCostado" type="text" class="form-control" th:field="*{TaquillaCostado}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaPunto">TaquillaPunto</label>  
+					<input id="TaquillaPunto" name="TaquillaPunto" type="text" class="form-control" th:field="*{TaquillaPunto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaArea">TaquillaArea</label>  
+					<input id="TaquillaArea" name="TaquillaArea" type="text" class="form-control" th:field="*{TaquillaArea}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaOrientador">TaquillaOrientador</label>  
+					<input id="TaquillaOrientador" name="TaquillaOrientador" type="text" class="form-control" th:field="*{TaquillaOrientador}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaOrientadormetro">TaquillaOrientadormetro</label>  
+					<input id="TaquillaOrientadormetro" name="TaquillaOrientadormetro" type="text" class="form-control" th:field="*{TaquillaOrientadormetro}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaAcomuladorbasura">TaquillaAcomuladorbasura</label>  
+					<input id="TaquillaAcomuladorbasura" name="TaquillaAcomuladorbasura" type="text" class="form-control" th:field="*{TaquillaAcomuladorbasura}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaDeterioro">TaquillaDeterioro</label>  
+					<input id="TaquillaDeterioro" name="TaquillaDeterioro" type="text" class="form-control" th:field="*{TaquillaDeterioro}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaCorrosion">TaquillaCorrosion</label>  
+					<input id="TaquillaCorrosion" name="TaquillaCorrosion" type="text" class="form-control" th:field="*{TaquillaCorrosion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaFiltrasion">TaquillaFiltrasion</label>  
+					<input id="TaquillaFiltrasion" name="TaquillaFiltrasion" type="text" class="form-control" th:field="*{TaquillaFiltrasion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaContaminacion">TaquillaContaminacion</label>  
+					<input id="TaquillaContaminacion" name="TaquillaContaminacion" type="text" class="form-control" th:field="*{TaquillaContaminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaSinluminacion">TaquillaSinluminacion</label>  
+					<input id="TaquillaSinluminacion" name="TaquillaSinluminacion" type="text" class="form-control" th:field="*{TaquillaSinluminacion}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaPerdidaelementos">TaquillaPerdidaelementos</label>  
+					<input id="TaquillaPerdidaelementos" name="TaquillaPerdidaelementos" type="text" class="form-control" th:field="*{TaquillaPerdidaelementos}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaVidrioroto">TaquillaVidrioroto</label>  
+					<input id="TaquillaVidrioroto" name="TaquillaVidrioroto" type="text" class="form-control" th:field="*{TaquillaVidrioroto}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaTipo">TaquillaTipo</label>  
+					<input id="TaquillaTipo" name="TaquillaTipo" type="text" class="form-control" th:field="*{TaquillaTipo}" />  
+				</div> 
+				<div class="form-group"> 
+					<label for="TaquillaRutaImagen">TaquillaRutaImagen</label>  
+					<input id="TaquillaRutaImagen" name="TaquillaRutaImagen" type="text" class="form-control" th:field="*{TaquillaRutaImagen}" />  
+				</div> 
+
+					</div>
+
+					<div class="col-12 mt-3">
+						<div class="d-flex justify-content-end">
+							<a th:href="@{/taquillas}" class="btn btn-secondary mr-2">Atrás</a>
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Toteminfors</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>ToteminforDeformacion</th> 
+					<th>IdTotem</th> 
+					<th>IdSeccionestacion</th> 
+					<th>ToteminforId</th> 
+					<th>ToteminforLongitud</th> 
+					<th>ToteminforAltura</th> 
+					<th>ToteminforAveria</th> 
+					<th>ToteminforPorcentajeaveria</th> 
+					<th>ToteminforCorrosion</th> 
+					<th>ToteminforPerdidaestrucmetal</th> 
+					<th>ToteminforContamivisual</th> 
+					<th>ToteminforFisuraestrucmetalica</th> 
+					<th>ToteminforAcrilicoausente</th> 
+					<th>ToteminforRutaImagen</th> 
+					<th>ToteminforImagen</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="toteminfor : ${listToteminfor}">
+										<td th:text="${toteminfor.ToteminforDeformacion}"></td> 
+					<td th:text="${toteminfor.IdTotem}"></td> 
+					<td th:text="${toteminfor.IdSeccionestacion}"></td> 
+					<td th:text="${toteminfor.ToteminforId}"></td> 
+					<td th:text="${toteminfor.ToteminforLongitud}"></td> 
+					<td th:text="${toteminfor.ToteminforAltura}"></td> 
+					<td th:text="${toteminfor.ToteminforAveria}"></td> 
+					<td th:text="${toteminfor.ToteminforPorcentajeaveria}"></td> 
+					<td th:text="${toteminfor.ToteminforCorrosion}"></td> 
+					<td th:text="${toteminfor.ToteminforPerdidaestrucmetal}"></td> 
+					<td th:text="${toteminfor.ToteminforContamivisual}"></td> 
+					<td th:text="${toteminfor.ToteminforFisuraestrucmetalica}"></td> 
+					<td th:text="${toteminfor.ToteminforAcrilicoausente}"></td> 
+					<td th:text="${toteminfor.ToteminforRutaImagen}"></td> 
+					<td th:text="${toteminfor.ToteminforImagen}"></td> 
+					<td>
+							<a th:href="@{/toteminfors/{id}(id = ${toteminfor.id})}">Show</a> 
+					 		<a th:href="@{/toteminfors/edit/{id}(id = ${toteminfor.id})}">Edit</a> 
+							<a th:href="@{/toteminfors/delete/{id}(id = ${toteminfor.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/toteminfors/{id}(id = ${toteminfor.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/toteminfors/edit/{id}(id = ${toteminfor.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/toteminfors/delete/{id}(id = ${toteminfor.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/toteminfors/new}" class="btn btn-primary">Crear Toteminfor</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Banderametal</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${banderametal.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanderametalId">BanderametalId: </label>  
+			<span th:text="${banderametal.BanderametalId}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanderametalCostado">BanderametalCostado: </label>  
+			<span th:text="${banderametal.BanderametalCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanderametalVagonnumero">BanderametalVagonnumero: </label>  
+			<span th:text="${banderametal.BanderametalVagonnumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanderametalNumero">BanderametalNumero: </label>  
+			<span th:text="${banderametal.BanderametalNumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanderametalDoblado">BanderametalDoblado: </label>  
+			<span th:text="${banderametal.BanderametalDoblado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanderametalRoto">BanderametalRoto: </label>  
+			<span th:text="${banderametal.BanderametalRoto}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="BanderametalDesaparecido">BanderametalDesaparecido: </label>  
+			<span th:text="${banderametal.BanderametalDesaparecido}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/banderametals}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/banderametals/delete/{id}(id = ${banderametal.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/banderametals/edit/{id}(id = ${banderametal.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

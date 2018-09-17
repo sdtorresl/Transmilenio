@@ -2,6 +2,7 @@ package co.innovaciones.controller;
 
 import java.util.List;
 import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.hibernate.service.spi.ServiceException;
@@ -21,7 +22,7 @@ import co.innovaciones.model.Seccion;
 import co.innovaciones.service.SeccionService;
 
 @Controller
-@RequestMapping("/secciones")
+@RequestMapping("/seccions")
 public class SeccionController {
 
 	private static final String MSG_SUCESS_INSERT = "Seccion inserted successfully.";
@@ -69,14 +70,14 @@ public class SeccionController {
 		return "redirect:/seccions/" + seccion.getId();
 	}
 	
-	@GetMapping("/{id}/edit")
+	@GetMapping("/edit/{id}")
 	public String update(Model model, @PathVariable("id") Integer id) {
 		try {
 			if (id != null) {
-				Optional<Seccion> seccion = seccionService.findById(id);
+				Optional<Seccion> entity = seccionService.findById(id);
 				
-				if (seccion.isPresent())
-					model.addAttribute("seccion", seccion.get());
+				if (entity.isPresent())
+					model.addAttribute("seccion", entity.get());
 			}
 		} catch (Exception e) {
 			throw new ServiceException(e.getMessage());
@@ -97,22 +98,24 @@ public class SeccionController {
 		return "redirect:/seccions/" + seccion.getId();
 	}
 	
-	@DeleteMapping("/{id}")
+	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes) {
 		try {
 			if (id != null) {
-				Optional<Seccion> seccion = seccionService.findById(id);
+				Optional<Seccion> entity = seccionService.findById(id);
 				
-				if (seccion.isPresent())
-					seccionService.delete(seccion.get());
-
-				redirectAttributes.addFlashAttribute("success", MSG_SUCESS_DELETE);
+				if (entity.isPresent()) {
+					seccionService.delete(entity.get());
+					redirectAttributes.addFlashAttribute("success", MSG_SUCESS_DELETE);
+				} else {
+					redirectAttributes.addFlashAttribute("error", MSG_ERROR);
+				}
 			}
 		} catch (Exception e) {
 			redirectAttributes.addFlashAttribute("error", MSG_ERROR);
 			throw new ServiceException(e.getMessage());
 		}
-		return "redirect:/seccions/index";
+		return "redirect:/seccions";
 	}
 
 }

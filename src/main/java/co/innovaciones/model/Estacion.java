@@ -11,7 +11,6 @@ import java.io.Serializable;
 @Entity
 @Table(name = "inv_estacion")
 public class Estacion implements Serializable {
-
     private static final long serialVersionUID = 1L;
     
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
@@ -112,4 +111,5 @@ public class Estacion implements Serializable {
     void setEstacionCodigo(Double estacionCodigo) {
         this.estacionCodigo = estacionCodigo;
     }
+
 }

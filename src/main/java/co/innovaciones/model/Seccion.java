@@ -14,55 +14,57 @@ public class Seccion implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
+	@Id @GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "inv_id_seccion")
+	private Integer id;
+
     @Column(name = "inv_id_plataforma")
-    private Integer IdPlataforma;
-	
+    private Double IdPlataforma;
+
     @Column(name = "inv_id_conexion")
-    private Integer IdConexion;
-	
+    private Double IdConexion;
+
     @Column(name = "inv_id_transicion")
-    private Integer IdTransicion;
-	
+    private Double IdTransicion;
+
     @Column(name = "inv_id_conexa")
-    private Integer IdConexa;
-	
+    private Double IdConexa;
+
     @Column(name = "inv_id_vagon")
-    private Integer IdVagon;
-	
+    private Double IdVagon;
+
     @Column(name = "inv_id_edificio")
-    private Integer IdEdificio;
-	
+    private Double IdEdificio;
+
     @Column(name = "inv_id_entrada")
-    private Integer IdEntrada;
-	
+    private Double IdEntrada;
+
     @Column(name = "inv_seccion_externa")
     private Boolean SeccionExterna;
-	
+
     @Column(name = "inv_seccion_nombre")
     private String SeccionNombre;
-	
-	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "inv_id_seccion")
-    private Integer IdSeccion;
-	
-	public void setIdPlataforma(Integer IdPlataforma) {this.IdPlataforma = IdPlataforma;}
-	public Integer getIdPlataforma() {return IdPlataforma;}
-	public void setIdConexion(Integer IdConexion) {this.IdConexion = IdConexion;}
-	public Integer getIdConexion() {return IdConexion;}
-	public void setIdTransicion(Integer IdTransicion) {this.IdTransicion = IdTransicion;}
-	public Integer getIdTransicion() {return IdTransicion;}
-	public void setIdConexa(Integer IdConexa) {this.IdConexa = IdConexa;}
-	public Integer getIdConexa() {return IdConexa;}
-	public void setIdVagon(Integer IdVagon) {this.IdVagon = IdVagon;}
-	public Integer getIdVagon() {return IdVagon;}
-	public void setIdEdificio(Integer IdEdificio) {this.IdEdificio = IdEdificio;}
-	public Integer getIdEdificio() {return IdEdificio;}
-	public void setIdEntrada(Integer IdEntrada) {this.IdEntrada = IdEntrada;}
-	public Integer getIdEntrada() {return IdEntrada;}
+
+	public void setIdPlataforma(Double IdPlataforma) {this.IdPlataforma = IdPlataforma;}
+	public Double getIdPlataforma() {return IdPlataforma;}
+	public void setIdConexion(Double IdConexion) {this.IdConexion = IdConexion;}
+	public Double getIdConexion() {return IdConexion;}
+	public void setIdTransicion(Double IdTransicion) {this.IdTransicion = IdTransicion;}
+	public Double getIdTransicion() {return IdTransicion;}
+	public void setIdConexa(Double IdConexa) {this.IdConexa = IdConexa;}
+	public Double getIdConexa() {return IdConexa;}
+	public void setIdVagon(Double IdVagon) {this.IdVagon = IdVagon;}
+	public Double getIdVagon() {return IdVagon;}
+	public void setIdEdificio(Double IdEdificio) {this.IdEdificio = IdEdificio;}
+	public Double getIdEdificio() {return IdEdificio;}
+	public void setIdEntrada(Double IdEntrada) {this.IdEntrada = IdEntrada;}
+	public Double getIdEntrada() {return IdEntrada;}
 	public void setSeccionExterna(Boolean SeccionExterna) {this.SeccionExterna = SeccionExterna;}
 	public Boolean getSeccionExterna() {return SeccionExterna;}
 	public void setSeccionNombre(String SeccionNombre) {this.SeccionNombre = SeccionNombre;}
 	public String getSeccionNombre() {return SeccionNombre;}
-	public void setIdSeccion(Integer IdSeccion) {this.IdSeccion = IdSeccion;}
-	public Integer getIdSeccion() {return IdSeccion;}	
+
+	public Integer getId() { return id; }
+	public void setId(Integer id) { this.id = id; }
+	
 }

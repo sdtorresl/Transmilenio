@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Ver Pantalla</h1>
+			<hr />
+
+			<div class="row justify-content-center">
+				<div class="col-8">
+							<div class="form-group"> 
+			<label for="PantallaPorcentajemanchas">PantallaPorcentajemanchas: </label>  
+			<span th:text="${pantalla.PantallaPorcentajemanchas}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PantallaFisura">PantallaFisura: </label>  
+			<span th:text="${pantalla.PantallaFisura}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PantallaSinservicio">PantallaSinservicio: </label>  
+			<span th:text="${pantalla.PantallaSinservicio}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PantallaNumero">PantallaNumero: </label>  
+			<span th:text="${pantalla.PantallaNumero}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="IdSeccionestacion">IdSeccionestacion: </label>  
+			<span th:text="${pantalla.IdSeccionestacion}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PantallaCostado">PantallaCostado: </label>  
+			<span th:text="${pantalla.PantallaCostado}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PantallaAveria">PantallaAveria: </label>  
+			<span th:text="${pantalla.PantallaAveria}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="PantallaManchas">PantallaManchas: </label>  
+			<span th:text="${pantalla.PantallaManchas}"></span> 
+		</div> 
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col mt-3">
+					<div class="d-flex justify-content-end">
+						<a class="btn btn-secondary mr-2"th:href="@{/pantallas}">Atrás</a>
+						<a class="btn btn-secondary mr-2" th:href="@{/pantallas/delete/{id}(id = ${pantalla.id})}">Borrar</a>
+						<a class="btn btn-primary" th:href="@{/pantallas/edit/{id}(id = ${pantalla.id})}">Editar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout/default :: head"></head>
+<body class="wrapper">
+<!-- Sidebar -->
+<head th:replace="layout/default :: sidebar"></head>
+<!-- Sidebar -->
+
+<!-- Page Content -->
+<div id="content">
+	<!-- Top nav -->
+	<nav th:replace="layout/default :: navbar"></nav>
+	<!-- Top nav -->
+
+	<article class="container-fluid">
+
+		<div id="main-content" class="shadow-sm bg-white">
+
+			<h1>Derivacions</h1>
+			<hr />
+
+			<table class="table table-hover text-center">
+				<thead class="thead-dark">
+				<tr>
+										<th>IdSeccionestacion</th> 
+					<th>DerivacionId</th> 
+					<th>DerivacionCostado</th> 
+					<th>DerivacionAveria</th> 
+					<th>DerivacionCorrosion</th> 
+					<th>DerivacionPorcentajecorrosion</th> 
+					<th>DerivacionSintuberia</th> 
+					<th>DerivacionSintapa</th> 
+					<th>Action</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="derivacion : ${listDerivacion}">
+										<td th:text="${derivacion.IdSeccionestacion}"></td> 
+					<td th:text="${derivacion.DerivacionId}"></td> 
+					<td th:text="${derivacion.DerivacionCostado}"></td> 
+					<td th:text="${derivacion.DerivacionAveria}"></td> 
+					<td th:text="${derivacion.DerivacionCorrosion}"></td> 
+					<td th:text="${derivacion.DerivacionPorcentajecorrosion}"></td> 
+					<td th:text="${derivacion.DerivacionSintuberia}"></td> 
+					<td th:text="${derivacion.DerivacionSintapa}"></td> 
+					<td>
+							<a th:href="@{/derivacions/{id}(id = ${derivacion.id})}">Show</a> 
+					 		<a th:href="@{/derivacions/edit/{id}(id = ${derivacion.id})}">Edit</a> 
+							<a th:href="@{/derivacions/delete/{id}(id = ${derivacion.id})}">Destroy</a> 
+					</td>
+					<td>
+						<a class="action" th:href="@{/derivacions/{id}(id = ${derivacion.id})}"><i class="flaticon-search"></i></a>
+						<a class="action" th:href="@{/derivacions/edit/{id}(id = ${derivacion.id})}"><i class="flaticon-edit"></i></a>
+						<a class="action" th:href="@{/derivacions/delete/{id}(id = ${derivacion.id})}"><i class="flaticon-trash"></i></a>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+
+			<div class="d-flex justify-content-end">
+				<a th:href="@{/derivacions/new}" class="btn btn-primary">Crear Derivacion</a>
+			</div>
+		</div>
+
+	</article>
+</div>
+<!-- Page Content -->
+
+<!-- Footer -->
+<footer th:replace="layout/default :: footer"></footer>
+<!-- Footer -->
+
+<!-- Scripts -->
+<div th:replace="layout/default :: scripts"></div>
+<!-- Scripts -->
+</body>
+</html>
